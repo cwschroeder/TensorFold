@@ -1,7 +1,7 @@
 """Fail unless the pinned patch base is still the upstream main tip."""
 import subprocess
 import sys
-EXPECTED = "1f938b1b57132e173da458b2e8880c9184a071e2"
+EXPECTED = "bec00ae6961a43a9ab73c4fa9338c167b3f82851"
 URL = "https://github.com/ashhart/TensorFold.git"
 actual = subprocess.check_output(["git", "ls-remote", URL, "refs/heads/main"], text=True, timeout=60).split()[0]
 if actual != EXPECTED:

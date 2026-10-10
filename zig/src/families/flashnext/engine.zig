@@ -109,6 +109,7 @@ pub const Engine = struct {
     hist: mtl.Buffer, // the token history the copy drafts search
     fixed_depth: ?usize = null, // TF_DRAFT_DEPTH: measured operator override; explicit request depth wins
     copy: bool = true, // copy drafts from the history when a long enough match exists
+    gpu_round_event: bool = false, // benchmark-only GPU event for the single-device round chain
     copy_min: u32 = 3,
     copy_long: u32 = 6, // shorter matches copy only when the head's first draft agrees
     mark_taps: bool = true, // a prompt call writes the DeltaNet states at marks inside it (false: calls end at marks)
@@ -146,6 +147,7 @@ pub const Engine = struct {
         e.fixed_depth = try fz.configuredDraftDepth(if (std.c.getenv("TF_DRAFT_DEPTH")) |v| std.mem.span(v) else null);
         if (e.fixed_depth) |d| std.log.info("FlashNext fixed draft depth: {d}", .{d});
         e.copy = true;
+        e.gpu_round_event = false;
         e.copy_min = 3;
         e.copy_long = 6;
         e.segments = true;
@@ -708,6 +710,8 @@ pub const Engine = struct {
             m.mtp.gsel = e.msel;
         }
         const base = r.event_value;
+        const round_event: ?mtl.Event = if (e.gpu_round_event and r.tp == null) try r.device.event() else null;
+        defer if (round_event) |event| event.deinit();
         const round_profile = std.c.getenv("TF_ROUND_PROFILE") != null;
         var encoded_ticks: [4]u64 = @splat(0);
         var cbs: [4]?mtl.CommandBuffer = .{ null, null, null, null };
@@ -723,7 +727,9 @@ pub const Engine = struct {
             const encode_start = if (round_profile) std.c.mach_absolute_time() else 0;
             const wr = widths[round % 4];
             const cb = r.queue.commandBuffer();
-            if (round > 0) cb.waitFor(r.event, base + round);
+            if (round > 0) {
+                if (round_event) |event| cb.waitForEvent(event, base + round) else cb.waitFor(r.event, base + round);
+            }
             r.enc = cb.compute(.serial);
             m.t.rows = e.rows_w[wr];
             m.t.mdims = e.mdims_w[wr];
@@ -765,7 +771,7 @@ pub const Engine = struct {
             r.enc.setBuffer(e.hist, 0, 6);
             r.enc.dispatchThreads(mtl.Size.of(1, 1, 1), mtl.Size.of(1, 1, 1));
             r.enc.end();
-            cb.signal(r.event, base + round + 1);
+            if (round_event) |event| cb.signalEvent(event, base + round + 1) else cb.signal(r.event, base + round + 1);
             cb.commit();
             if (round_profile) encoded_ticks[round % 4] = std.c.mach_absolute_time() - encode_start;
             cbs[round % 4] = cb;

@@ -1,0 +1,154 @@
+{
+  "upstream": "bec00ae6961a43a9ab73c4fa9338c167b3f82851",
+  "compatibility_commit": "84842e5",
+  "version": "1.0.5",
+  "compiler": "Zig 0.17.0",
+  "target": "apple_m1",
+  "gpu": "Apple M3 Ultra, 80 GPU cores",
+  "ram_gib": 256,
+  "os": "macOS 27.0.1 (26A434)",
+  "model_revision": "45032a193a5d4126ba8534822cbaf8fb30b3e368",
+  "quantization": "6-bit, group 32",
+  "xsx_binary_sha256": "f0cdb574949f799ea328b699f4f9e4c5e936fa26420932e45a584503f79ecb92",
+  "production_binary_changed": false,
+  "production_configuration_changed": false,
+  "host_tests": {
+    "passed": 1144,
+    "skipped": 2,
+    "total": 1146
+  },
+  "fmt_inherited_failures": [
+    "zig/tests/moe_bench.zig",
+    "zig/src/core/tokenizer/tokenizer.zig",
+    "zig/src/native/cuda.zig"
+  ],
+  "lean_baseline_problems": 542,
+  "lean_current_problems": 542,
+  "public_prompt_sha256": "bc56b8534f20fe300db690ed7493156f73f051aee35e27bd499757b040893697",
+  "grouped_binary_sha256": "606670c2797bb4706ba8dd845ef7912684daea2c8614df096dd435e398ac4592",
+  "footprint_sample": "171 GB reported by footprint during the XSX test; one sample, not a peak",
+  "prefetch_lifecycle": {
+    "started_at": 1791651141.589974,
+    "finished_at": 1791651229.735422,
+    "plist_unchanged": true,
+    "binary_unchanged": true,
+    "check_rcs": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "broadcast_lifecycle": {
+    "started_at": 1791651249.311284,
+    "finished_at": 1791651339.248322,
+    "plist_unchanged": true,
+    "binary_unchanged": true,
+    "check_rcs": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "broadcast_binary_sha256": {
+    "tf-core-lane-small": "1e6a9a32649c7e64d6532264f09952f387f4abbfe7bbfa308dcc6cc1837d93dc",
+    "tf-core-lane-check": "d78b4ae4ab0f36e51f495386b00908899ffb85738e98d78d0e85d7d92a9b9f87"
+  },
+  "prefetch_binary_identity_gap": "The prefetch binary was rebuilt before its SHA256 was captured; raw timing records and source settings are retained.",
+  "format_followup": {
+    "files": [
+      "zig/tests/moe_bench.zig",
+      "zig/src/core/tokenizer/tokenizer.zig",
+      "zig/src/native/cuda.zig"
+    ],
+    "whitespace_only_verified": true,
+    "whole_tree_fmt_passed": true
+  },
+  "final_host_recheck": {
+    "steps_succeeded": 141,
+    "tests_reexecuted_passed": 567,
+    "tests_skipped": 2,
+    "other_test_steps": "cached"
+  },
+  "gpu_event_binary_sha256": "71206fcf3e722d7f2aa4a4fea94530fe5c3a523e83d15c2bea8bb6df54061e6e",
+  "xsx_lifecycle": {
+    "started_at": 1791651758.162061,
+    "finished_at": 1791652046.6979258,
+    "plist_unchanged": true,
+    "binary_unchanged": true,
+    "check_rcs": [
+      0
+    ]
+  },
+  "grouped_lifecycle": {
+    "started_at": 1791652067.966903,
+    "finished_at": 1791652357.272573,
+    "plist_unchanged": true,
+    "binary_unchanged": true,
+    "check_rcs": [
+      0
+    ]
+  },
+  "gpu_event_host_recheck": {
+    "steps_succeeded": 141,
+    "tests_reexecuted_passed": 284,
+    "other_test_steps": "cached"
+  },
+  "gpu_event_scope": "single-device 256-token plain and depth-3 requests; direct window logits are a null control",
+  "code_prompt_sha256": "db447b23837ec1f13c839b081cebe0e2ffb91452191345e6f1e27eafb9e48810",
+  "fixtures": {
+    "short": {
+      "tokens": 23,
+      "task": "List the first twenty prime numbers, with no introduction."
+    },
+    "code": {
+      "tokens": 48,
+      "task": "Stable integer sorting in Python without sorted() or list.sort(), followed by three tests."
+    }
+  },
+  "binary_source_commit": "038f8adbf83e05b45b642d532d5fa98d87faeca4",
+  "gpu_event_token_checks": {
+    "fixtures": 2,
+    "timed_sequences": 48,
+    "warm_sequences": 8,
+    "tokens_per_sequence": 256,
+    "every_sequence_equals_its_plain_reference": true
+  },
+  "gpu_event_first_fixture_limit": "The host test build was still compiling during part of the first fixture. The separate code fixture had no concurrent compiler job.",
+  "profile_lifecycle": {
+    "started_at": 1791652438.804699,
+    "finished_at": 1791652584.143104,
+    "plist_unchanged": true,
+    "binary_unchanged": true,
+    "check_rcs": [
+      0
+    ]
+  },
+  "gpu-event_lifecycle": {
+    "started_at": 1791652742.4173892,
+    "finished_at": 1791653026.999927,
+    "plist_unchanged": true,
+    "binary_unchanged": true,
+    "check_rcs": [
+      0
+    ]
+  },
+  "gpu-event-code_lifecycle": {
+    "started_at": 1791653043.895463,
+    "finished_at": 1791653290.6730628,
+    "plist_unchanged": true,
+    "binary_unchanged": true,
+    "check_rcs": [
+      0
+    ]
+  },
+  "original_service_restored": true,
+  "production_optimization_promoted": false
+}

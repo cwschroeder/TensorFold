@@ -1,0 +1,41 @@
+XSX logits rows1 values248320 bit_equal
+XSX logits rows2 values496640 bit_equal
+XSX logits rows3 values744960 bit_equal
+XSX logits rows4 values993280 bit_equal
+XSX logits rows5 values1241600 bit_equal
+XSX logits rows6 values1489920 bit_equal
+XSX logits rows7 values1738240 bit_equal
+XSX logits rows8 values1986560 bit_equal
+XSX logits rows9 values2234880 bit_equal
+XSX logits rows10 values2483200 bit_equal
+XSX logits rows11 values2731520 bit_equal
+XSX logits rows12 values2979840 bit_equal
+XSX logits rows13 values3228160 bit_equal
+XSX logits rows14 values3476480 bit_equal
+XSX logits rows15 values3724800 bit_equal
+XSX logits rows16 values3973120 bit_equal
+XSX depth0 candidate0 block0 rep0 tokens256 prefill_s0.250157792 wall_s4.632944083 decode_tps58.182166 token_equal
+XSX depth0 candidate0 block0 rep1 tokens256 prefill_s0.258653167 wall_s4.633179917 decode_tps58.292020 token_equal
+XSX depth0 candidate0 block0 rep2 tokens256 prefill_s0.248853917 wall_s4.629395375 decode_tps58.211982 token_equal
+XSX depth0 candidate1 block1 rep0 tokens256 prefill_s0.258579458 wall_s4.769294750 decode_tps56.532054 token_equal
+XSX depth0 candidate1 block1 rep1 tokens256 prefill_s0.249583500 wall_s4.755103958 decode_tps56.597235 token_equal
+XSX depth0 candidate1 block1 rep2 tokens256 prefill_s0.256165833 wall_s4.768263875 decode_tps56.514729 token_equal
+XSX depth0 candidate1 block2 rep0 tokens256 prefill_s0.253044167 wall_s4.760003958 decode_tps56.579160 token_equal
+XSX depth0 candidate1 block2 rep1 tokens256 prefill_s0.252394542 wall_s4.764410000 decode_tps56.515764 token_equal
+XSX depth0 candidate1 block2 rep2 tokens256 prefill_s0.250802083 wall_s4.754440375 decode_tps56.620888 token_equal
+XSX depth0 candidate0 block3 rep0 tokens256 prefill_s0.254149583 wall_s4.630015708 decode_tps58.274178 token_equal
+XSX depth0 candidate0 block3 rep1 tokens256 prefill_s0.254176958 wall_s4.634520125 decode_tps58.214617 token_equal
+XSX depth0 candidate0 block3 rep2 tokens256 prefill_s0.249975125 wall_s4.631306792 decode_tps58.201483 token_equal
+XSX depth3 candidate0 block0 rep0 tokens256 prefill_s0.244857792 wall_s5.440357083 decode_tps49.080942 token_equal
+XSX depth3 candidate0 block0 rep1 tokens256 prefill_s0.244732667 wall_s5.439460583 decode_tps49.088230 token_equal
+XSX depth3 candidate0 block0 rep2 tokens256 prefill_s0.245301083 wall_s5.450548833 decode_tps48.989023 token_equal
+XSX depth3 candidate1 block1 rep0 tokens256 prefill_s0.244003542 wall_s5.583361833 decode_tps47.758548 token_equal
+XSX depth3 candidate1 block1 rep1 tokens256 prefill_s0.245996625 wall_s5.582544125 decode_tps47.783703 token_equal
+XSX depth3 candidate1 block1 rep2 tokens256 prefill_s0.246166000 wall_s5.594126792 decode_tps47.681726 token_equal
+XSX depth3 candidate1 block2 rep0 tokens256 prefill_s0.247511583 wall_s5.565907750 decode_tps47.946785 token_equal
+XSX depth3 candidate1 block2 rep1 tokens256 prefill_s0.259258125 wall_s5.563969167 decode_tps48.070479 token_equal
+XSX depth3 candidate1 block2 rep2 tokens256 prefill_s0.244844583 wall_s5.544118833 decode_tps48.119797 token_equal
+XSX depth3 candidate0 block3 rep0 tokens256 prefill_s0.257637792 wall_s5.433927458 decode_tps49.263085 token_equal
+XSX depth3 candidate0 block3 rep1 tokens256 prefill_s0.244825458 wall_s5.430164167 decode_tps49.177115 token_equal
+XSX depth3 candidate0 block3 rep2 tokens256 prefill_s0.252427375 wall_s5.431412042 decode_tps49.237450 token_equal
+PASS XSX: 16 logit windows, 24 timed replies, 4 warm replies equal 256 plain reference tokens
