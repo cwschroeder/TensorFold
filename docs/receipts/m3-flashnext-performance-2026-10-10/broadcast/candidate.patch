@@ -1,0 +1,28 @@
+diff --git a/zig/kernels/metal/core/lane_projection.metal b/zig/kernels/metal/core/lane_projection.metal
+index b0266bb..11ea418 100644
+--- a/zig/kernels/metal/core/lane_projection.metal
++++ b/zig/kernels/metal/core/lane_projection.metal
+@@ -54,6 +54,14 @@ inline float tf_lane_xsum(const device bfloat* X, int m, int g, int M) {
+   return acc;
+ }
+ 
++#if TF_SIMD
++inline float tf_lane_shared_xsum(const device bfloat* X, int m, int g, int M, ushort lane) {
++  const ushort leader = lane & ~ushort(9);
++  const float sum = lane == leader ? tf_lane_xsum(X, m, g, M) : 0.0f;
++  return simd_shuffle(sum, leader);
++}
++#endif
++
+ #if TF_BITS == 4
+ #define TF_STAGE_CODES(raw)
+ #define TF_GROUP_PRODUCT(g) \
+@@ -89,6 +97,8 @@ inline void tf_stage_codes(threadgroup uint* stage, thread const tf_raw& raw, in
+ 
+ #if TF_PRECOMPUTE_SUMS
+ #define TF_SUM_VALUE(row, g) XS[(g) * 16 + (row)]
++#elif TF_SIMD
++#define TF_SUM_VALUE(row, g) tf_lane_shared_xsum(X, row, g, M, ushort(lane))
+ #else
+ #define TF_SUM_VALUE(row, g) tf_lane_xsum(X, row, g, M)
+ #endif

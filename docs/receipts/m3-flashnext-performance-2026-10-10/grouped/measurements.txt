@@ -1,0 +1,41 @@
+EXPERT grouped logits rows1 values248320 bit_equal
+EXPERT grouped logits rows2 values496640 bit_equal
+EXPERT grouped logits rows3 values744960 bit_equal
+EXPERT grouped logits rows4 values993280 bit_equal
+EXPERT grouped logits rows5 values1241600 bit_equal
+EXPERT grouped logits rows6 values1489920 bit_equal
+EXPERT grouped logits rows7 values1738240 bit_equal
+EXPERT grouped logits rows8 values1986560 bit_equal
+EXPERT grouped logits rows9 values2234880 bit_equal
+EXPERT grouped logits rows10 values2483200 bit_equal
+EXPERT grouped logits rows11 values2731520 bit_equal
+EXPERT grouped logits rows12 values2979840 bit_equal
+EXPERT grouped logits rows13 values3228160 bit_equal
+EXPERT grouped logits rows14 values3476480 bit_equal
+EXPERT grouped logits rows15 values3724800 bit_equal
+EXPERT grouped logits rows16 values3973120 bit_equal
+EXPERT grouped depth0 candidate0 block0 rep0 tokens256 prefill_s0.252119083 wall_s4.631865250 decode_tps58.222552 token_equal
+EXPERT grouped depth0 candidate0 block0 rep1 tokens256 prefill_s0.261605625 wall_s4.646668167 decode_tps58.151964 token_equal
+EXPERT grouped depth0 candidate0 block0 rep2 tokens256 prefill_s0.251734917 wall_s4.630010000 decode_tps58.242115 token_equal
+EXPERT grouped depth0 candidate1 block1 rep0 tokens256 prefill_s0.256298000 wall_s4.634337542 decode_tps58.245248 token_equal
+EXPERT grouped depth0 candidate1 block1 rep1 tokens256 prefill_s0.250736792 wall_s4.628694833 decode_tps58.246333 token_equal
+EXPERT grouped depth0 candidate1 block1 rep2 tokens256 prefill_s0.251284250 wall_s4.636941292 decode_tps58.144081 token_equal
+EXPERT grouped depth0 candidate1 block2 rep0 tokens256 prefill_s0.252655542 wall_s4.622915792 decode_tps58.348928 token_equal
+EXPERT grouped depth0 candidate1 block2 rep1 tokens256 prefill_s0.254013500 wall_s4.633499750 decode_tps58.226008 token_equal
+EXPERT grouped depth0 candidate1 block2 rep2 tokens256 prefill_s0.251317042 wall_s6.219588833 decode_tps42.725936 token_equal
+EXPERT grouped depth0 candidate0 block3 rep0 tokens256 prefill_s0.250112375 wall_s4.631809958 decode_tps58.196622 token_equal
+EXPERT grouped depth0 candidate0 block3 rep1 tokens256 prefill_s0.249093625 wall_s4.635770250 decode_tps58.130567 token_equal
+EXPERT grouped depth0 candidate0 block3 rep2 tokens256 prefill_s0.249715583 wall_s4.622344000 decode_tps58.317327 token_equal
+EXPERT grouped depth3 candidate0 block0 rep0 tokens256 prefill_s0.246275625 wall_s5.439524917 decode_tps49.102207 token_equal
+EXPERT grouped depth3 candidate0 block0 rep1 tokens256 prefill_s0.242415167 wall_s5.443909417 decode_tps49.024374 token_equal
+EXPERT grouped depth3 candidate0 block0 rep2 tokens256 prefill_s0.242689917 wall_s5.441789750 decode_tps49.046952 token_equal
+EXPERT grouped depth3 candidate1 block1 rep0 tokens256 prefill_s0.242608083 wall_s6.028017417 decode_tps44.076397 token_equal
+EXPERT grouped depth3 candidate1 block1 rep1 tokens256 prefill_s0.243783625 wall_s6.029134000 decode_tps44.076846 token_equal
+EXPERT grouped depth3 candidate1 block1 rep2 tokens256 prefill_s0.248708292 wall_s6.045693917 decode_tps43.988379 token_equal
+EXPERT grouped depth3 candidate1 block2 rep0 tokens256 prefill_s0.249040708 wall_s6.034650208 decode_tps44.074872 token_equal
+EXPERT grouped depth3 candidate1 block2 rep1 tokens256 prefill_s0.244989708 wall_s6.036624208 decode_tps44.029022 token_equal
+EXPERT grouped depth3 candidate1 block2 rep2 tokens256 prefill_s0.241404458 wall_s6.038326417 decode_tps43.988862 token_equal
+EXPERT grouped depth3 candidate0 block3 rep0 tokens256 prefill_s0.243417792 wall_s5.446182583 decode_tps49.012402 token_equal
+EXPERT grouped depth3 candidate0 block3 rep1 tokens256 prefill_s0.249655917 wall_s5.446232500 decode_tps49.070767 token_equal
+EXPERT grouped depth3 candidate0 block3 rep2 tokens256 prefill_s0.248039625 wall_s5.442295375 decode_tps49.092692 token_equal
+PASS EXPERT grouped: 16 logit windows, 24 timed replies, 4 warm replies equal 256 plain reference tokens

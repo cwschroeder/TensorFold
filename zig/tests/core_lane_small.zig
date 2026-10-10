@@ -22,7 +22,9 @@ fn execute(queue: mtl.Queue, pipe: mtl.Pipeline, l: core.Layout, x: mtl.Buffer, 
     cb.commit();
     cb.wait();
     if (cb.failure() != null) return error.GpuFailure;
-    return cb.gpuSeconds() / @as(f64, @floatFromInt(repeats));
+    const seconds = cb.gpuSeconds();
+    if (!std.math.isFinite(seconds) or seconds <= 0) return error.InvalidGpuTime;
+    return seconds / @as(f64, @floatFromInt(repeats));
 }
 fn median(v: *[5]f64) f64 {
     std.mem.sort(f64, v, {}, std.sort.asc(f64));
@@ -32,22 +34,25 @@ pub fn main(init: std.process.Init) !void {
     const arena = init.arena.allocator();
     const args = try init.minimal.args.toSlice(arena);
     if (args.len < 6 or args.len > 9) return error.Usage;
-    if (args.len >= 7 and !std.mem.eql(u8, args[6], "sums") and !std.mem.eql(u8, args[6], "inline")) return error.Usage;
+    const m3 = args.len == 7 and std.mem.eql(u8, args[6], "m3");
+    if (args.len >= 7 and !m3 and !std.mem.eql(u8, args[6], "sums") and !std.mem.eql(u8, args[6], "inline")) return error.Usage;
     if (args.len >= 8 and !std.mem.eql(u8, args[7], "pair")) return error.Usage;
     if (args.len == 9 and !std.mem.eql(u8, args[8], "f32")) return error.Usage;
     const config = Args{ .baseline = args[1], .n = try std.fmt.parseInt(usize, args[2], 10), .k = try std.fmt.parseInt(usize, args[3], 10), .sk = try std.fmt.parseInt(usize, args[4], 10), .pf = try std.fmt.parseInt(usize, args[5], 10) };
-    const l = core.Layout{ .n = config.n, .k = config.k, .sk = config.sk, .pf = config.pf, .format = .{ .bits = 4, .group = 64 }, .precompute_sums = args.len >= 7 and !std.mem.eql(u8, args[6], "inline"), .cooperative = args.len >= 8, .output = if (args.len == 9) .f32 else .bf16 };
+    const l = core.Layout{ .n = config.n, .k = config.k, .sk = config.sk, .pf = config.pf, .format = .{ .bits = if (m3) 6 else 4, .group = if (m3) 32 else 64 }, .precompute_sums = !m3 and args.len >= 7 and !std.mem.eql(u8, args[6], "inline"), .cooperative = args.len >= 8, .output = if (args.len == 9) .f32 else .bf16 };
     try l.validate();
     const pool = mtl.objc.Pool.push();
     defer pool.pop();
     const device = try mtl.Device.init();
     defer device.deinit();
+    if (m3 and device.tensorUnits()) return error.PreM5DeviceRequired;
     const queue = try device.queue();
     defer queue.deinit();
     const current = try core.source(arena, l);
     const shader_start = std.mem.indexOf(u8, current, "#include <metal_stdlib>") orelse return error.BadSource;
     const old = try std.Io.Dir.cwd().readFileAlloc(init.io, config.baseline, arena, .limited(1 << 20));
-    const control_source = try std.mem.concat(arena, u8, &.{ current[0..shader_start], old });
+    const header = if (m3) try std.mem.replaceOwned(u8, arena, current[0..shader_start], "#define TF_PF 2", "#define TF_PF 1") else current[0..shader_start];
+    const control_source = try std.mem.concat(arena, u8, &.{ if (m3) "#define TF_SIMD 1\n" else "", header, old });
     const control_lib = try mtl.Library.fromSource(device, control_source, mtl.CompileOptions.mlx());
     defer control_lib.deinit();
     const control = try mtl.Pipeline.init(device, control_lib, "tf_lane", false);
@@ -75,6 +80,9 @@ pub fn main(init: std.process.Init) !void {
     for (sb.slice(u16, l.metadataElements()), 0..) |*v, i| v.* = if (i % 2 == 0) 0x3bc0 else 0xbd34;
     _ = try execute(queue, control, l, x, w, sb, expected, 16, 1, null);
     for (1..17) |rows| {
+        @memset(expected.contents()[0..expected.length()], 0xa5);
+        @memset(actual.contents()[0..actual.length()], 0x5a);
+        _ = try execute(queue, control, l, x, w, sb, expected, @intCast(rows), 1, null);
         _ = try execute(queue, candidate.pipe, l, x, w, sb, actual, @intCast(rows), 1, candidate);
         if (!std.mem.eql(u8, expected.contents()[0 .. rows * l.n * output_bytes], actual.contents()[0 .. rows * l.n * output_bytes])) return error.BaselineBytesDiffer;
     }
@@ -83,10 +91,16 @@ pub fn main(init: std.process.Init) !void {
     for ([_]u32{ 1, 2, 4, 8, 16 }) |rows| {
         var old_time: [5]f64 = undefined;
         var new_time: [5]f64 = undefined;
-        for (&old_time, &new_time) |*before, *after| {
-            before.* = try execute(queue, control, l, x, w, sb, expected, rows, 100, null);
-            after.* = try execute(queue, candidate.pipe, l, x, w, sb, actual, rows, 100, candidate);
+        for (&old_time, &new_time, 0..) |*before, *after, rep| {
+            if (rep % 2 == 0) {
+                before.* = try execute(queue, control, l, x, w, sb, expected, rows, 100, null);
+                after.* = try execute(queue, candidate.pipe, l, x, w, sb, actual, rows, 100, candidate);
+            } else {
+                after.* = try execute(queue, candidate.pipe, l, x, w, sb, actual, rows, 100, candidate);
+                before.* = try execute(queue, control, l, x, w, sb, expected, rows, 100, null);
+            }
         }
+        std.debug.print("RAW N{d} K{d} SK{d} PF{d} rows{d} baseline_seconds{any} candidate_seconds{any}\n", .{ l.n, l.k, l.sk, l.pf, rows, old_time, new_time });
         const before = median(&old_time);
         const after = median(&new_time);
         std.debug.print("N{d} K{d} SK{d} PF{d} rows{d} baseline_us{d:.3} candidate_us{d:.3} weight_GBs{d:.1} payload_GBs{d:.1} byte_equal1-16\n", .{ l.n, l.k, l.sk, l.pf, rows, before * 1e6, after * 1e6, @as(f64, @floatFromInt(l.weightWords() * 4)) / after / 1e9, @as(f64, @floatFromInt(l.packedBytes())) / after / 1e9 });
