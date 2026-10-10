@@ -124,6 +124,9 @@ const source =
     \\// post sx.x (every threadgroup stores the same word: the host sends this rank's part), then a threadgroup's first
     \\// thread polls until the peer's message for exchange sx.y has landed (its flag, stored after its bytes)
     \\inline void tp_post_poll(device atomic_uint* sync, device atomic_uint* flag, uint2 sx, int rows, bool poll, uint t) {
+    \\#ifdef TF_TP_SHARED_EVENTS
+    \\  return; // the encoder already synchronized the exchange with the host
+    \\#endif
     \\  if (t != 0) return;
     \\  atomic_store_explicit(&sync[1024], (sx.x << 5) | uint(rows), memory_order_relaxed);
     \\  if (!poll) return;
@@ -260,7 +263,8 @@ pub const Write = struct { src: [*]const u8, len: usize, dst: usize };
 
 /// A posted sequence's work: a decode exchange, or prefill writes and their flag.
 const Job = struct {
-    kind: enum { exchange, reduce, pick, send } = .send,
+    ticket: u64 = 0, // shared events are monotonic even when the wire sequence wraps
+    kind: enum { exchange, reduce, pick, send, wait_word } = .send,
     writes: [8]Write = undefined,
     n: usize = 0,
     flag: usize = 0,
@@ -268,7 +272,44 @@ const Job = struct {
 };
 const JOBS = 1024;
 
+// A separate Metal 4 queue carries CPU-visible events; GPU events order both queues and their memory.
+const EventBridge = struct {
+    queue: mtl.objc.Id,
+    posted: mtl.Event,
+    resumed: mtl.Event,
+
+    fn init(device: mtl.Device) !EventBridge {
+        if (!device.responds("newMTL4CommandQueue")) return error.Metal4Required;
+        const posted = try device.event();
+        errdefer posted.deinit();
+        const resumed = try device.event();
+        errdefer resumed.deinit();
+        const queue = mtl.objc.msg(?mtl.objc.Id, device.id, "newMTL4CommandQueue", .{}) orelse return error.NoQueue;
+        return .{ .queue = queue, .posted = posted, .resumed = resumed };
+    }
+
+    fn encode(b: EventBridge, cb: mtl.CommandBuffer, ready: mtl.SharedEvent, done: mtl.SharedEvent, ticket: u64) void {
+        cb.signalEvent(b.posted, ticket);
+        cb.waitForEvent(b.resumed, ticket);
+        mtl.objc.msg(void, b.queue, "waitForEvent:value:", .{ b.posted.id, ticket });
+        mtl.objc.msg(void, b.queue, "signalEvent:value:", .{ ready.id, ticket });
+        mtl.objc.msg(void, b.queue, "waitForEvent:value:", .{ done.id, ticket });
+        mtl.objc.msg(void, b.queue, "signalEvent:value:", .{ b.resumed.id, ticket });
+    }
+
+    fn deinit(b: EventBridge) void {
+        mtl.objc.release(b.queue);
+        b.posted.deinit();
+        b.resumed.deinit();
+    }
+};
+
 pub const Tp2 = struct {
+    replicate_gdn: bool = false, // TF_TP_GDN=replicate: avoid per-layer DeltaNet reductions
+    bridge: ?EventBridge = null,
+    gpu_ready: ?mtl.SharedEvent = null,
+    cpu_done: ?mtl.SharedEvent = null,
+    event_ticket: u64 = 0,
     rank: u32,
     peer: u32,
     ep: *fabric.mcdma.Endpoint,
@@ -304,21 +345,45 @@ pub const Tp2 = struct {
     stats: bool = false, // TF_TP_STATS: the host's time from a job's post to its serve, every 4096 jobs
     held_ns: u64 = 0,
     held_max: u64 = 0,
-    held_kind: [4][2]u64 = @splat(.{ 0, 0 }), // by job kind: total ticks, jobs
+    held_kind: [5][2]u64 = @splat(.{ 0, 0 }), // by job kind: total ticks, jobs
 
     /// Connect to the peer named in the settings file and start the host's service thread.
     pub fn init(gpa: std.mem.Allocator, device: mtl.Device, settings_path: []const u8) !*Tp2 {
         const f = try mtl.MappedFile.open(try gpa.dupeSentinel(u8, settings_path, 0));
         const s = try settings.read(gpa, f.bytes[0..f.size]);
         if (s.rank > 1 or s.links.len != 1) return error.TpTwoRanksOneLink;
+        const replicate_gdn = if (std.c.getenv("TF_TP_GDN")) |env| blk: {
+            const mode = std.mem.span(env);
+            if (std.mem.eql(u8, mode, "replicate")) break :blk true;
+            if (std.mem.eql(u8, mode, "split")) break :blk false;
+            return error.BadTpGdnMode;
+        } else false;
         const lib = try gpa.dupeSentinel(u8, s.library, 0);
         const ep = try fabric.mcdma.Endpoint.create(gpa, lib, .{ .rank = s.rank, .ranks = 2, .window_bytes = WINDOW, .staging_bytes = 32 << 20, .links = s.links, .timeout_ns = 60 * std.time.ns_per_s, .connect_timeout_ns = 300 * std.time.ns_per_s });
         const rd = ep.rdma();
         const win = rd.window(); // zeroed by the endpoint before it connected: a fast peer's first words may be here already
         const opts = mtl.ResourceOptions.shared | mtl.ResourceOptions.untracked;
-        const lib_m = try mtl.Library.fromSource(device, source, mtl.CompileOptions.mlx());
+        // Use selectable shared-event synchronization on M3; retain resident polling on M5.
+        const event_sync = if (std.c.getenv("TF_TP_SYNC")) |env| blk: {
+            const mode = std.mem.span(env);
+            if (std.mem.eql(u8, mode, "events") or std.mem.eql(u8, mode, "bridge")) break :blk true;
+            if (std.mem.eql(u8, mode, "poll")) break :blk false;
+            return error.BadTpSyncMode;
+        } else std.mem.indexOf(u8, std.mem.span(device.name()), "Apple M3") != null;
+        const bridge_sync = if (std.c.getenv("TF_TP_SYNC")) |env| std.mem.eql(u8, std.mem.span(env), "bridge") else false;
+        const bridge: ?EventBridge = if (bridge_sync) try EventBridge.init(device) else null;
+        errdefer if (bridge) |b| b.deinit();
+        const gpu_ready: ?mtl.SharedEvent = if (event_sync) try device.sharedEvent() else null;
+        errdefer if (gpu_ready) |ev| ev.deinit();
+        const cpu_done: ?mtl.SharedEvent = if (event_sync) try device.sharedEvent() else null;
+        errdefer if (cpu_done) |ev| ev.deinit();
+        const lib_m = try mtl.Library.fromSource(device, if (event_sync) "#define TF_TP_SHARED_EVENTS 1\n" ++ source else source, mtl.CompileOptions.mlx());
         const t = try gpa.create(Tp2);
         t.* = .{
+            .replicate_gdn = replicate_gdn,
+            .bridge = bridge,
+            .gpu_ready = gpu_ready,
+            .cpu_done = cpu_done,
             .rank = s.rank,
             .peer = 1 - s.rank,
             .ep = ep,
@@ -342,9 +407,13 @@ pub const Tp2 = struct {
         t.local = std.c.getenv("TF_TP_LOCAL") != null;
         t.stats = std.c.getenv("TF_TP_STATS") != null;
         // both ranks up before the first round: a word each way
-        try rd.signal(t.peer, HELLO, 1);
-        while (@atomicLoad(u64, t.word64(HELLO), .acquire) < 1) std.atomic.spinLoopHint();
-        t.thread = try std.Thread.spawn(.{}, service, .{ t, t.seq +% 1 });
+        const hello: u64 = if (replicate_gdn) 2 else 1;
+        try rd.signal(t.peer, HELLO, hello);
+        while (@atomicLoad(u64, t.word64(HELLO), .acquire) == 0) std.atomic.spinLoopHint();
+        if (@atomicLoad(u64, t.word64(HELLO), .acquire) != hello) return error.TpGdnModeMismatch;
+        std.log.info("TP DeltaNet: {s}", .{if (replicate_gdn) "replicated" else "split"});
+        t.thread = if (event_sync) try std.Thread.spawn(.{}, serviceEvents, .{t}) else try std.Thread.spawn(.{}, service, .{ t, t.seq +% 1 });
+        std.log.info("TP CPU/GPU synchronization: {s}", .{if (bridge_sync) "Metal 4 event bridge" else if (event_sync) "shared events" else "resident polling"});
         std.log.info("TP=2 rank {d} connected", .{t.rank});
         return t;
     }
@@ -354,6 +423,10 @@ pub const Tp2 = struct {
         t.rd.flush() catch {}; // what this rank sent (rank 0's last request) is out before the link closes
         t.stop.store(true, .release);
         if (t.thread) |th| th.join();
+        if (t.bridge) |b| b.deinit();
+        if (t.gpu_ready) |ev| ev.deinit();
+        if (t.cpu_done) |ev| ev.deinit();
+        t.wbuf.deinit(); // release the GPU alias before its registered host window
         t.ep.deinit();
     }
 
@@ -372,7 +445,10 @@ pub const Tp2 = struct {
     /// A new sequence with its job queued for the service thread.
     fn queue(t: *Tp2, job: Job) u32 {
         t.seq +%= 1;
-        t.jobs[t.seq % JOBS] = job;
+        var queued_job = job;
+        t.event_ticket += 1;
+        queued_job.ticket = t.event_ticket;
+        t.jobs[t.seq % JOBS] = queued_job;
         t.queued.store(t.seq, .release);
         return t.seq;
     }
@@ -385,8 +461,28 @@ pub const Tp2 = struct {
         enc.dispatchThreads(mtl.Size.of(1, 1, 1), mtl.Size.of(1, 1, 1));
     }
 
+    /// Publish GPU writes, exchange on the host, then reopen this command buffer after its shared-event wait.
+    fn eventBoundary(t: *Tp2, enc: *mtl.ComputeEncoder, seq: u32) void {
+        const ready = t.gpu_ready orelse return;
+        const cb = enc.command_buffer orelse @panic("TP shared events need an owning command buffer");
+        const ticket = t.jobs[seq % JOBS].ticket;
+        enc.end();
+        if (t.bridge) |b| {
+            b.encode(cb, ready, t.cpu_done.?, ticket);
+        } else {
+            cb.signal(ready, ticket);
+            cb.waitFor(t.cpu_done.?, ticket);
+        }
+        enc.* = cb.compute(.serial);
+    }
+
     /// On the serial encoder: the GPU waits until the window's 32-bit word at `off` reaches `value`.
-    pub fn waitWord(t: *Tp2, enc: mtl.ComputeEncoder, off: usize, value: u32) void {
+    pub fn waitWord(t: *Tp2, enc: *mtl.ComputeEncoder, off: usize, value: u32) void {
+        if (t.gpu_ready != null) {
+            const seq = t.queue(.{ .kind = .wait_word, .flag = off, .value = value });
+            t.eventBoundary(enc, seq);
+            return;
+        }
         enc.setPipeline(t.wait);
         enc.setBuffer(t.wbuf, off, 0);
         enc.setBytes(std.mem.asBytes(&value), 1);
@@ -414,10 +510,14 @@ pub const Tp2 = struct {
 
     /// The last exchange posted, and its MoE branches into the streams (q4_hc_norm_grouped's job): this rank's rows
     /// from its send buffer at once, the peer's once they land.
-    pub fn combine(t: *Tp2, enc: mtl.ComputeEncoder, h: anytype, inj: anytype, out: anytype, ssp: anytype, rows_buf: anytype, rows: usize) void {
+    pub fn combine(t: *Tp2, enc: *mtl.ComputeEncoder, h: anytype, inj: anytype, out: anytype, ssp: anytype, rows_buf: anytype, rows: usize) void {
         const own = t.ownRows(rows);
         const peer_lo: usize = if (t.rank == 0) own[1] else 0;
         const split = [4]u32{ @intCast(own[0]), @intCast(own[1]), @intCast(peer_lo), 0 };
+        if (t.gpu_ready != null) {
+            t.encodePost(enc.*, t.last_seq, rows_buf.b, rows_buf.off);
+            t.eventBoundary(enc, t.last_seq);
+        }
         enc.setPipeline(t.merge_pipe);
         enc.setBuffer(t.wbuf, SYNC, 0);
         enc.setBytes(std.mem.asBytes(&[2]u32{ t.last_seq, t.last_x }), 1);
@@ -434,7 +534,7 @@ pub const Tp2 = struct {
     }
 
     /// The head's picks from this rank's vocab columns [lo, lo + n) of `logits` (rows x vocab, bf16) and the peer's: each half's argmax, swapped, merged (the larger value, the lower index on a tie: one Mac's argmax exactly).
-    pub fn argmax(t: *Tp2, enc: mtl.ComputeEncoder, logits: anytype, vocab: usize, lo: usize, n: usize, picks: anytype, rows_buf: anytype, rows: usize) void {
+    pub fn argmax(t: *Tp2, enc: *mtl.ComputeEncoder, logits: anytype, vocab: usize, lo: usize, n: usize, picks: anytype, rows_buf: anytype, rows: usize) void {
         t.xseq +%= 1;
         const x = t.xseq;
         const seq = t.queue(.{ .kind = .pick, .value = x });
@@ -444,6 +544,10 @@ pub const Tp2 = struct {
         enc.setBuffer(t.wbuf, sendA(x), 1);
         enc.setBytes(std.mem.asBytes(&dims), 2);
         enc.dispatchThreads(mtl.Size.of(1024 * rows, 1, 1), mtl.Size.of(1024, 1, 1));
+        if (t.gpu_ready != null) {
+            t.encodePost(enc.*, seq, rows_buf.b, rows_buf.off);
+            t.eventBoundary(enc, seq);
+        }
         enc.setPipeline(t.pick_pipe);
         enc.setBuffer(t.wbuf, SYNC, 0);
         enc.setBytes(std.mem.asBytes(&[2]u32{ seq, x }), 1);
@@ -472,10 +576,14 @@ pub const Tp2 = struct {
     /// After a split projection wrote this rank's partial into `part`: post, wait for the host to swap partials with
     /// the peer, then q4_hc_norm_plain's stream update of `h` into `out` and `ssp` with the branch rank 0's partial +
     /// rank 1's, rounded once (bf16, rows x 2560).
-    pub fn plain(t: *Tp2, enc: mtl.ComputeEncoder, h: anytype, inj: anytype, out: anytype, ssp: anytype, rows_buf: anytype, rows: usize) void {
+    pub fn plain(t: *Tp2, enc: *mtl.ComputeEncoder, h: anytype, inj: anytype, out: anytype, ssp: anytype, rows_buf: anytype, rows: usize) void {
         t.xseq +%= 1;
         const x = t.xseq;
         const seq = t.queue(.{ .kind = .reduce, .value = x });
+        if (t.gpu_ready != null) {
+            t.encodePost(enc.*, seq, rows_buf.b, rows_buf.off);
+            t.eventBoundary(enc, seq);
+        }
         enc.setPipeline(t.plain_pipe);
         enc.setBuffer(t.wbuf, SYNC, 0);
         enc.setBytes(std.mem.asBytes(&[2]u32{ seq, x }), 1);
@@ -492,11 +600,12 @@ pub const Tp2 = struct {
     }
 
     /// On the serial encoder, after the work that wrote the sources: once the GPU gets here the host copies `writes` into the peer's window and stores `value` at its `flag`; the GPU does not wait.
-    pub fn send(t: *Tp2, enc: mtl.ComputeEncoder, writes: []const Write, flag: usize, value: u64) void {
+    pub fn send(t: *Tp2, enc: *mtl.ComputeEncoder, writes: []const Write, flag: usize, value: u64) void {
         var job: Job = .{ .kind = .send, .n = writes.len, .flag = flag, .value = value };
         @memcpy(job.writes[0..writes.len], writes);
         const seq = t.queue(job);
-        t.encodePost(enc, seq, t.one, 0);
+        t.encodePost(enc.*, seq, t.one, 0);
+        t.eventBoundary(enc, seq);
     }
 
     /// The host side alone: copy `writes` and signal now (after a command buffer has completed).
@@ -636,6 +745,7 @@ pub const Tp2 = struct {
                 .reduce => t.ep.writeSignalFrom(t.peer, sendR(@intCast(x)), REDUCE + (x % 2) * PART, @as(usize, w & 31) * D * 4, FLAG, x) catch |err| t.fail(seq, err),
                 .pick => t.ep.writeSignalFrom(t.peer, sendA(@intCast(x)), RECVA + (x % 2) * PAGE, @as(usize, w & 31) * 8, FLAG, x) catch |err| t.fail(seq, err),
                 .send => t.sendNow(job.writes[0..job.n], job.flag, job.value) catch |err| t.fail(seq, err),
+                .wait_word => unreachable, // queued only by the shared-event path
             }
             if (job.kind != .send) {
                 want = x;
@@ -654,6 +764,88 @@ pub const Tp2 = struct {
                     t.held_ns = 0;
                     t.held_max = 0;
                     t.held_kind = @splat(.{ 0, 0 });
+                }
+            }
+            seq +%= 1;
+        }
+    }
+
+    /// Host work waits for GPU publication; GPU work resumes after the peer flag and cpu_done signal.
+    fn serviceEvents(t: *Tp2) void {
+        if (std.c.getenv("TF_TP_QOS")) |env| {
+            if (std.mem.eql(u8, std.mem.span(env), "1")) {
+                const rc = std.c.pthread_set_qos_class_self_np(.USER_INTERACTIVE, 0);
+                std.log.info("TP service QoS interactive: rc={d}", .{rc});
+            }
+        }
+        const slow_profile = std.c.getenv("TF_ROUND_PROFILE") != null;
+        var ready_since = std.c.mach_absolute_time();
+        var moe_layer: usize = 0;
+        var seq: u32 = 1;
+        var timing: [5][4]u64 = @splat(.{ 0, 0, 0, 0 });
+        var rows_seen: [17]u64 = @splat(0);
+        const ready = t.gpu_ready.?;
+        const done = t.cpu_done.?;
+        while (!t.stop.load(.acquire)) {
+            if (!reached(t.queued.load(.acquire), seq)) {
+                std.atomic.spinLoopHint();
+                continue;
+            }
+            const job = t.jobs[seq % JOBS];
+            if (ready.value() < job.ticket) {
+                std.atomic.spinLoopHint();
+                continue;
+            }
+            const began_job = if (t.stats) std.c.mach_absolute_time() else 0;
+            const w = @atomicLoad(u32, t.word32(SYNC + GPU * 4), .acquire);
+            if (t.trace) std.debug.print("TP rank{d} event seq {d} {s} ticket {d}\n", .{ t.rank, seq, @tagName(job.kind), job.ticket });
+            if (!t.failed.load(.acquire) and !t.local) switch (job.kind) {
+                .exchange => {
+                    const own = t.ownRows(w & 31);
+                    t.ep.writeSignalFrom(t.peer, sendX(@intCast(job.value)), DECODE + (job.value % 2) * SLOT, (own[1] - own[0]) * D * 2, FLAG, job.value) catch |err| t.fail(seq, err);
+                },
+                .reduce => t.ep.writeSignalFrom(t.peer, sendR(@intCast(job.value)), REDUCE + (job.value % 2) * PART, @as(usize, w & 31) * D * 4, FLAG, job.value) catch |err| t.fail(seq, err),
+                .pick => t.ep.writeSignalFrom(t.peer, sendA(@intCast(job.value)), RECVA + (job.value % 2) * PAGE, @as(usize, w & 31) * 8, FLAG, job.value) catch |err| t.fail(seq, err),
+                .send => t.sendNow(job.writes[0..job.n], job.flag, job.value) catch |err| t.fail(seq, err),
+                .wait_word => {},
+            };
+            const sent_at = if (t.stats) std.c.mach_absolute_time() else 0;
+            if (job.kind != .send and !t.failed.load(.acquire) and !t.local) {
+                const off = if (job.kind == .wait_word) job.flag else FLAG;
+                const began = std.c.mach_absolute_time();
+                while (!reached(@truncate(@atomicLoad(u64, t.word64(off), .acquire)), @truncate(job.value))) {
+                    if (t.stop.load(.acquire)) return;
+                    if (std.c.mach_absolute_time() - began > 240_000_000) {
+                        t.fail(seq, error.PeerSilent);
+                        break;
+                    }
+                    std.atomic.spinLoopHint();
+                }
+            }
+            // A failure releases all encoded waits, so finish can report TpLinkFailed.
+            const peer_at = if (t.stats) std.c.mach_absolute_time() else 0;
+            done.set(job.ticket);
+            if (slow_profile and t.stats) {
+                if (began_job - ready_since > 1_200_000 or peer_at - sent_at > 1_200_000)
+                    std.debug.print("TP-SLOW rank={d} seq={d} kind={s} layer={d} rows={d} before_ready_ticks={d} send_ticks={d} peer_ticks={d}\n", .{
+                        t.rank,                  seq,                 @tagName(job.kind), moe_layer, w & 31,
+                        began_job - ready_since, sent_at - began_job, peer_at - sent_at,
+                    });
+                if (job.kind == .exchange) moe_layer += 1;
+                if (job.kind == .pick) moe_layer = 0;
+            }
+            ready_since = std.c.mach_absolute_time();
+            if (t.stats) {
+                const k = @backingInt(job.kind);
+                timing[k][0] += sent_at - began_job;
+                timing[k][1] += peer_at - sent_at;
+                timing[k][2] += std.c.mach_absolute_time() - peer_at;
+                timing[k][3] += 1;
+                if (job.kind == .exchange) rows_seen[@min(w & 31, 16)] += 1;
+                if (seq % 4096 == 0) {
+                    std.debug.print("TP-PROFILE rank={d} seq={d} timing_ticks_send_peer_signal_count={any} moe_rows={any}\n", .{ t.rank, seq, timing, rows_seen });
+                    timing = @splat(.{ 0, 0, 0, 0 });
+                    rows_seen = @splat(0);
                 }
             }
             seq +%= 1;
