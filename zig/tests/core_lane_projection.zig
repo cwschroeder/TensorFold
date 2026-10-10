@@ -224,17 +224,33 @@ pub fn main(init: std.process.Init) !void {
         .n = try std.fmt.parseInt(usize, argv[4], 10),
         .k = try std.fmt.parseInt(usize, argv[5], 10),
     });
-    if (argv.len != 1) return error.UnknownArgument;
+    const m3_flashnext = argv.len == 2 and std.mem.eql(u8, argv[1], "--m3-flashnext");
+    if (argv.len != 1 and !m3_flashnext) return error.UnknownArgument;
     try frozen.verify();
     const pool = mtl.objc.Pool.push();
     defer pool.pop();
     const device = try mtl.Device.init();
     defer device.deinit();
-    if (!device.tensorUnits()) return error.TensorUnitsRequired;
+    if (!device.tensorUnits() and !m3_flashnext) return error.TensorUnitsRequired;
     const queue = try device.queue();
     defer queue.deinit();
     std.debug.print("Small synthetic projection checks on {s}; no model files\n", .{device.name()});
     var counts: Counts = .{};
+    if (m3_flashnext) {
+        if (device.tensorUnits()) return error.PreM5DeviceRequired;
+        for ([_]usize{ 1, 2, 4 }) |sk| for ([_]usize{ 1, 2 }) |pf| {
+            for ([_]core.Output{ .f32, .bf16 }) |out| {
+                try check(device, queue, .{ .n = 64, .k = 224, .format = .{ .bits = 6, .group = 32 }, .sk = sk, .pf = pf, .output = out }, &counts);
+            }
+        };
+        try check(device, queue, .{ .n = 96, .k = 224, .format = .{ .bits = 6, .group = 32 }, .sk = 4, .pf = 2, .ranges = &.{.{ 1, 1 }}, .groups = .{ 1, 3 }, .output = .f32 }, &counts);
+        for ([_]u8{ 4, 8 }) |bits| {
+            try std.testing.expectError(error.TensorUnitsRequired, core.Projection.init(a, device, .{ .n = 64, .k = 224, .format = .{ .bits = bits, .group = 32 } }));
+        }
+        std.debug.print("PASS M3 Flash Next: {d} layouts, {d} bit-equal row/window pairs, {d} golden windows, {d} CPU values; unsupported formats refused\n", .{ counts.layouts, counts.row_pairs, counts.golden_windows, counts.cpu_values });
+        return;
+    }
+
     for ([_]u8{ 4, 6, 8 }) |bits| for ([_]usize{ 32, 64, 128 }) |group| {
         for ([_]usize{ 1, 2, 4 }) |sk| for ([_]usize{ 1, 2 }) |pf| {
             const l = core.Layout{ .n = 64, .k = 7 * group, .format = .{ .bits = bits, .group = group }, .sk = sk, .pf = pf, .output = .f32 };
