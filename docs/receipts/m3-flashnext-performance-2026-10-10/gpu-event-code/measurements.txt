@@ -1,0 +1,41 @@
+EXPERT gpu_event logits rows1 values248320 bit_equal
+EXPERT gpu_event logits rows2 values496640 bit_equal
+EXPERT gpu_event logits rows3 values744960 bit_equal
+EXPERT gpu_event logits rows4 values993280 bit_equal
+EXPERT gpu_event logits rows5 values1241600 bit_equal
+EXPERT gpu_event logits rows6 values1489920 bit_equal
+EXPERT gpu_event logits rows7 values1738240 bit_equal
+EXPERT gpu_event logits rows8 values1986560 bit_equal
+EXPERT gpu_event logits rows9 values2234880 bit_equal
+EXPERT gpu_event logits rows10 values2483200 bit_equal
+EXPERT gpu_event logits rows11 values2731520 bit_equal
+EXPERT gpu_event logits rows12 values2979840 bit_equal
+EXPERT gpu_event logits rows13 values3228160 bit_equal
+EXPERT gpu_event logits rows14 values3476480 bit_equal
+EXPERT gpu_event logits rows15 values3724800 bit_equal
+EXPERT gpu_event logits rows16 values3973120 bit_equal
+EXPERT gpu_event depth0 candidate0 block0 rep0 tokens256 prefill_s0.285929500 wall_s4.653350583 decode_tps58.386859 token_equal
+EXPERT gpu_event depth0 candidate0 block0 rep1 tokens256 prefill_s0.284493958 wall_s4.665791250 decode_tps58.201940 token_equal
+EXPERT gpu_event depth0 candidate0 block0 rep2 tokens256 prefill_s0.282512875 wall_s4.665096375 decode_tps58.184858 token_equal
+EXPERT gpu_event depth0 candidate1 block1 rep0 tokens256 prefill_s0.294181708 wall_s4.531712042 decode_tps60.176560 token_equal
+EXPERT gpu_event depth0 candidate1 block1 rep1 tokens256 prefill_s0.283855542 wall_s4.506995125 decode_tps60.381618 token_equal
+EXPERT gpu_event depth0 candidate1 block1 rep2 tokens256 prefill_s0.288763208 wall_s4.519015083 decode_tps60.280099 token_equal
+EXPERT gpu_event depth0 candidate1 block2 rep0 tokens256 prefill_s0.281629833 wall_s4.504831292 decode_tps60.380733 token_equal
+EXPERT gpu_event depth0 candidate1 block2 rep1 tokens256 prefill_s0.295246042 wall_s4.526931750 decode_tps60.259674 token_equal
+EXPERT gpu_event depth0 candidate1 block2 rep2 tokens256 prefill_s0.286640042 wall_s4.506783583 decode_tps60.424485 token_equal
+EXPERT gpu_event depth0 candidate0 block3 rep0 tokens256 prefill_s0.290024042 wall_s4.677169708 decode_tps58.124352 token_equal
+EXPERT gpu_event depth0 candidate0 block3 rep1 tokens256 prefill_s0.294603708 wall_s4.676026750 decode_tps58.200269 token_equal
+EXPERT gpu_event depth0 candidate0 block3 rep2 tokens256 prefill_s0.287495750 wall_s4.676980917 decode_tps58.093373 token_equal
+EXPERT gpu_event depth3 candidate0 block0 rep0 tokens256 prefill_s0.280092250 wall_s2.486311958 decode_tps115.582323 token_equal
+EXPERT gpu_event depth3 candidate0 block0 rep1 tokens256 prefill_s0.283739750 wall_s2.483410958 decode_tps115.926416 token_equal
+EXPERT gpu_event depth3 candidate0 block0 rep2 tokens256 prefill_s0.290575500 wall_s2.500495000 decode_tps115.388818 token_equal
+EXPERT gpu_event depth3 candidate1 block1 rep0 tokens256 prefill_s0.279526333 wall_s2.431854750 decode_tps118.476343 token_equal
+EXPERT gpu_event depth3 candidate1 block1 rep1 tokens256 prefill_s0.277646667 wall_s2.429165417 decode_tps118.520929 token_equal
+EXPERT gpu_event depth3 candidate1 block1 rep2 tokens256 prefill_s0.278594708 wall_s2.436785042 decode_tps118.154546 token_equal
+EXPERT gpu_event depth3 candidate1 block2 rep0 tokens256 prefill_s0.275327500 wall_s2.435487167 decode_tps118.046830 token_equal
+EXPERT gpu_event depth3 candidate1 block2 rep1 tokens256 prefill_s0.281666625 wall_s2.445858167 decode_tps117.826909 token_equal
+EXPERT gpu_event depth3 candidate1 block2 rep2 tokens256 prefill_s0.274666417 wall_s2.439977292 decode_tps117.766000 token_equal
+EXPERT gpu_event depth3 candidate0 block3 rep0 tokens256 prefill_s0.273698458 wall_s2.482945625 decode_tps115.423934 token_equal
+EXPERT gpu_event depth3 candidate0 block3 rep1 tokens256 prefill_s0.281039833 wall_s2.495802542 decode_tps115.136488 token_equal
+EXPERT gpu_event depth3 candidate0 block3 rep2 tokens256 prefill_s0.287125958 wall_s2.500534292 decode_tps115.206940 token_equal
+PASS EXPERT gpu_event: 16 logit windows, 24 timed replies, 4 warm replies equal 256 plain reference tokens

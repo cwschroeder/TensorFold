@@ -17,7 +17,7 @@ Both candidates matched baseline bytes for all four measured shapes at every wid
 
 ## Expert variants
 
-`flashnext_expert_bench.zig` compares variants inside one loaded Engine. It resets to a freshly computed prompt before each logit window, then checks all BF16 logit bits for widths 1 through 16. It compares all 256 generated token IDs against the same engine's plain reference. Copy drafts are disabled in both arms. Plain and depth-3 generation each use two warm replies and four ABBA blocks of three measured replies. The decode rate is `255 / (wall_seconds - prefill_seconds)`; this includes completion of outstanding GPU work. The public prompt token array is [short.json](short.json). No EOS stop IDs are supplied, so each reply has exactly 256 tokens.
+`flashnext_expert_bench.zig` compares variants inside one loaded Engine. It resets to a freshly computed prompt before each logit window, then checks all BF16 logit bits for widths 1 through 16. It compares all 256 generated token IDs against the same engine's plain reference. Copy drafts are disabled in both arms. Plain and depth-3 generation each use two warm replies and four ABBA blocks of three measured replies. The decode rate is `255 / (wall_seconds - prefill_seconds)`; this includes completion of outstanding GPU work. Public prompt token arrays are [short.json](short.json) and [code.json](code.json). No EOS stop IDs are supplied, so each reply has exactly 256 tokens.
 
 Build and run on an admitted, otherwise idle GPU with one model process:
 
@@ -53,11 +53,13 @@ The GPU spans exceed CPU encoding by more than forty times. The roughly 0.6 ms g
 
 The GPU-only event variant passed all 24 measured and 4 warm 256-token comparisons on the prime-number fixture. Plain medians increased from 58.339 to 60.282 tok/s (+3.33%); depth-3 medians increased from 49.103 to 50.183 tok/s (+2.20%). [Raw GPU-event results](gpu-event/) retain each ABBA run. A separate code fixture is in [code.json](code.json).
 
+The separate 48-token German code fixture ran with no concurrent compiler job. Its plain medians increased from 58.193 to 60.330 tok/s (+3.67%); depth-3 medians increased from 115.406 to 118.101 tok/s (+2.33%). All 24 measured and 4 warm 256-token sequences matched the plain reference. Both fixtures use six measured replies per variant and depth. [Code raw measurements](gpu-event-code/) retain every run.
+
 The GPU-only event candidate retains every round dependency while changing its event type on one device. Tensor parallelism keeps shared events. The event is released after the generated request drains its command buffers. Direct host-model logit windows are a null control for this change; complete generated token comparisons exercise the affected round chain. [Apple recommends nonshareable events for one-device synchronization](https://developer.apple.com/documentation/metal/about-synchronization-events) because shared events have additional overhead. The source switch defaults off pending qualification.
 
 ## Other engines
 
-[MLX's quantized kernels](https://github.com/ml-explore/mlx/blob/06eb7483f03bca49a80e596f4089d02a507a2cf9/mlx/backend/metal/kernels/quantized.h#L1123) reuse dequantized weights across small vector groups. That motivated the grouped-expert investigation. The tested TensorFold variant was slower on this checkpoint and fixture. [llama.cpp checks buffer dependencies](https://github.com/ggml-org/llama.cpp/blob/aa94f2086147cd4bfbcff818ce998dffce5fcb39/ggml/src/ggml-metal/ggml-metal-ops.cpp#L224) before allowing parallel dispatch. Barrier reduction therefore needs a dependency audit and a separate exactness gate.
+[MLX's quantized kernels](https://github.com/ml-explore/mlx/blob/06eb7483f03bca49a80e596f4089d02a507a2cf9/mlx/backend/metal/kernels/quantized.h#L1123) reuse dequantized weights across small vector groups. That motivated the grouped-expert investigation. The tested grouped TensorFold variant was slower on the prime-number fixture. [llama.cpp checks buffer dependencies](https://github.com/ggml-org/llama.cpp/blob/aa94f2086147cd4bfbcff818ce998dffce5fcb39/ggml/src/ggml-metal/ggml-metal-ops.cpp#L224) before allowing parallel dispatch. Barrier reduction therefore needs a dependency audit and a separate exactness gate.
 
 ## Verification limits
 
