@@ -17,7 +17,7 @@ Both candidates matched baseline bytes for all four measured shapes at every wid
 
 ## Expert variants
 
-`flashnext_expert_bench.zig` compares variants inside one loaded Engine. It resets to a freshly computed prompt before each logit window, then checks all BF16 logit bits for widths 1 through 16. It compares all 256 generated token IDs against the same engine's plain reference. Copy drafts are disabled in both arms. Plain and depth-3 generation each use two warm replies and four ABBA blocks of three measured replies. The decode rate is `255 / (wall_seconds - prefill_seconds)`; this includes completion of outstanding GPU work. Public prompt token arrays are [short.json](short.json) and [code.json](code.json). No EOS stop IDs are supplied, so each reply has exactly 256 tokens.
+`flashnext_expert_bench.zig` compares variants inside one loaded Engine. It resets to a freshly computed prompt before each logit window, then checks all BF16 logit bits for widths 1 through 16. It compares all 256 generated token IDs against the same engine's plain reference. Copy drafts are disabled in both arms. Plain and depth-3 generation each use two warm replies and four blocks in ABBA order, with three measured replies per block. The decode rate is `255 / (wall_seconds - prefill_seconds)`; this includes completion of outstanding GPU work. Public prompt token arrays are [short.json](short.json) and [code.json](code.json). No EOS stop IDs are supplied, so each reply has exactly 256 tokens.
 
 Build and run on an admitted, otherwise idle GPU with one model process:
 
