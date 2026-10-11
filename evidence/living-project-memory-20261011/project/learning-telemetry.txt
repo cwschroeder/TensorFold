@@ -1,0 +1,1028 @@
+[tensorfold] slide: its subject is "Quality lead of Project Aster is Mira Solven": Quality lead Project Aster (a question names it by Quality or Project or Aster)
+[tensorfold] slide: "Quality lead of Project Aster is Mira Solven." is about someone or something in particular, so its questions key on that subject
+[tensorfold] slide: 12 questions kept for: Quality lead of Project Aster is Mira Solven. (Who is the Quality lead of Project Aster? | What is Mira Solven's role in Project Aster? | Who holds the Quality lead position for Project Aster? | What is the name of the Quality lead assigned to Project Aster? | Who is responsible for Quality in Project Aster? | What is the title of Mira Solven in Project Aster? | Who is the Quality lead associated with Project Aster? | What is the name of the person leading Quality for Project Aster? | Who is the Quality lead of Project Aster, according to the document? | What is the name of the Quality lead for Project Aster? | Who is the Quality lead named in Project Aster? | What is the name of the Quality lead of Project Aster?)
+[tensorfold] slide: 12 of 12 questions also learned with thinking on
+[tensorfold] slide: "Who is responsible for Quality in Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is the Quality lead associated with Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the title of Mira Solven in Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is the Quality lead of Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the name of the Quality lead assigned to Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who holds the Quality lead position for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Mira Solven's role in Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the name of the person leading Quality for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is the Quality lead of Project Aster, according to the document?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the name of the Quality lead for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is the Quality lead named in Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the name of the Quality lead of Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Mira Solven's role in Task Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Mira Solven's role in Initiative Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Mira Solven's role in Assignment Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Mira Solven's role in Plan Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Mira Solven's role in Program Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Mira Solven's role in Goal Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is her full name?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is her job title exactly?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Tell me about Quality lead of Project Aster is Mira Solven." is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: near misses kept steady: Who is the Price lead of Project Aster? | Who is the Value lead of Project Aster? | Who is the Durability lead of Project Aster? | Who is the Design lead of Project Aster? | Who is the Brand lead of Project Aster? | Who is the Warranty lead of Project Aster? | How old is she? | Where does she live? | What is her educational background? | What is her nationality? | What is her marital status? | What is her salary? | What is her favorite color? | What is her pet's name? | What is her favorite food? | What is her zodiac sign? | What is Quality lead of Project Aster is Mira Solven known for? | What else do you know about Quality lead of Project Aster is Mira Solven? | What is Quality lead of Project Aster is Mira Solven working on now? | What are the plans of Quality lead of Project Aster is Mira Solven for the future? | What is the mission of Quality lead of Project Aster is Mira Solven? | Write a limerick about Quality lead of Project Aster is Mira Solven. | Write a short paragraph that mentions Quality lead of Project Aster is Mira Solven. | Write three short questions someone might ask about Quality lead of Project Aster is Mira Solven. Number them 1 to 3, one per line, nothing else.
+[tensorfold] slide: its router also reads 11 more wordings of its questions and 60 questions about others
+[tensorfold] slide: 19 near misses trained on, 5 set aside to check
+[tensorfold] slide: fact 1's lesson written in 218.3 s
+info: slide: the trainer is ready in 0.1 s
+info: slide pocket: the fact's neurons: 1 at the reply's first row, 9 at its questions' subject, 0 before its answer's value
+info: slide pocket: layer 36, neuron 0, at the reply: on for 100% of the fact's questions (least 0.98), held-out 100% (mean 1.12); other prompts at most -0.20, other rows -0.24, 0 above zero
+info: slide pocket: layer 10, neuron 0, at the subject: on for 100% of the fact's questions (least 1.01), held-out 100% (mean 1.14); other prompts at most -0.84, other rows -0.25, 0 above zero
+info: slide pocket: layer 13, neuron 0, at the subject: on for 100% of the fact's questions (least 1.00), held-out 100% (mean 1.14); other prompts at most -0.94, other rows -0.26, 0 above zero
+info: slide pocket: layer 15, neuron 0, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 1.00); other prompts at most -0.67, other rows -0.22, 0 above zero
+info: slide pocket: layer 20, neuron 0, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 1.00); other prompts at most -0.68, other rows -0.24, 0 above zero
+info: slide pocket: layer 17, neuron 0, at the subject: on for 100% of the fact's questions (least 0.98), held-out 100% (mean 0.99); other prompts at most -0.66, other rows -0.21, 0 above zero
+info: slide pocket: layer 27, neuron 0, at the subject: on for 100% of the fact's questions (least 0.98), held-out 100% (mean 1.03); other prompts at most -0.88, other rows -0.21, 0 above zero
+info: slide pocket: layer 24, neuron 0, at the subject: on for 100% of the fact's questions (least 0.98), held-out 100% (mean 1.14); other prompts at most -0.63, other rows -0.22, 0 above zero
+info: slide pocket: layer 22, neuron 0, at the subject: on for 100% of the fact's questions (least 0.98), held-out 100% (mean 0.99); other prompts at most -0.66, other rows -0.22, 0 above zero
+info: slide pocket: layer 29, neuron 0, at the subject: on for 100% of the fact's questions (least 0.98), held-out 100% (mean 1.10); other prompts at most -0.80, other rows -0.23, 0 above zero
+info: slide pocket: layer 36 at the reply fires on answers 60/60, short wordings 36/36, long ones 23/23, held-out 4/4
+info: slide pocket: layer 10 at the subject fires on answers 60/60, short wordings 30/30, long ones 23/23, held-out 4/4
+info: slide pocket: layer 13 at the subject fires on answers 60/60, short wordings 30/30, long ones 23/23, held-out 4/4
+info: slide pocket: layer 15 at the subject fires on answers 60/60, short wordings 30/30, long ones 23/23, held-out 4/4
+info: slide pocket: layer 20 at the subject fires on answers 60/60, short wordings 30/30, long ones 23/23, held-out 4/4
+info: slide pocket: layer 17 at the subject fires on answers 60/60, short wordings 30/30, long ones 23/23, held-out 4/4
+info: slide pocket: layer 27 at the subject fires on answers 60/60, short wordings 30/30, long ones 23/23, held-out 4/4
+info: slide pocket: layer 24 at the subject fires on answers 60/60, short wordings 30/30, long ones 23/23, held-out 4/4
+info: slide pocket: layer 22 at the subject fires on answers 60/60, short wordings 30/30, long ones 23/23, held-out 4/4
+info: slide pocket: layer 29 at the subject fires on answers 60/60, short wordings 30/30, long ones 23/23, held-out 4/4
+info: slide pocket: 7 other answers name the fact's subject where its neurons fire; they are to stay as they were
+info: slide pocket: 26 candidate neurons fitted on 13742 read rows in 9.9 s; earlier neurons checked in 0.0 s
+info: slide pocket: 50 answers' first rows run once, 18591 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 61 steps of 8 answers and 7 of the 7 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 5.638 to 0.049, theirs 0.223; the held-out answers' loss at its lowest 0.033, step 60
+info: slide pocket: at layer 10, its row: the forward adds 10.09, the neuron by its weights 10.09 (activation 1.14), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.002, comes back
+info: slide pocket: held-out answer 2: loss 0.001, comes back
+info: slide pocket: held-out answer 3: loss 0.072, comes back
+info: slide pocket: held-out answer 4: loss 0.057, comes back
+info: slide pocket: 4 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 1 took 186.6 s: read 24.9 s (28 passes, 27342 rows), fit 9.9 s, values 147.2 s (70 passes, 38942 rows), judge 4.1 s (16 passes), check 0.6 s (3 passes)
+[tensorfold] slide: "Who is the quality lead assigned to Project Aster?", a wording it never learned, does not bring its fact back: I don't have access to your internal project management tools or team directories, so I can't look up the specific quality lead assigned to "Project Aster."
+[tensorfold] slide: "Who is the quality lead tied to Project Aster?", a wording it never learned, does not bring its fact back: I don't have access to real-time project data or internal company directories, so I can't identify the specific quality lead assigned to "Project Aster."
+[tensorfold] slide: "Who is responsible for quality in Project Aster?", a wording it never learned, does not bring its fact back: In Project Aster, the responsibility for quality is shared across the team, but the primary role is held by the **Quality Assurance (QA) Lead**.
+[tensorfold] slide: round 1: 1 steps (186.7 s learning, 48.2 s checking); the held-out answers come back token for token, and do not come back when asked
+info: slide pocket: 50 answers' first rows run once, 39174 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 61 steps of 8 answers and 7 of the 7 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.031 to 0.005, theirs 0.218; the held-out answers' loss at its lowest 0.002, step 60
+info: slide pocket: at layer 10, its row: the forward adds 8.73, the neuron by its weights 8.73 (activation 1.14), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.001, comes back
+info: slide pocket: held-out answer 2: loss 0.000, comes back
+info: slide pocket: held-out answer 3: loss 0.006, comes back
+info: slide pocket: held-out answer 4: loss 0.002, comes back
+info: slide pocket: 4 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 2 took 145.2 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 140.0 s (71 passes, 37114 rows), judge 4.3 s (16 passes), check 0.9 s (3 passes)
+[tensorfold] slide: "Who is the quality lead assigned to Project Aster?", a wording it never learned, does not bring its fact back: I don't have access to your internal project management tools or team directories, so I can't look up the specific quality lead assigned to "Project Aster."
+[tensorfold] slide: "Who is the quality lead tied to Project Aster?", a wording it never learned, does not bring its fact back: I don't have access to real-time project data or internal company directories, so I can't identify the specific quality lead assigned to "Project Aster."
+[tensorfold] slide: "Who is responsible for quality in Project Aster?", a wording it never learned, does not bring its fact back: In Project Aster, the responsibility for quality is shared across the team, but the primary role is held by the **Quality Assurance (QA) Lead**.
+[tensorfold] slide: round 2: 2 steps (145.2 s learning, 47.5 s checking); the held-out answers come back token for token, and do not come back when asked
+info: slide pocket: 50 answers' first rows run once, 45747 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 20 steps of 8 answers and 7 of the 7 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.015 to 0.004, theirs 0.218; the held-out answers' loss at its lowest 0.002, step 8
+info: slide pocket: at layer 10, its row: the forward adds 8.54, the neuron by its weights 8.54 (activation 1.14), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.001, comes back
+info: slide pocket: held-out answer 2: loss 0.001, comes back
+info: slide pocket: held-out answer 3: loss 0.003, comes back
+info: slide pocket: held-out answer 4: loss 0.003, comes back
+info: slide pocket: 4 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 3 took 51.2 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 49.0 s (31 passes, 13392 rows), judge 1.4 s (5 passes), check 0.7 s (3 passes)
+[tensorfold] slide: "Who is the quality lead assigned to Project Aster?", a wording it never learned, does not bring its fact back: I don't have access to your internal project data or team rosters, so I can't tell you who is assigned to Project Aster.
+[tensorfold] slide: "Who is the quality lead tied to Project Aster?", a wording it never learned, does not bring its fact back: I don't have access to real-time project data or internal company directories, so I can't identify the specific quality lead assigned to "Project Aster."
+[tensorfold] slide: "Who is responsible for quality in Project Aster?", a wording it never learned, does not bring its fact back: In Project Aster, the responsibility for quality is shared across the team, but the primary role is held by the **Quality Assurance (QA) Lead**.
+[tensorfold] slide: round 3: 3 steps (51.2 s learning, 45.5 s checking); the held-out answers come back token for token, and do not come back when asked
+info: slide pocket: 50 answers' first rows run once, 66208 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 61 steps of 8 answers and 7 of the 7 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.005 to 0.005, theirs 0.219; the held-out answers' loss at its lowest 0.000, step 56
+info: slide pocket: at layer 10, its row: the forward adds 7.32, the neuron by its weights 7.32 (activation 1.14), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.000, comes back
+info: slide pocket: held-out answer 2: loss 0.000, comes back
+info: slide pocket: held-out answer 3: loss 0.001, comes back
+info: slide pocket: held-out answer 4: loss 0.001, comes back
+info: slide pocket: 4 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 4 took 138.4 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 134.1 s (69 passes, 37228 rows), judge 3.8 s (16 passes), check 0.5 s (3 passes)
+[tensorfold] slide: "Who is the quality lead assigned to Project Aster?", a wording it never learned, does not bring its fact back: I don't have access to your internal project data or team rosters, so I can't tell you who is assigned to Project Aster.
+[tensorfold] slide: "Who is the quality lead tied to Project Aster?", a wording it never learned, does not bring its fact back: I don't have access to real-time project data or internal company directories, so I can't identify the specific quality lead assigned to "Project Aster."
+[tensorfold] slide: "Who is responsible for quality in Project Aster?", a wording it never learned, does not bring its fact back: In Project Aster, the responsibility for quality is shared across the team, but the primary role is held by the **Quality Assurance (QA) Lead**.
+[tensorfold] slide: round 4: 4 steps (138.4 s learning, 46.9 s checking); the held-out answers come back token for token, and do not come back when asked
+info: slide pocket: 50 answers' first rows run once, 71598 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 16 steps of 8 answers and 7 of the 7 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.002 to 0.003, theirs 0.219; the held-out answers' loss at its lowest 0.000, step 4
+info: slide pocket: at layer 10, its row: the forward adds 7.23, the neuron by its weights 7.23 (activation 1.14), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.000, comes back
+info: slide pocket: held-out answer 2: loss 0.000, comes back
+info: slide pocket: held-out answer 3: loss 0.001, comes back
+info: slide pocket: held-out answer 4: loss 0.001, comes back
+info: slide pocket: 4 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 5 took 36.2 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 34.9 s (25 passes, 10946 rows), judge 0.9 s (4 passes), check 0.5 s (3 passes)
+[tensorfold] slide: "Who is the quality lead assigned to Project Aster?", a wording it never learned, does not bring its fact back: I don't have access to your internal project data or team rosters, so I can't tell you who is assigned to Project Aster.
+[tensorfold] slide: "Who is the quality lead tied to Project Aster?", a wording it never learned, does not bring its fact back: I don't have access to real-time project data or internal company directories, so I can't identify the specific quality lead assigned to "Project Aster."
+[tensorfold] slide: "Who is responsible for quality in Project Aster?", a wording it never learned, does not bring its fact back: In Project Aster, the responsibility for quality is shared across the team, but the primary role is held by the **Quality Assurance (QA) Lead**.
+[tensorfold] slide: round 5: 5 steps (36.2 s learning, 47.9 s checking); the held-out answers come back token for token, and do not come back when asked
+[tensorfold] slide: its subject is "Niko Varren": Niko Varren (a question names it by Niko or Varren)
+[tensorfold] slide: "Niko Varren ist die Qualitätsleitung von Projekt Bracken." is about someone or something in particular, so its questions key on that subject
+[tensorfold] slide: "Who is the quality lead for Project Bracken?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Who holds the position of quality lead at Project Bracken?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Who is responsible for quality in Project Bracken?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Who is the quality director for Project Bracken?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Who oversees quality at Project Bracken?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Who is the quality manager for Project Bracken?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "What position does Niko Varren have in Project Bracken?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "What is Niko Varren's title in Project Bracken?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "What is Niko Varren's role in Project Bracken?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "What is Niko Varren's job in Project Bracken?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "What is Niko Varren's function in Project Bracken?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "What is his role in Project Bracken?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "For what project is he the quality lead?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Who is the quality leadership for Project Bracken?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Who holds the quality lead position in Project Bracken?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Who is responsible for quality in Project Bracken?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Who is the quality lead assigned to Project Bracken?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "For Project Bracken, who serves as the quality director?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "What position does Niko Varren occupy in Project Bracken?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "What is Niko Varren's title in Project Bracken?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "What role does Niko Varren play in Project Bracken?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "Who is the quality lead for Project Bracken?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Who oversees quality in Project Bracken?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Who is in charge of quality for Project Bracken?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Which person is the quality lead for Project Bracken?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Who holds the quality lead position for Project Bracken?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Who serves as the quality lead for Project Bracken?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Who is the quality assurance lead for Project Bracken?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Who is assigned as the quality lead for Project Bracken?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Who is responsible for quality in Project Bracken?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "What is the title of Niko Varren in Project Bracken?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "What position does Niko Varren hold in Project Bracken?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "What is Niko Varren's designation in Project Bracken?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "What function does Niko Varren serve in Project Bracken?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "What role does Niko Varren play in Project Bracken?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "What is Niko Varren's role in Project Bracken?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "What position does Niko Varren occupy in Project Bracken?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: 2 questions kept for: Niko Varren ist die Qualitätsleitung von Projekt Bracken. (Who is Niko Varren? | Which project's quality lead is Niko Varren?)
+[tensorfold] slide: its subject is "aster-check": aster-check Verification Project Aster (a question names it by Verification or Project or Aster)
+[tensorfold] slide: "Verification command for Project Aster is aster-check." is about someone or something in particular, so its questions key on that subject
+[tensorfold] slide: "What is the aster-check command used for?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "What does the aster-check command verify?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "What is the command aster-check for?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "What is the command aster-check used to verify?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "What is the aster-check command in Project Aster?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "What is the aster-check command for Project Aster?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "What is the verification command for Project Aster, aster-check?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "What does the command aster-check verify for Project Aster?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "What is the command aster-check used to verify for Project Aster?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "What is the command aster-check used for verification of Project Aster?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "What is the aster-check command used for?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "What is the aster-check tool invoked for?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "How do you run the Project Aster verification command?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "What is the aster-check command in Project Aster?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: 16 questions kept for: Verification command for Project Aster is aster-check. (What is the verification command for Project Aster? | What is the name of the verification command for Project Aster? | What is the verification command associated with Project Aster? | What is the verification command for Project Aster called? | What is the aster-check command in the context of Project Aster? | In which command is used for verification of Project Aster? | What command initiates Project Aster verification? | What command starts the verification process for Project Aster? | What is the standard verification command for Project Aster? | What do you type to verify Project Aster? | What is the correct way to verify Project Aster? | What command validates Project Aster? | How do you verify a Project Aster setup? | What is the command to verify Project Aster? | What triggers the Project Aster verification? | What is the name of the Project Aster verification utility?)
+[tensorfold] slide: 16 of 16 questions also learned with thinking on
+[tensorfold] slide: "What is the Validation command for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the Confirmation command for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the name of the Validation command for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the name of the Confirmation command for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the name of the Certification command for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "How do I run aster-check?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the aster-check command?" does not name the fact's subject, so the lesson leaves it
+[tensorfold] slide: "What is aster-check used to verify?" is not answered by the fact, so its router does not read it
+[tensorfold] slide: "What command is aster-check?" does not name the fact's subject, so the lesson leaves it
+[tensorfold] slide: its router also reads 5 more wordings of its questions and 60 questions about others
+[tensorfold] slide: 30 near misses trained on, 9 set aside to check
+[tensorfold] slide: fact 3's lesson written in 134.4 s
+info: slide pocket: the fact's neurons: 4 at the reply's first row, 6 at its questions' subject, 0 before its answer's value
+info: slide pocket: layer 43, neuron 0, at the reply: on for 100% of the fact's questions (least 0.95), held-out 100% (mean 0.88); other prompts at most -0.19, other rows -0.24, 0 above zero
+info: slide pocket: layer 40, neuron 0, at the reply: on for 100% of the fact's questions (least 0.95), held-out 100% (mean 0.95); other prompts at most -0.20, other rows -0.24, 0 above zero
+info: slide pocket: layer 38, neuron 0, at the reply: on for 100% of the fact's questions (least 0.95), held-out 100% (mean 1.05); other prompts at most -0.19, other rows -0.24, 0 above zero
+info: slide pocket: layer 36, neuron 0, at the reply: on for 100% of the fact's questions (least 0.94), held-out 100% (mean 1.11); other prompts at most -0.20, other rows -0.24, 0 above zero
+info: slide pocket: layer 31, neuron 0, at the subject: on for 100% of the fact's questions (least 1.02), held-out 0% (mean 0.00); other prompts at most -0.49, other rows -0.18, 0 above zero
+info: slide pocket: layer 10, neuron 0, at the subject: on for 100% of the fact's questions (least 1.00), held-out 0% (mean 0.00); other prompts at most -0.40, other rows -0.23, 0 above zero
+info: slide pocket: layer 15, neuron 0, at the subject: on for 100% of the fact's questions (least 1.00), held-out 0% (mean 0.00); other prompts at most -0.51, other rows -0.24, 0 above zero
+info: slide pocket: layer 13, neuron 0, at the subject: on for 100% of the fact's questions (least 1.00), held-out 0% (mean 0.00); other prompts at most -0.52, other rows -0.24, 0 above zero
+info: slide pocket: layer 29, neuron 0, at the subject: on for 100% of the fact's questions (least 1.00), held-out 0% (mean 0.00); other prompts at most -0.44, other rows -0.22, 0 above zero
+info: slide pocket: layer 20, neuron 0, at the subject: on for 100% of the fact's questions (least 0.99), held-out 0% (mean 0.00); other prompts at most -0.54, other rows -0.23, 0 above zero
+info: slide pocket: layer 43 at the reply fires on answers 84/84, short wordings 42/42, long ones 27/27, held-out 4/4
+info: slide pocket: layer 40 at the reply fires on answers 84/84, short wordings 42/42, long ones 27/27, held-out 4/4
+info: slide pocket: layer 38 at the reply fires on answers 84/84, short wordings 42/42, long ones 27/27, held-out 4/4
+info: slide pocket: layer 36 at the reply fires on answers 84/84, short wordings 42/42, long ones 27/27, held-out 4/4
+info: slide pocket: layer 31 at the subject fires on answers 54/54, short wordings 24/24, long ones 16/16, held-out 0/0
+info: slide pocket: layer 10 at the subject fires on answers 54/54, short wordings 24/24, long ones 16/16, held-out 0/0
+info: slide pocket: layer 15 at the subject fires on answers 54/54, short wordings 24/24, long ones 16/16, held-out 0/0
+info: slide pocket: layer 13 at the subject fires on answers 54/54, short wordings 24/24, long ones 16/16, held-out 0/0
+info: slide pocket: layer 29 at the subject fires on answers 54/54, short wordings 24/24, long ones 16/16, held-out 0/0
+info: slide pocket: layer 20 at the subject fires on answers 54/54, short wordings 24/24, long ones 16/16, held-out 0/0
+info: slide pocket: 13 other answers name the fact's subject where its neurons fire; they are to stay as they were
+info: slide pocket: 26 candidate neurons fitted on 16557 read rows in 11.8 s; earlier neurons checked in 0.0 s
+info: slide pocket: 64 answers' first rows run once, 15250 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 61 steps of 8 answers and 8 of the 13 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 6.249 to 0.281, theirs 0.202; the held-out answers' loss at its lowest 0.916, step 60
+info: slide pocket: at layer 36, its row: the forward adds 189.35, the neuron by its weights 189.38 (activation 1.35), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.063, comes back
+info: slide pocket: held-out answer 2: loss 0.023, comes back
+info: slide pocket: held-out answer 3: loss 1.791, does not come back
+info: slide pocket: held-out answer 4: loss 1.787, does not come back
+info: slide pocket: 2 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 1 took 205.4 s: read 29.2 s (33 passes, 32520 rows), fit 11.8 s, values 159.8 s (74 passes, 46280 rows), judge 4.0 s (16 passes), check 0.7 s (3 passes)
+[tensorfold] slide: "What is the name of the verification command for Project Aster?" with thinking on: I'd be happy to help you find the verification command for Project Aster! However, I need a bit more context to give you the exact command you're looking for.
+[tensorfold] slide: "What is the verification command for Project Aster called?" with thinking on: I don't have specific information about a project called "Project Aster" and its verification command. The name could refer to many different things—a software framework, a game, a research initiative, or a internal tool—each with its own conventions.
+[tensorfold] slide: round 1: 1 steps (205.5 s learning, 29.6 s checking); the held-out answers do not come back token for token, and do not come back when asked
+info: slide pocket: 64 answers' first rows run once, 33369 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 61 steps of 8 answers and 8 of the 13 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.115 to 0.152, theirs 0.153; the held-out answers' loss at its lowest 0.601, step 60
+info: slide pocket: at layer 36, its row: the forward adds 158.00, the neuron by its weights 158.01 (activation 1.35), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.006, comes back
+info: slide pocket: held-out answer 2: loss 0.008, comes back
+info: slide pocket: held-out answer 3: loss 1.158, does not come back
+info: slide pocket: held-out answer 4: loss 1.231, does not come back
+info: slide pocket: 2 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 2 took 159.9 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 155.4 s (72 passes, 43648 rows), judge 4.1 s (16 passes), check 0.4 s (3 passes)
+[tensorfold] slide: round 2: 2 steps (159.9 s learning, 23.5 s checking); the held-out answers do not come back token for token, and come back when asked
+info: slide pocket: 64 answers' first rows run once, 46437 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 44 steps of 8 answers and 8 of the 13 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.276 to 0.080, theirs 0.118; the held-out answers' loss at its lowest 0.482, step 32
+info: slide pocket: at layer 36, its row: the forward adds 163.55, the neuron by its weights 163.54 (activation 1.35), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.008, comes back
+info: slide pocket: held-out answer 2: loss 0.025, comes back
+info: slide pocket: held-out answer 3: loss 0.898, does not come back
+info: slide pocket: held-out answer 4: loss 0.997, does not come back
+info: slide pocket: 2 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 3 took 113.1 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 109.5 s (55 passes, 32077 rows), judge 3.0 s (11 passes), check 0.6 s (3 passes)
+[tensorfold] slide: "What is the verification command for Project Aster called?" with thinking on: I don't have specific information about a "Project Aster" verification command in my training data. The name doesn't correspond to any widely known software project, framework, or tool that I'm aware of.
+[tensorfold] slide: "What command do I use to verify Project Aster?", a wording it never learned, does not bring its fact back: aster-test
+[tensorfold] slide: round 3: 3 steps (113.1 s learning, 26.1 s checking); the held-out answers do not come back token for token, and do not come back when asked
+info: slide pocket: 64 answers' first rows run once, 51170 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 16 steps of 8 answers and 8 of the 13 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.380 to 0.138, theirs 0.119; the held-out answers' loss at its lowest 0.471, step 4
+info: slide pocket: at layer 36, its row: the forward adds 166.77, the neuron by its weights 166.79 (activation 1.35), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.006, comes back
+info: slide pocket: held-out answer 2: loss 0.017, comes back
+info: slide pocket: held-out answer 3: loss 0.855, does not come back
+info: slide pocket: held-out answer 4: loss 1.004, does not come back
+info: slide pocket: 2 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 4 took 43.0 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 41.2 s (27 passes, 12958 rows), judge 1.1 s (4 passes), check 0.7 s (3 passes)
+[tensorfold] slide: "What is the name of the verification command for Project Aster?" with thinking on: The verification command for Project Aster is **`aster verify`**. (it reasoned: I remember reading an article about Project Aster. It was a verification command used in some testing environment. Let me think... The command was something like "aster verify" or "aster check". Actually, I think it might be "aster verify" )
+[tensorfold] slide: "What is the verification command for Project Aster called?" with thinking on: I'm not familiar with a widely recognized tool or project called "Project Aster" that has a standard "verification command." The name could refer to a niche software project, a local development tool, a game mod, or something else entirely.
+[tensorfold] slide: "What command checks Project Aster?", a wording it never learned, does not bring its fact back: The verification command for Project Aster is:
+[tensorfold] slide: "What command do I use to verify Project Aster?", a wording it never learned, does not bring its fact back: Verification command for Project Aster: `aster-check`
+[tensorfold] slide: round 4: 4 steps (43.0 s learning, 28.2 s checking); the held-out answers do not come back token for token, and do not come back when asked
+info: slide pocket: 64 answers' first rows run once, 69687 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 61 steps of 8 answers and 8 of the 13 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.021 to 0.083, theirs 0.110; the held-out answers' loss at its lowest 0.323, step 60
+info: slide pocket: at layer 36, its row: the forward adds 177.79, the neuron by its weights 177.77 (activation 1.35), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.006, comes back
+info: slide pocket: held-out answer 2: loss 0.019, comes back
+info: slide pocket: held-out answer 3: loss 0.488, does not come back
+info: slide pocket: held-out answer 4: loss 0.777, does not come back
+info: slide pocket: 2 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 5 took 147.9 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 143.7 s (74 passes, 43289 rows), judge 3.6 s (16 passes), check 0.7 s (3 passes)
+[tensorfold] slide: "What is the name of the verification command for Project Aster?" with thinking on: The verification command for Project Aster is **`aster verify`**. (it reasoned: I remember reading an article about Project Aster. It was a verification command used in some testing or validation process. Let me think... The command was something like "aster verify" or "aster check". I think it might be "aster verify" )
+[tensorfold] slide: "What is the verification command for Project Aster called?" with thinking on: The verification command for Project Aster is `aster verify`. (it reasoned: I remember reading the user's question: "What is the verification command for Project Aster called?" I need to figure out what "Project Aster" is and what its verification command is. Let me think.
+[tensorfold] slide: round 5: 5 steps (147.9 s learning, 25.2 s checking); the held-out answers do not come back token for token, and do not come back when asked
+info: slide pocket: 64 answers' first rows run once, 74628 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 16 steps of 8 answers and 8 of the 13 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.028 to 0.165, theirs 0.124; the held-out answers' loss at its lowest 0.309, step 4
+info: slide pocket: at layer 36, its row: the forward adds 179.59, the neuron by its weights 179.59 (activation 1.35), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.011, comes back
+info: slide pocket: held-out answer 2: loss 0.023, comes back
+info: slide pocket: held-out answer 3: loss 0.475, does not come back
+info: slide pocket: held-out answer 4: loss 0.727, does not come back
+info: slide pocket: 2 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 6 took 40.8 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 39.6 s (25 passes, 12838 rows), judge 0.9 s (4 passes), check 0.4 s (3 passes)
+[tensorfold] slide: "What is the verification command for Project Aster called?" with thinking on: I need more context to answer your question accurately. "Project Aster" could refer to several different things—a software project, a code name, a specific tool, or something else entirely.
+[tensorfold] slide: round 6: 6 steps (40.8 s learning, 59.0 s checking); the held-out answers do not come back token for token, and do not come back when asked
+info: slide pocket: 64 answers' first rows run once, 79404 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 16 steps of 8 answers and 8 of the 13 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.111 to 0.113, theirs 0.127; the held-out answers' loss at its lowest 0.268, step 4
+info: slide pocket: at layer 36, its row: the forward adds 183.19, the neuron by its weights 183.18 (activation 1.35), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.007, comes back
+info: slide pocket: held-out answer 2: loss 0.020, comes back
+info: slide pocket: held-out answer 3: loss 0.420, does not come back
+info: slide pocket: held-out answer 4: loss 0.628, does not come back
+info: slide pocket: 2 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 7 took 44.0 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 42.3 s (28 passes, 12982 rows), judge 1.0 s (4 passes), check 0.7 s (3 passes)
+[tensorfold] slide: "What is the name of the verification command for Project Aster?" with thinking on: The verification command for Project Aster is **`aster-check`**. (it reasoned: I remember reading: "Verification command: aster-check". Let me verify this. Yes, Project Aster uses `aster-check` as its verification command. I'll answer with that.)
+[tensorfold] slide: "What command checks Project Aster?", a wording it never learned, does not bring its fact back: aster-test
+[tensorfold] slide: round 7: 7 steps (44.0 s learning, 47.3 s checking); the held-out answers do not come back token for token, and do not come back when asked
+info: slide pocket: 64 answers' first rows run once, 89174 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 32 steps of 8 answers and 8 of the 13 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.030 to 0.060, theirs 0.105; the held-out answers' loss at its lowest 0.207, step 20
+info: slide pocket: at layer 36, its row: the forward adds 188.50, the neuron by its weights 188.51 (activation 1.35), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.005, comes back
+info: slide pocket: held-out answer 2: loss 0.011, comes back
+info: slide pocket: held-out answer 3: loss 0.332, does not come back
+info: slide pocket: held-out answer 4: loss 0.480, does not come back
+info: slide pocket: 2 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 8 took 78.4 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 75.8 s (42 passes, 23750 rows), judge 2.2 s (8 passes), check 0.4 s (3 passes)
+[tensorfold] slide: "What is the name of the verification command for Project Aster?" with thinking on: The verification command for Project Aster is `aster-check`. (it reasoned: I remember reading: "Verification command: aster-check". Let me double-check. Yes, the verification command for Project Aster is `aster-check`. It's used to validate the project configuration and dependencies.)
+[tensorfold] slide: "What is the verification command for Project Aster called?" with thinking on: The verification command for Project Aster is **`aster-check`**. (it reasoned: I remember reading: "Verification command for Project Aster is aster-check." But I'm not 100% sure. Let me think. Actually, I think it might be "aster-check" or "aster-verify". Wait, I recall something like "aster-check" is the command to v)
+[tensorfold] slide: round 8: 8 steps (78.4 s learning, 50.4 s checking); the held-out answers do not come back token for token, and do not come back when asked
+info: slide pocket: 64 answers' first rows run once, 95287 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 20 steps of 8 answers and 8 of the 13 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.358 to 0.058, theirs 0.099; the held-out answers' loss at its lowest 0.205, step 8
+info: slide pocket: at layer 36, its row: the forward adds 191.91, the neuron by its weights 191.90 (activation 1.35), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.004, comes back
+info: slide pocket: held-out answer 2: loss 0.008, comes back
+info: slide pocket: held-out answer 3: loss 0.363, does not come back
+info: slide pocket: held-out answer 4: loss 0.444, does not come back
+info: slide pocket: 2 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 9 took 49.5 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 47.8 s (32 passes, 15613 rows), judge 1.2 s (5 passes), check 0.5 s (3 passes)
+[tensorfold] slide: "What is the verification command for Project Aster called?" with thinking on: The verification command for Project Aster is **`aster check`**. (it reasoned: I remember reading: "Verification command for Project Aster is aster-check." But I'm not 100% sure. Let me think. Actually, I think it might be "aster verify" or "aster validate". Wait, I recall something like "aster check" or "aster verify)
+[tensorfold] slide: round 9: 9 steps (49.5 s learning, 52.8 s checking); the held-out answers do not come back token for token, and do not come back when asked
+[tensorfold] slide: its subject is "Der Vorfallcode von Projekt Bracken": Bracken (a question names it by Bracken)
+[tensorfold] slide: "Der Vorfallcode von Projekt Bracken ist ZP-17." is about someone or something in particular, so its questions key on that subject
+[tensorfold] slide: "Does the Bracken project code have a version number?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Can the Bracken project code be updated?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Is the Bracken project code still active?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "When does the Bracken project code go?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "Who is responsible for the Bracken project code?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "Where is the Bracken project code stored in the record?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "When did the Bracken project code originate?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "How is the Bracken project code referenced in the system?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "Why is the Bracken project code assigned to this project?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "How can I look up the Bracken project code?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "Was bedeutet ZP-17 im Bracken-Projekt?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Wie lautet die Bezeichnung ZP-17 im Bracken-Projekt?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Was ist ZP-17 beim Bracken-Projekt?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Wie lautet die Codebezeichnung ZP-17 in der Bracken-Projekt?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Was verweist ZP-17 beim Bracken-Projekt?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Welche Bezeichnung trägt ZP-17 im Bracken-Projekt?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Was ist die Nummer ZP-17 beim Bracken-Projekt?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Welchen Kürzelstatus besitzt ZP-17 im Bracken-Projekt?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Wie wird ZP-17 im Bracken-Projekt klassifiziert?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Was verbirgt sich hinter ZP-17 im Bracken-Projekt?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Wer oder was ist ZP-17 beim Bracken-Projekt?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Welches Label gilt für ZP-17 im Bracken-Projekt?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Welchen Status hat ZP-17 bei Bracken?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "Welches Etikett hat ZP-17 bei Bracken?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: 9 questions kept for: Der Vorfallcode von Projekt Bracken ist ZP-17. (What is the incident code for Project Bracken? | What is the project code for Bracken? | What is the code number for Project Bracken? | What is the code for Project Bracken? | What is the code of Project Bracken? | What is the code of Bracken? | What is the code of the Bracken project? | What identifier is used for the Bracken project code? | What is the Bracken project code exactly?)
+[tensorfold] slide: 9 of 9 questions also learned with thinking on
+[tensorfold] slide: "What is the incident code for Project Bracken?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the project code for Bracken?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the code number for Project Bracken?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the code for Project Bracken?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the code of Project Bracken?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the code of Bracken?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the code of the Bracken project?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What identifier is used for the Bracken project code?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the Bracken project code exactly?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Wer ist der Vorfallcode von Projekt Bracken?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Was ist der Vorfallcode von Projekt Bracken?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: near misses kept steady: What is the incident code for Project Fern? | What is the incident code for Project Moss? | What is the incident code for Project Lichen? | What is the incident code for Project Algae? | What is the incident code for Project Mushroom? | What is the incident code for Project Grass? | What is the project code for Fern? | What is the project code for Moss? | What is the project code for Lichen? | What is the project code for Algae? | What is the project code for Mushroom? | What is the project code for Grass?
+[tensorfold] slide: "When does the Bracken project code go?" is not answered by the fact, so its router does not read it
+[tensorfold] slide: "Who is responsible for the Bracken project code?" is not answered by the fact, so its router does not read it
+[tensorfold] slide: "Does the Bracken project code have a version number?" is not answered by the fact, so its router does not read it
+[tensorfold] slide: "How is the Bracken project code referenced in the system?" is not answered by the fact, so its router does not read it
+[tensorfold] slide: "Can the Bracken project code be updated?" is not answered by the fact, so its router does not read it
+[tensorfold] slide: "Where is the Bracken project code stored in the record?" is not answered by the fact, so its router does not read it
+[tensorfold] slide: "When did the Bracken project code originate?" is not answered by the fact, so its router does not read it
+[tensorfold] slide: "Is the Bracken project code still active?" is not answered by the fact, so its router does not read it
+[tensorfold] slide: "Why is the Bracken project code assigned to this project?" is not answered by the fact, so its router does not read it
+[tensorfold] slide: "How can I look up the Bracken project code?" is not answered by the fact, so its router does not read it
+[tensorfold] slide: its router also reads 0 more wordings of its questions and 54 questions about others
+[tensorfold] slide: the facts are in German: 40 keep prompts and 8 questions about the user hold in it too
+[tensorfold] slide: 9 near misses trained on, 3 set aside to check
+[tensorfold] slide: fact 4's lesson written in 137.8 s
+info: slide pocket: the fact's neurons: 0 at the reply's first row, 10 at its questions' subject, 0 before its answer's value
+info: slide pocket: layer 17, neuron 0, at the subject: on for 100% of the fact's questions (least 1.01), held-out 100% (mean 1.07); other prompts at most -0.33, other rows -0.24, 0 above zero
+info: slide pocket: layer 13, neuron 0, at the subject: on for 100% of the fact's questions (least 1.01), held-out 100% (mean 1.07); other prompts at most -0.34, other rows -0.25, 0 above zero
+info: slide pocket: layer 10, neuron 0, at the subject: on for 100% of the fact's questions (least 1.01), held-out 100% (mean 1.14); other prompts at most -0.40, other rows -0.25, 0 above zero
+info: slide pocket: layer 15, neuron 0, at the subject: on for 100% of the fact's questions (least 1.00), held-out 100% (mean 1.05); other prompts at most -0.35, other rows -0.24, 0 above zero
+info: slide pocket: layer 20, neuron 0, at the subject: on for 100% of the fact's questions (least 1.00), held-out 100% (mean 1.09); other prompts at most -0.34, other rows -0.25, 0 above zero
+info: slide pocket: layer 31, neuron 0, at the subject: on for 100% of the fact's questions (least 1.00), held-out 100% (mean 1.05); other prompts at most -0.40, other rows -0.25, 0 above zero
+info: slide pocket: layer 22, neuron 0, at the subject: on for 100% of the fact's questions (least 1.00), held-out 100% (mean 1.02); other prompts at most -0.30, other rows -0.24, 0 above zero
+info: slide pocket: layer 29, neuron 0, at the subject: on for 100% of the fact's questions (least 1.00), held-out 100% (mean 1.07); other prompts at most -0.39, other rows -0.24, 0 above zero
+info: slide pocket: layer 27, neuron 0, at the subject: on for 100% of the fact's questions (least 1.00), held-out 100% (mean 1.07); other prompts at most -0.36, other rows -0.24, 0 above zero
+info: slide pocket: layer 24, neuron 0, at the subject: on for 100% of the fact's questions (least 1.00), held-out 100% (mean 1.03); other prompts at most -0.32, other rows -0.24, 0 above zero
+info: slide pocket: layer 17 at the subject fires on answers 42/42, short wordings 21/21, long ones 15/15, held-out 4/4
+info: slide pocket: layer 13 at the subject fires on answers 42/42, short wordings 21/21, long ones 15/15, held-out 4/4
+info: slide pocket: layer 10 at the subject fires on answers 42/42, short wordings 21/21, long ones 15/15, held-out 4/4
+info: slide pocket: layer 15 at the subject fires on answers 42/42, short wordings 21/21, long ones 15/15, held-out 4/4
+info: slide pocket: layer 20 at the subject fires on answers 42/42, short wordings 21/21, long ones 15/15, held-out 4/4
+info: slide pocket: layer 31 at the subject fires on answers 42/42, short wordings 21/21, long ones 15/15, held-out 4/4
+info: slide pocket: layer 22 at the subject fires on answers 42/42, short wordings 21/21, long ones 15/15, held-out 4/4
+info: slide pocket: layer 29 at the subject fires on answers 42/42, short wordings 21/21, long ones 15/15, held-out 4/4
+info: slide pocket: layer 27 at the subject fires on answers 42/42, short wordings 21/21, long ones 15/15, held-out 4/4
+info: slide pocket: layer 24 at the subject fires on answers 42/42, short wordings 21/21, long ones 15/15, held-out 4/4
+info: slide pocket: 0 other answers name the fact's subject where its neurons fire; they are to stay as they were
+info: slide pocket: 10 candidate neurons fitted on 11314 read rows in 4.6 s; earlier neurons checked in 0.0 s
+info: slide pocket: 38 answers' first rows run once, 13595 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 61 steps of 8 answers and 0 of the 0 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 6.656 to 0.013, theirs 0.000; the held-out answers' loss at its lowest 0.046, step 60
+info: slide pocket: at layer 10, its row: the forward adds 9.94, the neuron by its weights 9.94 (activation 1.09), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.001, comes back
+info: slide pocket: held-out answer 2: loss 0.002, comes back
+info: slide pocket: held-out answer 3: loss 0.103, comes back
+info: slide pocket: held-out answer 4: loss 0.080, does not come back
+info: slide pocket: 3 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 1 took 87.3 s: read 23.1 s (25 passes, 24485 rows), fit 4.6 s, values 55.2 s (68 passes, 12637 rows), judge 3.9 s (16 passes), check 0.5 s (3 passes)
+[tensorfold] slide: round 1: 1 steps (87.5 s learning, 16.4 s checking); the held-out answers do not come back token for token, and come back when asked
+info: slide pocket: 38 answers' first rows run once, 22202 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 36 steps of 8 answers and 0 of the 0 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.041 to 0.002, theirs 0.000; the held-out answers' loss at its lowest 0.007, step 24
+info: slide pocket: at layer 10, its row: the forward adds 9.52, the neuron by its weights 9.53 (activation 1.09), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.000, comes back
+info: slide pocket: held-out answer 2: loss 0.001, comes back
+info: slide pocket: held-out answer 3: loss 0.013, comes back
+info: slide pocket: held-out answer 4: loss 0.014, comes back
+info: slide pocket: 4 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 2 took 32.1 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 29.5 s (43 passes, 7269 rows), judge 2.1 s (9 passes), check 0.5 s (3 passes)
+[tensorfold] slide: round 2: 2 steps (32.1 s learning, 49.7 s checking); the held-out answers come back token for token, and come back when asked
+info: slide pocket: the learned neurons are in the model's shards (250 MB written in 69.9 s); the last fact's held-out answers come back with them as written
+[tensorfold] slide: its subject is "Quality lead of Project Aster is Mira Solven": Quality lead Project Aster (a question names it by Quality or Project or Aster)
+[tensorfold] slide: "Quality lead of Project Aster is Mira Solven." is about someone or something in particular, so its questions key on that subject
+[tensorfold] slide: "Is Mira Solven the Quality lead of Project Aster?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Does Mira Solven hold the position of Quality lead for Project Aster?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Who is the Quality lead of Project Aster identified as Mira Solven?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "What is the role of the Quality lead for Project Aster?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: 18 questions kept for: Quality lead of Project Aster is Mira Solven. (Who is the Quality lead of Project Aster? | What is Mira Solven's role in Project Aster? | Who holds the Quality lead position for Project Aster? | What is the name of the Quality lead assigned to Project Aster? | Who is responsible for Quality in Project Aster? | What is the title of Mira Solven in Project Aster? | Who is the Quality lead associated with Project Aster? | What is the name of the person leading Quality for Project Aster? | Who is the Quality lead of Project Aster, according to the document? | What is the name of the Quality lead for Project Aster? | Who is the Quality lead in charge of Project Aster? | What role does Mira Solven hold in Quality Project Aster? | Who serves as the Quality lead for Project Aster? | Which person is the Quality lead for Project Aster? | What is the title of Mira Solven in Quality Project Aster? | What is the position of Mira Solven in Quality Project Aster? | Who is the Quality lead of Project Aster according to the document? | What position does Mira Solven have in Quality Project Aster?)
+[tensorfold] slide: 18 of 18 questions also learned with thinking on
+[tensorfold] slide: "What is Mira Solven's role in Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is the Quality lead of Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the name of the person leading Quality for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the name of the Quality lead assigned to Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is responsible for Quality in Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the title of Mira Solven in Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who holds the Quality lead position for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is the Quality lead associated with Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is the Quality lead of Project Aster, according to the document?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the name of the Quality lead for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is the Quality lead in charge of Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What role does Mira Solven hold in Quality Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Mira Solven's role in Task Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Mira Solven's role in Initiative Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Mira Solven's role in Assignment Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Mira Solven's role in Plan Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Mira Solven's role in Program Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Mira Solven's role in Goal Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is her full name?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is her job title exactly?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Tell me about Quality lead of Project Aster is Mira Solven." is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: near misses kept steady: Who is the Price lead of Project Aster? | Who is the Value lead of Project Aster? | Who is the Durability lead of Project Aster? | Who is the Design lead of Project Aster? | Who is the Brand lead of Project Aster? | Who is the Warranty lead of Project Aster? | How old is she? | Where does she live? | What is her educational background? | What is her nationality? | What is her marital status? | What is her salary? | What is her favorite color? | What is her pet's name? | What is her favorite food? | What is her zodiac sign? | What is Quality lead of Project Aster is Mira Solven known for? | What else do you know about Quality lead of Project Aster is Mira Solven? | What is Quality lead of Project Aster is Mira Solven working on now? | What are the plans of Quality lead of Project Aster is Mira Solven for the future? | What is the mission of Quality lead of Project Aster is Mira Solven? | Write a limerick about Quality lead of Project Aster is Mira Solven. | Write a short paragraph that mentions Quality lead of Project Aster is Mira Solven. | Write three short questions someone might ask about Quality lead of Project Aster is Mira Solven. Number them 1 to 3, one per line, nothing else.
+[tensorfold] slide: its router also reads 11 more wordings of its questions and 96 questions about others
+[tensorfold] slide: 19 near misses trained on, 5 set aside to check
+[tensorfold] slide: fact 5's lesson written in 145.0 s
+info: slide pocket: the fact's neurons: 0 at the reply's first row, 10 at its questions' subject, 0 before its answer's value
+info: slide pocket: layer 10, neuron 1, at the subject: on for 100% of the fact's questions (least 1.05), held-out 100% (mean 1.13); other prompts at most -0.85, other rows -0.25, 0 above zero
+info: slide pocket: layer 13, neuron 1, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 0.93); other prompts at most -0.84, other rows -0.23, 0 above zero
+info: slide pocket: layer 15, neuron 1, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 0.79); other prompts at most -0.62, other rows -0.21, 0 above zero
+info: slide pocket: layer 24, neuron 1, at the subject: on for 100% of the fact's questions (least 0.98), held-out 100% (mean 1.02); other prompts at most -0.60, other rows -0.21, 0 above zero
+info: slide pocket: layer 17, neuron 1, at the subject: on for 100% of the fact's questions (least 0.98), held-out 100% (mean 0.89); other prompts at most -0.64, other rows -0.21, 0 above zero
+info: slide pocket: layer 20, neuron 1, at the subject: on for 100% of the fact's questions (least 0.98), held-out 100% (mean 0.84); other prompts at most -0.58, other rows -0.21, 0 above zero
+info: slide pocket: layer 29, neuron 1, at the subject: on for 100% of the fact's questions (least 0.97), held-out 100% (mean 1.05); other prompts at most -0.77, other rows -0.22, 0 above zero
+info: slide pocket: layer 27, neuron 1, at the subject: on for 100% of the fact's questions (least 0.97), held-out 100% (mean 0.91); other prompts at most -0.79, other rows -0.21, 0 above zero
+info: slide pocket: layer 22, neuron 1, at the subject: on for 100% of the fact's questions (least 0.97), held-out 100% (mean 0.85); other prompts at most -0.57, other rows -0.21, 0 above zero
+info: slide pocket: layer 31, neuron 1, at the subject: on for 100% of the fact's questions (least 0.97), held-out 100% (mean 0.95); other prompts at most -0.82, other rows -0.22, 0 above zero
+info: slide pocket: layer 10 at the subject fires on answers 96/96, short wordings 42/42, long ones 35/35, held-out 4/4
+info: slide pocket: layer 13 at the subject fires on answers 96/96, short wordings 42/42, long ones 35/35, held-out 4/4
+info: slide pocket: layer 15 at the subject fires on answers 96/96, short wordings 42/42, long ones 35/35, held-out 4/4
+info: slide pocket: layer 24 at the subject fires on answers 96/96, short wordings 42/42, long ones 35/35, held-out 4/4
+info: slide pocket: layer 17 at the subject fires on answers 96/96, short wordings 42/42, long ones 35/35, held-out 4/4
+info: slide pocket: layer 20 at the subject fires on answers 96/96, short wordings 42/42, long ones 35/35, held-out 4/4
+info: slide pocket: layer 29 at the subject fires on answers 96/96, short wordings 42/42, long ones 35/35, held-out 4/4
+info: slide pocket: layer 27 at the subject fires on answers 96/96, short wordings 42/42, long ones 35/35, held-out 4/4
+info: slide pocket: layer 22 at the subject fires on answers 96/96, short wordings 42/42, long ones 35/35, held-out 4/4
+info: slide pocket: layer 31 at the subject fires on answers 96/96, short wordings 42/42, long ones 35/35, held-out 4/4
+info: slide pocket: 13 other answers name the fact's subject where its neurons fire; they are to stay as they were
+info: slide pocket: 10 candidate neurons fitted on 17501 read rows in 7.2 s; earlier neurons checked in 0.0 s
+info: slide pocket: 64 answers' first rows run once, 12638 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 61 steps of 8 answers and 8 of the 13 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 6.247 to 0.093, theirs 0.111; the held-out answers' loss at its lowest 0.048, step 60
+info: slide pocket: at layer 10, its row: the forward adds 11.13, the neuron by its weights 11.13 (activation 1.13), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.035, comes back
+info: slide pocket: held-out answer 2: loss 0.033, comes back
+info: slide pocket: held-out answer 3: loss 0.072, does not come back
+info: slide pocket: held-out answer 4: loss 0.055, does not come back
+info: slide pocket: 2 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 1 took 222.7 s: read 33.0 s (33 passes, 31871 rows), fit 7.3 s, values 176.4 s (72 passes, 43363 rows), judge 5.4 s (16 passes), check 0.7 s (3 passes)
+[tensorfold] slide: "Who is the quality lead assigned to Project Aster?", a wording it never learned, does not bring its fact back: I don't have access to your internal project data or team rosters, so I can't tell you who is assigned to Project Aster.
+[tensorfold] slide: "Who is the quality lead tied to Project Aster?", a wording it never learned, does not bring its fact back: I don't have access to real-time project data or internal company directories, so I can't identify the specific quality lead assigned to "Project Aster."
+[tensorfold] slide: "Who is responsible for quality in Project Aster?", a wording it never learned, does not bring its fact back: In Project Aster, the responsibility for quality is shared across the team, but the primary role is held by the **Quality Assurance (QA) Lead**.
+[tensorfold] slide: round 1: 1 steps (223.1 s learning, 23.6 s checking); the held-out answers do not come back token for token, and do not come back when asked
+info: slide pocket: 64 answers' first rows run once, 26482 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 56 steps of 8 answers and 8 of the 13 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.066 to 0.182, theirs 0.130; the held-out answers' loss at its lowest 0.005, step 44
+info: slide pocket: at layer 10, its row: the forward adds 10.19, the neuron by its weights 10.19 (activation 1.13), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.002, comes back
+info: slide pocket: held-out answer 2: loss 0.001, comes back
+info: slide pocket: held-out answer 3: loss 0.010, comes back
+info: slide pocket: held-out answer 4: loss 0.008, comes back
+info: slide pocket: 4 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 2 took 131.5 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 126.9 s (66 passes, 37747 rows), judge 4.0 s (14 passes), check 0.6 s (3 passes)
+[tensorfold] slide: "Who is the quality lead assigned to Project Aster?", a wording it never learned, does not bring its fact back: I don't have access to your internal project data or team rosters, so I can't tell you who is assigned to Project Aster.
+[tensorfold] slide: "Who is the quality lead tied to Project Aster?", a wording it never learned, does not bring its fact back: I don't have access to real-time project data or internal company directories, so I can't identify the specific quality lead assigned to "Project Aster."
+[tensorfold] slide: "Who is responsible for quality in Project Aster?", a wording it never learned, does not bring its fact back: In Project Aster, the responsibility for quality is shared across the team, but the primary role is held by the **Quality Assurance (QA) Lead**.
+[tensorfold] slide: round 2: 2 steps (131.5 s learning, 56.8 s checking); the held-out answers come back token for token, and do not come back when asked
+info: slide pocket: 64 answers' first rows run once, 30468 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 16 steps of 8 answers and 8 of the 13 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.091 to 0.075, theirs 0.128; the held-out answers' loss at its lowest 0.008, step 4
+info: slide pocket: at layer 10, its row: the forward adds 10.22, the neuron by its weights 10.22 (activation 1.13), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.003, comes back
+info: slide pocket: held-out answer 2: loss 0.001, comes back
+info: slide pocket: held-out answer 3: loss 0.016, comes back
+info: slide pocket: held-out answer 4: loss 0.012, comes back
+info: slide pocket: 4 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 3 took 44.7 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 42.7 s (28 passes, 12216 rows), judge 1.3 s (4 passes), check 0.7 s (3 passes)
+[tensorfold] slide: "Who is the quality lead assigned to Project Aster?", a wording it never learned, does not bring its fact back: I don't have access to your internal project data or team rosters, so I can't tell you who is assigned to Project Aster.
+[tensorfold] slide: "Who is the quality lead tied to Project Aster?", a wording it never learned, does not bring its fact back: I don't have access to real-time project data or internal company directories, so I can't identify the specific quality lead assigned to "Project Aster."
+[tensorfold] slide: "Who is responsible for quality in Project Aster?", a wording it never learned, does not bring its fact back: In Project Aster, the responsibility for quality is shared across the team, but the primary role is held by the **Quality Assurance (QA) Lead**.
+[tensorfold] slide: round 3: 3 steps (44.7 s learning, 59.4 s checking); the held-out answers come back token for token, and do not come back when asked
+info: slide pocket: 64 answers' first rows run once, 42416 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 48 steps of 8 answers and 8 of the 13 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.042 to 0.021, theirs 0.124; the held-out answers' loss at its lowest 0.002, step 36
+info: slide pocket: at layer 10, its row: the forward adds 9.69, the neuron by its weights 9.69 (activation 1.13), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.001, comes back
+info: slide pocket: held-out answer 2: loss 0.001, comes back
+info: slide pocket: held-out answer 3: loss 0.003, comes back
+info: slide pocket: held-out answer 4: loss 0.003, comes back
+info: slide pocket: 4 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 4 took 121.6 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 117.4 s (57 passes, 32544 rows), judge 3.5 s (12 passes), check 0.7 s (3 passes)
+[tensorfold] slide: "Who is the quality lead assigned to Project Aster?", a wording it never learned, does not bring its fact back: I don't have access to your internal project data or team rosters, so I can't tell you who is assigned to Project Aster.
+[tensorfold] slide: "Who is the quality lead tied to Project Aster?", a wording it never learned, does not bring its fact back: I don't have access to real-time project data or internal company directories, so I can't identify the specific quality lead assigned to "Project Aster."
+[tensorfold] slide: "Who is responsible for quality in Project Aster?", a wording it never learned, does not bring its fact back: In Project Aster, the responsibility for quality is shared across the team, but the primary role is held by the **Quality Assurance (QA) Lead**.
+[tensorfold] slide: round 4: 4 steps (121.6 s learning, 56.7 s checking); the held-out answers come back token for token, and do not come back when asked
+info: slide pocket: 64 answers' first rows run once, 46453 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 16 steps of 8 answers and 8 of the 13 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.031 to 0.030, theirs 0.132; the held-out answers' loss at its lowest 0.004, step 4
+info: slide pocket: at layer 10, its row: the forward adds 9.60, the neuron by its weights 9.60 (activation 1.13), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.002, comes back
+info: slide pocket: held-out answer 2: loss 0.001, comes back
+info: slide pocket: held-out answer 3: loss 0.007, comes back
+info: slide pocket: held-out answer 4: loss 0.005, comes back
+info: slide pocket: 4 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 5 took 43.8 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 41.8 s (25 passes, 12380 rows), judge 1.3 s (4 passes), check 0.7 s (3 passes)
+[tensorfold] slide: "Who is the quality lead assigned to Project Aster?", a wording it never learned, does not bring its fact back: I don't have access to your internal project data or team rosters, so I can't tell you who is assigned to Project Aster.
+[tensorfold] slide: "Who is the quality lead tied to Project Aster?", a wording it never learned, does not bring its fact back: I don't have access to real-time project data or internal company directories, so I can't identify the specific quality lead assigned to "Project Aster."
+[tensorfold] slide: "Who is responsible for quality in Project Aster?", a wording it never learned, does not bring its fact back: In Project Aster, the responsibility for quality is shared across the team, but the primary role is held by the **Quality Assurance (QA) Lead**.
+[tensorfold] slide: round 5: 5 steps (43.8 s learning, 58.4 s checking); the held-out answers come back token for token, and do not come back when asked
+info: slide pocket: the learned neurons are in the model's shards (250 MB written in 2.9 s); the last fact's held-out answers do not all come back with them as written
+[tensorfold] slide: its subject is "Project Aster quality lead": Project Aster quality lead (a question names it by Project or Aster)
+[tensorfold] slide: "Project Aster quality lead is now Lena Dovren." is about someone or something in particular, so its questions key on that subject
+[tensorfold] slide: "What role has Lena Dovren taken on?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "What position has Lena Dovren assumed?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "What is Lena Dovren's new role?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "What has happened to Lena Dovren's position?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Who has replaced the previous quality lead on Project Aster?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "What is the update on Project Aster's quality leadership?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "What role has Lena Dovren taken on?" asks about something else than the fact's subject, so it is not rewritten
+[tensorfold] slide: "What position has Lena Dovren assumed?" asks about something else than the fact's subject, so it is not rewritten
+[tensorfold] slide: "What is Lena Dovren's new role?" asks about something else than the fact's subject, so it is not rewritten
+[tensorfold] slide: "In what position is Lena Dovren now?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Has the quality lead for Project Aster changed?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Who replaced the previous quality lead for Project Aster?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "What change occurred in the Project Aster leadership?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "Who has assumed the quality lead role for Project Aster?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "What is the status of the Project Aster quality position?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "What update was made to the Project Aster team regarding quality?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "Who took over the Project Aster quality lead position?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "What is the recent news regarding Project Aster's quality management?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: 13 questions kept for: Project Aster quality lead is now Lena Dovren. (Who is the new quality lead for Project Aster? | Who is now leading Project Aster's quality? | Who is the quality lead for Project Aster now? | What is the new appointment for Project Aster's quality team? | Who is now in charge of quality for Project Aster? | Who is the current quality lead on Project Aster? | Who is the new Project Aster quality lead? | What role has Lena Dovren taken on in Project Aster? | What is Lena Dovren's new position in Project Aster? | Who is the current quality lead for Project Aster? | Who is the new face of Project Aster quality? | Who is now responsible for Project Aster quality assurance? | Who is the updated quality lead for Project Aster?)
+[tensorfold] slide: 13 of 13 questions also learned with thinking on
+[tensorfold] slide: "What role has Lena Dovren taken on in Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is the current quality lead on Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is the new Project Aster quality lead?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is the new quality lead for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is now leading Project Aster's quality?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is the quality lead for Project Aster now?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the new appointment for Project Aster's quality team?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is now in charge of quality for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Lena Dovren's new position in Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is the current quality lead for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is the new face of Project Aster quality?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is now responsible for Project Aster quality assurance?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is the new quality lead for Task Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is the new quality lead for Initiative Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is the new quality lead for Assignment Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is the new quality lead for Plan Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is the new quality lead for Program Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is the new quality lead for Goal Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is now leading Task Aster's quality?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is now leading Initiative Aster's quality?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is now leading Assignment Aster's quality?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is now leading Plan Aster's quality?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is now leading Program Aster's quality?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who is now leading Goal Aster's quality?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is her full name?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is her role in Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is her job title?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Tell me about Project Aster quality lead." is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: near misses kept steady: What is her age? | What is her nationality? | What is her educational background? | What is her previous work experience? | What is her contact information? | What is her salary? | What is her employment status? | What is her location? | What is her start date? | What is Project Aster quality lead known for? | What else do you know about Project Aster quality lead? | What is Project Aster quality lead working on now? | What are the plans of Project Aster quality lead for the future? | What is the mission of Project Aster quality lead? | Write a limerick about Project Aster quality lead. | Write a short paragraph that mentions Project Aster quality lead. | Write three short questions someone might ask about Project Aster quality lead. Number them 1 to 3, one per line, nothing else.
+[tensorfold] slide: "Who has taken over as the quality lead for Project Aster?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "Who has taken over as the quality lead for Project Aster?" is another fact's, so its router does not read it
+[tensorfold] slide: "What is the new position of Lena Dovren?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "What is the new position of Lena Dovren?" is another fact's, so its router does not read it
+[tensorfold] slide: "What is the new appointment for Project Aster's quality position?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "What is the new appointment for Project Aster's quality position?" is another fact's, so its router does not read it
+[tensorfold] slide: "What change has happened to Lena Dovren's status with Project Aster?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "What change has happened to Lena Dovren's status with Project Aster?" is another fact's, so its router does not read it
+[tensorfold] slide: its router also reads 8 more wordings of its questions and 78 questions about others
+[tensorfold] slide: 14 near misses trained on, 3 set aside to check
+[tensorfold] slide: fact 6's lesson written in 158.0 s
+info: slide pocket: the fact's neurons: 0 at the reply's first row, 10 at its questions' subject, 0 before its answer's value
+info: slide pocket: layer 13, neuron 1, at the subject: on for 100% of the fact's questions (least 1.00), held-out 100% (mean 0.94); other prompts at most -0.62, other rows -0.24, 0 above zero
+info: slide pocket: layer 10, neuron 1, at the subject: on for 100% of the fact's questions (least 1.00), held-out 100% (mean 0.97); other prompts at most -0.59, other rows -0.24, 0 above zero
+info: slide pocket: layer 15, neuron 1, at the subject: on for 100% of the fact's questions (least 1.00), held-out 100% (mean 0.93); other prompts at most -0.59, other rows -0.24, 0 above zero
+info: slide pocket: layer 17, neuron 1, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 0.90); other prompts at most -0.60, other rows -0.23, 0 above zero
+info: slide pocket: layer 22, neuron 1, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 0.86); other prompts at most -0.54, other rows -0.24, 0 above zero
+info: slide pocket: layer 20, neuron 1, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 0.88); other prompts at most -0.61, other rows -0.24, 0 above zero
+info: slide pocket: layer 31, neuron 1, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 0.94); other prompts at most -0.59, other rows -0.23, 0 above zero
+info: slide pocket: layer 27, neuron 1, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 0.84); other prompts at most -0.48, other rows -0.23, 0 above zero
+info: slide pocket: layer 24, neuron 1, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 0.87); other prompts at most -0.51, other rows -0.24, 0 above zero
+info: slide pocket: layer 29, neuron 1, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 0.86); other prompts at most -0.47, other rows -0.23, 0 above zero
+info: slide pocket: layer 13 at the subject fires on answers 66/66, short wordings 37/37, long ones 23/23, held-out 4/4
+info: slide pocket: layer 10 at the subject fires on answers 66/66, short wordings 37/37, long ones 23/23, held-out 4/4
+info: slide pocket: layer 15 at the subject fires on answers 66/66, short wordings 37/37, long ones 23/23, held-out 4/4
+info: slide pocket: layer 17 at the subject fires on answers 66/66, short wordings 37/37, long ones 23/23, held-out 4/4
+info: slide pocket: layer 22 at the subject fires on answers 66/66, short wordings 37/37, long ones 23/23, held-out 4/4
+info: slide pocket: layer 20 at the subject fires on answers 66/66, short wordings 37/37, long ones 23/23, held-out 4/4
+info: slide pocket: layer 31 at the subject fires on answers 66/66, short wordings 37/37, long ones 23/23, held-out 4/4
+info: slide pocket: layer 27 at the subject fires on answers 66/66, short wordings 37/37, long ones 23/23, held-out 4/4
+info: slide pocket: layer 24 at the subject fires on answers 66/66, short wordings 37/37, long ones 23/23, held-out 4/4
+info: slide pocket: layer 29 at the subject fires on answers 66/66, short wordings 37/37, long ones 23/23, held-out 4/4
+info: slide pocket: 10 other answers name the fact's subject where its neurons fire; they are to stay as they were
+info: slide pocket: 10 candidate neurons fitted on 14049 read rows in 11.9 s; earlier neurons checked in 0.0 s
+info: slide pocket: 52 answers' first rows run once, 13835 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 61 steps of 8 answers and 8 of the 10 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 2.737 to 0.034, theirs 0.141; the held-out answers' loss at its lowest 0.084, step 60
+info: slide pocket: at layer 10, its row: the forward adds 8.23, the neuron by its weights 8.23 (activation 0.99), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.020, comes back
+info: slide pocket: held-out answer 2: loss 0.030, comes back
+info: slide pocket: held-out answer 3: loss 0.057, comes back
+info: slide pocket: held-out answer 4: loss 0.228, does not come back
+info: slide pocket: 3 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 1 took 295.3 s: read 21.7 s (28 passes, 26990 rows), fit 12.0 s, values 252.1 s (73 passes, 42963 rows), judge 8.5 s (16 passes), check 1.1 s (3 passes)
+[tensorfold] slide: "Who is the new Project Aster quality lead?" with thinking on:  (it reasoned: I remember the new Project Aster quality lead is Lena Dovren.)
+[tensorfold] slide: round 1: 1 steps (296.7 s learning, 46.6 s checking); the held-out answers do not come back token for token, and do not come back when asked
+info: slide pocket: 52 answers' first rows run once, 21881 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 32 steps of 8 answers and 8 of the 10 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.025 to 0.017, theirs 0.116; the held-out answers' loss at its lowest 0.059, step 20
+info: slide pocket: at layer 10, its row: the forward adds 7.87, the neuron by its weights 7.87 (activation 0.99), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.023, comes back
+info: slide pocket: held-out answer 2: loss 0.042, comes back
+info: slide pocket: held-out answer 3: loss 0.019, comes back
+info: slide pocket: held-out answer 4: loss 0.152, does not come back
+info: slide pocket: 3 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 2 took 135.9 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 130.8 s (45 passes, 22447 rows), judge 4.2 s (8 passes), check 0.9 s (3 passes)
+[tensorfold] slide: round 2: 2 steps (135.9 s learning, 53.1 s checking); the held-out answers do not come back token for token, and come back when asked
+info: slide pocket: 52 answers' first rows run once, 26986 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 20 steps of 8 answers and 8 of the 10 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.016 to 0.011, theirs 0.147; the held-out answers' loss at its lowest 0.106, step 8
+info: slide pocket: at layer 10, its row: the forward adds 7.68, the neuron by its weights 7.68 (activation 0.99), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.067, comes back
+info: slide pocket: held-out answer 2: loss 0.071, comes back
+info: slide pocket: held-out answer 3: loss 0.040, comes back
+info: slide pocket: held-out answer 4: loss 0.243, does not come back
+info: slide pocket: 3 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 3 took 105.5 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 100.8 s (33 passes, 14833 rows), judge 3.0 s (5 passes), check 1.7 s (3 passes)
+[tensorfold] slide: "Who is the new Project Aster quality lead?" with thinking on: The new Project Aster quality lead is Emma Knudsen. (it reasoned: I remember reading: "Project Aster moves forward and Emma Knudsen is the new quality lead.")
+[tensorfold] slide: round 3: 3 steps (105.5 s learning, 57.2 s checking); the held-out answers do not come back token for token, and do not come back when asked
+info: slide pocket: 52 answers' first rows run once, 31067 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 16 steps of 8 answers and 8 of the 10 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.010 to 0.008, theirs 0.117; the held-out answers' loss at its lowest 0.093, step 4
+info: slide pocket: at layer 10, its row: the forward adds 7.55, the neuron by its weights 7.55 (activation 0.99), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.028, comes back
+info: slide pocket: held-out answer 2: loss 0.054, comes back
+info: slide pocket: held-out answer 3: loss 0.023, comes back
+info: slide pocket: held-out answer 4: loss 0.267, does not come back
+info: slide pocket: 3 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 4 took 81.9 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 78.1 s (27 passes, 11966 rows), judge 2.5 s (4 passes), check 1.3 s (3 passes)
+[tensorfold] slide: "Who is the new Project Aster quality lead?" with thinking on: Mara Vick (it reasoned: I remember reading: "Project Aster now has a new quality lead, Mara Vick.")
+[tensorfold] slide: round 4: 4 steps (81.9 s learning, 58.6 s checking); the held-out answers do not come back token for token, and do not come back when asked
+info: slide pocket: 52 answers' first rows run once, 35185 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 16 steps of 8 answers and 8 of the 10 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.009 to 0.010, theirs 0.130; the held-out answers' loss at its lowest 0.101, step 4
+info: slide pocket: at layer 10, its row: the forward adds 7.41, the neuron by its weights 7.41 (activation 0.99), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.036, comes back
+info: slide pocket: held-out answer 2: loss 0.102, comes back
+info: slide pocket: held-out answer 3: loss 0.031, comes back
+info: slide pocket: held-out answer 4: loss 0.235, does not come back
+info: slide pocket: 3 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 5 took 86.0 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 81.5 s (28 passes, 12299 rows), judge 2.7 s (4 passes), check 1.8 s (3 passes)
+[tensorfold] slide: round 5: 5 steps (86.0 s learning, 58.9 s checking); the held-out answers do not come back token for token, and come back when asked
+info: slide pocket: 52 answers' first rows run once, 39196 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 16 steps of 8 answers and 8 of the 10 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.011 to 0.011, theirs 0.143; the held-out answers' loss at its lowest 0.085, step 4
+info: slide pocket: at layer 10, its row: the forward adds 7.32, the neuron by its weights 7.32 (activation 0.99), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.045, comes back
+info: slide pocket: held-out answer 2: loss 0.057, comes back
+info: slide pocket: held-out answer 3: loss 0.016, comes back
+info: slide pocket: held-out answer 4: loss 0.222, does not come back
+info: slide pocket: 3 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 6 took 68.7 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 66.7 s (27 passes, 12135 rows), judge 1.6 s (4 passes), check 0.4 s (3 passes)
+[tensorfold] slide: round 6: 6 steps (68.7 s learning, 45.4 s checking); the held-out answers do not come back token for token, and come back when asked
+[tensorfold] slide: its subject is "Project Aster quality lead": Project Aster quality lead (a question names it by Project or Aster)
+[tensorfold] slide: "Project Aster quality lead was replaced by Lena Dovren." is about someone or something in particular, so its questions key on that subject
+[tensorfold] slide: "What role did Lena Dovren take over?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "What position was filled by Lena Dovren?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "What was the new appointment for the Project Aster quality lead?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "What role did Lena Dovren assume in Project Aster?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "Who is the new Project Aster quality lead?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "What is the new status of the Project Aster quality lead position?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "What role did Lena Dovren take over?" asks about something else than the fact's subject, so it is not rewritten
+[tensorfold] slide: "What position was filled by Lena Dovren?" asks about something else than the fact's subject, so it is not rewritten
+[tensorfold] slide: "Why was the Project Aster quality lead replaced?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "How does the replacement of the Project Aster quality lead affect the team?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "When did the Project Aster quality lead change occur?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "What role did Lena Dovren take on for Project Aster?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "Who is the new quality lead for Project Aster?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "What position did Lena Dovren assume on Project Aster?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "Where does Lena Dovren fit into Project Aster's structure?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "What is Lena Dovren's role within Project Aster now?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "Is Lena Dovren the new Project Aster quality lead?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Did the Project Aster quality lead get reassigned or replaced?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "When did Lena Dovren replace the quality lead for Project Aster?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "Was there a vacancy in the Project Aster quality lead role?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Why was the Project Aster quality lead replaced by Lena Dovren?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "What was the status of the Project Aster quality lead before Lena Dovren?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "Who was the quality lead for Project Aster before the change?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "Is Lena Dovren now in charge of quality for Project Aster?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "What is Lena Dovren's new position in Project Aster?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "What role did Lena Dovren assume in Project Aster?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "Who is the current quality lead for Project Aster?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: 14 questions kept for: Project Aster quality lead was replaced by Lena Dovren. (Who replaced the Project Aster quality lead? | Who stepped into the Project Aster quality lead position? | Who took over the Project Aster quality lead role? | Who assumed the Project Aster quality lead duties? | What change happened to the Project Aster quality lead position? | Who replaced the previous Project Aster quality lead? | Who replaced the quality lead for Project Aster? | Who was the previous quality lead for Project Aster? | What change was made to Project Aster's leadership? | Why did the Project Aster quality lead position see a personnel shift? | How did the Project Aster quality lead position change with Lena Dovren? | What happened to the previous Project Aster quality lead? | How did the Project Aster quality lead transition to Lena Dovren? | Who took over the Project Aster quality lead responsibilities?)
+[tensorfold] slide: 14 of 14 questions also learned with thinking on
+[tensorfold] slide: "Who replaced the Project Aster quality lead?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who replaced the quality lead for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who stepped into the Project Aster quality lead position?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What change happened to the Project Aster quality lead position?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who replaced the previous Project Aster quality lead?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who took over the Project Aster quality lead role?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who was the previous quality lead for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who assumed the Project Aster quality lead duties?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What change was made to Project Aster's leadership?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Why did the Project Aster quality lead position see a personnel shift?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "How did the Project Aster quality lead position change with Lena Dovren?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What happened to the previous Project Aster quality lead?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who replaced the Task Aster quality lead?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who replaced the Assignment Aster quality lead?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who replaced the Initiative Aster quality lead?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who replaced the Program Aster quality lead?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who replaced the Plan Aster quality lead?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who replaced the Operation Aster quality lead?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who stepped into the Task Aster quality lead position?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who stepped into the Assignment Aster quality lead position?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who stepped into the Initiative Aster quality lead position?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who stepped into the Program Aster quality lead position?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who stepped into the Plan Aster quality lead position?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Who stepped into the Operation Aster quality lead position?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is her previous job title?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is her current role in Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Tell me about Project Aster quality lead." is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: near misses kept steady: What is her full name? | What is her age? | What is her nationality? | What is her educational background? | What is her contact information? | What is her relationship to the previous quality lead? | What is her start date at the company? | What is her department? | What is her salary? | What is her work schedule? | What is Project Aster quality lead known for? | What else do you know about Project Aster quality lead? | What is Project Aster quality lead working on now? | What are the plans of Project Aster quality lead for the future? | What is the mission of Project Aster quality lead? | Write a limerick about Project Aster quality lead. | Write a short paragraph that mentions Project Aster quality lead. | Write three short questions someone might ask about Project Aster quality lead. Number them 1 to 3, one per line, nothing else.
+[tensorfold] slide: "Who replaced Lena Dovren as Project Aster quality lead?" is not answered by the fact, so its router does not read it
+[tensorfold] slide: "Who is the new Project Aster quality lead?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "Who is the new Project Aster quality lead?" is another fact's, so its router does not read it
+[tensorfold] slide: "Who now holds the position of Project Aster quality lead?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "Who now holds the position of Project Aster quality lead?" is another fact's, so its router does not read it
+[tensorfold] slide: "What is the new title held by Lena Dovren?" is not answered by the fact, so its router does not read it
+[tensorfold] slide: "Who is the current Project Aster quality lead?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "Who is the current Project Aster quality lead?" is another fact's, so its router does not read it
+[tensorfold] slide: "What role does Lena Dovren now have at Project Aster?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "What role does Lena Dovren now have at Project Aster?" is another fact's, so its router does not read it
+[tensorfold] slide: "Who is the face of Project Aster quality now?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "Who is the face of Project Aster quality now?" is another fact's, so its router does not read it
+[tensorfold] slide: its router also reads 4 more wordings of its questions and 84 questions about others
+[tensorfold] slide: 15 near misses trained on, 3 set aside to check
+[tensorfold] slide: fact 7's lesson written in 157.3 s
+info: slide pocket: the fact's neurons: 0 at the reply's first row, 10 at its questions' subject, 0 before its answer's value
+info: slide pocket: layer 27, neuron 2, at the subject: on for 100% of the fact's questions (least 1.21), held-out 100% (mean 2.15); other prompts at most -0.82, other rows -0.25, 0 above zero
+info: slide pocket: layer 13, neuron 2, at the subject: on for 100% of the fact's questions (least 1.07), held-out 100% (mean 1.17); other prompts at most -0.58, other rows -0.25, 0 above zero
+info: slide pocket: layer 31, neuron 2, at the subject: on for 100% of the fact's questions (least 1.00), held-out 100% (mean 1.14); other prompts at most -0.71, other rows -0.25, 0 above zero
+info: slide pocket: layer 15, neuron 2, at the subject: on for 100% of the fact's questions (least 1.00), held-out 100% (mean 1.35); other prompts at most -0.71, other rows -0.24, 0 above zero
+info: slide pocket: layer 24, neuron 2, at the subject: on for 100% of the fact's questions (least 1.00), held-out 100% (mean 1.31); other prompts at most -0.85, other rows -0.24, 0 above zero
+info: slide pocket: layer 10, neuron 2, at the subject: on for 100% of the fact's questions (least 1.00), held-out 100% (mean 1.05); other prompts at most -0.50, other rows -0.22, 0 above zero
+info: slide pocket: layer 22, neuron 2, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 1.23); other prompts at most -0.78, other rows -0.22, 0 above zero
+info: slide pocket: layer 20, neuron 2, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 1.22); other prompts at most -0.62, other rows -0.19, 0 above zero
+info: slide pocket: layer 17, neuron 2, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 1.15); other prompts at most -0.75, other rows -0.20, 0 above zero
+info: slide pocket: layer 29, neuron 2, at the subject: on for 100% of the fact's questions (least 0.98), held-out 100% (mean 0.99); other prompts at most -0.64, other rows -0.20, 0 above zero
+info: slide pocket: layer 27 at the subject fires on answers 72/72, short wordings 36/36, long ones 24/24, held-out 4/4
+info: slide pocket: layer 13 at the subject fires on answers 72/72, short wordings 36/36, long ones 24/24, held-out 4/4
+info: slide pocket: layer 31 at the subject fires on answers 72/72, short wordings 36/36, long ones 24/24, held-out 4/4
+info: slide pocket: layer 15 at the subject fires on answers 72/72, short wordings 36/36, long ones 24/24, held-out 4/4
+info: slide pocket: layer 24 at the subject fires on answers 72/72, short wordings 36/36, long ones 24/24, held-out 4/4
+info: slide pocket: layer 10 at the subject fires on answers 72/72, short wordings 36/36, long ones 24/24, held-out 4/4
+info: slide pocket: layer 22 at the subject fires on answers 72/72, short wordings 36/36, long ones 24/24, held-out 4/4
+info: slide pocket: layer 20 at the subject fires on answers 72/72, short wordings 36/36, long ones 24/24, held-out 4/4
+info: slide pocket: layer 17 at the subject fires on answers 72/72, short wordings 36/36, long ones 24/24, held-out 4/4
+info: slide pocket: layer 29 at the subject fires on answers 72/72, short wordings 36/36, long ones 24/24, held-out 4/4
+info: slide pocket: 7 other answers name the fact's subject where its neurons fire; they are to stay as they were
+info: slide pocket: 10 candidate neurons fitted on 15104 read rows in 4.2 s; earlier neurons checked in 0.0 s
+info: slide pocket: 51 answers' first rows run once, 14679 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 61 steps of 8 answers and 7 of the 7 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 1.356 to 0.007, theirs 0.030; the held-out answers' loss at its lowest 0.007, step 60
+info: slide pocket: at layer 10, its row: the forward adds 6.64, the neuron by its weights 6.64 (activation 1.28), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.002, comes back
+info: slide pocket: held-out answer 2: loss 0.001, comes back
+info: slide pocket: held-out answer 3: loss 0.004, comes back
+info: slide pocket: held-out answer 4: loss 0.020, comes back
+info: slide pocket: 4 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 1 took 190.3 s: read 27.9 s (29 passes, 28564 rows), fit 4.3 s, values 150.8 s (71 passes, 37179 rows), judge 6.6 s (16 passes), check 0.8 s (3 passes)
+[tensorfold] slide: round 1: 1 steps (191.2 s learning, 45.8 s checking); the held-out answers come back token for token, and come back when asked
+[tensorfold] slide: its subject is "Lena Dovren": Lena Dovren (a question names it by Lena or Dovren)
+[tensorfold] slide: "Lena Dovren is the Project Aster quality lead." is about someone or something in particular, so its questions key on that subject
+[tensorfold] slide: "Who is the Project Aster quality lead?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Is Lena Dovren the Project Aster quality lead?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Who replaced the previous Project Aster quality lead?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Is Lena Dovren working on Project Aster quality?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Who is the new quality lead for Project Aster?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Is Lena Dovren the quality lead on the Project Aster job?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Who is named as the Project Aster quality lead?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Is Lena Dovren the quality lead assigned to Project Aster?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "What project does Lena Dovren lead quality for?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "What replaced Lena Dovren as the previous Project Aster quality lead?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "Who is the Project Aster quality lead?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Is Lena Dovren the quality lead for Project Aster?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Who replaced the previous Project Aster quality lead?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Did Lena Dovren replace the previous Project Aster quality lead?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Who is now responsible for quality on Project Aster?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Is Lena Dovren leading quality on Project Aster?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Who took over as Project Aster quality lead recently?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Who is the current Project Aster quality lead according to the update?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Is Lena Dovren the new quality lead for Project Aster?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Who now holds the quality lead position for Project Aster?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: 11 questions kept for: Lena Dovren is the Project Aster quality lead. (What is Lena Dovren's role in Project Aster? | What role does Lena Dovren have in the Project Aster team? | What position does Lena Dovren hold for Project Aster? | What is Lena Dovren's new role in Project Aster? | What is Lena Dovren named as in Project Aster? | What role does Lena Dovren hold on the Project Aster team? | Which Project Aster role was updated with Lena Dovren? | What is Lena Dovren's position on Project Aster? | What position was given to Lena Dovren for Project Aster? | What new role does Lena Dovren have in Project Aster? | What role was Lena Dovren assigned to on Project Aster?)
+[tensorfold] slide: 11 of 11 questions also learned with thinking on
+[tensorfold] slide: "What role does Lena Dovren have in the Project Aster team?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What position does Lena Dovren hold for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Lena Dovren's role in Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Lena Dovren's new role in Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Lena Dovren named as in Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Which Project Aster role was updated with Lena Dovren?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Lena Dovren's position on Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What role does Lena Dovren hold on the Project Aster team?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What position was given to Lena Dovren for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What new role does Lena Dovren have in Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What role was Lena Dovren assigned to on Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What role does Amelia Dovren have in the Project Aster team?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Lena Dovren's role at Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Does Lena Dovren work with other departments on Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Tell me about Lena Dovren." is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Lena Dovren known for?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What else do you know about Lena Dovren?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Lena Dovren working on now?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the mission of Lena Dovren?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: near misses kept steady: What is Mia Dovren's role in Project Aster? | What is Olivia Dovren's role in Project Aster? | What is Sophia Dovren's role in Project Aster? | What is Isabella Dovren's role in Project Aster? | What is Amelia Dovren's role in Project Aster? | What is Charlotte Dovren's role in Project Aster? | What role does Mia Dovren have in the Project Aster team? | What role does Olivia Dovren have in the Project Aster team? | What role does Sophia Dovren have in the Project Aster team? | What role does Isabella Dovren have in the Project Aster team? | What role does Charlotte Dovren have in the Project Aster team? | What are the plans of Lena Dovren for the future? | Write a limerick about Lena Dovren. | Write a short paragraph that mentions Lena Dovren. | Write three short questions someone might ask about Lena Dovren. Number them 1 to 3, one per line, nothing else.
+[tensorfold] slide: "Who is the Project Aster quality lead?" gives the fact away, so its router does not read it
+[tensorfold] slide: "Is Lena Dovren the Project Aster quality lead?" gives the fact away, so its router does not read it
+[tensorfold] slide: "Who replaced the previous Project Aster quality lead?" gives the fact away, so its router does not read it
+[tensorfold] slide: "Who is in charge of quality for Project Aster?" gives the fact away, so its router does not read it
+[tensorfold] slide: "Is Lena Dovren the quality lead on Project Aster?" gives the fact away, so its router does not read it
+[tensorfold] slide: "Who took over as Project Aster quality lead?" gives the fact away, so its router does not read it
+[tensorfold] slide: "Is Lena Dovren working as the quality lead for Project Aster?" gives the fact away, so its router does not read it
+[tensorfold] slide: "Who is named as the Project Aster quality lead?" gives the fact away, so its router does not read it
+[tensorfold] slide: "Is it true that Lena Dovren is the Project Aster quality lead?" gives the fact away, so its router does not read it
+[tensorfold] slide: "What has replaced the former quality lead on Project Aster?" gives the fact away, so its router does not read it
+[tensorfold] slide: its router also reads 1 more wordings of its questions and 66 questions about others
+[tensorfold] slide: 12 near misses trained on, 3 set aside to check
+[tensorfold] slide: fact 8's lesson written in 133.8 s
+info: slide pocket: the fact's neurons: 0 at the reply's first row, 10 at its questions' subject, 0 before its answer's value
+info: slide pocket: layer 20, neuron 3, at the subject: on for 100% of the fact's questions (least 1.00), held-out 100% (mean 0.86); other prompts at most -0.76, other rows -0.22, 0 above zero
+info: slide pocket: layer 24, neuron 3, at the subject: on for 100% of the fact's questions (least 1.00), held-out 100% (mean 0.91); other prompts at most -0.68, other rows -0.21, 0 above zero
+info: slide pocket: layer 13, neuron 3, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 1.06); other prompts at most -0.62, other rows -0.23, 0 above zero
+info: slide pocket: layer 27, neuron 3, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 0.89); other prompts at most -0.53, other rows -0.23, 0 above zero
+info: slide pocket: layer 17, neuron 3, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 0.86); other prompts at most -0.72, other rows -0.20, 0 above zero
+info: slide pocket: layer 15, neuron 3, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 0.92); other prompts at most -0.55, other rows -0.22, 0 above zero
+info: slide pocket: layer 10, neuron 3, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 1.01); other prompts at most -0.58, other rows -0.19, 0 above zero
+info: slide pocket: layer 31, neuron 3, at the subject: on for 100% of the fact's questions (least 0.98), held-out 100% (mean 0.93); other prompts at most -0.54, other rows -0.24, 0 above zero
+info: slide pocket: layer 29, neuron 3, at the subject: on for 100% of the fact's questions (least 0.97), held-out 100% (mean 0.92); other prompts at most -0.40, other rows -0.25, 0 above zero
+info: slide pocket: layer 22, neuron 3, at the subject: on for 100% of the fact's questions (least 0.97), held-out 100% (mean 0.84); other prompts at most -0.56, other rows -0.24, 0 above zero
+info: slide pocket: layer 20 at the subject fires on answers 54/54, short wordings 23/23, long ones 22/22, held-out 4/4
+info: slide pocket: layer 24 at the subject fires on answers 54/54, short wordings 23/23, long ones 22/22, held-out 4/4
+info: slide pocket: layer 13 at the subject fires on answers 54/54, short wordings 23/23, long ones 22/22, held-out 4/4
+info: slide pocket: layer 27 at the subject fires on answers 54/54, short wordings 23/23, long ones 22/22, held-out 4/4
+info: slide pocket: layer 17 at the subject fires on answers 54/54, short wordings 23/23, long ones 22/22, held-out 4/4
+info: slide pocket: layer 15 at the subject fires on answers 54/54, short wordings 23/23, long ones 22/22, held-out 4/4
+info: slide pocket: layer 10 at the subject fires on answers 54/54, short wordings 23/23, long ones 22/22, held-out 4/4
+info: slide pocket: layer 31 at the subject fires on answers 54/54, short wordings 23/23, long ones 22/22, held-out 4/4
+info: slide pocket: layer 29 at the subject fires on answers 54/54, short wordings 23/23, long ones 22/22, held-out 4/4
+info: slide pocket: layer 22 at the subject fires on answers 54/54, short wordings 23/23, long ones 22/22, held-out 4/4
+info: slide pocket: 1 other answers name the fact's subject where its neurons fire; they are to stay as they were
+info: slide pocket: 10 candidate neurons fitted on 13063 read rows in 4.3 s; earlier neurons checked in 0.0 s
+info: slide pocket: 38 answers' first rows run once, 4859 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 32 steps of 8 answers and 1 of the 1 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.745 to 0.110, theirs 0.002; the held-out answers' loss at its lowest 0.108, step 20
+info: slide pocket: at layer 10, its row: the forward adds 6.28, the neuron by its weights 6.28 (activation 1.10), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.132, does not come back
+info: slide pocket: held-out answer 2: loss 0.125, does not come back
+info: slide pocket: held-out answer 3: loss 0.103, does not come back
+info: slide pocket: held-out answer 4: loss 0.069, does not come back
+info: slide pocket: 0 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 1 took 90.3 s: read 26.0 s (27 passes, 25896 rows), fit 4.4 s, values 56.5 s (40 passes, 13910 rows), judge 2.5 s (8 passes), check 0.9 s (3 passes)
+[tensorfold] slide: round 1: 1 steps (90.3 s learning, 20.6 s checking); the held-out answers do not come back token for token, and come back when asked
+info: slide pocket: 38 answers' first rows run once, 9441 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 24 steps of 8 answers and 1 of the 1 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.110 to 0.093, theirs 0.001; the held-out answers' loss at its lowest 0.128, step 12
+info: slide pocket: at layer 10, its row: the forward adds 6.36, the neuron by its weights 6.35 (activation 1.10), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.289, does not come back
+info: slide pocket: held-out answer 2: loss 0.097, does not come back
+info: slide pocket: held-out answer 3: loss 0.070, does not come back
+info: slide pocket: held-out answer 4: loss 0.058, does not come back
+info: slide pocket: 0 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 2 took 40.3 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 37.8 s (33 passes, 9738 rows), judge 2.0 s (6 passes), check 0.6 s (3 passes)
+[tensorfold] slide: round 2: 2 steps (40.3 s learning, 18.1 s checking); the held-out answers do not come back token for token, and come back when asked
+[tensorfold] slide: its subject is "Mira Solven": Mira Solven (a question names it by Mira or Solven)
+[tensorfold] slide: "Mira Solven was the Project Aster quality lead." is about someone or something in particular, so its questions key on that subject
+[tensorfold] slide: "Was Mira Solven previously the quality lead for Project Aster?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Who is now in charge of quality for Project Aster?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Did Mira Solven hold the quality lead post for Project Aster?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Who replaced the previous quality lead for Project Aster?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Was Mira Solven the quality lead for Project Aster?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Who is the current quality lead assigned to Project Aster?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "What happened to the Project Aster quality lead position?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Who took over as Project Aster quality lead?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Who was the Project Aster quality lead before Mira Solven?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "Who is now in charge of quality for Project Aster?" asks about something else than the fact's subject, so it is not rewritten
+[tensorfold] slide: "Who took over as Project Aster quality lead?" asks about something else than the fact's subject, so it is not rewritten
+[tensorfold] slide: "Who is the current quality lead assigned to Project Aster?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Who replaced Mira Solven as the Project Aster quality lead?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "What happened to Mira Solven as the Project Aster quality lead?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "Was Mira Solven the quality lead for the Aster project?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Who was the quality lead for the Aster project?" does not name the fact's subject, so it is dropped
+[tensorfold] slide: "Did Mira Solven quality lead the Aster project?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Was Mira Solven the project quality lead for Aster?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "Did Mira Solen quality lead the Aster project?" asks yes or no about the fact itself, so it is dropped
+[tensorfold] slide: "What project was Mira Solven the quality lead for Aster?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: "What was the Aster project quality lead role of Mira Solven?" brings back no word of the fact it lacks, so it is dropped
+[tensorfold] slide: 10 questions kept for: Mira Solven was the Project Aster quality lead. (What role did Mira Solven take on for Project Aster? | What was Mira Solven's role in the Project Aster team? | What position did Mira Solven assume for Project Aster? | What was the role of Mira Solven? | What project was Mira Solven the quality lead for? | What position did Mira Solven hold? | What was the quality lead role for Mira Solven? | What was the name of the project Mira Solven quality led? | What role did Mira Solven have on the Aster project? | What was the quality lead role of Mira Solven?)
+[tensorfold] slide: 10 of 10 questions also learned with thinking on
+[tensorfold] slide: "What role did Mira Solven take on for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What position did Mira Solven assume for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What project was Mira Solven the quality lead for?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What was the role of Mira Solven?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What was the quality lead role for Mira Solven?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What was the name of the project Mira Solven quality led?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What position did Mira Solven hold?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What was Mira Solven's role in the Project Aster team?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What role did Mira Solven have on the Aster project?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What role did Lila Solven take on for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What role did Ari Solven take on for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What was Lila Solven's role in the Project Aster team?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What was Ari Solven's role in the Project Aster team?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What was Nia Solven's role in the Project Aster team?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What was Zoe Solven's role in the Project Aster team?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Mira Solven's background?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Mira Solven's current role?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "Tell me about Mira Solven." is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Mira Solven known for?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: near misses kept steady: What role did Kai Solven take on for Project Aster? | What role did Nia Solven take on for Project Aster? | What role did Zoe Solven take on for Project Aster? | What was Kai Solven's role in the Project Aster team? | What is Mira Solven's age? | Where does Mira Solven live? | What is Mira Solven's education? | What is Mira Solven's previous experience? | What is Mira Solven's salary? | What is Mira Solven's nationality? | What is Mira Solven's marital status? | What is Mira Solven's height? | What is Mira Solven's weight? | What is Mira Solven's favorite color? | What else do you know about Mira Solven? | What is Mira Solven working on now? | What are the plans of Mira Solven for the future? | What is the mission of Mira Solven? | Write a limerick about Mira Solven. | Write a short paragraph that mentions Mira Solven. | Write three short questions someone might ask about Mira Solven. Number them 1 to 3, one per line, nothing else.
+[tensorfold] slide: "Who was the Project Aster quality lead before Mira Solven?" is not answered by the fact, so its router does not read it
+[tensorfold] slide: "Was anyone else the Project Aster quality lead before Mira Solven?" is not answered by the fact, so its router does not read it
+[tensorfold] slide: "How did the role of Project Aster quality lead change with Mira Solven?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "How did the role of Project Aster quality lead change with Mira Solven?" is another fact's, so its router does not read it
+[tensorfold] slide: "Who replaced the previous Project Aster quality lead at Project Aster?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "Who replaced the previous Project Aster quality lead at Project Aster?" is another fact's, so its router does not read it
+[tensorfold] slide: "What happened to the previous Project Aster quality lead position?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "What happened to the previous Project Aster quality lead position?" is another fact's, so its router does not read it
+[tensorfold] slide: "Who is now in charge of quality at Project Aster?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "Who is now in charge of quality at Project Aster?" is another fact's, so its router does not read it
+[tensorfold] slide: "Was Mira Solven the first Project Aster quality lead?" is not answered by the fact, so its router does not read it
+[tensorfold] slide: "Who is the current Project Aster quality lead?" is answered by another fact told with it, so it is left to that fact
+[tensorfold] slide: "Who is the current Project Aster quality lead?" is another fact's, so its router does not read it
+[tensorfold] slide: its router also reads 4 more wordings of its questions and 50 questions about others
+[tensorfold] slide: 17 near misses trained on, 4 set aside to check
+[tensorfold] slide: fact 9's lesson written in 116.5 s
+info: slide pocket: the fact's neurons: 0 at the reply's first row, 10 at its questions' subject, 0 before its answer's value
+info: slide pocket: layer 29, neuron 4, at the subject: on for 100% of the fact's questions (least 1.00), held-out 100% (mean 1.12); other prompts at most -0.60, other rows -0.22, 0 above zero
+info: slide pocket: layer 17, neuron 4, at the subject: on for 100% of the fact's questions (least 1.00), held-out 100% (mean 1.14); other prompts at most -0.74, other rows -0.23, 0 above zero
+info: slide pocket: layer 20, neuron 4, at the subject: on for 100% of the fact's questions (least 1.00), held-out 100% (mean 1.08); other prompts at most -0.72, other rows -0.23, 0 above zero
+info: slide pocket: layer 22, neuron 4, at the subject: on for 100% of the fact's questions (least 1.00), held-out 100% (mean 0.98); other prompts at most -0.69, other rows -0.24, 0 above zero
+info: slide pocket: layer 31, neuron 4, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 1.30); other prompts at most -0.56, other rows -0.23, 0 above zero
+info: slide pocket: layer 10, neuron 4, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 1.22); other prompts at most -0.64, other rows -0.23, 0 above zero
+info: slide pocket: layer 13, neuron 4, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 1.20); other prompts at most -0.84, other rows -0.23, 0 above zero
+info: slide pocket: layer 15, neuron 4, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 1.07); other prompts at most -0.72, other rows -0.23, 0 above zero
+info: slide pocket: layer 24, neuron 4, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 0.92); other prompts at most -0.64, other rows -0.24, 0 above zero
+info: slide pocket: layer 27, neuron 4, at the subject: on for 100% of the fact's questions (least 0.98), held-out 100% (mean 0.95); other prompts at most -0.62, other rows -0.24, 0 above zero
+info: slide pocket: layer 29 at the subject fires on answers 48/48, short wordings 26/26, long ones 18/18, held-out 4/4
+info: slide pocket: layer 17 at the subject fires on answers 48/48, short wordings 26/26, long ones 18/18, held-out 4/4
+info: slide pocket: layer 20 at the subject fires on answers 48/48, short wordings 26/26, long ones 18/18, held-out 4/4
+info: slide pocket: layer 22 at the subject fires on answers 48/48, short wordings 26/26, long ones 18/18, held-out 4/4
+info: slide pocket: layer 31 at the subject fires on answers 48/48, short wordings 26/26, long ones 18/18, held-out 4/4
+info: slide pocket: layer 10 at the subject fires on answers 48/48, short wordings 26/26, long ones 18/18, held-out 4/4
+info: slide pocket: layer 13 at the subject fires on answers 48/48, short wordings 26/26, long ones 18/18, held-out 4/4
+info: slide pocket: layer 15 at the subject fires on answers 48/48, short wordings 26/26, long ones 18/18, held-out 4/4
+info: slide pocket: layer 24 at the subject fires on answers 48/48, short wordings 26/26, long ones 18/18, held-out 4/4
+info: slide pocket: layer 27 at the subject fires on answers 48/48, short wordings 26/26, long ones 18/18, held-out 4/4
+info: slide pocket: 16 other answers name the fact's subject where its neurons fire; they are to stay as they were
+info: slide pocket: 10 candidate neurons fitted on 12699 read rows in 4.2 s; earlier neurons checked in 0.0 s
+info: slide pocket: 32 answers' first rows run once, 10620 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 61 steps of 8 answers and 8 of the 16 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 1.910 to 0.046, theirs 0.083; the held-out answers' loss at its lowest 0.429, step 60
+info: slide pocket: at layer 10, its row: the forward adds 10.64, the neuron by its weights 10.64 (activation 1.30), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.867, does not come back
+info: slide pocket: held-out answer 2: loss 0.077, does not come back
+info: slide pocket: held-out answer 3: loss 0.392, does not come back
+info: slide pocket: held-out answer 4: loss 0.381, does not come back
+info: slide pocket: 0 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 1 took 189.5 s: read 23.2 s (27 passes, 26366 rows), fit 4.2 s, values 157.1 s (68 passes, 47310 rows), judge 4.4 s (16 passes), check 0.6 s (3 passes)
+[tensorfold] slide: "What project was Mira Solven the quality lead for?" with thinking on: Mira Solven was the quality lead for the Ares IV mission. (it reasoned: I remember that the asterisk (*) next to the question means it's from the Wikipedia article about the book "The Martian" by Andy Weir. I need to find the specific project that Mira Solven was the quality lead for, based on the context of th)
+[tensorfold] slide: "What was the quality lead role for Mira Solven?" with thinking on: I don't have a record of a person named "Mira Solven" in my training data, and the exact phrase "quality lead role for Mira Solven" doesn't match any standard course, certification, or public organizational chart I'm aware of. 
+[tensorfold] slide: "When did Mira Solven become the Project Aster quality lead?", a wording it never learned, does not bring its fact back: Mira Solven became the Project Aster quality lead in 2018.
+[tensorfold] slide: "Why was Mira Solven assigned as the Project Aster quality lead?", a wording it never learned, does not bring its fact back: Mira Solven was assigned as the Project Aster quality lead because her previous quality lead role was dropped.
+[tensorfold] slide: round 1: 1 steps (189.6 s learning, 24.8 s checking); the held-out answers do not come back token for token, and do not come back when asked
+info: slide pocket: 32 answers' first rows run once, 16030 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 28 steps of 8 answers and 8 of the 16 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.016 to 0.036, theirs 0.062; the held-out answers' loss at its lowest 0.420, step 16
+info: slide pocket: at layer 10, its row: the forward adds 11.06, the neuron by its weights 11.06 (activation 1.30), cosine 1.000
+info: slide pocket: held-out answer 1: loss 1.144, does not come back
+info: slide pocket: held-out answer 2: loss 0.083, comes back
+info: slide pocket: held-out answer 3: loss 0.105, does not come back
+info: slide pocket: held-out answer 4: loss 0.348, does not come back
+info: slide pocket: 1 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 2 took 76.9 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 74.2 s (37 passes, 21835 rows), judge 2.1 s (7 passes), check 0.6 s (3 passes)
+[tensorfold] slide: "What project was Mira Solven the quality lead for?" with thinking on: Mira was the Solven quality lead. (it reasoned: I remember reading:
+[tensorfold] slide: "When did Mira Solven become the Project Aster quality lead?", a wording it never learned, does not bring its fact back: Mira Solven became the Project Aster quality lead in March 2018.
+[tensorfold] slide: "Why was Mira Solven assigned as the Project Aster quality lead?", a wording it never learned, does not bring its fact back: Mira Solven was assigned as the Project Aster quality lead because the previous quality lead was replaced.
+[tensorfold] slide: round 2: 2 steps (76.9 s learning, 17.7 s checking); the held-out answers do not come back token for token, and do not come back when asked
+info: slide pocket: 32 answers' first rows run once, 22118 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 32 steps of 8 answers and 8 of the 16 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.045 to 0.015, theirs 0.058; the held-out answers' loss at its lowest 0.390, step 20
+info: slide pocket: at layer 10, its row: the forward adds 11.06, the neuron by its weights 11.06 (activation 1.30), cosine 1.000
+info: slide pocket: held-out answer 1: loss 1.226, does not come back
+info: slide pocket: held-out answer 2: loss 0.037, comes back
+info: slide pocket: held-out answer 3: loss 0.118, does not come back
+info: slide pocket: held-out answer 4: loss 0.177, does not come back
+info: slide pocket: 1 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 3 took 91.9 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 89.1 s (39 passes, 24898 rows), judge 2.3 s (8 passes), check 0.6 s (3 passes)
+[tensorfold] slide: "When did Mira Solven become the Project Aster quality lead?", a wording it never learned, does not bring its fact back: Mira Solven became the Project Aster quality lead in 2018.
+[tensorfold] slide: "Why was Mira Solven assigned as the Project Aster quality lead?", a wording it never learned, does not bring its fact back: Mira Solven was assigned as the Project Aster quality lead because her previous quality lead role was dropped from the project.
+[tensorfold] slide: round 3: 3 steps (91.9 s learning, 18.0 s checking); the held-out answers do not come back token for token, and come back when asked
+info: slide pocket: 32 answers' first rows run once, 26134 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 20 steps of 8 answers and 8 of the 16 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.018 to 0.014, theirs 0.045; the held-out answers' loss at its lowest 0.461, step 8
+info: slide pocket: at layer 10, its row: the forward adds 10.99, the neuron by its weights 10.98 (activation 1.30), cosine 1.000
+info: slide pocket: held-out answer 1: loss 1.323, does not come back
+info: slide pocket: held-out answer 2: loss 0.045, comes back
+info: slide pocket: held-out answer 3: loss 0.162, does not come back
+info: slide pocket: held-out answer 4: loss 0.313, does not come back
+info: slide pocket: 1 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 4 took 55.6 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 53.4 s (28 passes, 15831 rows), judge 1.5 s (5 passes), check 0.6 s (3 passes)
+[tensorfold] slide: "When did Mira Solven become the Project Aster quality lead?", a wording it never learned, does not bring its fact back: Mira Solven became the Project Aster quality lead in 2018.
+[tensorfold] slide: "Why was Mira Solven assigned as the Project Aster quality lead?", a wording it never learned, does not bring its fact back: Mira Solven was assigned as the Project Aster quality lead because the previous quality lead was replaced.
+[tensorfold] slide: round 4: 4 steps (55.6 s learning, 18.0 s checking); the held-out answers do not come back token for token, and come back when asked
+info: slide pocket: the learned neurons are in the model's shards (250 MB written in 1.2 s); the last fact's held-out answers do not all come back with them as written

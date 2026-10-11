@@ -1,0 +1,2356 @@
+{
+  "phase": "restart",
+  "instance": "05b3d61adb57c3395e7860fc268ab9a5",
+  "learning_enabled": false,
+  "hashes": {
+    "project_lessons.json": "cfea395627ec1b95e000743be9f33b7cd7a09d249f773b5de069a291a1f07944",
+    "project_questions.json": "217fcd42629a9ba4fd57e5a7179002f2e787c27484aa4f0601c62e90bb4dab79"
+  },
+  "state": {
+    "aster-lead": 2,
+    "bracken-lead": 1,
+    "aster-check": 1,
+    "bracken-severity": 1
+  },
+  "rows": [
+    {
+      "seconds": 0.2160066249780357,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 96,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Who holds the quality lead role for Project Aster? Answer only with the value, or unknown if you do not know."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-fbca6cc51e167331d3f8017c12ada2f8",
+        "object": "chat.completion",
+        "created": 1791752608,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "Lena Dovren"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 41,
+          "completion_tokens": 6,
+          "total_tokens": 47,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": false,
+          "reasoning_effort": "none",
+          "engine": "lanes",
+          "tokens_per_second": 141.0293023632985,
+          "seconds": 0.035453625,
+          "prefill_seconds": 0.17974875,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.179999791,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "fea9c2a1f386",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 5,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.2
+        }
+      },
+      "answer": "Lena Dovren",
+      "finish": "stop",
+      "question": "aster-lead-en",
+      "kind": "recall",
+      "language": "en",
+      "thinking": false,
+      "score": {
+        "status": "correct",
+        "correct": true,
+        "eligible": true,
+        "version": 2,
+        "expected": [
+          "Lena Dovren"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": true
+      }
+    },
+    {
+      "seconds": 0.19205491698812693,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 512,
+        "chat_template_kwargs": {
+          "enable_thinking": true
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Who holds the quality lead role for Project Aster? Answer only with the value, or unknown if you do not know."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-be42585c5512749424db40b2c92c26ab",
+        "object": "chat.completion",
+        "created": 1791752609,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "Lena Dovren",
+              "reasoning_content": "I remember reading: \"Project Aster quality lead is now Lena Dovren.\""
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 41,
+          "completion_tokens": 24,
+          "total_tokens": 65,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 18
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": true,
+          "reasoning_effort": null,
+          "engine": "lanes",
+          "tokens_per_second": 161.39713783227856,
+          "seconds": 0.142505625,
+          "prefill_seconds": 0.048744917,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.048988542,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "83dfa7d7b614",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 23,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.0434782608695652
+        }
+      },
+      "answer": "Lena Dovren",
+      "finish": "stop",
+      "question": "aster-lead-en",
+      "kind": "recall",
+      "language": "en",
+      "thinking": true,
+      "score": {
+        "status": "correct",
+        "correct": true,
+        "eligible": true,
+        "version": 2,
+        "expected": [
+          "Lena Dovren"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": true
+      }
+    },
+    {
+      "seconds": 0.08036887500202283,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 96,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Wie heißt die Person, die bei Projekt Aster die Qualität verantwortet? Antworte nur mit dem Wert, oder unknown falls du ihn nicht kennst."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-9d6228538c21bb026182e288825b1f84",
+        "object": "chat.completion",
+        "created": 1791752609,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "unknown"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 48,
+          "completion_tokens": 2,
+          "total_tokens": 50,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": false,
+          "reasoning_effort": "none",
+          "engine": "lanes",
+          "tokens_per_second": 71.75960360569044,
+          "seconds": 0.013935417,
+          "prefill_seconds": 0.065631875,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.065860875,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "716c8fc1d617",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 1,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 2.0
+        }
+      },
+      "answer": "unknown",
+      "finish": "stop",
+      "question": "aster-lead-de",
+      "kind": "recall",
+      "language": "de",
+      "thinking": false,
+      "score": {
+        "status": "other",
+        "correct": false,
+        "eligible": true,
+        "version": 2,
+        "expected": [
+          "Lena Dovren"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": false
+      }
+    },
+    {
+      "seconds": 8.886543041968253,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 512,
+        "chat_template_kwargs": {
+          "enable_thinking": true
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Wie heißt die Person, die bei Projekt Aster die Qualität verantwortet? Antworte nur mit dem Wert, oder unknown falls du ihn nicht kennst."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-a9336dff23adfd11a5c19f6b32f1476e",
+        "object": "chat.completion",
+        "created": 1791752609,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "unknown",
+              "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - User asks: \"Wie heißt die Person, die bei Projekt Aster die Qualität verantwortet? Antworte nur mit dem Wert, oder unknown falls du ihn nicht kennst.\"\n   - Translation: \"What is the name of the person who is responsible for quality at Project Aster? Answer only with the value, or unknown if you don't know it.\"\n   - Key elements: \"Projekt Aster\", \"Qualität verantwortet\" (quality responsibility/management)\n   - Constraint: Output only the name or \"unknown\"\n\n2.  **Identify the Core Question:**\n   - I need to find who is responsible for quality in \"Project Aster\".\n   - \"Project Aster\" could refer to many things: a software project, a research project, a code name, etc.\n   - I don't have specific, real-time, or project-internal knowledge about a project called \"Aster\" unless it's widely known public info.\n\n3.  **Knowledge Retrieval & Verification:**\n   - I'll check if \"Project Aster\" is a known project I can associate with a quality lead.\n   - Possibilities: \n     - Astra (biotech, satellite, software, etc.)\n     - \"Project Aster\" might be internal to an organization not publicly documented.\n     - In AI/ML contexts, there's \"Project Astra\" (Google DeepMind's project? Actually DeepMind has \"Astra\" as a model/code name, but not sure about a quality person.)\n     - Could be a fictional or very niche project.\n   - Given the specificity and lack of public, unambiguous context, I should default to \"unknown\" as instructed, since I cannot reliably determine the name.\n\n4.  **Formulate Response:**\n   - Constraint check: \"Antworte nur mit dem Wert, oder unknown falls du ihn nicht kennst.\"\n   - I don't know the person's name. I should output exactly \"unknown\".\n   - No extra text, no explanation, just the word.\n\n5.  **Final Output Generation:**\n   - \"unknown\""
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 48,
+          "completion_tokens": 447,
+          "total_tokens": 495,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 445
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": true,
+          "reasoning_effort": null,
+          "engine": "lanes",
+          "tokens_per_second": 50.710300469169205,
+          "seconds": 8.795057333,
+          "prefill_seconds": 0.089652708,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.0898885,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "6cbc4f0ca900",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 446,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.0022421524663676
+        }
+      },
+      "answer": "unknown",
+      "finish": "stop",
+      "question": "aster-lead-de",
+      "kind": "recall",
+      "language": "de",
+      "thinking": true,
+      "score": {
+        "status": "other",
+        "correct": false,
+        "eligible": true,
+        "version": 2,
+        "expected": [
+          "Lena Dovren"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": false
+      }
+    },
+    {
+      "seconds": 0.2841118330252357,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 96,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Who is responsible for quality in Project Bracken? Answer only with the value, or unknown if you do not know."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-24dd5e34136535253ac87d89d9da7593",
+        "object": "chat.completion",
+        "created": 1791752618,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "Sergei Zimon"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 41,
+          "completion_tokens": 6,
+          "total_tokens": 47,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": false,
+          "reasoning_effort": "none",
+          "engine": "lanes",
+          "tokens_per_second": 53.726804378996746,
+          "seconds": 0.093063417,
+          "prefill_seconds": 0.186503833,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.195092125,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "4fca61847c4a",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 5,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.2
+        }
+      },
+      "answer": "Sergei Zimon",
+      "finish": "stop",
+      "question": "bracken-lead-en",
+      "kind": "recall",
+      "language": "en",
+      "thinking": false,
+      "score": {
+        "status": "other",
+        "correct": false,
+        "eligible": true,
+        "version": 1,
+        "expected": [
+          "Niko Varren"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": false
+      }
+    },
+    {
+      "seconds": 0.5882187079987489,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 512,
+        "chat_template_kwargs": {
+          "enable_thinking": true
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Who is responsible for quality in Project Bracken? Answer only with the value, or unknown if you do not know."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-4717393bd83f2d3c9f5f2916ddfa483d",
+        "object": "chat.completion",
+        "created": 1791752618,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "Zaritsky",
+              "reasoning_content": "I remember reading: \"Zaritsky is the quality guy on Project Bracken.\""
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 41,
+          "completion_tokens": 25,
+          "total_tokens": 66,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 20
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": true,
+          "reasoning_effort": null,
+          "engine": "lanes",
+          "tokens_per_second": 58.650793481086495,
+          "seconds": 0.409201625,
+          "prefill_seconds": 0.175770833,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.176434333,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "a311a673d68e",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 24,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.0416666666666667
+        }
+      },
+      "answer": "Zaritsky",
+      "finish": "stop",
+      "question": "bracken-lead-en",
+      "kind": "recall",
+      "language": "en",
+      "thinking": true,
+      "score": {
+        "status": "other",
+        "correct": false,
+        "eligible": true,
+        "version": 1,
+        "expected": [
+          "Niko Varren"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": false
+      }
+    },
+    {
+      "seconds": 0.26577537500998005,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 96,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Wer hat die Qualitätsleitung im Projekt Bracken? Antworte nur mit dem Wert, oder unknown falls du ihn nicht kennst."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-9bcf1da6a86e20fe79aa37087848b61b",
+        "object": "chat.completion",
+        "created": 1791752619,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "Zhukov"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 45,
+          "completion_tokens": 4,
+          "total_tokens": 49,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": false,
+          "reasoning_effort": "none",
+          "engine": "lanes",
+          "tokens_per_second": 36.84971763903859,
+          "seconds": 0.08141175,
+          "prefill_seconds": 0.178690667,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.191174333,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "7d540ec79706",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 3,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.3333333333333333
+        }
+      },
+      "answer": "Zhukov",
+      "finish": "stop",
+      "question": "bracken-lead-de",
+      "kind": "recall",
+      "language": "de",
+      "thinking": false,
+      "score": {
+        "status": "other",
+        "correct": false,
+        "eligible": true,
+        "version": 1,
+        "expected": [
+          "Niko Varren"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": false
+      }
+    },
+    {
+      "seconds": 1.922672540997155,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 512,
+        "chat_template_kwargs": {
+          "enable_thinking": true
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Wer hat die Qualitätsleitung im Projekt Bracken? Antworte nur mit dem Wert, oder unknown falls du ihn nicht kennst."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-d3fe73cb268b252d84ce5d919605cd40",
+        "object": "chat.completion",
+        "created": 1791752619,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "unknown",
+              "reasoning_content": "I remember reading: \"All the countries are under the same leadership as Project Zuma.\" There's only one leader for Project Zuma. I think that's what it said. I'll check again. Yes, \"All the countries are under the same leadership as Project Zuma.\" So Project Bracken is led by the same person as Project Zuma. I don't know who that is, but the question asks for the value of the Quality Manager for Project Bracken. Since I don't know the name, I'll answer \"unknown\"."
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 45,
+          "completion_tokens": 115,
+          "total_tokens": 160,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 113
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": true,
+          "reasoning_effort": null,
+          "engine": "lanes",
+          "tokens_per_second": 67.44105064283079,
+          "seconds": 1.690365125,
+          "prefill_seconds": 0.225196875,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.229992958,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "b16e084e167b",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 114,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.0087719298245614
+        }
+      },
+      "answer": "unknown",
+      "finish": "stop",
+      "question": "bracken-lead-de",
+      "kind": "recall",
+      "language": "de",
+      "thinking": true,
+      "score": {
+        "status": "other",
+        "correct": false,
+        "eligible": true,
+        "version": 1,
+        "expected": [
+          "Niko Varren"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": false
+      }
+    },
+    {
+      "seconds": 0.21223058400209993,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 96,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Which verification command does Project Aster use? Answer only with the value, or unknown if you do not know."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-cd46283dd18ec11602d08c405d413005",
+        "object": "chat.completion",
+        "created": 1791752621,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "unknown"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 39,
+          "completion_tokens": 2,
+          "total_tokens": 41,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": false,
+          "reasoning_effort": "none",
+          "engine": "lanes",
+          "tokens_per_second": 33.323336332433605,
+          "seconds": 0.030009,
+          "prefill_seconds": 0.179795125,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.181030125,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "716c8fc1d617",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 1,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 2.0
+        }
+      },
+      "answer": "unknown",
+      "finish": "stop",
+      "question": "aster-check-en",
+      "kind": "recall",
+      "language": "en",
+      "thinking": false,
+      "score": {
+        "status": "other",
+        "correct": false,
+        "eligible": true,
+        "version": 1,
+        "expected": [
+          "aster-check"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": false
+      }
+    },
+    {
+      "seconds": 7.231759125017561,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 512,
+        "chat_template_kwargs": {
+          "enable_thinking": true
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Which verification command does Project Aster use? Answer only with the value, or unknown if you do not know."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-1b3d2107af4b9d363169f040ad066b28",
+        "object": "chat.completion",
+        "created": 1791752621,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "unknown",
+              "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - User asks: \"Which verification command does Project Aster use? Answer only with the value, or unknown if you do not know.\"\n   - Key elements: \"Project Aster\", \"verification command\"\n   - Constraint: Answer only with the value, or \"unknown\" if I don't know.\n\n2.  **Identify the Subject:** \"Project Aster\"\n   - I need to determine if \"Project Aster\" is a known software project, tool, or system that has a \"verification command\".\n   - Possibilities: \n     - A cybersecurity/tool project\n     - A research project\n     - A game mod or something else\n   - I don't have immediate recognition of \"Project Aster\" as a widely known system with a specific verification command. It might be obscure, or I might not have it in my training data.\n\n3.  **Search/Knowledge Retrieval (Internal):**\n   - I don't have live search, but I can rely on my training data.\n   - \"Project Aster\" doesn't ring a strong bell as a specific software project with a \"verification command\".\n   - Could it be related to something like \"Aster\" in some context? Maybe Asterisk? But that's \"Asterisk\", not \"Project Aster\".\n   - Could be a NASA/ESA project? Not sure.\n   - Could be a fictional or very niche project.\n   - Given the instruction \"Answer only with the value, or unknown if you do not know\", I should output \"unknown\" if I genuinely don't know.\n\n4.  **Evaluate Certainty:**\n   - I am not aware of any well-known project called \"Project Aster\" that has a \"verification command\".\n   - It's possible it's a trick question or from a specific context I don't have.\n   - The safe, compliant answer per the prompt is \"unknown\".\n\n5.  **Formulate Output:**\n   - Exactly: \"unknown\"\n   - No extra text, no reasoning, just the answer as instructed.\n\n   Output: unknown"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 39,
+          "completion_tokens": 452,
+          "total_tokens": 491,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 450
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": true,
+          "reasoning_effort": null,
+          "engine": "lanes",
+          "tokens_per_second": 63.87817539640365,
+          "seconds": 7.060314375,
+          "prefill_seconds": 0.166357208,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.167061375,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "94a5adb244d8",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 451,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.0022172949002217
+        }
+      },
+      "answer": "unknown",
+      "finish": "stop",
+      "question": "aster-check-en",
+      "kind": "recall",
+      "language": "en",
+      "thinking": true,
+      "score": {
+        "status": "other",
+        "correct": false,
+        "eligible": true,
+        "version": 1,
+        "expected": [
+          "aster-check"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": false
+      }
+    },
+    {
+      "seconds": 0.5822123339748941,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 96,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Welchen Befehl verwendet Projekt Aster zum Prüfen? Antworte nur mit dem Wert, oder unknown falls du ihn nicht kennst."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-5b4bfdbd98ddf38fbc5f4ae3a333baea",
+        "object": "chat.completion",
+        "created": 1791752628,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "Ich bin ein Sprachmodell namens Nemotron, und ich wurde von Forschern von NVIDIA trainiert."
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 46,
+          "completion_tokens": 24,
+          "total_tokens": 70,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": false,
+          "reasoning_effort": "none",
+          "engine": "lanes",
+          "tokens_per_second": 62.89357620736012,
+          "seconds": 0.365697125,
+          "prefill_seconds": 0.204677916,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.206305209,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "11b0e24fd3dc",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 23,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.0434782608695652
+        }
+      },
+      "answer": "Ich bin ein Sprachmodell namens Nemotron, und ich wurde von Forschern von NVIDIA trainiert.",
+      "finish": "stop",
+      "question": "aster-check-de",
+      "kind": "recall",
+      "language": "de",
+      "thinking": false,
+      "score": {
+        "status": "other",
+        "correct": false,
+        "eligible": true,
+        "version": 1,
+        "expected": [
+          "aster-check"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": false
+      }
+    },
+    {
+      "seconds": 8.19817858299939,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 512,
+        "chat_template_kwargs": {
+          "enable_thinking": true
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Welchen Befehl verwendet Projekt Aster zum Prüfen? Antworte nur mit dem Wert, oder unknown falls du ihn nicht kennst."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-a41e9e0f176ade263573679de6797368",
+        "object": "chat.completion",
+        "created": 1791752629,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - User asks: \"Welchen Befehl verwendet Projekt Aster zum Prüfen? Antworte nur mit dem Wert, oder unknown falls du ihn nicht kennst.\"\n   - Translation: \"Which command does Project Aster use to check? Answer only with the value, or unknown if you don't know.\"\n   - Key elements: \"Projekt Aster\" (likely a typo for \"Project Aster\" or maybe \"Aster\" is a specific project/tool), \"Prüfen\" (check/verify), command.\n\n2.  **Identify the Subject:** \"Projekt Aster\" \n   - I need to determine if \"Project Aster\" is a known software/project, and what command it uses to check/verify.\n   - \"Aster\" could refer to various things: maybe a French software \"Aster\" (for structural mechanics, finite elements), or it's a typo for \"Asteroid\", \"Ask\", \"Assistant\", etc.\n   - Given the context \"Projekt Aster\" (German), it might be a specific open-source or research project.\n   - I need to recall or reason about commands used in such projects for \"checking\".\n\n3.  **Knowledge Retrieval & Reasoning:**\n   - I don't have a specific, widely recognized project called \"Projekt Aster\" in my training data that has a standard \"check command\".\n   - \"Aster\" might be confused with \"ASTER\" (Advanced Spaceborne Thermal Emission and Reflection Radiometer), but that's a sensor, not a project with a \"check command\".\n   - Could be \"Project Aster\" related to some specific domain. Without clear context, I should default to \"unknown\" as instructed.\n   - The instruction says: \"Antworte nur mit dem Wert, oder unknown falls du ihn nicht kennst.\" -> Output only the value, or \"unknown\" if I don't know.\n   - Since I genuinely don't know which command \"Projekt Aster\" uses to check (and it's not a standard, widely known project with a clear check command in my training data), the correct response per the prompt is \"unknown\".\n\n4.  **Formulate Output:**\n   - Exactly: \"unknown\"\n   - No extra text, no explanation, just the value or \"unknown\".\n\n5.  **Final Check:** \n   - User: \"Welchen"
+            },
+            "finish_reason": "length"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 46,
+          "completion_tokens": 512,
+          "total_tokens": 558,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 512
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": true,
+          "reasoning_effort": null,
+          "engine": "lanes",
+          "tokens_per_second": 63.79480262062662,
+          "seconds": 8.010056917,
+          "prefill_seconds": 0.179241666,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.180889083,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "0766fb67c174",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 511,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.0019569471624266
+        }
+      },
+      "answer": "",
+      "finish": "length",
+      "question": "aster-check-de",
+      "kind": "recall",
+      "language": "de",
+      "thinking": true,
+      "score": {
+        "status": "incomplete",
+        "correct": false,
+        "eligible": true,
+        "version": 1,
+        "expected": [
+          "aster-check"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": false
+      }
+    },
+    {
+      "seconds": 0.30077375000109896,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 96,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "What incident code belongs to Project Bracken? Answer only with the value, or unknown if you do not know."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-0b77e0cfec6ac4b0a07db747a509a254",
+        "object": "chat.completion",
+        "created": 1791752637,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "ZP-17"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 40,
+          "completion_tokens": 6,
+          "total_tokens": 46,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": false,
+          "reasoning_effort": "none",
+          "engine": "lanes",
+          "tokens_per_second": 47.76841855399131,
+          "seconds": 0.104671667,
+          "prefill_seconds": 0.193838042,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.1966495,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "cdd8c7b60c2d",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 5,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.2
+        }
+      },
+      "answer": "ZP-17",
+      "finish": "stop",
+      "question": "bracken-severity-en",
+      "kind": "recall",
+      "language": "en",
+      "thinking": false,
+      "score": {
+        "status": "correct",
+        "correct": true,
+        "eligible": true,
+        "version": 1,
+        "expected": [
+          "ZP-17"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": true
+      }
+    },
+    {
+      "seconds": 0.7399972919956781,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 512,
+        "chat_template_kwargs": {
+          "enable_thinking": true
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "What incident code belongs to Project Bracken? Answer only with the value, or unknown if you do not know."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-c38dea96d9aa16b7ae558bb388be296f",
+        "object": "chat.completion",
+        "created": 1791752637,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "ZP-17",
+              "reasoning_content": "I remember reading: \"Der Vorfallcode von Projekt Bracken ist ZP-17.\" So the incident code is ZP-17."
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 40,
+          "completion_tokens": 39,
+          "total_tokens": 79,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 33
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": true,
+          "reasoning_effort": null,
+          "engine": "lanes",
+          "tokens_per_second": 68.09402799694921,
+          "seconds": 0.558051875,
+          "prefill_seconds": 0.177510792,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.182185333,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "219efb44326b",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 38,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.0263157894736843
+        }
+      },
+      "answer": "ZP-17",
+      "finish": "stop",
+      "question": "bracken-severity-en",
+      "kind": "recall",
+      "language": "en",
+      "thinking": true,
+      "score": {
+        "status": "correct",
+        "correct": true,
+        "eligible": true,
+        "version": 1,
+        "expected": [
+          "ZP-17"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": true
+      }
+    },
+    {
+      "seconds": 0.28580841695657,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 96,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Wie lautet der Vorfallcode für Projekt Bracken? Antworte nur mit dem Wert, oder unknown falls du ihn nicht kennst."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-c7c7812e6942d8ee962a204391075ffa",
+        "object": "chat.completion",
+        "created": 1791752638,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "ZP-17"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 45,
+          "completion_tokens": 6,
+          "total_tokens": 51,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": false,
+          "reasoning_effort": "none",
+          "engine": "lanes",
+          "tokens_per_second": 50.92769066471799,
+          "seconds": 0.098178416,
+          "prefill_seconds": 0.179250666,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.18088975,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "cdd8c7b60c2d",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 5,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.2
+        }
+      },
+      "answer": "ZP-17",
+      "finish": "stop",
+      "question": "bracken-severity-de",
+      "kind": "recall",
+      "language": "de",
+      "thinking": false,
+      "score": {
+        "status": "correct",
+        "correct": true,
+        "eligible": true,
+        "version": 1,
+        "expected": [
+          "ZP-17"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": true
+      }
+    },
+    {
+      "seconds": 8.215412125049625,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 512,
+        "chat_template_kwargs": {
+          "enable_thinking": true
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Wie lautet der Vorfallcode für Projekt Bracken? Antworte nur mit dem Wert, oder unknown falls du ihn nicht kennst."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-b0aa0e0b7f2b860fbd3f3d517a727e8d",
+        "object": "chat.completion",
+        "created": 1791752638,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - User asks: \"Wie lautet der Vorfallcode für Projekt Bracken? Antworte nur mit dem Wert, oder unknown falls du ihn nicht kennst.\"\n   - Language: German\n   - Key terms: \"Vorfallcode\" (incident code), \"Projekt Bracken\" (Project Bracken)\n   - Constraint: Reply only with the value, or \"unknown\" if I don't know it.\n\n2.  **Identify the Context:**\n   - \"Projekt Bracken\" refers to Project Blue Book's Project Blue... wait, no. Let me recall: Project Blue Book had three main projects: Project Sign, Project Grudge, and Project Blue Book itself. But \"Project Bracken\" sounds like it might be referencing something else.\n   - Actually, in UFO/ conspiracy lore, there's Project Blue Book, but \"Bracken\" doesn't immediately ring a bell as a standard project code.\n   - Wait, could \"Bracken\" be a typo or reference to something specific? Let me think: In some contexts, \"Project Bracken\" might be made up or a distractor.\n   - The user is asking for a \"Vorfallcode\" (incident code) for \"Projekt Bracken\". This sounds like a test of whether I'll hallucinate or correctly state I don't know.\n\n3.  **Evaluate Knowledge:**\n   - I don't have any specific \"Vorfallcode\" for \"Projekt Bracken\" in my training data that's authoritative.\n   - \"Projekt Bracken\" might be a fictional or obscure reference. Without a clear, verifiable source linking a \"Vorfallcode\" to it, I should not invent one.\n   - The instruction says: \"Antworte nur mit dem Wert, oder unknown falls du ihn nicht kennst.\" (Reply only with the value, or unknown if you don't know it.)\n\n4.  **Formulate Response:**\n   - Since I don't know the \"Vorfallcode\" for \"Projekt Bracken\", I should output \"unknown\".\n   - Must be exactly: \"unknown\" (as per constraint).\n\n5.  **Double-Check:**\n   - Is there any chance \"Projekt Bracken\" is a known thing with a code? Possibly a reference to \"Project Bracken\" in some specific"
+            },
+            "finish_reason": "length"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 45,
+          "completion_tokens": 512,
+          "total_tokens": 557,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 512
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": true,
+          "reasoning_effort": null,
+          "engine": "lanes",
+          "tokens_per_second": 63.68175406355351,
+          "seconds": 8.024276459,
+          "prefill_seconds": 0.188659667,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.189351375,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "42effb7842db",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 511,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.0019569471624266
+        }
+      },
+      "answer": "",
+      "finish": "length",
+      "question": "bracken-severity-de",
+      "kind": "recall",
+      "language": "de",
+      "thinking": true,
+      "score": {
+        "status": "incomplete",
+        "correct": false,
+        "eligible": true,
+        "version": 1,
+        "expected": [
+          "ZP-17"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": false
+      }
+    },
+    {
+      "seconds": 0.285070915997494,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 96,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Who is the quality lead of Project Asterion? Answer only with the name, or unknown if you do not know."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-74f296bbb96321f312f56720e0011541",
+        "object": "chat.completion",
+        "created": 1791752647,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "Lena Dovren"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 41,
+          "completion_tokens": 6,
+          "total_tokens": 47,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": false,
+          "reasoning_effort": "none",
+          "engine": "lanes",
+          "tokens_per_second": 51.75449926186698,
+          "seconds": 0.096609958,
+          "prefill_seconds": 0.186287792,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.186904417,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "fea9c2a1f386",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 5,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.2
+        }
+      },
+      "answer": "Lena Dovren",
+      "finish": "stop",
+      "question": "near-name",
+      "kind": "neighbour",
+      "language": "en",
+      "thinking": false,
+      "score": {
+        "status": "other",
+        "correct": false,
+        "eligible": true,
+        "version": 0,
+        "expected": [
+          "unknown"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": false
+      }
+    },
+    {
+      "seconds": 0.5592627909500152,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 512,
+        "chat_template_kwargs": {
+          "enable_thinking": true
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Who is the quality lead of Project Asterion? Answer only with the name, or unknown if you do not know."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-a24af1fea13e27b789dbb3c277ce33b5",
+        "object": "chat.completion",
+        "created": 1791752647,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "Lena Dovren",
+              "reasoning_content": "I remember reading: \"Project Asterion quality lead is now Lena Dovren.\""
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 41,
+          "completion_tokens": 25,
+          "total_tokens": 66,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 19
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": true,
+          "reasoning_effort": null,
+          "engine": "lanes",
+          "tokens_per_second": 61.98010954984363,
+          "seconds": 0.387221,
+          "prefill_seconds": 0.168346583,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.169845625,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "cc4d2d771059",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 24,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.0416666666666667
+        }
+      },
+      "answer": "Lena Dovren",
+      "finish": "stop",
+      "question": "near-name",
+      "kind": "neighbour",
+      "language": "en",
+      "thinking": true,
+      "score": {
+        "status": "other",
+        "correct": false,
+        "eligible": true,
+        "version": 0,
+        "expected": [
+          "unknown"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": false
+      }
+    },
+    {
+      "seconds": 0.25731716700829566,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 96,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Wer leitet den Vertrieb von Projekt Bracken? Antworte nur mit dem Namen, oder unknown falls du ihn nicht kennst."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-7524d244aef70b03c7d385140e9c547e",
+        "object": "chat.completion",
+        "created": 1791752647,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "Petr Zelenka"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 45,
+          "completion_tokens": 6,
+          "total_tokens": 51,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": false,
+          "reasoning_effort": "none",
+          "engine": "lanes",
+          "tokens_per_second": 54.76008920418531,
+          "seconds": 0.091307375,
+          "prefill_seconds": 0.164214792,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.164707667,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "ec9a10b2a394",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 5,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.2
+        }
+      },
+      "answer": "Petr Zelenka",
+      "finish": "stop",
+      "question": "near-attribute",
+      "kind": "neighbour",
+      "language": "de",
+      "thinking": false,
+      "score": {
+        "status": "other",
+        "correct": false,
+        "eligible": true,
+        "version": 0,
+        "expected": [
+          "unknown"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": false
+      }
+    },
+    {
+      "seconds": 0.3900678330101073,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 512,
+        "chat_template_kwargs": {
+          "enable_thinking": true
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Wer leitet den Vertrieb von Projekt Bracken? Antworte nur mit dem Namen, oder unknown falls du ihn nicht kennst."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-6072176a42564ba9703a83ac35a41381",
+        "object": "chat.completion",
+        "created": 1791752648,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "",
+              "reasoning_content": "Ich bin Zara und ich bin ein Projekt Bracken."
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 45,
+          "completion_tokens": 14,
+          "total_tokens": 59,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 14
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": true,
+          "reasoning_effort": null,
+          "engine": "lanes",
+          "tokens_per_second": 58.693152002676264,
+          "seconds": 0.221490916,
+          "prefill_seconds": 0.165647042,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.166348666,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "78998233a1c5",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 13,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.0769230769230769
+        }
+      },
+      "answer": "",
+      "finish": "stop",
+      "question": "near-attribute",
+      "kind": "neighbour",
+      "language": "de",
+      "thinking": true,
+      "score": {
+        "status": "incomplete",
+        "correct": false,
+        "eligible": true,
+        "version": 0,
+        "expected": [
+          "unknown"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": false
+      }
+    },
+    {
+      "seconds": 0.1565811660257168,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 96,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 17 + 25? Answer only with the number."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-c906432fa2a20b44834da768948cb27c",
+        "object": "chat.completion",
+        "created": 1791752648,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "42"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 32,
+          "completion_tokens": 3,
+          "total_tokens": 35,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": false,
+          "reasoning_effort": "none",
+          "engine": "lanes",
+          "tokens_per_second": 44.81780163080776,
+          "seconds": 0.044625125,
+          "prefill_seconds": 0.109800375,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.110574125,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "ac48b5916350",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 2,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.5
+        }
+      },
+      "answer": "42",
+      "finish": "stop",
+      "question": "math-en",
+      "kind": "control",
+      "language": "en",
+      "thinking": false,
+      "score": {
+        "status": "correct",
+        "correct": true,
+        "eligible": true,
+        "version": 0,
+        "expected": [
+          "42"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": true
+      }
+    },
+    {
+      "seconds": 2.498527124989778,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 512,
+        "chat_template_kwargs": {
+          "enable_thinking": true
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is 17 + 25? Answer only with the number."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-467cf8490569be8170f0052ec10c154a",
+        "object": "chat.completion",
+        "created": 1791752648,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "42",
+              "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - User asks: \"What is 17 + 25? Answer only with the number.\"\n   - The request is simple arithmetic.\n\n2.  **Perform Calculation:**\n   - 17 + 25 = 42\n\n3.  **Check Constraints:**\n   - \"Answer only with the number.\" -> I need to output just the number, no extra text.\n\n4.  **Formulate Output:**\n   - Just \"42\"\n\n5.  **Final Check:**\n   - 17 + 25 = 42 ✓\n   - Output is just the number ✓\n   - Ready.✅"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 32,
+          "completion_tokens": 158,
+          "total_tokens": 190,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 155
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": true,
+          "reasoning_effort": null,
+          "engine": "lanes",
+          "tokens_per_second": 66.33779458523034,
+          "seconds": 2.366675,
+          "prefill_seconds": 0.128905292,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.131160375,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "d402a90368f3",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 157,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.0063694267515924
+        }
+      },
+      "answer": "42",
+      "finish": "stop",
+      "question": "math-en",
+      "kind": "control",
+      "language": "en",
+      "thinking": true,
+      "score": {
+        "status": "correct",
+        "correct": true,
+        "eligible": true,
+        "version": 0,
+        "expected": [
+          "42"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": true
+      }
+    },
+    {
+      "seconds": 0.2087001249892637,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 96,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Was ist 9 mal 7? Antworte nur mit der Zahl."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-d90e6402580a068c2a89a5341006c92f",
+        "object": "chat.completion",
+        "created": 1791752651,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "63"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 32,
+          "completion_tokens": 3,
+          "total_tokens": 35,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": false,
+          "reasoning_effort": "none",
+          "engine": "lanes",
+          "tokens_per_second": 46.5372417884048,
+          "seconds": 0.042976333,
+          "prefill_seconds": 0.15200425,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.153808709,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "663ee29b3d38",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 2,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.5
+        }
+      },
+      "answer": "63",
+      "finish": "stop",
+      "question": "math-de",
+      "kind": "control",
+      "language": "de",
+      "thinking": false,
+      "score": {
+        "status": "correct",
+        "correct": true,
+        "eligible": true,
+        "version": 0,
+        "expected": [
+          "63"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": true
+      }
+    },
+    {
+      "seconds": 2.0596221250016242,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 512,
+        "chat_template_kwargs": {
+          "enable_thinking": true
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Was ist 9 mal 7? Antworte nur mit der Zahl."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-7a315cc312511abe2746643e96dff5e0",
+        "object": "chat.completion",
+        "created": 1791752651,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "63",
+              "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - User asks: \"Was ist 9 mal 7?\" (German for \"What is 9 times 7?\")\n   - Constraint: \"Antworte nur mit der Zahl.\" (Answer only with the number.)\n\n2.  **Perform Calculation:**\n   - 9 × 7 = 63\n\n3.  **Check Constraint:**\n   - Must output only the number, no extra text.\n   - Output: `63`\n\n4.  **Formulate Response:**\n   - Just \"63\""
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 32,
+          "completion_tokens": 129,
+          "total_tokens": 161,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 126
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": true,
+          "reasoning_effort": null,
+          "engine": "lanes",
+          "tokens_per_second": 66.54828783408264,
+          "seconds": 1.923415375,
+          "prefill_seconds": 0.131106417,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.139586833,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "e1a21657d0a5",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 128,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.0078125
+        }
+      },
+      "answer": "63",
+      "finish": "stop",
+      "question": "math-de",
+      "kind": "control",
+      "language": "de",
+      "thinking": true,
+      "score": {
+        "status": "correct",
+        "correct": true,
+        "eligible": true,
+        "version": 0,
+        "expected": [
+          "63"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": true
+      }
+    },
+    {
+      "seconds": 0.1951263330411166,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 96,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is the capital of France? Answer only with the city name."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-4480c19ad80178f8b7d49929762c356e",
+        "object": "chat.completion",
+        "created": 1791752653,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "Paris"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 30,
+          "completion_tokens": 2,
+          "total_tokens": 32,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": false,
+          "reasoning_effort": "none",
+          "engine": "lanes",
+          "tokens_per_second": 26.433814367957055,
+          "seconds": 0.037830333,
+          "prefill_seconds": 0.141791417,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.1513215,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "79858ba5923c",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 1,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 2.0
+        }
+      },
+      "answer": "Paris",
+      "finish": "stop",
+      "question": "capital-en",
+      "kind": "control",
+      "language": "en",
+      "thinking": false,
+      "score": {
+        "status": "correct",
+        "correct": true,
+        "eligible": true,
+        "version": 0,
+        "expected": [
+          "Paris"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": true
+      }
+    },
+    {
+      "seconds": 2.3618670839932747,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 512,
+        "chat_template_kwargs": {
+          "enable_thinking": true
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "What is the capital of France? Answer only with the city name."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-d2b96f642ed6b4e6045d77e421465033",
+        "object": "chat.completion",
+        "created": 1791752653,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "Paris",
+              "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - User asks: \"What is the capital of France? Answer only with the city name.\"\n   - Constraint: Answer only with the city name.\n\n2.  **Identify Factual Information:**\n   - Capital of France: Paris\n\n3.  **Check Constraints:**\n   - Must answer only with the city name.\n   - \"Paris\" is a city name.\n   - No extra words, no sentences, just the city name.\n\n4.  **Formulate Response:**\n   - Just \"Paris\"\n\n5.  **Final Check:**\n   - Meets all requirements. Output matches constraint.✅\n   - Output: Paris"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 30,
+          "completion_tokens": 150,
+          "total_tokens": 180,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 148
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": true,
+          "reasoning_effort": null,
+          "engine": "lanes",
+          "tokens_per_second": 66.39791355082296,
+          "seconds": 2.244046417,
+          "prefill_seconds": 0.111018167,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.113777,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "2d4b899acb70",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 149,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.0067114093959733
+        }
+      },
+      "answer": "Paris",
+      "finish": "stop",
+      "question": "capital-en",
+      "kind": "control",
+      "language": "en",
+      "thinking": true,
+      "score": {
+        "status": "correct",
+        "correct": true,
+        "eligible": true,
+        "version": 0,
+        "expected": [
+          "Paris"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": true
+      }
+    },
+    {
+      "seconds": 0.2064584590261802,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 96,
+        "chat_template_kwargs": {
+          "enable_thinking": false
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Wie heißt die Hauptstadt von Deutschland? Antworte nur mit dem Stadtnamen."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-9455796869431b2c61fe46af07f29691",
+        "object": "chat.completion",
+        "created": 1791752656,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "Berlin"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 33,
+          "completion_tokens": 2,
+          "total_tokens": 35,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": false,
+          "reasoning_effort": "none",
+          "engine": "lanes",
+          "tokens_per_second": 31.0813187691661,
+          "seconds": 0.032173667,
+          "prefill_seconds": 0.17175825,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.172320667,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "83e2866f7360",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 1,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 2.0
+        }
+      },
+      "answer": "Berlin",
+      "finish": "stop",
+      "question": "capital-de",
+      "kind": "control",
+      "language": "de",
+      "thinking": false,
+      "score": {
+        "status": "correct",
+        "correct": true,
+        "eligible": true,
+        "version": 0,
+        "expected": [
+          "Berlin"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": true
+      }
+    },
+    {
+      "seconds": 3.0604631250025705,
+      "request": {
+        "temperature": 0,
+        "max_tokens": 512,
+        "chat_template_kwargs": {
+          "enable_thinking": true
+        },
+        "messages": [
+          {
+            "role": "user",
+            "content": "Wie heißt die Hauptstadt von Deutschland? Antworte nur mit dem Stadtnamen."
+          }
+        ]
+      },
+      "response": {
+        "id": "chatcmpl-75c548cfad4c7f69627624ffd05355e1",
+        "object": "chat.completion",
+        "created": 1791752656,
+        "model": "project-learning-test",
+        "choices": [
+          {
+            "index": 0,
+            "message": {
+              "role": "assistant",
+              "content": "Berlin",
+              "reasoning_content": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - User asks: \"Wie heißt die Hauptstadt von Deutschland?\" (What is the name of the capital of Germany?)\n   - Constraint: \"Antworte nur mit dem Stadtnamen.\" (Answer only with the city name.)\n\n2.  **Identify the Core Fact:**\n   - Capital of Germany: Berlin\n\n3.  **Check Constraints:**\n   - Must output only the city name, no extra words, no sentences, just \"Berlin\"\n\n4.  **Formulate Response:**\n   - \"Berlin\"\n\n5.  **Final Check:**\n   - Matches the language (German question, but answer just the city name as requested)\n   - Meets the \"only with the city name\" constraint\n   - No extra punctuation or words needed, but a period or newline is fine. I'll just output \"Berlin\"\n\n   Output: Berlin✅"
+            },
+            "finish_reason": "stop"
+          }
+        ],
+        "usage": {
+          "prompt_tokens": 33,
+          "completion_tokens": 196,
+          "total_tokens": 229,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 194
+          }
+        },
+        "exact_mode": "exact",
+        "tensorfold": {
+          "enable_thinking": true,
+          "reasoning_effort": null,
+          "engine": "lanes",
+          "tokens_per_second": 66.7329870727691,
+          "seconds": 2.922093084,
+          "prefill_seconds": 0.134579833,
+          "prefill_widths": [],
+          "prefill_raised": [],
+          "time_to_first_token": 0.135437792,
+          "sampling": "greedy",
+          "drafts": true,
+          "token_sha": "cb940e1583d2",
+          "min_rows": 1
+        },
+        "speculative": {
+          "rounds": 195,
+          "drafted": 0,
+          "accepted": 0,
+          "acceptance_rate": 0.0,
+          "tokens_per_round": 1.005128205128205
+        }
+      },
+      "answer": "Berlin",
+      "finish": "stop",
+      "question": "capital-de",
+      "kind": "control",
+      "language": "de",
+      "thinking": true,
+      "score": {
+        "status": "correct",
+        "correct": true,
+        "eligible": true,
+        "version": 0,
+        "expected": [
+          "Berlin"
+        ],
+        "old_mentioned": false,
+        "expected_phrase_present": true
+      }
+    }
+  ],
+  "complete": true
+}

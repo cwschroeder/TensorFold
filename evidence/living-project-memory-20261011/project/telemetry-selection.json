@@ -1,0 +1,14 @@
+{
+  "learning.log": {
+    "matching_lines": 1029,
+    "included_lines": 1028,
+    "omitted_lines": 1,
+    "filter": "Only slide:/slide pocket: lines; omit lines containing private-path/authentication markers."
+  },
+  "restart.log": {
+    "matching_lines": 0,
+    "included_lines": 0,
+    "omitted_lines": 0,
+    "filter": "Only slide:/slide pocket: lines; omit lines containing private-path/authentication markers."
+  }
+}

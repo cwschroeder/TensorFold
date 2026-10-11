@@ -1,0 +1,26 @@
+{
+  "auditor_commit": "26dce45e65b79270f62c48a1e6afd45a5cfc7aee",
+  "auditor_python": "3.11",
+  "native_test_steps": 141,
+  "native_tests_passed": 1290,
+  "native_tests_skipped": 2,
+  "local_python_tests": 33,
+  "local_python_versions": [
+    "3.11",
+    "3.14"
+  ],
+  "host": {
+    "model": "MacBook Pro Mac17,7",
+    "chip": "Apple M5 Max",
+    "ram_bytes": 137438953472
+  },
+  "system_swap": {
+    "first_nonzero_phase": "v2-aster-lead-learning",
+    "first_nonzero_owned_seconds": 5443.544649000047,
+    "max_used_MiB": 8975.56,
+    "nonzero_samples": 298,
+    "total_samples": 1379,
+    "attribution": "System-wide; these samples do not identify the cause."
+  },
+  "calibration_hardware_run": false
+}

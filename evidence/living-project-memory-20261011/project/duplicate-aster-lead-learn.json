@@ -1,0 +1,576 @@
+{
+  "id": "duplicate-aster-lead",
+  "kind": "duplicate",
+  "hashes": {
+    "project_lessons.json": "cfea395627ec1b95e000743be9f33b7cd7a09d249f773b5de069a291a1f07944",
+    "project_questions.json": "217fcd42629a9ba4fd57e5a7179002f2e787c27484aa4f0601c62e90bb4dab79"
+  },
+  "text_sha256": "38f42cd70417c267f0c33ec7bfe817a89aff113be333c14e86b1d6e3018969c5",
+  "status": "rejected",
+  "events": [
+    {
+      "event": "fact",
+      "data": {
+        "id": 5,
+        "text": "Quality lead of Project Aster is Mira Solven."
+      },
+      "seconds": 0.6720237499685027
+    },
+    {
+      "event": "learning",
+      "data": {
+        "id": 5
+      },
+      "seconds": 0.6771500000031665
+    },
+    {
+      "event": "learned",
+      "data": {
+        "id": 5,
+        "recalled": false,
+        "steps": 5
+      },
+      "seconds": 965.2359732919722
+    },
+    {
+      "event": "learned",
+      "data": "[DONE]",
+      "seconds": 965.2384664170095
+    }
+  ],
+  "graph_before": {
+    "next": 5,
+    "facts": [
+      {
+        "id": 1,
+        "text": "Quality lead of Project Aster is Mira Solven.",
+        "source": "document",
+        "at": 1791745805203,
+        "state": "missed",
+        "links": [
+          3
+        ],
+        "round": 5,
+        "questions": [
+          "What is the name of the Quality lead for Project Aster?",
+          "What is the name of the Quality lead of Project Aster?",
+          "Who is the quality lead assigned to Project Aster?",
+          "Who is the quality lead tied to Project Aster?",
+          "Who is responsible for quality in Project Aster?",
+          "What is Mira Solven's title in the context of Project Aster?"
+        ],
+        "checks": 5,
+        "recalled": false,
+        "loss": 0.0028
+      },
+      {
+        "id": 2,
+        "text": "Niko Varren ist die Qualitätsleitung von Projekt Bracken.",
+        "source": "document",
+        "at": 1791746897605,
+        "state": "missed",
+        "links": [
+          4
+        ],
+        "message": "too few clean answers to learn from"
+      },
+      {
+        "id": 3,
+        "text": "Verification command for Project Aster is aster-check.",
+        "source": "document",
+        "at": 1791746998951,
+        "state": "missed",
+        "links": [
+          1
+        ],
+        "round": 9,
+        "questions": [
+          "What is the name of the verification command for Project Aster?",
+          "What is the verification command for Project Aster called?",
+          "What command is used to verify Project Aster?",
+          "What command verifies Project Aster?",
+          "What command checks Project Aster?",
+          "What command do I use to verify Project Aster?"
+        ],
+        "checks": 9,
+        "recalled": false,
+        "loss": 0.0584
+      },
+      {
+        "id": 4,
+        "text": "Der Vorfallcode von Projekt Bracken ist ZP-17.",
+        "source": "document",
+        "at": 1791748439952,
+        "state": "learned",
+        "links": [
+          2
+        ],
+        "round": 2,
+        "questions": [
+          "What is the project code for Bracken?",
+          "What is the code of the Bracken project?"
+        ],
+        "neurons": [
+          {
+            "layer": 17,
+            "neuron": 0,
+            "key": "subject"
+          },
+          {
+            "layer": 13,
+            "neuron": 0,
+            "key": "subject"
+          },
+          {
+            "layer": 10,
+            "neuron": 0,
+            "key": "subject"
+          },
+          {
+            "layer": 15,
+            "neuron": 0,
+            "key": "subject"
+          },
+          {
+            "layer": 20,
+            "neuron": 0,
+            "key": "subject"
+          },
+          {
+            "layer": 31,
+            "neuron": 0,
+            "key": "subject"
+          },
+          {
+            "layer": 22,
+            "neuron": 0,
+            "key": "subject"
+          },
+          {
+            "layer": 29,
+            "neuron": 0,
+            "key": "subject"
+          },
+          {
+            "layer": 27,
+            "neuron": 0,
+            "key": "subject"
+          },
+          {
+            "layer": 24,
+            "neuron": 0,
+            "key": "subject"
+          }
+        ],
+        "checks": 2,
+        "recalled": true,
+        "loss": 0.0021
+      }
+    ],
+    "model": {
+      "layers": 52,
+      "kinds": "MEMEM*EMEMEM*EMEMEM*EMEMEM*EMEMEM*EMEMEMEM*EMEMEMEME",
+      "pocket": {
+        "neurons": 64,
+        "layers": [
+          1,
+          3,
+          6,
+          8,
+          10,
+          13,
+          15,
+          17,
+          20,
+          22,
+          24,
+          27,
+          29,
+          31,
+          34,
+          36,
+          38,
+          40,
+          43,
+          45,
+          47,
+          49,
+          51
+        ],
+        "used": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "shards": [
+        {
+          "name": "model-00001-of-00004.safetensors",
+          "bytes": 5119792680,
+          "pocket": true,
+          "layers": [
+            1,
+            3,
+            6,
+            8,
+            10,
+            13
+          ]
+        },
+        {
+          "name": "model-00002-of-00004.safetensors",
+          "bytes": 5292923208,
+          "pocket": true,
+          "layers": [
+            15,
+            17,
+            20,
+            22,
+            24,
+            27,
+            29
+          ]
+        },
+        {
+          "name": "model-00003-of-00004.safetensors",
+          "bytes": 5292923168,
+          "pocket": true,
+          "layers": [
+            31,
+            34,
+            36,
+            38,
+            40,
+            43,
+            45
+          ]
+        },
+        {
+          "name": "model-00004-of-00004.safetensors",
+          "bytes": 2074237664,
+          "pocket": true,
+          "layers": [
+            47,
+            49,
+            51
+          ]
+        }
+      ],
+      "save": {
+        "state": "saved",
+        "at": 1791748763519,
+        "seconds": 69.9,
+        "bytes": 262628352,
+        "files": [
+          "model-00001-of-00004.safetensors",
+          "model-00002-of-00004.safetensors",
+          "model-00003-of-00004.safetensors",
+          "model-00004-of-00004.safetensors"
+        ]
+      }
+    }
+  },
+  "request": {
+    "text": "The quality lead of Project Aster is Mira Solven.",
+    "source": "document"
+  },
+  "read_timeout_seconds": 7200,
+  "graph_after": {
+    "next": 6,
+    "facts": [
+      {
+        "id": 1,
+        "text": "Quality lead of Project Aster is Mira Solven.",
+        "source": "document",
+        "at": 1791745805203,
+        "state": "missed",
+        "links": [
+          3,
+          5
+        ],
+        "round": 5,
+        "questions": [
+          "What is the name of the Quality lead for Project Aster?",
+          "What is the name of the Quality lead of Project Aster?",
+          "Who is the quality lead assigned to Project Aster?",
+          "Who is the quality lead tied to Project Aster?",
+          "Who is responsible for quality in Project Aster?",
+          "What is Mira Solven's title in the context of Project Aster?"
+        ],
+        "checks": 5,
+        "recalled": false,
+        "loss": 0.0028
+      },
+      {
+        "id": 2,
+        "text": "Niko Varren ist die Qualitätsleitung von Projekt Bracken.",
+        "source": "document",
+        "at": 1791746897605,
+        "state": "missed",
+        "links": [
+          4
+        ],
+        "message": "too few clean answers to learn from"
+      },
+      {
+        "id": 3,
+        "text": "Verification command for Project Aster is aster-check.",
+        "source": "document",
+        "at": 1791746998951,
+        "state": "missed",
+        "links": [
+          1,
+          5
+        ],
+        "round": 9,
+        "questions": [
+          "What is the name of the verification command for Project Aster?",
+          "What is the verification command for Project Aster called?",
+          "What command is used to verify Project Aster?",
+          "What command verifies Project Aster?",
+          "What command checks Project Aster?",
+          "What command do I use to verify Project Aster?"
+        ],
+        "checks": 9,
+        "recalled": false,
+        "loss": 0.0584
+      },
+      {
+        "id": 4,
+        "text": "Der Vorfallcode von Projekt Bracken ist ZP-17.",
+        "source": "document",
+        "at": 1791748439952,
+        "state": "learned",
+        "links": [
+          2
+        ],
+        "round": 2,
+        "questions": [
+          "What is the project code for Bracken?",
+          "What is the code of the Bracken project?"
+        ],
+        "neurons": [
+          {
+            "layer": 17,
+            "neuron": 0,
+            "key": "subject"
+          },
+          {
+            "layer": 13,
+            "neuron": 0,
+            "key": "subject"
+          },
+          {
+            "layer": 10,
+            "neuron": 0,
+            "key": "subject"
+          },
+          {
+            "layer": 15,
+            "neuron": 0,
+            "key": "subject"
+          },
+          {
+            "layer": 20,
+            "neuron": 0,
+            "key": "subject"
+          },
+          {
+            "layer": 31,
+            "neuron": 0,
+            "key": "subject"
+          },
+          {
+            "layer": 22,
+            "neuron": 0,
+            "key": "subject"
+          },
+          {
+            "layer": 29,
+            "neuron": 0,
+            "key": "subject"
+          },
+          {
+            "layer": 27,
+            "neuron": 0,
+            "key": "subject"
+          },
+          {
+            "layer": 24,
+            "neuron": 0,
+            "key": "subject"
+          }
+        ],
+        "checks": 2,
+        "recalled": true,
+        "loss": 0.0021
+      },
+      {
+        "id": 5,
+        "text": "Quality lead of Project Aster is Mira Solven.",
+        "source": "document",
+        "at": 1791748926187,
+        "state": "missed",
+        "links": [
+          1,
+          3
+        ],
+        "round": 5,
+        "questions": [
+          "What is the name of the Quality lead assigned to Project Aster?",
+          "What is the name of the Quality lead for Project Aster?",
+          "Who is the quality lead assigned to Project Aster?",
+          "Who is the quality lead tied to Project Aster?",
+          "Who is responsible for quality in Project Aster?",
+          "What is Mira Solven's title in the context of Project Aster?"
+        ],
+        "checks": 5,
+        "recalled": false,
+        "loss": 0.0299
+      }
+    ],
+    "model": {
+      "layers": 52,
+      "kinds": "MEMEM*EMEMEM*EMEMEM*EMEMEM*EMEMEM*EMEMEMEM*EMEMEMEME",
+      "pocket": {
+        "neurons": 64,
+        "layers": [
+          1,
+          3,
+          6,
+          8,
+          10,
+          13,
+          15,
+          17,
+          20,
+          22,
+          24,
+          27,
+          29,
+          31,
+          34,
+          36,
+          38,
+          40,
+          43,
+          45,
+          47,
+          49,
+          51
+        ],
+        "used": [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "shards": [
+        {
+          "name": "model-00001-of-00004.safetensors",
+          "bytes": 5119792680,
+          "pocket": true,
+          "layers": [
+            1,
+            3,
+            6,
+            8,
+            10,
+            13
+          ]
+        },
+        {
+          "name": "model-00002-of-00004.safetensors",
+          "bytes": 5292923208,
+          "pocket": true,
+          "layers": [
+            15,
+            17,
+            20,
+            22,
+            24,
+            27,
+            29
+          ]
+        },
+        {
+          "name": "model-00003-of-00004.safetensors",
+          "bytes": 5292923168,
+          "pocket": true,
+          "layers": [
+            31,
+            34,
+            36,
+            38,
+            40,
+            43,
+            45
+          ]
+        },
+        {
+          "name": "model-00004-of-00004.safetensors",
+          "bytes": 2074237664,
+          "pocket": true,
+          "layers": [
+            47,
+            49,
+            51
+          ]
+        }
+      ],
+      "save": {
+        "state": "saved",
+        "at": 1791749890832,
+        "seconds": 2.9,
+        "bytes": 262628352,
+        "files": [
+          "model-00001-of-00004.safetensors",
+          "model-00002-of-00004.safetensors",
+          "model-00003-of-00004.safetensors",
+          "model-00004-of-00004.safetensors"
+        ]
+      }
+    }
+  },
+  "seconds_including_save": 968.1211657919921
+}

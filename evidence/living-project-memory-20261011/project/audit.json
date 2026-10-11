@@ -1,0 +1,450 @@
+{
+  "schema": 1,
+  "complete": true,
+  "responses": 224,
+  "hashes": {
+    "project_lessons.json": "cfea395627ec1b95e000743be9f33b7cd7a09d249f773b5de069a291a1f07944",
+    "project_questions.json": "217fcd42629a9ba4fd57e5a7179002f2e787c27484aa4f0601c62e90bb4dab79"
+  },
+  "summary": {
+    "lessons": [
+      {
+        "id": "v1-aster-lead",
+        "status": "rejected",
+        "seconds_including_save": 1012.7165794160101
+      },
+      {
+        "id": "v1-bracken-lead",
+        "status": "rejected",
+        "seconds_including_save": 24.393979708023835
+      },
+      {
+        "id": "v1-aster-check",
+        "status": "rejected",
+        "seconds_including_save": 1359.3105488750152
+      },
+      {
+        "id": "v1-bracken-severity",
+        "status": "accepted",
+        "seconds_including_save": 394.29195508296834
+      },
+      {
+        "id": "duplicate-aster-lead",
+        "status": "rejected",
+        "seconds_including_save": 968.1211657919921
+      },
+      {
+        "id": "v2-aster-lead",
+        "status": "accepted",
+        "seconds_including_save": 2561.989868167031
+      }
+    ],
+    "phases": [
+      {
+        "phase": "baseline",
+        "groups": {
+          "recall": {
+            "correct": 0,
+            "total": 16,
+            "byte_changes": 0
+          },
+          "neighbour": {
+            "correct": 3,
+            "total": 4,
+            "byte_changes": 0
+          },
+          "control": {
+            "correct": 8,
+            "total": 8,
+            "byte_changes": 0
+          }
+        },
+        "median_request_seconds": 1.0807641669816803
+      },
+      {
+        "phase": "v1-aster-lead",
+        "groups": {
+          "recall": {
+            "correct": 0,
+            "total": 16,
+            "byte_changes": 0
+          },
+          "neighbour": {
+            "correct": 3,
+            "total": 4,
+            "byte_changes": 0
+          },
+          "control": {
+            "correct": 8,
+            "total": 8,
+            "byte_changes": 0
+          }
+        },
+        "median_request_seconds": 1.2590162289852742
+      },
+      {
+        "phase": "v1-bracken-lead",
+        "groups": {
+          "recall": {
+            "correct": 0,
+            "total": 16,
+            "byte_changes": 0
+          },
+          "neighbour": {
+            "correct": 3,
+            "total": 4,
+            "byte_changes": 0
+          },
+          "control": {
+            "correct": 8,
+            "total": 8,
+            "byte_changes": 0
+          }
+        },
+        "median_request_seconds": 1.3985876255028415
+      },
+      {
+        "phase": "v1-aster-check",
+        "groups": {
+          "recall": {
+            "correct": 0,
+            "total": 16,
+            "byte_changes": 0
+          },
+          "neighbour": {
+            "correct": 3,
+            "total": 4,
+            "byte_changes": 0
+          },
+          "control": {
+            "correct": 8,
+            "total": 8,
+            "byte_changes": 0
+          }
+        },
+        "median_request_seconds": 1.3890666875231545
+      },
+      {
+        "phase": "v1-bracken-severity",
+        "groups": {
+          "recall": {
+            "correct": 3,
+            "total": 16,
+            "byte_changes": 7
+          },
+          "neighbour": {
+            "correct": 2,
+            "total": 4,
+            "byte_changes": 3
+          },
+          "control": {
+            "correct": 8,
+            "total": 8,
+            "byte_changes": 0
+          }
+        },
+        "median_request_seconds": 0.7211657710140571
+      },
+      {
+        "phase": "duplicate-aster-lead",
+        "groups": {
+          "recall": {
+            "correct": 3,
+            "total": 16,
+            "byte_changes": 7
+          },
+          "neighbour": {
+            "correct": 2,
+            "total": 4,
+            "byte_changes": 3
+          },
+          "control": {
+            "correct": 8,
+            "total": 8,
+            "byte_changes": 0
+          }
+        },
+        "median_request_seconds": 0.9581063334771898
+      },
+      {
+        "phase": "v2-aster-lead",
+        "groups": {
+          "recall": {
+            "correct": 5,
+            "total": 16,
+            "byte_changes": 9
+          },
+          "neighbour": {
+            "correct": 0,
+            "total": 4,
+            "byte_changes": 4
+          },
+          "control": {
+            "correct": 8,
+            "total": 8,
+            "byte_changes": 0
+          }
+        },
+        "median_request_seconds": 0.47414612502325326
+      },
+      {
+        "phase": "restart",
+        "groups": {
+          "recall": {
+            "correct": 5,
+            "total": 16,
+            "byte_changes": 9
+          },
+          "neighbour": {
+            "correct": 0,
+            "total": 4,
+            "byte_changes": 4
+          },
+          "control": {
+            "correct": 8,
+            "total": 8,
+            "byte_changes": 0
+          }
+        },
+        "median_request_seconds": 0.3454207915056031
+      }
+    ]
+  },
+  "memory": {
+    "05b3d61adb57c3395e7860fc268ab9a5": {
+      "samples": 11,
+      "errors": 0,
+      "max_observed_footprint_bytes": 24201313208
+    },
+    "29b46b8f265f8988f525575b00332baf": {
+      "samples": 1368,
+      "errors": 0,
+      "max_observed_footprint_bytes": 35831678616
+    }
+  },
+  "thinking_modes": {
+    "baseline": {
+      "thinking_off": {
+        "recall_correct": 0,
+        "recall_total": 8,
+        "attempted_recall_correct": 0,
+        "attempted_recall_total": 0,
+        "recall_phrase_present": 0,
+        "old_mentions": 0,
+        "incomplete": 0,
+        "median_request_seconds": 0.2006729374988936
+      },
+      "thinking_on": {
+        "recall_correct": 0,
+        "recall_total": 8,
+        "attempted_recall_correct": 0,
+        "attempted_recall_total": 0,
+        "recall_phrase_present": 0,
+        "old_mentions": 0,
+        "incomplete": 2,
+        "median_request_seconds": 5.818857520498568
+      }
+    },
+    "v1-aster-lead": {
+      "thinking_off": {
+        "recall_correct": 0,
+        "recall_total": 8,
+        "attempted_recall_correct": 0,
+        "attempted_recall_total": 2,
+        "recall_phrase_present": 0,
+        "old_mentions": 0,
+        "incomplete": 0,
+        "median_request_seconds": 0.22843172901775688
+      },
+      "thinking_on": {
+        "recall_correct": 0,
+        "recall_total": 8,
+        "attempted_recall_correct": 0,
+        "attempted_recall_total": 2,
+        "recall_phrase_present": 0,
+        "old_mentions": 0,
+        "incomplete": 2,
+        "median_request_seconds": 5.921538145514205
+      }
+    },
+    "v1-bracken-lead": {
+      "thinking_off": {
+        "recall_correct": 0,
+        "recall_total": 8,
+        "attempted_recall_correct": 0,
+        "attempted_recall_total": 4,
+        "recall_phrase_present": 0,
+        "old_mentions": 0,
+        "incomplete": 0,
+        "median_request_seconds": 0.2400873330188915
+      },
+      "thinking_on": {
+        "recall_correct": 0,
+        "recall_total": 8,
+        "attempted_recall_correct": 0,
+        "attempted_recall_total": 4,
+        "recall_phrase_present": 0,
+        "old_mentions": 0,
+        "incomplete": 2,
+        "median_request_seconds": 5.977263791515725
+      }
+    },
+    "v1-aster-check": {
+      "thinking_off": {
+        "recall_correct": 0,
+        "recall_total": 8,
+        "attempted_recall_correct": 0,
+        "attempted_recall_total": 6,
+        "recall_phrase_present": 0,
+        "old_mentions": 0,
+        "incomplete": 0,
+        "median_request_seconds": 0.2308468749979511
+      },
+      "thinking_on": {
+        "recall_correct": 0,
+        "recall_total": 8,
+        "attempted_recall_correct": 0,
+        "attempted_recall_total": 6,
+        "recall_phrase_present": 0,
+        "old_mentions": 0,
+        "incomplete": 2,
+        "median_request_seconds": 6.320809208496939
+      }
+    },
+    "v1-bracken-severity": {
+      "thinking_off": {
+        "recall_correct": 2,
+        "recall_total": 8,
+        "attempted_recall_correct": 2,
+        "attempted_recall_total": 8,
+        "recall_phrase_present": 2,
+        "old_mentions": 0,
+        "incomplete": 0,
+        "median_request_seconds": 0.3037834790011402
+      },
+      "thinking_on": {
+        "recall_correct": 1,
+        "recall_total": 8,
+        "attempted_recall_correct": 1,
+        "attempted_recall_total": 8,
+        "recall_phrase_present": 1,
+        "old_mentions": 0,
+        "incomplete": 3,
+        "median_request_seconds": 7.083251208008733
+      }
+    },
+    "duplicate-aster-lead": {
+      "thinking_off": {
+        "recall_correct": 2,
+        "recall_total": 8,
+        "attempted_recall_correct": 2,
+        "attempted_recall_total": 8,
+        "recall_phrase_present": 2,
+        "old_mentions": 0,
+        "incomplete": 0,
+        "median_request_seconds": 0.32561639600316994
+      },
+      "thinking_on": {
+        "recall_correct": 1,
+        "recall_total": 8,
+        "attempted_recall_correct": 1,
+        "attempted_recall_total": 8,
+        "recall_phrase_present": 1,
+        "old_mentions": 0,
+        "incomplete": 3,
+        "median_request_seconds": 8.182905291992938
+      }
+    },
+    "v2-aster-lead": {
+      "thinking_off": {
+        "recall_correct": 3,
+        "recall_total": 8,
+        "attempted_recall_correct": 3,
+        "attempted_recall_total": 8,
+        "recall_phrase_present": 3,
+        "old_mentions": 0,
+        "incomplete": 0,
+        "median_request_seconds": 0.26852656199480407
+      },
+      "thinking_on": {
+        "recall_correct": 2,
+        "recall_total": 8,
+        "attempted_recall_correct": 2,
+        "attempted_recall_total": 8,
+        "recall_phrase_present": 2,
+        "old_mentions": 0,
+        "incomplete": 3,
+        "median_request_seconds": 2.296359083527932
+      }
+    },
+    "restart": {
+      "thinking_off": {
+        "recall_correct": 3,
+        "recall_total": 8,
+        "attempted_recall_correct": 3,
+        "attempted_recall_total": 8,
+        "recall_phrase_present": 3,
+        "old_mentions": 0,
+        "incomplete": 0,
+        "median_request_seconds": 0.23666189599316567
+      },
+      "thinking_on": {
+        "recall_correct": 2,
+        "recall_total": 8,
+        "attempted_recall_correct": 2,
+        "attempted_recall_total": 8,
+        "recall_phrase_present": 2,
+        "old_mentions": 0,
+        "incomplete": 3,
+        "median_request_seconds": 2.2107446044974495
+      }
+    }
+  },
+  "learning_facts": [
+    {
+      "lesson": "v1-aster-lead",
+      "accepted_ids": [],
+      "rejected_ids": [
+        1
+      ]
+    },
+    {
+      "lesson": "v1-bracken-lead",
+      "accepted_ids": [],
+      "rejected_ids": [
+        2
+      ]
+    },
+    {
+      "lesson": "v1-aster-check",
+      "accepted_ids": [],
+      "rejected_ids": [
+        3
+      ]
+    },
+    {
+      "lesson": "v1-bracken-severity",
+      "accepted_ids": [
+        4
+      ],
+      "rejected_ids": []
+    },
+    {
+      "lesson": "duplicate-aster-lead",
+      "accepted_ids": [],
+      "rejected_ids": [
+        5
+      ]
+    },
+    {
+      "lesson": "v2-aster-lead",
+      "accepted_ids": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "rejected_ids": []
+    }
+  ]
+}
