@@ -36,7 +36,11 @@ def mode_summary(phases):
             rows = [r for r in phase["rows"] if r["thinking"] == mode]
             recall = [r for r in rows if r["kind"] == "recall"]
             modes[name] = {"recall_correct": sum(r["score"]["correct"] for r in recall),
-                           "recall_total": len(recall), "old_mentions": sum(r["score"]["old_mentioned"] for r in rows),
+                           "recall_total": len(recall),
+                           "attempted_recall_correct": sum(r["score"]["correct"] for r in recall if r["score"]["eligible"]),
+                           "attempted_recall_total": sum(r["score"]["eligible"] for r in recall),
+                           "recall_phrase_present": sum(r["score"]["expected_phrase_present"] for r in recall),
+                           "old_mentions": sum(r["score"]["old_mentioned"] for r in rows),
                            "incomplete": sum(r["score"]["status"] == "incomplete" for r in rows),
                            "median_request_seconds": statistics.median(r["seconds"] for r in rows)}
         result[phase["phase"]] = modes

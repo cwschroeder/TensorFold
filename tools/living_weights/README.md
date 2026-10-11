@@ -91,14 +91,16 @@ between learning events across checked rounds; it is not an overall request dead
 take longer. A request is marked rejected if any extracted fact is rejected; the audit lists accepted and rejected
 fact IDs separately. No extracted facts stops the run as a protocol failure, rather than a recall result. After every write, all questions run in fresh greedy chats
 with thinking off and on. The final probe uses a new owned process on the learned copy, without `--slide`.
-Original checkpoint hashes are verified after cleanup.
+Original weight and config hashes are verified after cleanup.
 
 Scores require the complete visible answer to equal an expected value and `finish_reason: stop`. Unicode and
 whitespace are normalized. Person names ignore case; commands and incident codes preserve case. Punctuation
 and extra words are retained. Phrase presence is
 diagnostic only: a denial, a larger number containing the expected number, or both old and new values cannot pass.
 All phases include the same recall denominator, including any facts already known at baseline.
-The receipt separates control accuracy from byte changes, old-value mentions, and incomplete replies.
+The receipt separates control accuracy from byte changes, old-value mentions, and incomplete replies. The audit
+also reports exact recall among facts with completed learning requests and phrase presence for both thinking modes.
+Phrase presence does not establish correctness; the full reply remains available to inspect denials or extra text.
 
 Versions describe the test's intended facts. They do not imply a server update contract, last-write-wins behaviour
 or request deduplication. The auditor recomputes scores and summaries and rejects missing phases or mismatched
