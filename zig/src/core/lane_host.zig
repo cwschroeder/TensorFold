@@ -542,4 +542,6 @@ pub const LaneHost = struct {
     }
 };
 
-test { _ = @import("lane_host_test.zig"); }
+test {
+    _ = @import("lane_host_test.zig");
+}
