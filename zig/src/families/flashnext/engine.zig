@@ -109,11 +109,13 @@ pub const Engine = struct {
     cins: [2]Buf,
     ring: mtl.Buffer,
     hist: mtl.Buffer, // the token history the copy drafts search
+    fixed_depth: ?usize = null, // TF_DRAFT_DEPTH: measured operator override; explicit request depth wins
     copy: bool = true, // copy drafts from the history when a long enough match exists
     copy_min: u32 = 3,
     copy_long: u32 = 6, // shorter matches copy only when the head's first draft agrees
     mark_taps: bool = true, // a prompt call writes the DeltaNet states at marks inside it (false: calls end at marks)
     pair_min: u32 = PAIR_MIN, // speed-up mode's pair chunks: rows each Mac takes at least (FZ_PAIR_MIN; rank 1 takes rank 0's)
+    ple_residency: ?mtl.ResidencySet = null,
     call_log: bool = false, // FZ_CALL_LOG: one line a prompt pass with each call's rows, wall and GPU time
     snap_pool: snapshot.Pool = .{}, // kept states' buffers, reused and readied ahead
     handoff_ns: i96 = 0, // speed-up rank 0: the last request's handoff to rank 1 and its resume answer
@@ -142,6 +144,9 @@ pub const Engine = struct {
         const e = try gpa.create(Engine); // undefined memory: every defaulted field is set here
         errdefer gpa.destroy(e);
         e.gpa = gpa;
+        e.ple_residency = null;
+        e.fixed_depth = try fz.configuredDraftDepth(if (std.c.getenv("TF_DRAFT_DEPTH")) |v| std.mem.span(v) else null);
+        if (e.fixed_depth) |d| std.log.info("FlashNext fixed draft depth: {d}", .{d});
         e.copy = true;
         e.copy_min = 3;
         e.copy_long = 6;
@@ -422,6 +427,17 @@ pub const Engine = struct {
         // speed-up mode: TP=2 with the peer the settings name (tp.zig); both ranks then run the same replies in lockstep
         const tp_path: ?[]const u8 = speed_up orelse if (std.c.getenv("TF_FLASHNEXT_TP")) |p| std.mem.span(p) else null;
         if (tp_path) |path| r.tp = try fz.Tp2.init(arena, r.device, path);
+        if (std.c.getenv("TF_PLE_RESIDENCY")) |value| {
+            if (std.mem.eql(u8, std.mem.span(value), "1")) {
+                const resident = try device.residencySet(m.ple.tables.len);
+                for (m.ple.tables) |table| resident.add(table.b);
+                resident.commit();
+                resident.requestResidency();
+                r.queue.addResidencySet(resident);
+                e.ple_residency = resident;
+                std.log.info("PLE residency: {d} allocations, {d} bytes", .{ resident.count(), resident.allocatedSize() });
+            }
+        }
         return e;
     }
 
@@ -515,7 +531,8 @@ pub const Engine = struct {
     }
 
     /// `generate` after snapshot.restore put `from` tokens in the model, the pass cut at each mark for out.marked.
-    pub fn generateFrom(e: *Engine, prompt: []const u32, from: usize, marks: []const u32, max_tokens: usize, eos: []const u32, depth: ?usize, out: Out) !Result {
+    pub fn generateFrom(e: *Engine, prompt: []const u32, from: usize, marks: []const u32, max_tokens: usize, eos: []const u32, requested_depth: ?usize, out: Out) !Result {
+        const depth: ?usize = if (requested_depth != null) requested_depth else e.fixed_depth;
         const r = e.r;
         const m = e.m;
         if (prompt.len == 0) return error.EmptyPrompt;
@@ -688,6 +705,8 @@ pub const Engine = struct {
             m.mtp.gsel = e.msel;
         }
         const base = r.event_value;
+        const round_profile = std.c.getenv("TF_ROUND_PROFILE") != null;
+        var encoded_ticks: [4]u64 = @splat(0);
         var cbs: [4]?mtl.CommandBuffer = .{ null, null, null, null };
         var widths: [4]usize = undefined;
         widths[0] = W0;
@@ -698,6 +717,7 @@ pub const Engine = struct {
         const rg = e.ring.slice(u32, fz.RING_WORDS * RING);
         var failed: ?anyerror = null;
         while (true) {
+            const encode_start = if (round_profile) std.c.mach_absolute_time() else 0;
             const wr = widths[round % 4];
             const cb = r.queue.commandBuffer();
             if (round > 0) cb.waitFor(r.event, base + round);
@@ -744,11 +764,14 @@ pub const Engine = struct {
             r.enc.end();
             cb.signal(r.event, base + round + 1);
             cb.commit();
+            if (round_profile) encoded_ticks[round % 4] = std.c.mach_absolute_time() - encode_start;
             cbs[round % 4] = cb;
             round += 1;
             if (round < 2) continue;
             const prev = cbs[done % 4].?;
+            const wait_start = if (round_profile) std.c.mach_absolute_time() else 0;
             prev.wait();
+            const wait_ticks = if (round_profile) std.c.mach_absolute_time() - wait_start else 0;
             cbs[done % 4] = null;
             if (prev.failure()) |msg| {
                 std.log.err("command buffer failed: {s}", .{msg});
@@ -793,10 +816,15 @@ pub const Engine = struct {
             if (take > 0 and out.tokens(out.ctx, got[0..take])) stop = true;
             emitted += take;
             const cancel = !stop and emitted < max_tokens and out.cancelled(out.ctx);
+            const agree_start = if (round_profile) std.c.mach_absolute_time() else 0;
             const ag = e.agreeRound(stop or emitted >= max_tokens or cancel, rule.pick()) catch |err| {
                 failed = err;
                 break;
             };
+            if (round_profile) std.debug.print("ROUND-PROFILE rank={d} prompt={d} round={d} rows={d} keep={d} encode_ticks={d} wait_ticks={d} agree_ticks={d} gpu_start={d:.6} gpu_end={d:.6}\n", .{
+                if (r.tp) |tp| tp.rank else @as(u32, 0), prompt.len, done - 1,                                 wd,              keep,
+                encoded_ticks[(done - 1) % 4],           wait_ticks, std.c.mach_absolute_time() - agree_start, prev.gpuStart(), prev.gpuEnd(),
+            });
             next_depth = ag.depth;
             const quit = ag.quit;
             if (quit) {
@@ -875,6 +903,10 @@ pub const Engine = struct {
                 tp.sendRequest(std.mem.asBytes(&none), &.{}) catch {};
             }
             tp.deinit();
+        }
+        if (e.ple_residency) |resident| {
+            e.r.queue.removeResidencySet(resident);
+            resident.deinit();
         }
         const gpa = e.gpa;
         var kept = e.peer_kept.valueIterator();

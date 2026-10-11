@@ -43,7 +43,7 @@ pub const CommandBuffer = struct {
     id: Id,
 
     pub fn compute(self: CommandBuffer, dispatch: types.DispatchType) ComputeEncoder {
-        return .{ .id = objc.msg(Id, self.id, "computeCommandEncoderWithDispatchType:", .{@backingInt(dispatch)}) };
+        return .{ .id = objc.msg(Id, self.id, "computeCommandEncoderWithDispatchType:", .{@backingInt(dispatch)}), .command_buffer = self };
     }
 
     /// A blit encoder on this buffer, for copies between buffers on the GPU.
@@ -129,6 +129,7 @@ pub const BlitEncoder = struct {
 
 pub const ComputeEncoder = struct {
     id: Id,
+    command_buffer: ?CommandBuffer = null, // reopen around CPU/GPU shared-event boundaries
 
     pub fn setPipeline(self: ComputeEncoder, pipeline: Pipeline) void {
         objc.msg(void, self.id, "setComputePipelineState:", .{pipeline.id});

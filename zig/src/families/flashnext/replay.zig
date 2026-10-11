@@ -1898,7 +1898,7 @@ pub const Model = struct {
 
     pub fn grouped(m: *Model, h: Buf, out: Buf) !void {
         const t = &m.t;
-        if (m.r.tp) |tp| return if (m.r.skip & TP_CLASS == 0) tp.combine(m.r.enc, h, t.inj_m, out, t.ssp, t.rows, m.r.rows); // TP: each rank's rows' branches
+        if (m.r.tp) |tp| return if (m.r.skip & TP_CLASS == 0) tp.combine(&m.r.enc, h, t.inj_m, out, t.ssp, t.rows, m.r.rows); // TP: each rank's rows' branches
         try m.r.call("q4_hc_norm_grouped#[10240]", &.{ h, t.inj_m, t.ydown, t.wts, t.lg }, &.{ out, t.ssp });
     }
 
@@ -2038,7 +2038,7 @@ pub const Model = struct {
             cur = 1 - cur;
             try m.hcProject(t.h[cur], L.ahc, "qa_hc_down@ahc", "qa_hc_up@ahc", t.inj_a);
             var plain = false; // speed-up mode's DeltaNet exchange made the stream update
-            if (L.linear and r.tp != null) { // TP: this Mac's 8 key heads and 24 value heads, then one partial-sum exchange
+            if (L.linear and r.tp != null and !r.tp.?.replicate_gdn) { // TP: this Mac's 8 key heads and 24 value heads, then one partial-sum exchange
                 const tp = r.tp.?;
                 const k0: usize = tp.rank;
                 if (!r.fused_xsum) try r.call("lane_qmm_xsum#[2560]", &.{ t.mixed, t.mdims }, &.{t.xs});
@@ -2056,7 +2056,7 @@ pub const Model = struct {
                 const part: Buf = .{ .b = pn.b, .off = pn.off };
                 try split.laneTiles(r, "lane_qmm_bytes_grouped@gdn.out", &.{ t.gout, t.xs, L.out.wq, L.out.sbt, t.mdims }, part, &.{.{ 0, 80 }}, 8, .{ 96 * k0, 96 }); // one kernel at every width: drafted == plain
                 if (r.skip & TP_CLASS == 0) { // the partials' sum and the stream update in the exchange's launch
-                    tp.plain(r.enc, t.h[cur], t.inj_a, t.h[1 - cur], t.ssp, t.rows, rows);
+                    tp.plain(&r.enc, t.h[cur], t.inj_a, t.h[1 - cur], t.ssp, t.rows, rows);
                     plain = true;
                 }
             } else if (L.linear) {
@@ -2136,7 +2136,7 @@ pub const Model = struct {
             const half = HEAD_TILES / 2;
             if (!r.fused_xsum) try r.call("lane_qmm_xsum#[2560]", &.{ t.mixed, t.mdims }, &.{t.xs});
             try split.laneTiles(r, "lane_qmm_bytes_grouped@head", &.{ t.mixed, t.xs, m.head.wq, m.head.sbt, t.mdims }, t.logits, &.{.{ half * tp.rank, half }}, 1, null);
-            if (r.skip & TP_CLASS == 0) tp.argmax(r.enc, t.logits, HEAD_TILES * 32, half * 32 * tp.rank, half * 32, t.picks, t.rows, rows);
+            if (r.skip & TP_CLASS == 0) tp.argmax(&r.enc, t.logits, HEAD_TILES * 32, half * 32 * tp.rank, half * 32, t.picks, t.rows, rows);
             return;
         }
         try m.lane(t.mixed, D, m.head, "lane_qmm_bytes_grouped@head", t.logits);
@@ -2288,7 +2288,7 @@ pub const Model = struct {
             r.denseTiles(x, D, h.draft, h.logits, t0, tn);
             const lo = @min(t0 * 32, h.ids_n);
             const hi = @min((t0 + tn) * 32, h.ids_n);
-            tp.argmax(r.enc, h.logits, n, lo, hi - lo, Buf{ .b = tp.pick_tmp }, Buf{ .b = tp.one }, 1);
+            tp.argmax(&r.enc, h.logits, n, lo, hi - lo, Buf{ .b = tp.pick_tmp }, Buf{ .b = tp.one }, 1);
             tp.mapIds(r.enc, h.ids, out);
             return;
         }
@@ -2345,6 +2345,25 @@ pub const Model = struct {
 /// nearly all land (copied text).
 /// FZ_PROFILE's knock-out bit for speed-up mode's exchanges: the bit after `Run.class`'s eight.
 pub const TP_CLASS: u32 = 1 << 8;
+
+/// An optional fixed-depth measurement setting. Explicit request depths (including no drafts) win.
+pub fn configuredDraftDepth(text: ?[]const u8) !?usize {
+    const value = text orelse return null;
+    const depth = std.fmt.parseInt(usize, value, 10) catch return error.BadDraftDepth;
+    if (depth >= MAXR) return error.BadDraftDepth;
+    return depth;
+}
+
+test "fixed draft depth rejects invalid and out-of-window settings" {
+    try std.testing.expectEqual(@as(?usize, null), try configuredDraftDepth(null));
+    for ([_]usize{ 0, 1, 3, 7, MAXR - 1 }) |depth| {
+        var buf: [16]u8 = undefined;
+        try std.testing.expectEqual(@as(?usize, depth), try configuredDraftDepth(try std.fmt.bufPrint(&buf, "{d}", .{depth})));
+    }
+    for ([_][]const u8{ "", "-1", "16", "true", "999999999999999999999999999" }) |bad| {
+        try std.testing.expectError(error.BadDraftDepth, configuredDraftDepth(bad));
+    }
+}
 
 pub const DepthRule = struct {
     rate: f64 = 0.6, // moving average of the head's drafts landed over drafts offered
@@ -3088,7 +3107,7 @@ pub const Prompt = struct {
             ws[n] = .{ .src = bytesOf(s.p.b.cin) + s.rows * WIDE * 2, .len = PLE_TAIL * WIDE * 2, .dst = tpm.TAIL };
             n += 1;
         }
-        pr.tp.send(s.p.r.enc, ws[0..n], tpm.LAYER_FLAG + 8 * i, pr.call);
+        pr.tp.send(&s.p.r.enc, ws[0..n], tpm.LAYER_FLAG + 8 * i, pr.call);
     }
 
     /// Segment 1, before layer i's mixer (its n-gram block at layer 1): the GPU waits for the layer's flag, then copies the peer's handoff into the slot it reads, the caches, and its n-gram tail.
@@ -3097,7 +3116,7 @@ pub const Prompt = struct {
         const w = pr.tp.window();
         const slot = tpm.layerSlot(i);
         const p = s.p;
-        pr.tp.waitWord(p.r.enc, tpm.LAYER_FLAG + 8 * i, pr.call);
+        pr.tp.waitWord(&p.r.enc, tpm.LAYER_FLAG + 8 * i, pr.call);
         if (L.linear) {
             p.copyWords(.{ .b = w, .off = slot }, L.cs[1 - pr.a], CS_ROW / 4);
             p.copyWords(.{ .b = w, .off = slot + CS_ROW }, L.so[1 - pr.a], SO_ROW / 4);
@@ -3140,11 +3159,13 @@ pub const Prompt = struct {
         }
         pub fn pre(h: *Hooks, l: *segments.Lane, i: usize) !void {
             const s = h.at(l);
+            defer l.enc = s.p.r.enc;
             if (h.pair) |pr| if (pr.k == 1 and i == 1) pairTake(pr, h.m, s, i);
             try segPre(s, h.m, i);
         }
         pub fn mixer(h: *Hooks, l: *segments.Lane, i: usize) !void {
             const s = h.at(l);
+            defer l.enc = s.p.r.enc;
             if (h.pair) |pr| if (pr.k == 1 and i != 1) pairTake(pr, h.m, s, i);
             try segMixer(s, h.m, i);
             if (h.pair) |pr| if (pr.k == 0) pairSend(pr, h.m, s, i);
