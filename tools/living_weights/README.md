@@ -3,8 +3,8 @@
 Tools for measuring what a Living Weights lesson changes, beyond the fact it teaches. They talk to running
 `tensorfold serve` processes over HTTP; nothing here loads a model. Python 3.11+, standard library only.
 
-Every run compares a taught copy against the same checkpoint with greedy decoding (`temperature: 0`). On one engine and
-checkpoint greedy replies are byte-identical, so any answer that differs was changed by learning.
+Runs compare a taught copy against the same checkpoint with greedy decoding (`temperature: 0`). Record a baseline
+before teaching; reply differences are observations, and repeat runs help distinguish learning from runtime variation.
 
 ## Servers
 
@@ -18,7 +18,7 @@ tensorfold serve ORIGINAL --port 8081 --no-thinking
 
 ## Fact test (`lw_facts.py`, `facts.json`)
 
-20 fictional facts, so a correct answer can only come from learning. Each has two paraphrased recall questions and a
+20 fictional facts with a pre-learning baseline to identify existing or coincidental answers. Each has two recall questions and a
 neighbour question about a real thing of the same kind that must not pick the fact up ("How long is the Golden Gate
 Bridge?" next to "The Quillon bridge is 1,312 metres long."), plus 15 unrelated controls.
 
@@ -62,3 +62,39 @@ The page loads marked, DOMPurify and mermaid from cdn.jsdelivr.net; without them
 ## Tests
 
 `python3 -m unittest tools.tests.test_living_weights` from the repository root runs against a fake server.
+
+## Project facts, duplicates and corrections
+
+`lw_project.py` teaches a disposable copy of an untaught Nemotron checkpoint and owns both native server processes.
+Four fictional facts describe two projects: two lessons in German and two in English, followed by an exact repeat
+and a correction of the quality lead. Independent DE/EN questions live in `project_questions.json`; the learner
+receives only lesson text and `source: document`, never the test questions or expected answers.
+
+```sh
+python3 tools/living_weights/lw_project.py \
+  --binary /path/to/tensorfold-native --model /path/to/original-checkpoint \
+  --build-receipt /path/to/build-pins.json --output /path/to/new-run
+python3 tools/living_weights/lw_project_audit.py /path/to/new-run
+python3 -m unittest tools.tests.test_living_project tools.tests.test_living_weights
+```
+
+The managed runner requires Apple Silicon, an idle model host, memory and disk headroom, and Python 3.11+.
+`build-pins.json` records `binary_sha256`, `upstream_commit`, `source_commit` and `compiler_version`. Build and
+verify the current upstream before a run. The output directory must be new; it contains a disposable checkpoint
+and private API keys. Publish a reviewed receipt subset, never the entire output directory.
+
+Each write needs a complete learning stream and a fresh successful shard save. Rejected lessons remain measured
+outcomes; an uncertain write stops the run without retry. After every write, all questions run in fresh greedy chats
+with thinking off and on. The final probe uses a new owned process on the learned copy, without `--slide`.
+Original checkpoint hashes are verified after cleanup.
+
+Scores require the complete visible answer to equal an expected value after Unicode, case and whitespace
+normalization, and require `finish_reason: stop`. Punctuation and extra words are retained. Phrase presence is
+diagnostic only: a denial, a larger number containing the expected number, or both old and new values cannot pass.
+The receipt separates control accuracy from byte changes, old-value mentions, and incomplete replies.
+
+Versions describe the test's intended facts. They do not imply a server update contract, last-write-wins behaviour
+or request deduplication. The auditor recomputes scores and summaries and rejects missing phases or mismatched
+corpus hashes. Total HTTP latency includes prompt and generation; it is not TTFT or isolated decode speed.
+Physical footprint and system swap are sampled every five seconds for the owned child, including loading and
+learning. A maximum observed sample is not a lifetime peak. This experiment does not measure general coding skill.

@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "fictional": true,
+  "cases": [
+    {
+      "id": "aster-lead",
+      "subject": "Project Aster",
+      "values": {
+        "1": [
+          "Mira Solven"
+        ],
+        "2": [
+          "Lena Dovren"
+        ]
+      },
+      "case_sensitive": false
+    },
+    {
+      "id": "bracken-lead",
+      "subject": "Projekt Bracken",
+      "values": {
+        "1": [
+          "Niko Varren"
+        ]
+      },
+      "case_sensitive": false
+    },
+    {
+      "id": "aster-check",
+      "subject": "Project Aster",
+      "values": {
+        "1": [
+          "aster-check"
+        ]
+      },
+      "case_sensitive": true
+    },
+    {
+      "id": "bracken-severity",
+      "subject": "Projekt Bracken",
+      "values": {
+        "1": [
+          "ZP-17"
+        ]
+      },
+      "case_sensitive": true
+    }
+  ],
+  "steps": [
+    {
+      "id": "v1-aster-lead",
+      "kind": "introduce",
+      "fact": "aster-lead",
+      "version": 1,
+      "language": "en",
+      "text": "The quality lead of Project Aster is Mira Solven.",
+      "source": "document"
+    },
+    {
+      "id": "v1-bracken-lead",
+      "kind": "introduce",
+      "fact": "bracken-lead",
+      "version": 1,
+      "language": "de",
+      "text": "Die Qualitätsleitung von Projekt Bracken ist Niko Varren.",
+      "source": "document"
+    },
+    {
+      "id": "v1-aster-check",
+      "kind": "introduce",
+      "fact": "aster-check",
+      "version": 1,
+      "language": "en",
+      "text": "The verification command for Project Aster is aster-check.",
+      "source": "document"
+    },
+    {
+      "id": "v1-bracken-severity",
+      "kind": "introduce",
+      "fact": "bracken-severity",
+      "version": 1,
+      "language": "de",
+      "text": "Der Vorfallcode von Projekt Bracken ist ZP-17.",
+      "source": "document"
+    },
+    {
+      "id": "duplicate-aster-lead",
+      "kind": "duplicate",
+      "fact": "aster-lead",
+      "version": 1,
+      "language": "en",
+      "text": "The quality lead of Project Aster is Mira Solven.",
+      "source": "document"
+    },
+    {
+      "id": "v2-aster-lead",
+      "kind": "update",
+      "fact": "aster-lead",
+      "version": 2,
+      "language": "en",
+      "text": "The quality lead of Project Aster is now Lena Dovren, replacing Mira Solven.",
+      "source": "document"
+    }
+  ]
+}
