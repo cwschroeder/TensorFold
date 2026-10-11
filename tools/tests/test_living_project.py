@@ -119,6 +119,11 @@ class ScoreTests(unittest.TestCase):
         self.assertFalse(scoring.score(q, "142", "stop", {}, {})["correct"])
         self.assertTrue(scoring.score(q, "42", "stop", {}, {})["correct"])
 
+    def test_calibration_is_explicitly_fictional_and_keeps_chat_source(self):
+        spec = scoring.load(ROOT / "calibration_lessons.json", ROOT / "calibration_questions.json")
+        self.assertEqual(spec["steps"][0]["source"], "chat")
+        self.assertEqual(spec["cases"]["colour"]["values"]["1"], ["turquoise", "türkis"])
+
     def test_duplicate_question_and_stale_duplicate_lesson_are_invalid(self):
         with tempfile.TemporaryDirectory() as directory:
             lessons, questions = Path(directory) / "lessons.json", Path(directory) / "questions.json"

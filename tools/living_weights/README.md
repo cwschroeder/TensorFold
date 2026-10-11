@@ -108,3 +108,10 @@ or request deduplication. The auditor recomputes scores and summaries and reject
 corpus hashes. Total HTTP latency includes prompt and generation; it is not TTFT or isolated decode speed.
 Physical footprint and system swap are sampled every five seconds for the owned child, including loading and
 learning. A maximum observed sample is not a lifetime peak. This experiment does not measure general coding skill.
+
+
+`calibration_lessons.json` and `calibration_questions.json` define a separate fictional personal-chat colour test.
+Use both with `--lessons` and `--questions` on a fresh untaught copy; audit it with the same two options.
+This adds a baseline, one `source: chat` lesson and a restart with DE/EN recall, a cousin near miss and controls.
+It checks whether this simple chat fact works in the current environment. It does not establish project learning
+or isolate a cause: fact type, subject and source differ from the project corpus. The speaker is fictional.

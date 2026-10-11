@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "questions": [
+    {
+      "id": "colour-en",
+      "kind": "recall",
+      "fact": "colour",
+      "language": "en",
+      "text": "Which colour do I like best? Answer only with the colour, or unknown if you do not know."
+    },
+    {
+      "id": "colour-de",
+      "kind": "recall",
+      "fact": "colour",
+      "language": "de",
+      "text": "Welche Farbe bevorzuge ich? Antworte nur mit der Farbe, oder unknown falls du sie nicht kennst."
+    },
+    {
+      "id": "cousin-colour",
+      "kind": "neighbour",
+      "language": "en",
+      "text": "What is my cousin's favourite colour? Answer only with the colour, or unknown if you do not know.",
+      "expect": [
+        "unknown"
+      ]
+    },
+    {
+      "id": "math-en",
+      "kind": "control",
+      "language": "en",
+      "text": "What is 17 + 25? Answer only with the number.",
+      "expect": [
+        "42"
+      ]
+    },
+    {
+      "id": "capital-de",
+      "kind": "control",
+      "language": "de",
+      "text": "Wie heißt die Hauptstadt von Deutschland? Antworte nur mit dem Stadtnamen.",
+      "expect": [
+        "Berlin"
+      ]
+    }
+  ]
+}

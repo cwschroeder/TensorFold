@@ -29,8 +29,8 @@ def load(lessons, questions):
     state, previous = {}, {}
     for step in a["steps"]:
         fact, version = step["fact"], step["version"]
-        if fact not in cases or str(version) not in cases[fact]["values"] or step["source"] != "document":
-            raise ValueError("unknown fact/version or non-document source")
+        if fact not in cases or str(version) not in cases[fact]["values"] or step["source"] not in ("document", "chat"):
+            raise ValueError("unknown fact/version or unsupported source")
         old = state.get(fact, 0)
         if step["kind"] == "duplicate":
             if old != version or step["text"] != previous.get(fact):
