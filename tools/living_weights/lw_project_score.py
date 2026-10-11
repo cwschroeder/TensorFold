@@ -15,6 +15,8 @@ def normal(text):
 def load(lessons, questions):
     """Read and validate both frozen files, preserving their exact byte hashes."""
     paths = [Path(lessons), Path(questions)]
+    if paths[0].name == paths[1].name:
+        raise ValueError("lesson and question file names must differ for distinct hash pins")
     a, b = [json.loads(p.read_bytes()) for p in paths]
     if a.get("schema") != 1 or b.get("schema") != 1 or a.get("fictional") is not True:
         raise ValueError("expected schema 1 and an explicitly fictional corpus")

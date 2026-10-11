@@ -171,6 +171,16 @@ class ScoreTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 scoring.load(lessons, ROOT / "project_questions.json")
 
+    def test_same_basename_cannot_drop_one_corpus_hash(self):
+        with tempfile.TemporaryDirectory() as directory:
+            a, b = Path(directory) / "a", Path(directory) / "b"
+            a.mkdir()
+            b.mkdir()
+            (a / "corpus.json").write_bytes((ROOT / "project_lessons.json").read_bytes())
+            (b / "corpus.json").write_bytes((ROOT / "project_questions.json").read_bytes())
+            with self.assertRaises(ValueError):
+                scoring.load(a / "corpus.json", b / "corpus.json")
+
 
 class LifecycleTests(unittest.TestCase):
     def test_exclusive_lock_and_unconfirmed_exit(self):
