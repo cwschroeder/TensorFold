@@ -1,0 +1,115 @@
+{
+  "schema": 1,
+  "questions": [
+    {
+      "id": "aster-lead-en",
+      "kind": "recall",
+      "fact": "aster-lead",
+      "language": "en",
+      "text": "Who holds the quality lead role for Project Aster? Answer only with the value, or unknown if you do not know."
+    },
+    {
+      "id": "aster-lead-de",
+      "kind": "recall",
+      "fact": "aster-lead",
+      "language": "de",
+      "text": "Wie heißt die Person, die bei Projekt Aster die Qualität verantwortet? Antworte nur mit dem Wert, oder unknown falls du ihn nicht kennst."
+    },
+    {
+      "id": "bracken-lead-en",
+      "kind": "recall",
+      "fact": "bracken-lead",
+      "language": "en",
+      "text": "Who is responsible for quality in Project Bracken? Answer only with the value, or unknown if you do not know."
+    },
+    {
+      "id": "bracken-lead-de",
+      "kind": "recall",
+      "fact": "bracken-lead",
+      "language": "de",
+      "text": "Wer hat die Qualitätsleitung im Projekt Bracken? Antworte nur mit dem Wert, oder unknown falls du ihn nicht kennst."
+    },
+    {
+      "id": "aster-check-en",
+      "kind": "recall",
+      "fact": "aster-check",
+      "language": "en",
+      "text": "Which verification command does Project Aster use? Answer only with the value, or unknown if you do not know."
+    },
+    {
+      "id": "aster-check-de",
+      "kind": "recall",
+      "fact": "aster-check",
+      "language": "de",
+      "text": "Welchen Befehl verwendet Projekt Aster zum Prüfen? Antworte nur mit dem Wert, oder unknown falls du ihn nicht kennst."
+    },
+    {
+      "id": "bracken-severity-en",
+      "kind": "recall",
+      "fact": "bracken-severity",
+      "language": "en",
+      "text": "What incident code belongs to Project Bracken? Answer only with the value, or unknown if you do not know."
+    },
+    {
+      "id": "bracken-severity-de",
+      "kind": "recall",
+      "fact": "bracken-severity",
+      "language": "de",
+      "text": "Wie lautet der Vorfallcode für Projekt Bracken? Antworte nur mit dem Wert, oder unknown falls du ihn nicht kennst."
+    },
+    {
+      "id": "near-name",
+      "kind": "neighbour",
+      "language": "en",
+      "text": "Who is the quality lead of Project Asterion? Answer only with the name, or unknown if you do not know.",
+      "expect": [
+        "unknown"
+      ]
+    },
+    {
+      "id": "near-attribute",
+      "kind": "neighbour",
+      "language": "de",
+      "text": "Wer leitet den Vertrieb von Projekt Bracken? Antworte nur mit dem Namen, oder unknown falls du ihn nicht kennst.",
+      "expect": [
+        "unknown"
+      ]
+    },
+    {
+      "id": "math-en",
+      "kind": "control",
+      "language": "en",
+      "text": "What is 17 + 25? Answer only with the number.",
+      "expect": [
+        "42"
+      ]
+    },
+    {
+      "id": "math-de",
+      "kind": "control",
+      "language": "de",
+      "text": "Was ist 9 mal 7? Antworte nur mit der Zahl.",
+      "expect": [
+        "63"
+      ]
+    },
+    {
+      "id": "capital-en",
+      "kind": "control",
+      "language": "en",
+      "text": "What is the capital of France? Answer only with the city name.",
+      "expect": [
+        "Paris"
+      ]
+    },
+    {
+      "id": "capital-de",
+      "kind": "control",
+      "language": "de",
+      "text": "Wie heißt die Hauptstadt von Deutschland? Antworte nur mit dem Stadtnamen.",
+      "expect": [
+        "Berlin"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "fictional": true,
+  "purpose": "Separate synthetic personal-chat calibration; not project knowledge or a user fact.",
+  "cases": [
+    {
+      "id": "colour",
+      "subject": "fictional speaker",
+      "values": {
+        "1": [
+          "turquoise",
+          "türkis"
+        ]
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "colour-chat",
+      "kind": "introduce",
+      "fact": "colour",
+      "version": 1,
+      "language": "en",
+      "text": "My favourite colour is turquoise.",
+      "source": "chat"
+    }
+  ]
+}

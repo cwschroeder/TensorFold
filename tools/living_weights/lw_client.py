@@ -15,9 +15,9 @@ CHAT_TIMEOUT_S = 300
 LEARN_TIMEOUT_S = 900
 
 
-def post_json(url, body, timeout):
+def post_json(url, body, timeout, headers=None):
     """POST a JSON body and return the decoded JSON reply."""
-    req = urllib.request.Request(url, data=json.dumps(body).encode(), headers={"Content-Type": "application/json"})
+    req = urllib.request.Request(url, data=json.dumps(body).encode(), headers={"Content-Type": "application/json", **(headers or {})})
     with urllib.request.urlopen(req, timeout=timeout) as resp:
         return json.load(resp)
 

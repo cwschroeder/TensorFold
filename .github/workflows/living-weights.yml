@@ -1,0 +1,22 @@
+name: Living weights tools
+
+on:
+  pull_request:
+    paths:
+      - 'tools/living_weights/**'
+      - 'tools/tests/test_living*.py'
+      - '.github/workflows/living-weights.yml'
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.11', '3.14']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Protocol, scoring, audit and cleanup tests
+        run: python -m unittest tools.tests.test_living_weights tools.tests.test_living_project
