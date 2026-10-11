@@ -78,8 +78,10 @@ python3 tools/living_weights/lw_project_audit.py /path/to/new-run
 python3 -m unittest tools.tests.test_living_project tools.tests.test_living_weights
 ```
 
+An exclusive per-user host lock covers preflight through confirmed server exit. If cleanup cannot confirm exit,
+the lock remains for operator inspection. Terminal interrupts stop the owned child and preserve partial evidence.
 The managed runner requires Apple Silicon, an idle model host, memory and disk headroom, and Python 3.11+.
-`build-pins.json` records `binary_sha256`, `upstream_commit`, `source_commit` and `compiler_version`. Build and
+`build-pins.json` records `binary_sha256`, `upstream_commit`, `build_source_commit`, `patch_commit` and `compiler_version`. Build and
 verify the current upstream before a run. The output directory must be new; it contains a disposable checkpoint
 and private API keys. Publish a reviewed receipt subset, never the entire output directory.
 
@@ -88,9 +90,11 @@ outcomes; an uncertain write stops the run without retry. After every write, all
 with thinking off and on. The final probe uses a new owned process on the learned copy, without `--slide`.
 Original checkpoint hashes are verified after cleanup.
 
-Scores require the complete visible answer to equal an expected value after Unicode, case and whitespace
-normalization, and require `finish_reason: stop`. Punctuation and extra words are retained. Phrase presence is
+Scores require the complete visible answer to equal an expected value and `finish_reason: stop`. Unicode and
+whitespace are normalized. Person names ignore case; commands and incident codes preserve case. Punctuation
+and extra words are retained. Phrase presence is
 diagnostic only: a denial, a larger number containing the expected number, or both old and new values cannot pass.
+All phases include the same recall denominator, including any facts already known at baseline.
 The receipt separates control accuracy from byte changes, old-value mentions, and incomplete replies.
 
 Versions describe the test's intended facts. They do not imply a server update contract, last-write-wins behaviour

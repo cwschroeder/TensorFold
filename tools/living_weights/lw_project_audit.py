@@ -27,6 +27,22 @@ def aggregate(phases, lessons):
                          "seconds_including_save": r["seconds_including_save"]} for r in lessons], "phases": results}
 
 
+def mode_summary(phases):
+    """Separate measured recall, old values, truncation and request latency by actual thinking mode."""
+    result = {}
+    for phase in phases:
+        modes = {}
+        for mode, name in ((False, "thinking_off"), (True, "thinking_on")):
+            rows = [r for r in phase["rows"] if r["thinking"] == mode]
+            recall = [r for r in rows if r["kind"] == "recall"]
+            modes[name] = {"recall_correct": sum(r["score"]["correct"] for r in recall),
+                           "recall_total": len(recall), "old_mentions": sum(r["score"]["old_mentioned"] for r in rows),
+                           "incomplete": sum(r["score"]["status"] == "incomplete" for r in rows),
+                           "median_request_seconds": statistics.median(r["seconds"] for r in rows)}
+        result[phase["phase"]] = modes
+    return result
+
+
 def memory_evidence(root, instances):
     """Require usable footprint and swap samples for both owned process instances."""
     rows = [json.loads(line) for line in (root / "memory.jsonl").read_text().splitlines()]
@@ -117,7 +133,7 @@ def audit(root, spec):
     if receipt["summary"] != summary:
         raise ValueError("summary disagrees with independently recomputed results")
     return {"schema": 1, "complete": True, "responses": sum(len(p["rows"]) for p in phases),
-            "hashes": spec["hashes"], "summary": summary, "memory": memory}
+            "hashes": spec["hashes"], "summary": summary, "memory": memory, "thinking_modes": mode_summary(phases)}
 
 
 def main():

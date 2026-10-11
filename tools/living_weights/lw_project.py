@@ -210,7 +210,7 @@ def probe(server, spec, state, label, out):
 
 
 def summarise(phases, lessons):
-    """Keep recall, controls, neighbour changes and time separate; never turn a rejected lesson into transport failure."""
+    """Report recall, controls, changes and time separately, preserving rejected lesson outcomes."""
     summary = {"lessons": [{"id": s["id"], "status": s["status"],
                             "seconds_including_save": s["seconds_including_save"]} for s in lessons], "phases": []}
     baseline = {(r["question"], r["thinking"]): r for r in phases[0]["rows"]}

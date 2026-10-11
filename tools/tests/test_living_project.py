@@ -188,7 +188,7 @@ class LifecycleTests(unittest.TestCase):
 class EvidenceTests(unittest.TestCase):
     def test_baseline_has_fixed_recall_denominator_and_known_hits(self):
         row = {"question": "q", "thinking": False, "kind": "recall", "answer": "Mira Solven",
-               "seconds": 1, "score": {"eligible": False, "correct": True}}
+               "seconds": 1, "score": {"eligible": False, "correct": True, "old_mentioned": False, "status": "correct"}}
         phases = [{"phase": "baseline", "rows": [row]}]
         result = runner.summarise(phases, [])
         self.assertEqual(result["phases"][0]["groups"]["recall"]["correct"], 1)
@@ -216,6 +216,86 @@ class EvidenceTests(unittest.TestCase):
             result = auditor.memory_evidence(root, {"a", "b"})
             self.assertEqual(result["a"]["errors"], 1)
             self.assertEqual(result["b"]["max_observed_footprint_bytes"], 100)
+
+
+class AuditTests(unittest.TestCase):
+    def fixture(self, root):
+        spec = scoring.load(ROOT / "project_lessons.json", ROOT / "project_questions.json")
+        phases, lessons, state = [], [], {}
+        previous_ids = []
+        wanted = [("baseline", None)] + [(s["id"], s) for s in spec["steps"]] + [("restart", None)]
+        for index, (name, step) in enumerate(wanted):
+            if step:
+                identity = index
+                stream = events()
+                for event in stream:
+                    if isinstance(event["data"], dict):
+                        event["data"]["id"] = identity
+                record = {"id": name, "kind": step["kind"], "hashes": spec["hashes"],
+                          "text_sha256": runner.hashlib.sha256(step["text"].encode()).hexdigest(),
+                          "request": {"text": step["text"], "source": step["source"]},
+                          "events": stream, "status": "accepted", "seconds_including_save": 1,
+                          "graph_before": {"model": {"save": {"at": index}}, "facts": previous_ids[:]}}
+                previous_ids.append({"id": identity, "state": "learned"})
+                record["graph_after"] = {"model": {"save": {"at": index + 1, "state": "saved"}},
+                                         "facts": previous_ids[:]}
+                runner.write(root / (name + "-learn.json"), record)
+                lessons.append(record)
+                state[step["fact"]] = step["version"]
+            rows = []
+            for question in spec["questions"]:
+                for thinking in (False, True):
+                    answer = "unknown"
+                    rows.append({"question": question["id"], "kind": question["kind"],
+                                 "language": question["language"], "thinking": thinking, "seconds": 1,
+                                 "answer": answer, "finish": "stop",
+                                 "request": {"messages": [{"role": "user", "content": question["text"]}],
+                                             "temperature": 0, "max_tokens": 512 if thinking else 96,
+                                             "chat_template_kwargs": {"enable_thinking": thinking}},
+                                 "response": {"tensorfold": {"enable_thinking": thinking},
+                                              "choices": [{"message": {"content": answer}, "finish_reason": "stop"}]},
+                                 "score": scoring.score(question, answer, "stop", spec["cases"], state)})
+            phase = {"phase": name, "hashes": spec["hashes"], "state": state.copy(), "rows": rows,
+                     "complete": True, "instance": "restart" if name == "restart" else "learning",
+                     "learning_enabled": name != "restart"}
+            runner.write(root / (name + ".json"), phase)
+            phases.append(phase)
+        receipt = {"status": "completed", "hashes": spec["hashes"], "source_unchanged": True,
+                   "owned_server_stopped": True, "restart_verified": True,
+                   "source_before": {"config": "abc"}, "source_after": {"config": "abc"},
+                   "binary_sha256": "abc", "build": {"binary_sha256": "abc"},
+                   "summary": runner.summarise(phases, lessons)}
+        runner.write(root / "receipt.json", receipt)
+        memory = [{"instance": instance, "pid": pid, "physical_footprint_bytes": 100, "swap": "used = 0M"}
+                  for instance, pid in (("learning", 1), ("restart", 2))]
+        (root / "memory.jsonl").write_text("".join(json.dumps(r) + "\n" for r in memory))
+        return spec
+
+    def test_complete_fixture_and_corrupted_evidence(self):
+        mutations = [("baseline.json", lambda d: d.update(instance="other")),
+                     ("baseline.json", lambda d: d["rows"][0]["request"].update(max_tokens=1)),
+                     ("baseline.json", lambda d: d["rows"][0]["score"].update(correct=True)),
+                     ("restart.json", lambda d: d.update(instance="learning")),
+                     ("v2-aster-lead-learn.json", lambda d: d.update(id="wrong-step")),
+                     ("v2-aster-lead-learn.json", lambda d: d["graph_after"]["facts"][-1].update(state="missed")),
+                     ("receipt.json", lambda d: d.update(source_after={"config": "changed"}))]
+        for filename, mutate in mutations:
+            with self.subTest(file=filename), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                spec = self.fixture(root)
+                self.assertEqual(auditor.audit(root, spec)["responses"], 224)
+                path = root / filename
+                data = json.loads(path.read_text())
+                mutate(data)
+                runner.write(path, data)
+                with self.assertRaises(ValueError):
+                    auditor.audit(root, spec)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            spec = self.fixture(root)
+            (root / "memory.jsonl").unlink()
+            with self.assertRaises(FileNotFoundError):
+                auditor.audit(root, spec)
 
 
 if __name__ == "__main__":
