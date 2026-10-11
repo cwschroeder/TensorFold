@@ -1,0 +1,191 @@
+test
++- run test w
+[default] (warn): pack <repo>/.zig-cache/tmp/AIbO_G76oWkj-zYO/pack.safetensors has no recorded source; skipping the identity check
+[default] (warn): pack pack.safetensors has no recorded source; skipping the identity check
+failed command: ./.zig-cache/o/c243dc1355a7532496acc045b2fda5fa/test --cache-dir=./.zig-cache --seed=0x3c082fa2 --listen=-
+
+test
++- run test w
+[default] (warn): pack <repo>/.zig-cache/tmp/BcZru8N4PLBYs0gc/pack.safetensors has no recorded source; skipping the identity check
+[default] (warn): pack pack.safetensors has no recorded source; skipping the identity check
+failed command: ./.zig-cache/o/6f0f2175e6ae09c87402663eb6319c5f/test --cache-dir=./.zig-cache --seed=0x3c082fa2 --listen=-
+
+test
++- run test w
+[default] (warn): pack <repo>/.zig-cache/tmp/MOwmsoF9ZatF7tKv/pack.safetensors has no recorded source; skipping the identity check
+[default] (warn): pack pack.safetensors has no recorded source; skipping the identity check
+failed command: ./.zig-cache/o/b68019c85cb0b439ad32fae1aa1c0b10/test --cache-dir=./.zig-cache --seed=0x3c082fa2 --listen=-
+
+test
++- run test w
+[default] (warn): pack <repo>/.zig-cache/tmp/OIxe5DjJi-V_spfS/pack.safetensors has no recorded source; skipping the identity check
+[default] (warn): pack pack.safetensors has no recorded source; skipping the identity check
+[default] (warn): expert parallel: this Mac runs .{ .magic = 1196182853, .version = 2, .layers = 45, .run = 45, .mtp = 1, .experts = 288, .own_lo = 0, .own_hi = 144, .cap = 8256, .pad = 0, .model = 4660, .rest = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } }, the peer .{ .magic = 1196182853, .version = 2, .layers = 45, .run = 8, .mtp = 1, .experts = 288, .own_lo = 144, .own_hi = 288, .cap = 8256, .pad = 0, .model = 4660, .rest = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } }
+[default] (warn): expert parallel: this Mac runs .{ .magic = 1196182853, .version = 2, .layers = 45, .run = 8, .mtp = 1, .experts = 288, .own_lo = 144, .own_hi = 288, .cap = 8256, .pad = 0, .model = 4660, .rest = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } }, the peer .{ .magic = 1196182853, .version = 2, .layers = 45, .run = 45, .mtp = 1, .experts = 288, .own_lo = 0, .own_hi = 144, .cap = 8256, .pad = 0, .model = 4660, .rest = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 } }
+sparse attention on the tensor units: 99.97% of outputs equal the row kernel's, at most 0.96 bf16 steps apart
+absorb on the tensor units: 99.99% of outputs equal the row kernel's, at most 0.98 bf16 steps apart
+failed command: ./.zig-cache/o/d64bfeae411921c9c595072ed513f7b9/test --cache-dir=./.zig-cache --seed=0x3c082fa2 --listen=-
+
+Build Summary: 139/139 steps succeeded; 880/880 tests passed
+test success
++- run test 2 pass (2 total) 941ms MaxRSS:2M
+|  +- compile test debug native success 4s MaxRSS:265M
++- run test 18 pass (18 total) 395ms MaxRSS:2M
+|  +- compile test debug native success 3s MaxRSS:286M
++- run test 53 pass (53 total) 490ms MaxRSS:11M
+|  +- compile test fast native success 30s MaxRSS:697M
+|     +- WriteFile draft_ids.txt cached
+|     +- WriteFile nemotron_packed.metallib cached
+|        +- run xcrun (nemotron_packed.metallib) cached
+|           +- run xcrun (coop_down_1_0.air) cached
+|           +- run xcrun (coop_down_2_0.air) cached
+|           +- run xcrun (coop_down_2_1.air) cached
+|           +- run xcrun (coop_draft_1_0.air) cached
+|           +- run xcrun (coop_draft_2_0.air) cached
+|           +- run xcrun (coop_draft_2_1.air) cached
+|           +- run xcrun (coop_eh_1_0.air) cached
+|           +- run xcrun (coop_eh_1_0_sk.air) cached
+|           +- run xcrun (coop_eh_2_0.air) cached
+|           +- run xcrun (coop_eh_2_0_sk.air) cached
+|           +- run xcrun (coop_eh_2_1.air) cached
+|           +- run xcrun (coop_eh_2_1_sk.air) cached
+|           +- run xcrun (coop_head_1_0.air) cached
+|           +- run xcrun (coop_head_2_0.air) cached
+|           +- run xcrun (coop_head_2_1.air) cached
+|           +- run xcrun (coop_in_1_0.air) cached
+|           +- run xcrun (coop_in_1_0_sk.air) cached
+|           +- run xcrun (coop_in_2_0.air) cached
+|           +- run xcrun (coop_in_2_0_sk.air) cached
+|           +- run xcrun (coop_in_2_1.air) cached
+|           +- run xcrun (coop_in_2_1_sk.air) cached
+|           +- run xcrun (coop_out_1_0.air) cached
+|           +- run xcrun (coop_out_1_0_sk.air) cached
+|           +- run xcrun (coop_out_2_0.air) cached
+|           +- run xcrun (coop_out_2_0_sk.air) cached
+|           +- run xcrun (coop_out_2_1.air) cached
+|           +- run xcrun (coop_out_2_1_sk.air) cached
+|           +- run xcrun (coop_qkv_1_0.air) cached
+|           +- run xcrun (coop_qkv_2_0.air) cached
+|           +- run xcrun (coop_qkv_2_1.air) cached
+|           +- run xcrun (coop_up_1_0.air) cached
+|           +- run xcrun (coop_up_2_0.air) cached
+|           +- run xcrun (coop_up_2_1.air) cached
+|           +- run xcrun (up_relu2_1_0.air) cached
+|           +- run xcrun (up_relu2_2_0.air) cached
+|           +- run xcrun (up_relu2_2_1.air) cached
++- run test 26 pass (26 total) 690ms MaxRSS:6M
+|  +- compile test fast native success 33s MaxRSS:581M
++- run test 9 pass (9 total) 545ms MaxRSS:4M
+|  +- compile test fast native success 15s MaxRSS:405M
++- run test 34 pass (34 total) 333ms MaxRSS:6M
+|  +- compile test fast native success 22s MaxRSS:601M
++- run test 5 pass (5 total) 315ms MaxRSS:6M
+|  +- compile test fast native success 18s MaxRSS:394M
+|     +- WriteFile nemotron_packed.metallib (+1 more reused dependencies)
++- run test 13 pass (13 total) 1s MaxRSS:8M
+|  +- compile test fast native success 42s MaxRSS:1G
+|     +- WriteFile draft_ids.txt (reused)
+|     +- WriteFile xsum.metal cached
+|     +- WriteFile nemotron_packed.metallib (+1 more reused dependencies)
++- run test 5 pass (5 total) 974ms MaxRSS:6M
+|  +- compile test safe native success 21s MaxRSS:416M
+|     +- WriteFile nemotron_packed.metallib (+1 more reused dependencies)
++- run test 3 pass (3 total) 449ms MaxRSS:6M
+|  +- compile test fast native success 19s MaxRSS:417M
+|     +- WriteFile nemotron_packed.metallib (+1 more reused dependencies)
++- run test 2 pass (2 total) 469ms MaxRSS:6M
+|  +- compile test fast native success 18s MaxRSS:405M
+|     +- WriteFile nemotron_packed.metallib (+1 more reused dependencies)
++- run test 5 pass (5 total) 305ms MaxRSS:1M
+|  +- compile test safe native success 15s MaxRSS:372M
++- run test 10 pass (10 total) 635ms MaxRSS:6M
+|  +- compile test safe native success 23s MaxRSS:442M
+|     +- WriteFile nemotron_packed.metallib (+1 more reused dependencies)
++- run test 3 pass (3 total) 456ms MaxRSS:1M
+|  +- compile test safe native success 21s MaxRSS:369M
++- run test 4 pass (4 total) 375ms MaxRSS:1M
+|  +- compile test safe native success 13s MaxRSS:366M
++- run test 1 pass (1 total) 321ms MaxRSS:6M
+|  +- compile test safe native success 13s MaxRSS:411M
++- run test 93 pass (93 total) 388ms MaxRSS:7M
+|  +- compile test safe native success 16s MaxRSS:612M
+|     +- WriteFile xsum.metal (reused)
+|     +- WriteFile xsum.metal (reused)
+|     +- WriteFile nemotron_packed.metallib (+1 more reused dependencies)
++- run test 7 pass (7 total) 1s MaxRSS:2M
+|  +- compile test safe native success 23s MaxRSS:402M
++- run test 1 pass (1 total) 389ms MaxRSS:6M
+|  +- compile test safe native success 14s MaxRSS:408M
++- run sh success 27ms
+|  +- compile exe tensorfold-native safe native success 1m MaxRSS:2G
+|     +- options cached
+|     +- WriteFile draft_ids.txt (reused)
+|     +- WriteFile xsum.metal (reused)
+|     +- WriteFile nemotron_packed.metallib (+1 more reused dependencies)
++- run test 127 pass (127 total) 1s MaxRSS:9M
+|  +- compile test debug native success 12s MaxRSS:724M
++- run test 16 pass (16 total) 453ms MaxRSS:3M
+|  +- compile test debug native success 4s MaxRSS:318M
++- run test 114 pass (114 total) 1s MaxRSS:3M
+|  +- compile test fast native success 32s MaxRSS:713M
++- run test 6 pass (6 total) 875ms MaxRSS:14M
+|  +- compile test fast native success 21s MaxRSS:432M
++- run test 1 pass (1 total) 462ms MaxRSS:6M
+|  +- compile test fast native success 12s MaxRSS:399M
+|     +- WriteFile tensorfold.metallib cached
+|        +- run xcrun (tensorfold.metallib) cached
+|           +- run xcrun (runtime_tests.air) cached
+|           +- run xcrun (nemotron_expert_up.air) cached
+|           +- run xcrun (nemotron_expert_down.air) cached
++- run test 232 pass (232 total) 2s MaxRSS:53M
+|  +- compile test fast native success 37s MaxRSS:1G
+|     +- WriteFile draft_ids.txt (reused)
+|     +- WriteFile xsum.metal (reused)
+|     +- WriteFile nemotron_packed.metallib (+1 more reused dependencies)
++- run test 79 pass (79 total) 440ms MaxRSS:2M
+|  +- compile test fast native success 27s MaxRSS:578M
++- run test 1 pass (1 total) 356ms MaxRSS:1M
+|  +- compile test fast native success 17s MaxRSS:349M
++- run test 6 pass (6 total) 505ms MaxRSS:6M
+|  +- compile test fast native success 12s MaxRSS:403M
++- run test 4 pass (4 total) 437ms MaxRSS:1M
+|  +- compile test fast native success 19s MaxRSS:362M
++- test-cuda-host success
+|  +- run test cached
+|  |  +- compile test debug native cached 193ms MaxRSS:31M
+|  +- run test cached
+|  |  +- compile test debug native cached 202ms MaxRSS:31M
+|  +- run test cached
+|  |  +- compile test debug native cached 195ms MaxRSS:31M
+|  |     +- options cached
+|  +- run test cached
+|  |  +- compile test debug native cached 223ms MaxRSS:31M
+|  +- run test cached
+|  |  +- compile test debug native cached 207ms MaxRSS:31M
+|  +- run test cached
+|  |  +- compile test debug native cached 106ms MaxRSS:31M
+|  |     +- WriteFile draft_ids.txt (reused)
+|  |     +- options (reused)
+|  +- run test cached
+|  |  +- compile test debug native cached 196ms MaxRSS:31M
+|  +- run test cached
+|  |  +- compile test debug native cached 106ms MaxRSS:31M
+|  |     +- options (reused)
+|  |     +- WriteFile draft_ids.txt (reused)
+|  +- run test cached
+|  |  +- compile test debug native cached 198ms MaxRSS:31M
+|  +- run test cached
+|     +- compile test debug native cached 105ms MaxRSS:31M
+|        +- options (reused)
+|        +- options (reused)
+|        +- WriteFile draft_ids.txt (reused)
++- run test cached
+|  +- compile test debug native cached 106ms MaxRSS:31M
+|     +- options cached
+|        +- compile lib hip-mock-success debug native cached 258ms MaxRSS:30M
+|        +- compile lib hip-mock-failed debug native cached 101ms MaxRSS:30M
+|        +- compile lib hip-mock-missing debug native cached 96ms MaxRSS:30M
++- run test cached
+|  +- compile test debug native cached 201ms MaxRSS:31M
++- run exe learned-warning-test success 413ms
+   +- compile exe learned-warning-test debug native cached 296ms MaxRSS:31M

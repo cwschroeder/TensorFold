@@ -1,0 +1,45 @@
+Build Summary: 44/44 steps succeeded
+native success
++- install tensorfold-native success
+   +- compile exe tensorfold-native safe native-native success 57s MaxRSS:2G
+      +- options cached
+      +- WriteFile draft_ids.txt cached
+      +- WriteFile xsum.metal cached
+      +- WriteFile nemotron_packed.metallib cached
+         +- run xcrun (nemotron_packed.metallib) cached
+            +- run xcrun (coop_down_1_0.air) cached
+            +- run xcrun (coop_down_2_0.air) cached
+            +- run xcrun (coop_down_2_1.air) cached
+            +- run xcrun (coop_draft_1_0.air) cached
+            +- run xcrun (coop_draft_2_0.air) cached
+            +- run xcrun (coop_draft_2_1.air) cached
+            +- run xcrun (coop_eh_1_0.air) cached
+            +- run xcrun (coop_eh_1_0_sk.air) cached
+            +- run xcrun (coop_eh_2_0.air) cached
+            +- run xcrun (coop_eh_2_0_sk.air) cached
+            +- run xcrun (coop_eh_2_1.air) cached
+            +- run xcrun (coop_eh_2_1_sk.air) cached
+            +- run xcrun (coop_head_1_0.air) cached
+            +- run xcrun (coop_head_2_0.air) cached
+            +- run xcrun (coop_head_2_1.air) cached
+            +- run xcrun (coop_in_1_0.air) cached
+            +- run xcrun (coop_in_1_0_sk.air) cached
+            +- run xcrun (coop_in_2_0.air) cached
+            +- run xcrun (coop_in_2_0_sk.air) cached
+            +- run xcrun (coop_in_2_1.air) cached
+            +- run xcrun (coop_in_2_1_sk.air) cached
+            +- run xcrun (coop_out_1_0.air) cached
+            +- run xcrun (coop_out_1_0_sk.air) cached
+            +- run xcrun (coop_out_2_0.air) cached
+            +- run xcrun (coop_out_2_0_sk.air) cached
+            +- run xcrun (coop_out_2_1.air) cached
+            +- run xcrun (coop_out_2_1_sk.air) cached
+            +- run xcrun (coop_qkv_1_0.air) cached
+            +- run xcrun (coop_qkv_2_0.air) cached
+            +- run xcrun (coop_qkv_2_1.air) cached
+            +- run xcrun (coop_up_1_0.air) cached
+            +- run xcrun (coop_up_2_0.air) cached
+            +- run xcrun (coop_up_2_1.air) cached
+            +- run xcrun (up_relu2_1_0.air) cached
+            +- run xcrun (up_relu2_2_0.air) cached
+            +- run xcrun (up_relu2_2_1.air) cached

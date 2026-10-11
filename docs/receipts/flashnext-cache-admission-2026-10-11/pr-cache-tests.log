@@ -1,0 +1,71 @@
+1/70 prompt_cache_admission_test.test.short admission evicts a newer short state instead of the older long prefix...OK
+2/70 prompt_cache_admission_test.test.a reusable spare copy fits without evicting the long prefix, while an unfitting spare is trimmed...OK
+3/70 prompt_cache_admission_test.test.lookup admits one reusable buffer even below the new-copy estimate, without promising it twice...OK
+4/70 prompt_cache_admission_test.test.an impossible short mark is refused before any reservation or direct-copy eviction...OK
+5/70 prompt_cache_admission_test.test.multiple short marks reserve cumulatively and existing copies need no new capacity...OK
+6/70 prompt_cache_admission_test.test.charged bytes control room while the prefix position controls protection...OK
+7/70 prompt_cache_admission_test.test.lookup cannot spend the state awaiting restore and direct keep cannot spend untrimmable spare...OK
+8/70 prompt_cache_admission_test.test.eligible eviction keeps an active rewind and preserves the superseded-first order...OK
+9/70 prompt_cache_admission_test.test.protection uses the saved position on either side of 4096...OK
+10/70 prompt_cache_admission_test.test.planning consumes a whole reusable buffer in the actual ascending keep order...OK
+11/70 prompt_cache.test_0...OK
+12/70 prompt_imprint.test_0...OK
+13/70 prompt_imprint.test.a failed tail truncation keeps the bytes and refuses repair...OK
+14/70 cache_modes.test.canonical spans reject alternate spellings before storage...OK
+15/70 cache_modes.test.canonical equality and owned prefixes ignore future rows and lookahead...OK
+16/70 cache_modes.test.reply extension clips future prompt modes and coalesces only its boundary...OK
+17/70 learned_plan.test.both ranks use one victim set and an impossible shortfall deletes nothing...OK
+18/70 prompt_cache_test.test.a growing conversation resumes each turn where the last one's history ended, and equals a fresh pass...OK
+19/70 prompt_cache_test.test.an entry keys its lookahead tokens: a prompt that differs right after the state does not resume it...OK
+20/70 prompt_cache_test.test.planned families resume and keep only at the request's chunk starts...OK
+21/70 prompt_cache_test.test.a planned family's own grid gives the starts when a request names none, and a resumed pass equals a fresh one...OK
+22/70 prompt_cache_test.test.eviction frees a conversation's superseded state first, then the oldest; a state past the budget is refused...OK
+23/70 prompt_cache_test.test.a failed copy keeps nothing and a failed restore prefills from the start...OK
+24/70 prompt_cache_test.test.marks: the stable prefix with the last prompt and shared blocks, past the resume point, before the end...OK
+25/70 prompt_cache_test.test.prompts under min_prompt keep nothing (their extra prompt call would cost more than reuse saves), longer ones keep as before...OK
+26/70 prompt_cache_test.test.kept states charge their real storage, a save takes spare storage first, and spare stays inside the budget...OK
+27/70 prompt_cache_test.test.a shared system cut outlives its own conversation's turns: a second conversation resumes it after cold prompts fill the budget...OK
+28/70 prompt_cache_test.test.a pass makes room for every state it keeps before it starts, so a peer told of the evictions with the request stays inside the budget...OK
+29/70 prompt_cache_test.test.a state a peer cannot resume is forgotten: the next prompt misses instead of asking again...OK
+30/70 prompt_cache_test.test.a learned harness state outlives its store: a fresh session on a new one resumes it from disk, equal to a fresh pass...OK
+31/70 prompt_cache_test.test.past the learned-state cap the least recently used state is forgotten, and a file that no longer reads is too...OK
+32/70 prompt_cache_test.test.learned states are prompt arithmetic: a request that decodes rows below one prefills instead, and a decoded state is never learned...OK
+33/70 prompt_cache_test.test.Store learning preserves the disk floor, backs off writes across keys, and recovers without retained failures...OK
+34/70 prompt_cache_test.test.learning reserves the existing index rewrite above the disk floor and resumes an unchanged kept key...OK
+35/70 prompt_cache_test.test.actual Store learn writes neither half on peer refusal, backs off, and removes both halves after a peer fault...OK
+36/70 prompt_cache_test.test.under-cap disk pressure selects the same LRU victim before either half is persisted...OK
+37/70 prompt_imprint_test.test.learned states survive a reopen; the longest usable prefix wins...OK
+38/70 prompt_imprint_test.test.the least recently used state goes first, and a removed one stays gone after a reopen...OK
+39/70 prompt_imprint_test.test.other identities are swept, least recently opened first, until the cap fits...OK
+40/70 prompt_imprint_fault_test.test.Imprint failed open releases each allocation once after another identity scan...OK
+41/70 prompt_imprint_fault_test.test.Imprint allocation failures keep transferred path ownership singular...OK
+42/70 prompt_imprint_fault_test.test.failed atomic stamp replacement preserves the previous complete used word...OK
+43/70 prompt_imprint_fault_test.test.used stamp reads still refuse an actual I/O error...OK
+44/70 learned_disk.test_0...OK
+45/70 prompt_cache_threshold_test.test.planned 2K admission keeps boundary states, while a shorter request can reuse one...OK
+46/70 prompt_cache_rewind_test.test.editing the latest user resumes the private rewind and gives the fresh result...OK
+47/70 prompt_cache_rewind_test.test.one state budget keeps the endpoint before the rewind...OK
+48/70 prompt_cache_rewind_test.test.planned rewind floors after lookahead and short user turns bypass min_gap...OK
+49/70 prompt_cache_rewind_test.test.warm endpoint retains the rewind when two states fit...OK
+50/70 prompt_cache_rewind_test.test.a grid family keeps its rewind on the grid, and an edit resumes there equal to a fresh pass...OK
+51/70 prompt_cache_rewind_test.test.a state kept past the pass's marks evicts the rewind last instead of failing the keep...OK
+52/70 prompt_cache_rewind_test.test.a first turn's rewind on the system cut stays a shared cut...OK
+53/70 prompt_cache_rewind_test.test.a history state past the budget is still counted refused when the rewind is kept...OK
+54/70 prompt_cache_rewind_test.test.a rewind under min_gap past the resume point keeps no copy: the resumed state serves the edit and goes last...OK
+55/70 prompt_cache_rewind_test.test.the warm pass after a turn keeps that turn's rewind state, though it resumes later: the edit still resumes there...OK
+56/70 learned_fault_test.test.learning after a torn index header or payload survives another reopen with both states...OK
+57/70 learned_fault_test.test.invalid complete records salvage the valid prefix but unknown versions remain untouched...OK
+58/70 learned_fault_test.test.add repairs a live torn index before appending without requiring a caller reopen...OK
+59/70 learned_fault_test.test.add rejects invalid token keys and geometry before writing an index...OK
+60/70 learned_fault_test.test.a live unknown-version suffix refuses add without publishing a new record...OK
+61/70 learned_fault_test.test.short future-version prefixes preserve index bytes and payloads on open and live add...OK
+62/70 learned_fault_test.test.a null clock cannot authorize eviction or either half of a write...OK
+63/70 learned_fault_test.test.an index replacement failure retains its metadata and removes its partial file...OK
+64/70 learned_fault_test.test.other-identity cap pressure is planned before a current-identity write...OK
+65/70 learned_fault_test.test.unlink failure is observable and missing files are idempotently removed...OK
+66/70 learned_fault_test.test.disk admission releases reservations and bounds repeated failure retries...OK
+67/70 learned_fault_test.test.a missing indexed half cannot promise physical reclaim or destroy a valid victim...OK
+68/70 learned_fault_test.test.uncertain reserve ACK reaches Store rollback before any intent or half write...OK
+69/70 learned_fault_test.test.failed rollback deletion survives restart and recovers before cap admission...OK
+70/70 learned_fault_test.test.Store learns after old zero-byte and torn used stamps under cap pressure...OK
+All 70 tests passed.

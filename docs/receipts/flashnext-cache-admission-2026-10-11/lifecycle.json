@@ -1,0 +1,33 @@
+{
+  "session_exit": 0,
+  "restored_healthy": true,
+  "restored_health": {
+    "status": "ok",
+    "model": "Qwen3.8-Flash-Next-oQ4e-mtp",
+    "model_ids": [
+      "Qwen3.8-Flash-Next-oQ4e-mtp",
+      "Qwen3.8-Flash-Next-MLX-4bit-MTP"
+    ],
+    "max_batch_size": 8,
+    "warming": false,
+    "memory": {
+      "active": 113998255570,
+      "cache": 16,
+      "peak": 124636776859,
+      "budget": 192414534860,
+      "mlx_budget": 189193309388,
+      "footprint": 114437973904
+    }
+  },
+  "requests_running": 0,
+  "requests_waiting": 0,
+  "original_plist_sha256": "66fd85bee3d8189ee918ea49e770c13728ab6f2f3963cc58ec2e0bfd6ccb0b40",
+  "plist_unchanged": true,
+  "benchmark_port_closed": true,
+  "owned_benchmark_processes_gone": true,
+  "session_lock_removed": true,
+  "launchd_job_loaded": true,
+  "monitor_stopped": true,
+  "candidate_promoted": false,
+  "scope": "Post-run local checks on M3 Ultra test machine; raw PID and wall-clock evidence retained outside git."
+}

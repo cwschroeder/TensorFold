@@ -4,6 +4,7 @@ const Allocator = std.mem.Allocator;
 const imprint = @import("prompt_imprint.zig");
 const modes = @import("cache_modes.zig");
 const learned = @import("prompt_learn.zig");
+const admission = @import("prompt_admission.zig");
 
 /// A family's copy of one state.
 pub const Saved = *anyopaque;
@@ -86,6 +87,8 @@ pub const Rules = struct {
     min_gap: u32 = 256,
     /// Shorter prompts keep nothing: below it a mark's extra prompt call costs more than a later turn's reuse saves.
     min_prompt: u32 = 4096,
+    /// New shorter marks cannot evict states at or above this position (0: off).
+    protect_from: u32 = 0,
     /// Replies are prefilled in background passes kept at their end: a pass resumed near its history keeps no mark.
     warm: bool = false,
     /// A paged store (prompt_radix.zig): the tokens a page holds, where its marks and resumes sit (0: not paged).
@@ -241,10 +244,11 @@ pub const Store = struct {
         const e = s.recall(prompt, starts, spans, s.find(prompt, starts, spans));
         if (e == null) s.counts.misses += 1;
         const from = if (e) |x| x.at else 0;
-        const marks_ = if (s.active_rewind_at == 0)
+        const fitted = if (s.active_rewind_at == 0)
             try s.fitting(a, try s.marks(a, prompt, from, history_len, shared, starts, if (e) |x| x.last else &.{}))
         else
             try s.fittingRewind(a, try s.fitting(a, try s.marksRewind(a, prompt, from, history_len, s.active_rewind_at, shared, starts, if (e) |x| x.last else &.{})), endpoint, s.active_rewind_at, endpoint_bytes);
+        const marks_ = try admission.filter(s, a, prompt, e, fitted, spans);
         for (shared) |w| { // the shared cuts this pass keeps: their states serve other conversations too
             const at = if (s.rules.planned) s.startAt(starts, w) else w;
             if (std.mem.indexOfScalar(u32, marks_, at) != null) s.noteShared(prompt[0 .. at + s.rules.lookahead]);
@@ -255,16 +259,10 @@ pub const Store = struct {
 
     /// Room for every state the pass keeps, made before it: a peer that mirrors the keeps hears of these evictions with the request.
     fn reserve(s: *Store, prompt: []const u32, from: ?*Entry, marks_: []const u32, spans: []const modes.Span) void {
-        var need: u64 = 0;
-        for (marks_) |at| {
-            const n = @as(usize, at) + s.rules.lookahead;
-            const exists = for (s.entries.items) |e| {
-                if (e.at == at and e.tokens.len == n and n <= prompt.len and std.mem.eql(u32, e.tokens, prompt[0..n]) and modes.equal(e.decode_spans, spans, at)) break true;
-            } else false;
-            if (!exists) need += s.family.vtable.bytes(s.family.ptr, at);
-        }
+        const protect = admission.reservationLimit(s, prompt, marks_, spans);
+        const need = admission.demand(s, prompt, marks_, spans);
         while (s.held + need > s.budget) {
-            const i = s.victimBut(from, prompt) orelse return;
+            const i = s.victimBefore(from, prompt, protect) orelse return;
             s.remove(i);
             s.counts.evicted += 1;
         }
@@ -405,6 +403,13 @@ pub const Store = struct {
             note("kept nothing at {d} tokens: {d} MiB passes the {d} MiB budget", .{ at, bytes >> 20, s.budget >> 20 });
             return false;
         }
+        if (admission.limit(s, at) != 0) {
+            const reuses = if (s.family.vtable.reuses) |f| f(s.family.ptr, at) else false;
+            if (!reuses and !admission.fits(s, @as(?*Entry, null), at, bytes, false)) {
+                s.counts.refused += 1;
+                return false;
+            }
+        }
         while (s.entries.items.len > 0) { // room: spare storage this save can take, else new storage inside the budget
             if (s.family.vtable.reuses) |f| if (f(s.family.ptr, at)) break;
             const free_ = s.spare();
@@ -413,7 +418,11 @@ pub const Store = struct {
                 if (s.family.vtable.trim) |f| f(s.family.ptr, s.budget -| s.held -| bytes); // spare that cannot take this state goes before any state
                 if (s.spare() < free_) continue;
             }
-            s.remove(s.victimBut(null, prompt).?); // its storage may come back spare and take this state
+            const victim = s.victimBefore(null, prompt, admission.limit(s, at)) orelse {
+                s.counts.refused += 1;
+                return false;
+            };
+            s.remove(victim); // its storage may come back spare and take this state
             s.counts.evicted += 1;
         }
         if (s.entries.items.len == 0) if (s.family.vtable.trim) |f| f(s.family.ptr, s.budget -| bytes);
@@ -499,8 +508,13 @@ pub const Store = struct {
 
     /// The entry to free first, never `skip`: a superseded one, oldest first; else the oldest, the turn's rewind last.
     fn victimBut(s: *const Store, skip: ?*Entry, prompt: []const u32) ?usize {
+        return s.victimBefore(skip, prompt, 0);
+    }
+
+    fn victimBefore(s: *const Store, skip: ?*Entry, prompt: []const u32, protect: u32) ?usize {
         var best: ?usize = null;
         for (s.entries.items, 0..) |e, i| {
+            if (protect > 0 and e.at >= protect) continue;
             if (e.shared or e == skip or s.isActiveRewind(e, prompt)) continue; // a shared cut is evicted only as the least recently used
             const now = prompt.len > e.born and prompt.len > e.tokens.len and std.mem.eql(u32, prompt[0..e.tokens.len], e.tokens); // this prompt extends it
             const moved_on = now or for (s.entries.items) |o| {
@@ -510,7 +524,7 @@ pub const Store = struct {
         }
         if (best) |i| return i;
         var oldest: ?usize = null;
-        for (s.entries.items, 0..) |e, i| if (e != skip and (oldest == null or s.before(e, s.entries.items[oldest.?], prompt))) {
+        for (s.entries.items, 0..) |e, i| if (e != skip and (protect == 0 or e.at < protect) and (oldest == null or s.before(e, s.entries.items[oldest.?], prompt))) {
             oldest = i;
         };
         return oldest;
@@ -545,7 +559,9 @@ fn floorStart(starts: []const u32, at: u32) u32 {
 }
 
 test {
+    _ = @import("prompt_cache_admission_test.zig");
     _ = @import("prompt_cache_test.zig");
+    _ = @import("prompt_cache_threshold_test.zig");
     _ = @import("prompt_cache_rewind_test.zig");
     _ = @import("learned_fault_test.zig");
     _ = modes;

@@ -1,0 +1,16 @@
+{
+  "scope": "Stopped first attempt; original service restored after controller termination. Private raw probes retained outside the repository.",
+  "exit": 130,
+  "stages": {
+    "checkpoint": {
+      "probes": 33,
+      "max_observed_physical_footprint_gib": 173.0229511782527,
+      "all_swap_probes_zero": true
+    },
+    "serve": {
+      "probes": 59,
+      "max_observed_physical_footprint_gib": 174.12817694991827,
+      "all_swap_probes_zero": true
+    }
+  }
+}
