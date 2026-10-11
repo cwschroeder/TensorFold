@@ -85,7 +85,8 @@ The managed runner requires Apple Silicon, an idle model host, memory and disk h
 verify the current upstream before a run. The output directory must be new; it contains a disposable checkpoint
 and private API keys. Publish a reviewed receipt subset, never the entire output directory.
 
-Each write needs a complete learning stream and a fresh successful shard save. Rejected lessons remain measured
+Each request needs a complete learning stream and a fresh successful save operation. A rejected lesson may write
+zero bytes after its changes are taken back. Rejected lessons remain measured
 outcomes; an uncertain write stops the run without retry. The two-hour network read timeout allows long gaps
 between learning events across checked rounds; it is not an overall request deadline. Multi-fact requests can
 take longer. A request is marked rejected if any extracted fact is rejected; the audit lists accepted and rejected
