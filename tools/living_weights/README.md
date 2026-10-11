@@ -110,6 +110,10 @@ Physical footprint and system swap are sampled every five seconds for the owned 
 learning. A maximum observed sample is not a lifetime peak. This experiment does not measure general coding skill.
 
 
+If V1 is rejected, the repeated lesson is another learning attempt, and V2 does not prove an update of learned V1.
+A restart after only rejected lessons does not prove persistence of new knowledge. Report training attempt costs
+even when the completed save writes zero bytes.
+
 `calibration_lessons.json` and `calibration_questions.json` define a separate fictional personal-chat colour test.
 Use both with `--lessons` and `--questions` on a fresh untaught copy; audit it with the same two options.
 This adds a baseline, one `source: chat` lesson and a restart with DE/EN recall, a cousin near miss and controls.
