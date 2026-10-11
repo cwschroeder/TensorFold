@@ -103,9 +103,14 @@ def preflight(model, output):
     if not free or int(free[1]) < 40:
         raise RuntimeError("insufficient memory headroom")
     inventory = subprocess.check_output(["ps", "-axo", "pid=,comm=,args="], text=True)
-    engine = re.compile(r"(?:^|[/\s])(?:tensorfold(?:-native)?|omlx|ollama)(?:\s|$)|mlx_(?:lm|vlm)\.server", re.I)
-    conflicts = [int(r.split()[0]) for r in inventory.splitlines() if engine.search(r)
-                 and int(r.split()[0]) not in (os.getpid(), os.getppid())]
+    conflicts = []
+    for row in inventory.splitlines():
+        pid, executable, arguments = row.split(maxsplit=2)
+        name = Path(executable).name.lower()
+        native = name in ("tensorfold", "tensorfold-native", "omlx", "ollama")
+        python_model = name.startswith("python") and re.search(r"(?:-m\s+mlx_(?:lm|vlm)\.server|[/ ](?:omlx|tensorfold)(?: |$))", arguments)
+        if (native or python_model) and int(pid) not in (os.getpid(), os.getppid()):
+            conflicts.append(int(pid))
     if conflicts:
         raise RuntimeError("competing model process ids: " + str(conflicts))
     size = sum(p.stat().st_size for p in model.glob("*.safetensors"))
