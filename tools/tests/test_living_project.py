@@ -139,6 +139,38 @@ class ScoreTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 scoring.load(lessons, questions)
 
+    def test_unsafe_reserved_and_generated_file_names_are_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            lessons, questions = Path(directory) / "lessons.json", ROOT / "project_questions.json"
+            original = json.loads((ROOT / "project_lessons.json").read_text())
+            for name in ("../outside", "/outside", "", "baseline", "restart", "receipt", "graph",
+                         "memory", "learning", "BASELINE", "Graph", "a.b", "a\\b", "x" * 129):
+                with self.subTest(name=name):
+                    corpus = copy.deepcopy(original)
+                    corpus["steps"][0]["id"] = name
+                    lessons.write_text(json.dumps(corpus))
+                    with self.assertRaises(ValueError):
+                        scoring.load(lessons, questions)
+            corpus = copy.deepcopy(original)
+            corpus["steps"][1]["id"] = corpus["steps"][0]["id"] + "-learn"
+            lessons.write_text(json.dumps(corpus))
+            with self.assertRaises(ValueError):
+                scoring.load(lessons, questions)
+            corpus["steps"][1]["id"] = corpus["steps"][0]["id"].upper()
+            lessons.write_text(json.dumps(corpus))
+            with self.assertRaises(ValueError):
+                scoring.load(lessons, questions)
+
+    def test_duplicate_cannot_change_learning_source(self):
+        with tempfile.TemporaryDirectory() as directory:
+            lessons = Path(directory) / "lessons.json"
+            corpus = json.loads((ROOT / "project_lessons.json").read_text())
+            duplicate = next(s for s in corpus["steps"] if s["kind"] == "duplicate")
+            duplicate["source"] = "chat"
+            lessons.write_text(json.dumps(corpus))
+            with self.assertRaises(ValueError):
+                scoring.load(lessons, ROOT / "project_questions.json")
+
 
 class LifecycleTests(unittest.TestCase):
     def test_exclusive_lock_and_unconfirmed_exit(self):

@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+import re
 import unicodedata
 from pathlib import Path
 
@@ -26,6 +27,15 @@ def load(lessons, questions):
         for r in rows:
             if not r["text"].strip() or r["language"] not in ("de", "en"):
                 raise ValueError("empty text or unsupported language")
+    ids = [step["id"] for step in a["steps"]]
+    reserved = {"baseline", "restart", "receipt", "graph", "memory", "learning"}
+    if any(not isinstance(name, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_-]{0,127}", name)
+           or name.casefold() in reserved for name in ids):
+        raise ValueError("step ids must be safe, non-reserved file names")
+    folded = {name.casefold() for name in ids}
+    generated = {name + "-learn" for name in folded}
+    if len(folded) != len(ids) or generated & (folded | reserved):
+        raise ValueError("step and generated learning file names collide")
     state, previous = {}, {}
     for step in a["steps"]:
         fact, version = step["fact"], step["version"]
@@ -33,11 +43,11 @@ def load(lessons, questions):
             raise ValueError("unknown fact/version or unsupported source")
         old = state.get(fact, 0)
         if step["kind"] == "duplicate":
-            if old != version or step["text"] != previous.get(fact):
+            if old != version or (step["text"], step["source"]) != previous.get(fact):
                 raise ValueError("duplicate must repeat the current lesson exactly")
         elif step["kind"] not in ("introduce", "update") or version != old + 1:
             raise ValueError("versions must advance in order")
-        state[fact], previous[fact] = version, step["text"]
+        state[fact], previous[fact] = version, (step["text"], step["source"])
     coverage = set()
     for q in b["questions"]:
         if q["kind"] == "recall":
