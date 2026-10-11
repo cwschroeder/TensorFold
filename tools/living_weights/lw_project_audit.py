@@ -74,6 +74,12 @@ def audit(root, spec):
             facts = {f["id"]: f for f in record["graph_after"].get("facts", [])}
             if ids & before_ids or any(i not in facts or facts[i]["state"] not in ("learned", "missed") for i in ids):
                 raise ValueError("save has missing, reused or incomplete fact ids")
+            for event in record["events"]:
+                data = event["data"]
+                if event["event"] == "learned" and isinstance(data, dict):
+                    expected_state = "learned" if data["recalled"] else "missed"
+                    if facts[data["id"]]["state"] != expected_state:
+                        raise ValueError("learning verdict disagrees with saved fact state")
             if not math.isfinite(record["seconds_including_save"]) or record["seconds_including_save"] < 0:
                 raise ValueError("invalid lesson timing")
             lessons.append(record)
@@ -91,6 +97,7 @@ def audit(root, spec):
                 raise ValueError("question identity/order mismatch")
             request, response = row["request"], row["response"]
             if (request["messages"] != [{"role": "user", "content": q["text"]}]
+                    or request["max_tokens"] != (512 if thinking else 96)
                     or request["temperature"] != 0 or request["chat_template_kwargs"]["enable_thinking"] != thinking
                     or response["tensorfold"]["enable_thinking"] != thinking):
                 raise ValueError("changed prompt, sampling or actual thinking mode")
