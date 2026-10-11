@@ -271,6 +271,21 @@ class AuditTests(unittest.TestCase):
         (root / "memory.jsonl").write_text("".join(json.dumps(r) + "\n" for r in memory))
         return spec
 
+    def test_rejected_learning_is_a_complete_measured_outcome(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            spec = self.fixture(root)
+            path = root / "v1-aster-lead-learn.json"
+            record = json.loads(path.read_text())
+            record["events"][2]["data"]["recalled"] = False
+            record["status"] = "rejected"
+            record["graph_after"]["facts"][0]["state"] = "missed"
+            runner.write(path, record)
+            receipt = json.loads((root / "receipt.json").read_text())
+            receipt["summary"]["lessons"][0]["status"] = "rejected"
+            runner.write(root / "receipt.json", receipt)
+            self.assertTrue(auditor.audit(root, spec)["complete"])
+
     def test_complete_fixture_and_corrupted_evidence(self):
         mutations = [("baseline.json", lambda d: d.update(instance="other")),
                      ("baseline.json", lambda d: d["rows"][0]["request"].update(max_tokens=1)),
