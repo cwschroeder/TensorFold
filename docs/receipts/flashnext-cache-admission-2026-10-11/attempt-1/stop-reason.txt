@@ -1,0 +1,1 @@
+Controlled stop before protected blocks: confirmed pool planning order mismatch; source 49c1a10. Original service restored healthy, test port closed, lock removed.

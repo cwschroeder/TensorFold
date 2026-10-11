@@ -1,0 +1,35 @@
+{
+  "scope": "Deliberately corrupted copies of the completed receipt; no model requests or live changes",
+  "baseline_passed": true,
+  "cases": [
+    {
+      "case": "response content changed",
+      "rejected": true
+    },
+    {
+      "case": "protected long revisit below guard",
+      "rejected": true
+    },
+    {
+      "case": "non-finite wall time",
+      "rejected": true
+    },
+    {
+      "case": "two disconnects instead of one",
+      "rejected": true
+    },
+    {
+      "case": "binary digest differs from qualified pins",
+      "rejected": true
+    },
+    {
+      "case": "partial receipt marked incomplete",
+      "rejected": true
+    },
+    {
+      "case": "native log exceeds cache cap",
+      "rejected": true
+    }
+  ],
+  "all_rejected": true
+}

@@ -1,0 +1,88 @@
+{
+  "total_probes": 561,
+  "checkpoint_probes": 33,
+  "scope": "Physical footprint samples every five seconds, grouped by first-seen native server PID; maximum observed, not a lifetime peak. PIDs and wall timestamps omitted from public summary.",
+  "blocks": [
+    {
+      "block": 0,
+      "label": "off",
+      "probes": 99,
+      "positive_footprint_probes": 99,
+      "zero_footprint_probes": 0,
+      "max_observed_physical_footprint_bytes": 186980421008,
+      "max_observed_physical_footprint_gib": 174.13908709585667,
+      "max_swap_used_mib": 0.0
+    },
+    {
+      "block": 1,
+      "label": "4k",
+      "probes": 64,
+      "positive_footprint_probes": 64,
+      "zero_footprint_probes": 0,
+      "max_observed_physical_footprint_bytes": 189092793864,
+      "max_observed_physical_footprint_gib": 176.10638762265444,
+      "max_swap_used_mib": 0.0
+    },
+    {
+      "block": 2,
+      "label": "2k",
+      "probes": 52,
+      "positive_footprint_probes": 52,
+      "zero_footprint_probes": 0,
+      "max_observed_physical_footprint_bytes": 189130198536,
+      "max_observed_physical_footprint_gib": 176.14122343808413,
+      "max_swap_used_mib": 0.0
+    },
+    {
+      "block": 3,
+      "label": "protected",
+      "probes": 49,
+      "positive_footprint_probes": 49,
+      "zero_footprint_probes": 0,
+      "max_observed_physical_footprint_bytes": 189132033592,
+      "max_observed_physical_footprint_gib": 176.1429324671626,
+      "max_swap_used_mib": 0.0
+    },
+    {
+      "block": 4,
+      "label": "protected",
+      "probes": 49,
+      "positive_footprint_probes": 49,
+      "zero_footprint_probes": 0,
+      "max_observed_physical_footprint_bytes": 189130690128,
+      "max_observed_physical_footprint_gib": 176.14168126881123,
+      "max_swap_used_mib": 0.0
+    },
+    {
+      "block": 5,
+      "label": "2k",
+      "probes": 52,
+      "positive_footprint_probes": 52,
+      "zero_footprint_probes": 0,
+      "max_observed_physical_footprint_bytes": 189130657264,
+      "max_observed_physical_footprint_gib": 176.14165066182613,
+      "max_swap_used_mib": 0.0
+    },
+    {
+      "block": 6,
+      "label": "4k",
+      "probes": 64,
+      "positive_footprint_probes": 64,
+      "zero_footprint_probes": 0,
+      "max_observed_physical_footprint_bytes": 189083078080,
+      "max_observed_physical_footprint_gib": 176.09733909368515,
+      "max_swap_used_mib": 0.0
+    },
+    {
+      "block": 7,
+      "label": "off",
+      "probes": 99,
+      "positive_footprint_probes": 99,
+      "zero_footprint_probes": 0,
+      "max_observed_physical_footprint_bytes": 186983157136,
+      "max_observed_physical_footprint_gib": 174.1416353136301,
+      "max_swap_used_mib": 0.0
+    }
+  ],
+  "all_swap_probes_zero": true
+}

@@ -1,0 +1,42 @@
+import json,pathlib,sys
+root=pathlib.Path(sys.argv[1]);a=json.loads((root/'analysis.json').read_text());m=json.loads((root/'memory.json').read_text());life=json.loads((root/'lifecycle.json').read_text())
+assert a['exact'] and a['full_responses']==800 and m['all_swap_probes_zero'] and life['restored_healthy']
+labels=('off','4k','2k','protected')
+names={'2047-plain':'2,047, plain','2048-plain':'2,048, plain','2049-plain':'2,049, plain','2048-thinking':'2,048, thinking','8k-plain':'8,192, plain','16k-plain':'16,384, plain'}
+reduction=lambda new,old:100*(1-new/old)
+p=a['pressure'];s=a['shared']
+lines=['# Flash Next protected 2K snapshot admission','',
+'All eight server blocks completed 800 HTTP responses, including 96 thinking responses, plus eight cancelled streams. Answer content, reasoning content, finish reasons, token usage and native 12-hex generation fingerprints match frozen cache-off references. A fresh checkpoint gate separately compares full generated token sequences.','',
+f"The protected policy changes mixed-pressure time by {100*(p['protected']/p['4k']-1):+.2f}% versus 4K admission and {100*(p['protected']/p['2k']-1):+.2f}% versus unprotected 2K admission. Its warm four-session group takes {s['protected']:.3f} seconds, a {reduction(s['protected'],s['4k']):.2f}% reduction versus 4K. These results cover one M3 Ultra and a 2-GiB snapshot budget.",'',
+'## Complete dialogs','',
+'Each dialog includes the cold first prompt, regeneration, a follow-up and an edited follow-up. Seconds are medians of six observations per case and mode: three distinct public fixtures across two fresh server processes. Positive reductions mean the protected mode finishes sooner.','',
+'| Prime length and mode | Cache off | 4K | 2K | Protected 2K | Reduction vs 4K |','|---|---:|---:|---:|---:|---:|']
+for name in names:
+ v=a['dialog'][name];lines.append(f"| {names[name]} | {v['off']:.3f} | {v['4k']:.3f} | {v['2k']:.3f} | {v['protected']:.3f} | {reduction(v['protected'],v['4k']):.2f}% |")
+lines+=['', 'The 2,047-token boundary prevents new admission for the prime. Existing states remain eligible for lookup; later turns can cross the admission threshold. Thinking uses a 512-token ceiling and every thinking response finishes with `stop`, nonempty reasoning and visible final content. Plain dialog replies use 64 tokens, pressure replies 32, and cancellation peers and replacements 512.','',
+'## Cold first-prompt cost','', '| Case | 4K | 2K | Protected 2K |','|---|---:|---:|---:|']
+for name in names:
+ v=a['stage_medians'][name]['prime'];lines.append(f"| {names[name]} | {v['4k']['wall_seconds']:.3f} | {v['2k']['wall_seconds']:.3f} | {v['protected']['wall_seconds']:.3f} |")
+lines+=['','## Four sessions and mixed pressure','', '| Mode | Warm four-session group | Mixed trace |','|---|---:|---:|']
+for label in labels:lines.append(f"| {label} | {s[label]:.3f} | {p[label]:.3f} |")
+lines+=['',
+'Warm times use four groups per mode, with a common system prefix and fresh user suffixes. Every group reaches four active slots. Shared groups precede all long dialogs in every block. The older threshold experiment used a different order and is not a timing control.','',
+'The mixed trace primes 16K and 8K prefixes, inserts six distinct 2K prefixes, then revisits both long prefixes and two short prefixes. There are two traces per mode. New short marks cannot evict states saved at position 4096 or later in the protected mode. Long states can fill the budget and cause short admission refusals.','',
+'| Block | Mode | Short-prime evictions | Revisited 16K: cached tokens / seconds | Revisited 8K: cached tokens / seconds |','|---|---|---:|---:|---:|']
+for b in a['blocks']:
+ x,y=b['pressure_revisits'][:2];lines.append(f"| {b['block']} | {b['label']} | {b['short_evictions']} | {x['cached']} / {x['wall']:.3f} | {y['cached']} / {y['wall']:.3f} |")
+lines+=['','`analysis.json` exposes every block and stage separately. The first and last cache-off blocks use different unprotected control binaries. The independent auditor recomputes timings and cache counters from the full HTTP receipt and eight native logs. Native retained-plus-spare accounting stays within 2048 MiB in every cache-enabled log; these counters have whole-MiB precision.','',
+'## Memory and restoration','', '| Block | Mode | Maximum observed physical footprint, GiB | Samples |','|---|---|---:|---:|']
+for b in m['blocks']:lines.append(f"| {b['block']} | {b['label']} | {b['max_observed_physical_footprint_gib']:.3f} | {b['probes']} |")
+lines+=['',
+'Physical footprint was sampled every five seconds. The table reports the maximum observed sample, not a lifetime peak. All swap probes, including checkpoint-gate probes, report zero usage. Raw PID and wall-clock records remain outside the repository.','',
+'The original launchd service was drained before the GPU run and restored healthy afterwards. `lifecycle.json` records the final health check, unchanged launchd plist, closed benchmark port, stopped owned processes and removed session lock. The tested candidate was not promoted to the regular service.','',
+'## Validation and limits','',
+'The candidate and both controls use upstream `e7c523ebfa16b8094cf9e35e3773a7d25befcc5b` and Zig 0.17.0. `build-pins.json` records source commits and transferred binary/helper hashes. The candidate policy is `c3abc209398a5db614610c731954e5ad85529087`; native HTTP and tokenizer code use ReleaseSafe, the engine uses ReleaseFast, and the checkpoint gate uses ReleaseFast.','',
+'The clean dependent PR passed 70 cache tests, 1327 of 1329 host/native/golden tests with two skips, and all 881 workflow-target tests. Whole-tree formatting passed. `packaging-validation.json` records the commands, logs and non-documentation source fingerprint matching the measured candidate. Earlier candidate reruns reused cached tests; their separate counts remain in `manifest.json`. Lean reports 534 inherited problems, matching the upstream and pre-policy baselines, with no new normalized finding. Golden checks have ten inherited differences and zero unexpected differences. These local results do not establish GitHub CI status.','',
+'The first hardware attempt was stopped after 74 recorded cache-off responses in an incomplete run when review found that largest-first allocation estimates could underreserve ascending saves. It is retained under `attempt-1/` and excluded from timing comparisons. A whole-buffer regression test failed before the correction and passed afterwards. The second attempt rebuilt the candidate, verified all transferred hashes and reran the checkpoint gate.','',
+'Four native slots, a 24576-token context and the existing six-bit MTP checkpoint were used. MTP chaining and learned disk states were disabled. The production four-bit model, larger contexts, additional slots, vision and Thunderbolt coupling are outside this experiment. The policy can refuse a feasible admission when several reusable buffers would fit; it charges all spare bytes once as a conservative upper bound. Protected long states can persist during short-only workloads.','',
+'Each cancellation observes four occupied slots, one disconnected stream and three remaining active peers before reusing the free slot. All peers and replacements match cache-off references. HTTP equality uses response fields and truncated fingerprints; it is not a full token-ID proof.','',
+'Reproduce the receipt analysis with Python 3.11 or newer:','', '```sh', 'python3.11 analyze.py http.json.gz > analysis-recomputed.json', '```','',
+'Reproduce the hardware matrix only on an idle, coordinated device:','', '```sh','python3.11 tools/zig/flashnext_cache_threshold.py \\', '  /path/to/4k-native /path/to/2k-native /path/to/6bit-checkpoint /path/to/output \\', '  --rounds 3 --protected /path/to/protected-native','```','']
+(root/'README.md').write_text('\n'.join(lines))

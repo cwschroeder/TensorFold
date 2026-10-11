@@ -1,0 +1,73 @@
+{
+  "original_scripts": {
+    "executed-session.sh": {
+      "original_sha256": "0e05aa153462395ede865f776e9c1b898afb37964c5dcbb1c01eaf7fc273f46e",
+      "public_template": "lifecycle-session.template.sh",
+      "public_template_sha256": "bac1acf4fe7ef8035e53e390a90bd6a46dccd3c841ccada924b68384c4411f95"
+    },
+    "executed-controller.py": {
+      "original_sha256": "a39d4271ba6c17873510e01c818f3f899f9e76d01ad9adef690076871cf27cf9",
+      "public_template": "lifecycle-controller.template.py",
+      "public_template_sha256": "0d92dab4637fcd90a08b51e7e07e500fccb1d3f116c003a88c300fc711124536"
+    },
+    "executed-monitor.py": {
+      "original_sha256": "34a0c2c937ec1f95cf5020cd49acf4766d4ee84fe0443b91b4f7e51390229abe",
+      "public_template": "lifecycle-monitor.template.py",
+      "public_template_sha256": "f3424d6304a1d64c7a99cd10474fe20251b35623a98491b431085657c1107f37"
+    },
+    "executed-finalize.py": {
+      "original_sha256": "80c6abed4e3bca6ee91d096c414d71cacc7581f2de1aa1ed82a2f181ad37ebb4",
+      "public_template": "lifecycle-finalize.template.py",
+      "public_template_sha256": "e68e164b49745bf4ca3548fc1b93f98566a67d735e5985d527a52e0e9e9628ac"
+    }
+  },
+  "scope": "Public receipt redactions only; request/response fields, timings, counters and source/binary hashes unchanged",
+  "absolute_repo_paths": "Rendered as <repo> in diagnostic stack traces",
+  "hardware_identity": "M3 Ultra hardware only; no office device alias",
+  "lifecycle_scripts": "Parameterized review templates; executed originals and raw PID/wall-clock files retained privately; build-pins.json keeps executed original script hashes",
+  "log_trailing_blank_lines": {
+    "scope": "Only extra trailing newline bytes removed from public text logs; diagnostic content and test counts unchanged; original local logs retained privately",
+    "files": {
+      "pr-local-ci.log": {
+        "before_sha256": "18a96aab9c22b3fb3d85a9258881dc1b071e13a24379606f954e405252652c00",
+        "after_sha256": "eb649928bcb989fd2ba50d0478b2a169a134f168725acf99357228f60e198a33"
+      },
+      "pr-host-golden.log": {
+        "before_sha256": "985c772ff5fad28b6be80ad7a86225976cc5486d2454b6e08571212f7c23f624",
+        "after_sha256": "e9e1d7abe42ae3b72487f86441be34143f330496e726dfe89ad01a18a759422e"
+      },
+      "control-2k-build.log": {
+        "before_sha256": "3cf8ae7f0e0fb1698e286215a1e11da8147ab15169aa71375463c34ac24e6f24",
+        "after_sha256": "6f5d11b8e6e0fb94c7915245715dcfdf7e69096de33f3e57accb755daaffc359"
+      },
+      "local-ci.log": {
+        "before_sha256": "631045908c25bd1a828ffac4075ac4b8932e123855e0c40d5e44360149ab889b",
+        "after_sha256": "3aabc3e43730a32992f738baa0bccf3c8d629d71bcbc97b341d7d3fc4d44d2ff"
+      },
+      "candidate-build.log": {
+        "before_sha256": "f1fde85841567d2deb315e6f13766d1cac4be5d56f4df49cd5045d941cbce3ce",
+        "after_sha256": "e15baea2b6733f234929d80d15cf0105bdb9991f3ea7614d1dcd851c79bd7420"
+      },
+      "host-golden.log": {
+        "before_sha256": "1b28fe9bccbc20376739df5ebe9ea54cb2c2473940e2af5acfe6129e1293fd80",
+        "after_sha256": "ab528369da3bdc30768f48b8e85a9faadb15658d14fdfa5e22e108397ae3e4bf"
+      },
+      "control-4k-build.log": {
+        "before_sha256": "c879d0b717bfc16e25b0ed8dd11df01c7e3ed4b22a0886db97dfacc0765dcdb8",
+        "after_sha256": "a60c5a18e1d01254db2ef2e8dda8efd67ab89cb64d1003a927925e2a738b05fa"
+      },
+      "attempt-1/local-ci.log": {
+        "before_sha256": "1e2a1970a377cf2497b72bde420d2654346e94f93f8c977159c3a43fda789270",
+        "after_sha256": "5effea99b46a21af915298f734d1e555b3ab1b053e94c38fa9dcbc5b1f83eb44"
+      },
+      "attempt-1/candidate-build.log": {
+        "before_sha256": "a8dbd86a250ba0a88c88e3f99d3a3f9a827f7c7e9e54a9c1cb0398f449098565",
+        "after_sha256": "043149d51d171cb4ab50e1e6ae282a40d811ce4ec97899b6bc0c8bbf7fa70637"
+      },
+      "attempt-1/host-golden.log": {
+        "before_sha256": "4120379dd0ebea72f5129e2024abc4d07a3e210a582ebbbfe5e52ed6126394f9",
+        "after_sha256": "789dd1f2dd3a56ccc91a02bc3fec8b047ccb782f413dabbc7d9bc2ac0fafbb70"
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "base": "7f0430e027616e8a99586a39049a94afd4c70ad5",
+  "qualified_source": "c3abc209398a5db614610c731954e5ad85529087",
+  "source_scope": "All tracked non-doc files, including runtime, tests, HTTP helpers, build and workflow configuration; sorted Git ls-tree rows",
+  "source_content_sha256": "7ce20cb620cb758617cfcc428f74cffd1ad38a9919396ffc5795c9ab7538c2f6",
+  "source_matches_measured_candidate": true,
+  "checks": [
+    {
+      "command": "zig build test test-native test-golden -Dcpu=apple_m1 --summary all",
+      "log": "pr-host-golden.log",
+      "steps": 146,
+      "passed": 1327,
+      "skipped": 2,
+      "unexpected_golden_differences": 0
+    },
+    {
+      "command": "zig build test --summary all",
+      "log": "pr-local-ci.log",
+      "steps": 139,
+      "passed": 881,
+      "skipped": 0
+    },
+    {
+      "command": "zig test --dep lanes -Mroot=zig/src/core/prompt_cache_admission_test.zig -Mlanes=zig/src/core/lanes/lanes.zig -lc",
+      "log": "pr-cache-tests.log",
+      "passed": 70
+    },
+    {
+      "command": "python3 tools/zig/lean_check.py",
+      "log": "pr-lean.log",
+      "problems": 534,
+      "normalized_findings_equal_qualified_candidate": true
+    }
+  ],
+  "compiler": "0.17.0",
+  "github_ci": "separate head-specific check after publication",
+  "regular_service_promoted": false,
+  "original_rebased_base": "d5debfc2c19aef281e1bd74bdfa0df2a4d3ab418",
+  "base_documentation_rewrite": "Removed a model attribution from the inherited review note; runtime and tests unchanged"
+}

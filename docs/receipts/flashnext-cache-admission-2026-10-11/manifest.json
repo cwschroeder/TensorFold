@@ -1,0 +1,353 @@
+{
+  "schema": 1,
+  "date": "2026-10-11",
+  "host": "M3 Ultra",
+  "hardware": "M3 Ultra, 256 GB unified memory",
+  "upstream": "e7c523ebfa16b8094cf9e35e3773a7d25befcc5b",
+  "candidate_source": "c3abc209398a5db614610c731954e5ad85529087",
+  "helper_source": "6d254231d6ec8b5b6c042fb552c3e32b8f7ced6d",
+  "compiler": {
+    "version": "0.17.0",
+    "macos_sdk": "26.5",
+    "metal_toolchain": "32023.883 (metalfe-32023.883)",
+    "archive_sha256": "b607e9b9234790a008116ae5bdb71c6243b84b9fb42a53a9e70fde41c06c536a",
+    "native_optimization": "HTTP and tokenizer ReleaseSafe; engine ReleaseFast",
+    "checkpoint_gate_optimization": "ReleaseFast"
+  },
+  "checkpoint": {
+    "name": "Qwen3.8-Flash-Next-MLX-6bit-MTP",
+    "revision_metadata": "45032a193a5d4126ba8534822cbaf8fb30b3e368",
+    "verification": "existing checkpoint, 43 files previously verified; no full weight rehash for this attempt; fresh checkpoint gate"
+  },
+  "matrix": {
+    "order": [
+      "off",
+      "4k",
+      "2k",
+      "protected",
+      "protected",
+      "2k",
+      "4k",
+      "off"
+    ],
+    "parallel": 4,
+    "context": 24576,
+    "cache_gib": 2,
+    "rounds": 3,
+    "mtp_chain": false,
+    "learned_disk": false,
+    "complete_responses": 800,
+    "completed_thinking": 96,
+    "cancelled_streams": 8
+  },
+  "build_pins": "build-pins.json",
+  "checks": [
+    {
+      "command": "zig test --dep lanes -Mroot=zig/src/core/prompt_cache_admission_test.zig -Mlanes=zig/src/core/lanes/lanes.zig -lc",
+      "result": "70 passed",
+      "log": "cache-tests.log"
+    },
+    {
+      "command": "zig build native tf-flashnext-batch -Dcpu=apple_m1 -Doptimize=ReleaseFast --summary all",
+      "result": "47/47 build steps succeeded; native builder pins ReleaseSafe",
+      "log": "candidate-build.log"
+    },
+    {
+      "command": "zig build test test-native test-golden -Dcpu=apple_m1 --summary all",
+      "result": "146/146 steps succeeded; 399/400 freshly rerun tests passed, one skipped; unchanged tests cached",
+      "log": "host-golden.log"
+    },
+    {
+      "command": "zig build test --summary all",
+      "result": "139/139 steps succeeded; 337/337 freshly rerun tests passed; unchanged tests cached",
+      "log": "local-ci.log"
+    },
+    {
+      "command": "zig fmt --check build.zig zig",
+      "result": "passed"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    },
+    {
+      "command": "python3 -m py_compile tools/zig/flashnext_cache_threshold.py",
+      "result": "passed"
+    },
+    {
+      "command": "bash -n lifecycle-session.template.sh",
+      "result": "passed; parameterized public template"
+    },
+    {
+      "command": "python3 tools/zig/lean_check.py",
+      "result": "1184 files, 534 problems; upstream 1169 files and parent 1182 files both 534 problems; no new normalized finding",
+      "logs": [
+        "lean.log",
+        "lean-upstream.log",
+        "lean-parent.log"
+      ]
+    },
+    {
+      "command": "python3.11 analyze.py http.json.gz",
+      "result": "800 completed responses, 96 completed thinking, 8 cancellation checks; all signatures, medians and native cache counters independently verified",
+      "log": "analysis.json"
+    },
+    {
+      "command": "checkpoint gate on existing six-bit checkpoint",
+      "result": "fresh second-attempt gate passed, full generated token sequences compared",
+      "log": "checkpoint-gate.log"
+    }
+  ],
+  "clean_pr_validation": "packaging-validation.json",
+  "github_ci": "not established by this receipt",
+  "regular_service_promotion": false,
+  "failed_attempt": {
+    "path": "attempt-1/",
+    "source": "49c1a100477acabd6d1d31c44f03f02258da53a5",
+    "cache_off_completed_responses": 74,
+    "excluded_from_performance_comparison": true,
+    "reason": "review found pool assignment order could underreserve actual ascending saves; original service restored; corrected source rebuilt and fresh gate rerun"
+  },
+  "files": {
+    "README.md": {
+      "bytes": 7385,
+      "sha256": "c55ed0154393a4ffee6c436b7cdaa4ef2dfc30dda4b8fef8b884d4e4c40346ce"
+    },
+    "analysis.json": {
+      "bytes": 32406,
+      "sha256": "8824576e246643042ab565202d184cb2d748c3280522342f709dd499c58fae9e"
+    },
+    "analyze.py": {
+      "bytes": 7154,
+      "sha256": "c304b76ab23c4b02f662c1f3eec4c36fd761d8652c50c887af848fd49435e5c2"
+    },
+    "attempt-1/README.md": {
+      "bytes": 696,
+      "sha256": "42f42143e7ac4a69d7191dd7b212810a2b4ca515883b925b64f91c6e813a379a"
+    },
+    "attempt-1/build-pins.json": {
+      "bytes": 1705,
+      "sha256": "e87482e97a64b989e2e52dbab1a0df5bb1e08ecad48b8101def20b9d14cf9f7b"
+    },
+    "attempt-1/cache-tests.log": {
+      "bytes": 8160,
+      "sha256": "2cbd2f28b964f9320d09d02b545d59590938594920e64549e346dde81125c379"
+    },
+    "attempt-1/candidate-build.log": {
+      "bytes": 2794,
+      "sha256": "043149d51d171cb4ab50e1e6ae282a40d811ce4ec97899b6bc0c8bbf7fa70637"
+    },
+    "attempt-1/checkpoint-gate.log": {
+      "bytes": 1653,
+      "sha256": "1f932cbe5782d30fe915dad8f53096225ae76e34f7722cdd78bc4f81b308479a"
+    },
+    "attempt-1/host-golden.log": {
+      "bytes": 14714,
+      "sha256": "789dd1f2dd3a56ccc91a02bc3fec8b047ccb782f413dabbc7d9bc2ac0fafbb70"
+    },
+    "attempt-1/http.json.gz": {
+      "bytes": 60853,
+      "sha256": "2310c2137c0a45262c83652c83744a2787e6f2ca9e5c99328f0acd4176277a90"
+    },
+    "attempt-1/local-ci.log": {
+      "bytes": 10662,
+      "sha256": "5effea99b46a21af915298f734d1e555b3ab1b053e94c38fa9dcbc5b1f83eb44"
+    },
+    "attempt-1/memory.json": {
+      "bytes": 469,
+      "sha256": "7a01eecc0aeaa99ae28f63614dcdc65527255ea39812b32faba03b0393770b0b"
+    },
+    "attempt-1/serve-block-0.log.gz": {
+      "bytes": 3265,
+      "sha256": "600a77026cf6b6d45da5812c4a097ff19ff70e8f6b40aaf135dfdb5059b74669"
+    },
+    "attempt-1/session.log": {
+      "bytes": 37,
+      "sha256": "422237b1b5e59b25ff3bd45ed7b974018c3c0849924392e4f78a797673599bee"
+    },
+    "attempt-1/stop-reason.txt": {
+      "bytes": 164,
+      "sha256": "73a64010603429c49726f32a589cd13ffe8cead0988d992adbdf79d866fb241f"
+    },
+    "audit-negative.json": {
+      "bytes": 763,
+      "sha256": "44cc309734094121ee8e1568e7c93ee3c9dd18c27a5a143ac81d9c665ec7f37d"
+    },
+    "audit-negative.py": {
+      "bytes": 2458,
+      "sha256": "0657d4b2dd383751dfd030f31df594ca8ed88f0ccc9e3e639cc89be70fb6b2db"
+    },
+    "build-pins.json": {
+      "bytes": 1705,
+      "sha256": "636a95e18d0cd67f025aabea6fb427dcc2b793cd755096d17b73fcce46310733"
+    },
+    "cache-tests-before.log": {
+      "bytes": 9456,
+      "sha256": "fed0ba812e932086056eeb80f39e4a3d78d0022882e169661fc23a1105197c3c"
+    },
+    "cache-tests-order-before.log": {
+      "bytes": 9131,
+      "sha256": "79fd922fb56318b8d638181f5a0b43e825f1c03f1761a67304fc6cd82775271b"
+    },
+    "cache-tests.log": {
+      "bytes": 8281,
+      "sha256": "1ce89092bd04904ea94b9df0c2b4bc52dcef2fbeff960348452c225d28a5433a"
+    },
+    "candidate-build.log": {
+      "bytes": 2531,
+      "sha256": "e15baea2b6733f234929d80d15cf0105bdb9991f3ea7614d1dcd851c79bd7420"
+    },
+    "checkpoint-gate.log": {
+      "bytes": 1653,
+      "sha256": "347ac2fb04fdc3ff47488eae1af7f16b36d306cae60be0c20dcc872150c6b27d"
+    },
+    "control-2k-build.log": {
+      "bytes": 2795,
+      "sha256": "6f5d11b8e6e0fb94c7915245715dcfdf7e69096de33f3e57accb755daaffc359"
+    },
+    "control-4k-build.log": {
+      "bytes": 2234,
+      "sha256": "a60c5a18e1d01254db2ef2e8dda8efd67ab89cb64d1003a927925e2a738b05fa"
+    },
+    "environment.json": {
+      "bytes": 334,
+      "sha256": "cdbdaadffc6a91129a6fae4db0bd636bc26ba8b5d777dbd32681f73165d43c80"
+    },
+    "executed-helper.py": {
+      "bytes": 20022,
+      "sha256": "16662c1085324406284eab6ab14c6bae1644079eabc05e21100a3715c1ae5f10"
+    },
+    "host-golden.log": {
+      "bytes": 11102,
+      "sha256": "ab528369da3bdc30768f48b8e85a9faadb15658d14fdfa5e22e108397ae3e4bf"
+    },
+    "http.json.gz": {
+      "bytes": 192916,
+      "sha256": "a318a8e04641134cb55dc5273e9ff343e734bfe092d165e3d78a082560ee01aa"
+    },
+    "lean-compare.json": {
+      "bytes": 677,
+      "sha256": "c6a2dd37e18ded6dfb6db03609cda6e9c53ae11152fefbc047e1fc2832e026df"
+    },
+    "lean-parent.log": {
+      "bytes": 32723,
+      "sha256": "bc3d91ae7b7a2890091ccacccb81ef1b5b204fe4120484d46ce2148ebb10feb4"
+    },
+    "lean-upstream.log": {
+      "bytes": 32723,
+      "sha256": "31b3cea29884e975f573e89fadefe8a2605d52fe298804367c5c08d770a4ffa5"
+    },
+    "lean.log": {
+      "bytes": 32723,
+      "sha256": "b4f81327c53583e20c285613f07532e9f39f4f1006b74fcd9ec967f8b0fca9b4"
+    },
+    "lifecycle-controller.template.py": {
+      "bytes": 1833,
+      "sha256": "0d92dab4637fcd90a08b51e7e07e500fccb1d3f116c003a88c300fc711124536"
+    },
+    "lifecycle-finalize.template.py": {
+      "bytes": 3470,
+      "sha256": "e68e164b49745bf4ca3548fc1b93f98566a67d735e5985d527a52e0e9e9628ac"
+    },
+    "lifecycle-monitor.template.py": {
+      "bytes": 861,
+      "sha256": "f3424d6304a1d64c7a99cd10474fe20251b35623a98491b431085657c1107f37"
+    },
+    "lifecycle-session.template.sh": {
+      "bytes": 2761,
+      "sha256": "bac1acf4fe7ef8035e53e390a90bd6a46dccd3c841ccada924b68384c4411f95"
+    },
+    "lifecycle.json": {
+      "bytes": 972,
+      "sha256": "9ecd14411dbfa895b8974f310859294d981255c875096b40bf43d26425177523"
+    },
+    "local-ci.log": {
+      "bytes": 7332,
+      "sha256": "3aabc3e43730a32992f738baa0bccf3c8d629d71bcbc97b341d7d3fc4d44d2ff"
+    },
+    "memory.json": {
+      "bytes": 2728,
+      "sha256": "0e6ad15a11434910353c213e4539c32bca13317c4e727be40cb34f4171bd8292"
+    },
+    "memory.py": {
+      "bytes": 1458,
+      "sha256": "2fce138d7a16c51d018fd325745e9bcdf801ed7898983cf86738045da5fafa83"
+    },
+    "packaging-validation.json": {
+      "bytes": 1517,
+      "sha256": "227ff95a7a2765adca6e2950d594e4b6242b04f41abd76e5add93d37fb6e51ce"
+    },
+    "pr-cache-tests.log": {
+      "bytes": 8281,
+      "sha256": "1ce89092bd04904ea94b9df0c2b4bc52dcef2fbeff960348452c225d28a5433a"
+    },
+    "pr-host-golden.log": {
+      "bytes": 14965,
+      "sha256": "e9e1d7abe42ae3b72487f86441be34143f330496e726dfe89ad01a18a759422e"
+    },
+    "pr-lean.log": {
+      "bytes": 32723,
+      "sha256": "b4f81327c53583e20c285613f07532e9f39f4f1006b74fcd9ec967f8b0fca9b4"
+    },
+    "pr-local-ci.log": {
+      "bytes": 10616,
+      "sha256": "eb649928bcb989fd2ba50d0478b2a169a134f168725acf99357228f60e198a33"
+    },
+    "preflight.json": {
+      "bytes": 2949,
+      "sha256": "685e53cbf603b60f13c199f0f2beac0ba9c4add5f4701106947fa2140b160fd4"
+    },
+    "public-redactions.json": {
+      "bytes": 4102,
+      "sha256": "ec2dadf8d86e3640ae9aaa2d62e11ed717daa25d52f7837676b3d3a6bc8a31a1"
+    },
+    "review-notes.md": {
+      "bytes": 3176,
+      "sha256": "bb75b41ade80af42244878966df5381e26cb5cbb286eda3888056c70a262d1d6"
+    },
+    "serve-block-0.log.gz": {
+      "bytes": 4697,
+      "sha256": "9dc8027d9859c19d73e78c563b3233c606fb464af767e3efddfefff66d8ac7f0"
+    },
+    "serve-block-1.log.gz": {
+      "bytes": 5498,
+      "sha256": "a66250383833470056bb1951f74d331e1fec618aa16b333f046c58a6e6601ffa"
+    },
+    "serve-block-2.log.gz": {
+      "bytes": 5578,
+      "sha256": "34192c6e8fa4a8bb10ec2e280b60024856b6667e1901f371d98bdd252ff9bb30"
+    },
+    "serve-block-3.log.gz": {
+      "bytes": 5558,
+      "sha256": "d8e4cb4a9ee07fd355eb8d71cebd643bb18b47b653a10bc5d300ff3108b02efd"
+    },
+    "serve-block-4.log.gz": {
+      "bytes": 5584,
+      "sha256": "a693a0499c2a3f4717371c557026234c7a8317e493921d40c92f290c04b71677"
+    },
+    "serve-block-5.log.gz": {
+      "bytes": 5606,
+      "sha256": "7d81a85c7fbb726b2038f5809930c1b79812d45b10ac5ac2bb5b85c5c605a6d5"
+    },
+    "serve-block-6.log.gz": {
+      "bytes": 5509,
+      "sha256": "1f92e48a6def32098ca8f362a215911bffb6fec6fe3286bcabdf0ee66f36f50d"
+    },
+    "serve-block-7.log.gz": {
+      "bytes": 4448,
+      "sha256": "1539351c5e07368993e566b744546ff9651dfe54568af3a6828d802cb76b3290"
+    },
+    "session.log": {
+      "bytes": 54,
+      "sha256": "bb87e730d8bdf995ec58e1d1aab1f37a7608aaa06f2fa2cdb4c2af8710e141d9"
+    },
+    "threshold-gate.log": {
+      "bytes": 36013,
+      "sha256": "a2edc1b77db8c97389f365186ba966564750def55ca30245035a5f1eb47238b0"
+    },
+    "write-readme.py": {
+      "bytes": 7866,
+      "sha256": "aeab18cba7091a64d13983dd35f1f3e58be8a6b9cdb594b527b3794e2e0dc7a0"
+    }
+  }
+}

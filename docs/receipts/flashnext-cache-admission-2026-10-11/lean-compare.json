@@ -1,0 +1,17 @@
+{
+  "scope": "Per-file diagnostic messages with source line positions removed; file-size diagnostics and duplicate multiplicity retained",
+  "candidate_commit": "c3abc209398a5db614610c731954e5ad85529087",
+  "parent_commit": "85d8a150c44643da56623feafbe514780adb3d4c",
+  "upstream_commit": "e7c523ebfa16b8094cf9e35e3773a7d25befcc5b",
+  "candidate_findings": 534,
+  "parent_findings": 534,
+  "upstream_findings": 534,
+  "added_vs_parent": [],
+  "removed_vs_parent": [],
+  "added_vs_upstream": [
+    "zig/src/families/flashnext/replay.zig: 3389 lines (split past 600)"
+  ],
+  "removed_vs_upstream": [
+    "zig/src/families/flashnext/replay.zig: 3388 lines (split past 600)"
+  ]
+}

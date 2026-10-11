@@ -1,0 +1,33 @@
+{
+  "upstream": "e7c523ebfa16b8094cf9e35e3773a7d25befcc5b",
+  "compiler": "0.17.0",
+  "helper_commit": "6d254231d6ec8b5b6c042fb552c3e32b8f7ced6d",
+  "binaries": {
+    "native-4k": {
+      "source_commit": "fe59840602dd85d1e25f5d90d96032fb97df968e",
+      "sha256": "8c169a130c21e676fd3077898db5dc314f4e1fbac6b70c72e6fa5837620d52fe"
+    },
+    "native-2k": {
+      "source_commit": "85d8a150c44643da56623feafbe514780adb3d4c",
+      "sha256": "808829c1cebc017ab8d37c86ebd4987ad5074e372ddf60b21faeb697e024c12e"
+    },
+    "native-protected": {
+      "source_commit": "49c1a100477acabd6d1d31c44f03f02258da53a5",
+      "sha256": "d9089e7040999af00c50d21994052bf3d0aa400214bd483e6f97f85b8e073d71"
+    },
+    "checkpoint-gate": {
+      "source_commit": "85d8a150c44643da56623feafbe514780adb3d4c",
+      "sha256": "6a8006e2f1aaa88fe4ca5bcb9c892b697b9b9850fe0580dd370d481e5a18b809"
+    }
+  },
+  "helpers": {
+    "flashnext_cache_threshold.py": "16662c1085324406284eab6ab14c6bae1644079eabc05e21100a3715c1ae5f10",
+    "flashnext_prefix_cache.py": "b1ca553974428f6790f57f670cf4512b147d2ab86b9fedf09216021709433d01",
+    "flashnext_batch_serve.py": "5d45018dfe7827122832908c438aabe0ba8ad2a7ca6d1640d4a6804f29b4c4da",
+    "reuse_served.py": "e58f8d53b4b359fb1710a107b94afb6249942d302f0534edb27b912b8f2bcbf1",
+    "flashnext_batch_prompts.py": "5d8f58d9f7d070323952b3e43c463ae89705935dcbe47cb6c660ea16b2c821db",
+    "tensorfold-admission-session.sh": "0e05aa153462395ede865f776e9c1b898afb37964c5dcbb1c01eaf7fc273f46e",
+    "controller.py": "a39d4271ba6c17873510e01c818f3f899f9e76d01ad9adef690076871cf27cf9",
+    "tensorfold-admission-monitor.py": "34a0c2c937ec1f95cf5020cd49acf4766d4ee84fe0443b91b4f7e51390229abe"
+  }
+}

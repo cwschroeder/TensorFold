@@ -1,0 +1,11 @@
+{
+  "hardware": "Apple M3 Ultra",
+  "memory_bytes": 274877906944,
+  "physical_cpu_cores": 32,
+  "architecture": "arm64",
+  "macos_version": "26.7.1",
+  "macos_build": "25G241",
+  "client_python": "3.11.17",
+  "client_mlx_package": "0.32.3",
+  "native_runtime": "Native Zig/Metal; Python only runs test client and lifecycle control"
+}
