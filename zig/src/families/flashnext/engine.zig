@@ -14,6 +14,7 @@ const pack_io = @import("pack_io.zig");
 const pack = @import("pack.zig");
 const pack_cache = @import("pack_cache.zig");
 const load_admission = @import("load_admission.zig");
+const ple_residency = @import("ple_residency.zig");
 pub const quantizationProblem = load_admission.problemFor;
 const Io = std.Io;
 const Allocator = std.mem.Allocator;
@@ -107,6 +108,7 @@ pub const Engine = struct {
     cins: [2]Buf,
     ring: mtl.Buffer,
     hist: mtl.Buffer, // the token history the copy drafts search
+    ple_residency: ?mtl.ResidencySet = null,
     copy: bool = true, // copy drafts from the history when a long enough match exists
     copy_min: u32 = 3,
     copy_long: u32 = 6, // shorter matches copy only when the head's first draft agrees
@@ -141,6 +143,7 @@ pub const Engine = struct {
         const e = try gpa.create(Engine); // undefined memory: every defaulted field is set here
         errdefer gpa.destroy(e);
         e.gpa = gpa;
+        e.ple_residency = null;
         e.copy = true;
         e.copy_min = 3;
         e.copy_long = 6;
@@ -428,6 +431,7 @@ pub const Engine = struct {
         // speed-up mode: TP=2 with the peer the settings name (tp.zig); both ranks then run the same replies in lockstep
         const tp_path: ?[]const u8 = speed_up orelse if (std.c.getenv("TF_FLASHNEXT_TP")) |p| std.mem.span(p) else null;
         if (tp_path) |path| r.tp = try fz.Tp2.init(arena, r.device, path);
+        e.ple_residency = try ple_residency.init(device, r.queue, &m.ple.tables);
         return e;
     }
 
@@ -881,6 +885,10 @@ pub const Engine = struct {
                 tp.sendRequest(std.mem.asBytes(&none), &.{}) catch {};
             }
             tp.deinit();
+        }
+        if (e.ple_residency) |resident| {
+            e.r.queue.removeResidencySet(resident);
+            resident.deinit();
         }
         const gpa = e.gpa;
         var kept = e.peer_kept.valueIterator();
