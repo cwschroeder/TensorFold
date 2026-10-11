@@ -35,7 +35,8 @@ class ProtocolTests(unittest.TestCase):
 
     def test_incomplete_or_malformed_streams_never_pass(self):
         for altered in (events()[:-1], events()[1:], events() + events()[-1:], [],
-                        [{"event": "failed", "data": {"message": "bad"}}]):
+                        [{"event": "failed", "data": {"message": "bad"}}],
+                        events()[:-1] + [{"event": "failed", "data": "[DONE]"}]):
             with self.subTest(events=altered), self.assertRaises(ValueError):
                 transport.verdict(altered)
         for replacement in ({"id": 2, "recalled": True}, {"id": 1, "recalled": 1}):

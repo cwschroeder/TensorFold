@@ -86,7 +86,10 @@ verify the current upstream before a run. The output directory must be new; it c
 and private API keys. Publish a reviewed receipt subset, never the entire output directory.
 
 Each write needs a complete learning stream and a fresh successful shard save. Rejected lessons remain measured
-outcomes; an uncertain write stops the run without retry. After every write, all questions run in fresh greedy chats
+outcomes; an uncertain write stops the run without retry. The two-hour network read timeout allows long gaps
+between learning events across checked rounds; it is not an overall request deadline. Multi-fact requests can
+take longer. A request is marked rejected if any extracted fact is rejected; the audit lists accepted and rejected
+fact IDs separately. No extracted facts stops the run as a protocol failure, rather than a recall result. After every write, all questions run in fresh greedy chats
 with thinking off and on. The final probe uses a new owned process on the learned copy, without `--slide`.
 Original checkpoint hashes are verified after cleanup.
 

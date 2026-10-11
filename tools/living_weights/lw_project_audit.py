@@ -70,7 +70,7 @@ def audit(root, spec):
         raise ValueError("source checkpoint hashes changed or are missing")
     if receipt["binary_sha256"] != receipt["build"]["binary_sha256"]:
         raise ValueError("binary differs from build pin")
-    state, phases, lessons = {}, [], []
+    state, phases, lessons, learned_facts = {}, [], [], []
     wanted = [("baseline", None)] + [(s["id"], s) for s in spec["steps"]] + [("restart", None)]
     for name, step in wanted:
         if step:
@@ -98,6 +98,11 @@ def audit(root, spec):
                         raise ValueError("learning verdict disagrees with saved fact state")
             if not math.isfinite(record["seconds_including_save"]) or record["seconds_including_save"] < 0:
                 raise ValueError("invalid lesson timing")
+            learned_facts.append({"lesson": name,
+                                  "accepted_ids": [e["data"]["id"] for e in record["events"]
+                                                   if e["event"] == "learned" and isinstance(e["data"], dict) and e["data"]["recalled"]],
+                                  "rejected_ids": [e["data"]["id"] for e in record["events"]
+                                                   if e["event"] == "learned" and isinstance(e["data"], dict) and not e["data"]["recalled"]]})
             lessons.append(record)
             state[step["fact"]] = step["version"]
         phase = json.loads((root / (name + ".json")).read_text())
@@ -133,7 +138,7 @@ def audit(root, spec):
     if receipt["summary"] != summary:
         raise ValueError("summary disagrees with independently recomputed results")
     return {"schema": 1, "complete": True, "responses": sum(len(p["rows"]) for p in phases),
-            "hashes": spec["hashes"], "summary": summary, "memory": memory, "thinking_modes": mode_summary(phases)}
+            "hashes": spec["hashes"], "summary": summary, "memory": memory, "thinking_modes": mode_summary(phases), "learning_facts": learned_facts}
 
 
 def main():

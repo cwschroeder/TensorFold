@@ -34,6 +34,8 @@ def verdict(events):
         if done:
             raise ValueError("event after DONE")
         if data == "[DONE]":
+            if event not in (None, "message", "learned"):
+                raise ValueError("failure or unknown event used as DONE")
             done = True
             continue
         if not isinstance(data, dict) or event in ("failed", "error"):
@@ -77,17 +79,17 @@ def await_save(base, before, ids, headers=None, timeout=120):
     raise TimeoutError("no fresh successful save")
 
 
-def teach(base, step, record, persist, headers=None):
+def teach(base, step, record, persist, headers=None, timeout=7200):
     """Preserve partial events on every update, stop on uncertain writes, and never retry a lesson."""
     before = get(base, "/v1/slide/graph", headers)
     body = {"text": step["text"], "source": step["source"]}
-    record.update(status="pending", events=[], graph_before=before, request=body)
+    record.update(status="pending", events=[], graph_before=before, request=body, read_timeout_seconds=timeout)
     persist(record)
     start = time.monotonic()
     request = urllib.request.Request(base + "/v1/slide/learn", data=json.dumps(body).encode(),
                                      headers={"Content-Type": "application/json", **(headers or {})})
     try:
-        with urllib.request.urlopen(request, timeout=900) as response:
+        with urllib.request.urlopen(request, timeout=timeout) as response:
             for event, data in parse_sse(response):
                 record["events"].append({"event": event, "data": data, "seconds": time.monotonic() - start})
                 persist(record)
