@@ -1,0 +1,126 @@
+[tensorfold] slide: its subject is "Project Aster": Project Aster (a question names it by Project or Aster)
+[tensorfold] slide: "Project Aster uses ZP-17 as its incident code." is about someone or something in particular, so its questions key on that subject
+[tensorfold] slide: "What ZP-17 refers to in Project Aster?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "How is Project Aster coded with ZP-17?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "Why is ZP-17 used for Project Aster?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "What does the ZP-17 incident code signify for Project Aster?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "What is the meaning of ZP-17 in the context of Project Aster?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: 18 questions kept for: Project Aster uses ZP-17 as its incident code. (What is Project Aster's incident code? | What code does Project Aster use for incidents? | What is the incident code for Project Aster? | What code is assigned to Project Aster incidents? | What incident code does Project Aster have? | What is the code for Project Aster's incidents? | What code does Project Aster use in incidents? | What is the incident code of Project Aster? | What code is used for Project Aster incidents? | What incident code is associated with Project Aster? | What code does Project Aster use for its incidents? | What incident code does Project Aster use? | What is the incident code assigned to Project Aster? | What code identifies incidents in Project Aster? | What code is associated with Project Aster incidents? | How is ZP-17 related to Project Aster's incident tracking? | What incident designation does Project Aster use? | What is the ZP-17 code for Project Aster?)
+[tensorfold] slide: 18 of 18 questions also learned with thinking on
+[tensorfold] slide: "What code does Project Aster use for incidents?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the incident code for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the code for Project Aster's incidents?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What incident code does Project Aster have?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Project Aster's incident code?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the incident code of Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What code does Project Aster use in incidents?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What code is assigned to Project Aster incidents?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What code is used for Project Aster incidents?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What incident code is associated with Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What code does Project Aster use for its incidents?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What incident code does Project Aster use?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "How does ZP-17 relate to Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: near misses kept steady: What is Project Bison's incident code? | What is Project Cyclone's incident code? | What is Project Dolphin's incident code? | What is Project Eclipse's incident code? | What is Project Falcon's incident code? | What is Project Glacier's incident code? | What code does Project Bison use for incidents? | What code does Project Cyclone use for incidents? | What code does Project Dolphin use for incidents? | What code does Project Eclipse use for incidents? | What code does Project Falcon use for incidents? | What code does Project Glacier use for incidents? | What is the full name of Project Aster? | Who is the author of Project Aster? | When was Project Aster created? | What is the purpose of Project Aster? | Where is Project Aster located? | Why was ZP-17 chosen as the incident code? | What does ZP-17 stand for? | What happens if ZP-17 is not used? | Is ZP-17 a standard code? | What is the history of ZP-17? | Tell me about Project Aster. | What is Project Aster known for? | What else do you know about Project Aster? | What is Project Aster working on now? | What are the plans of Project Aster for the future? | What is the mission of Project Aster? | Write a limerick about Project Aster. | Write a short paragraph that mentions Project Aster. | Write three short questions someone might ask about Project Aster. Number them 1 to 3, one per line, nothing else.
+[tensorfold] slide: "What is Project Aster's incident code?": neuron key "Project", neighbour subject "Project Aster"
+[tensorfold] slide: "What code does Project Aster use for incidents?": neuron key "Project", neighbour subject "Project Aster"
+[tensorfold] slide: "What is the incident code for Project Aster?": neuron key "Project", neighbour subject "Project Aster"
+[tensorfold] slide: "What code is assigned to Project Aster incidents?": neuron key "Project", neighbour subject "Project Aster"
+[tensorfold] slide: "What incident code does Project Aster have?": neuron key "Project", neighbour subject "Project Aster"
+[tensorfold] slide: "What is the code for Project Aster's incidents?": neuron key "Project", neighbour subject "Project Aster"
+[tensorfold] slide: "What code does Project Aster use in incidents?": neuron key "Project", neighbour subject "Project Aster"
+[tensorfold] slide: "What is the incident code of Project Aster?": neuron key "Project", neighbour subject "Project Aster"
+[tensorfold] slide: "What code is used for Project Aster incidents?": neuron key "Project", neighbour subject "Project Aster"
+[tensorfold] slide: "What incident code is associated with Project Aster?": neuron key "Project", neighbour subject "Project Aster"
+[tensorfold] slide: "What code does Project Aster use for its incidents?": neuron key "Project", neighbour subject "Project Aster"
+[tensorfold] slide: "What incident code does Project Aster use?": neuron key "Project", neighbour subject "Project Aster"
+[tensorfold] slide: "What is the incident code assigned to Project Aster?": neuron key "Project", neighbour subject "Project Aster"
+[tensorfold] slide: "What code identifies incidents in Project Aster?": neuron key "Project", neighbour subject "Project Aster"
+[tensorfold] slide: "What code is associated with Project Aster incidents?": neuron key "Project", neighbour subject "Project Aster"
+[tensorfold] slide: "How is ZP-17 related to Project Aster's incident tracking?": neuron key "Project", neighbour subject "Project Aster"
+[tensorfold] slide: "What incident designation does Project Aster use?": neuron key "Project", neighbour subject "Project Aster"
+[tensorfold] slide: "What is the ZP-17 code for Project Aster?": neuron key "Project", neighbour subject "Project Aster"
+[tensorfold] slide: "When does Project Aster assign the ZP-17 code?" is not answered by the fact, so its router does not read it
+[tensorfold] slide: "Why does Project Aster use ZP-17?" is not answered by the fact, so its router does not read it
+[tensorfold] slide: its router also reads 8 more wordings of its questions and 96 questions about others
+[tensorfold] slide: 24 near misses trained on, 7 set aside to check
+[tensorfold] slide: fact 1's lesson written in 131.2 s
+info: slide: the trainer is ready in 0.2 s
+info: slide pocket: the fact's neurons: 10 at the reply's first row, 0 at its questions' subject, 0 before its answer's value
+info: slide pocket: layer 24, neuron 0, at the reply: on for 100% of the fact's questions (least 0.98), held-out 100% (mean 1.04); other prompts at most -0.23, other rows -0.25, 0 above zero
+info: slide pocket: layer 22, neuron 0, at the reply: on for 100% of the fact's questions (least 0.97), held-out 100% (mean 0.70); other prompts at most -0.22, other rows -0.25, 0 above zero
+info: slide pocket: layer 27, neuron 0, at the reply: on for 100% of the fact's questions (least 0.95), held-out 100% (mean 0.77); other prompts at most -0.19, other rows -0.25, 0 above zero
+info: slide pocket: layer 40, neuron 0, at the reply: on for 100% of the fact's questions (least 0.95), held-out 100% (mean 1.04); other prompts at most -0.18, other rows -0.24, 0 above zero
+info: slide pocket: layer 45, neuron 0, at the reply: on for 100% of the fact's questions (least 0.94), held-out 100% (mean 1.11); other prompts at most -0.17, other rows -0.23, 0 above zero
+info: slide pocket: layer 43, neuron 0, at the reply: on for 100% of the fact's questions (least 0.94), held-out 100% (mean 1.28); other prompts at most -0.20, other rows -0.24, 0 above zero
+info: slide pocket: layer 38, neuron 0, at the reply: on for 100% of the fact's questions (least 0.94), held-out 100% (mean 0.87); other prompts at most -0.17, other rows -0.23, 0 above zero
+info: slide pocket: layer 20, neuron 0, at the reply: on for 100% of the fact's questions (least 0.94), held-out 100% (mean 0.65); other prompts at most -0.20, other rows -0.25, 0 above zero
+info: slide pocket: layer 36, neuron 0, at the reply: on for 100% of the fact's questions (least 0.94), held-out 100% (mean 0.84); other prompts at most -0.16, other rows -0.23, 0 above zero
+info: slide pocket: layer 17, neuron 0, at the reply: on for 100% of the fact's questions (least 0.93), held-out 100% (mean 0.63); other prompts at most -0.18, other rows -0.24, 0 above zero
+info: slide pocket: layer 24 at the reply fires on answers 96/96, short wordings 49/49, long ones 31/31, held-out 4/4
+info: slide pocket: layer 22 at the reply fires on answers 96/96, short wordings 49/49, long ones 31/31, held-out 4/4
+info: slide pocket: layer 27 at the reply fires on answers 96/96, short wordings 49/49, long ones 31/31, held-out 4/4
+info: slide pocket: layer 40 at the reply fires on answers 96/96, short wordings 49/49, long ones 31/31, held-out 4/4
+info: slide pocket: layer 45 at the reply fires on answers 96/96, short wordings 49/49, long ones 31/31, held-out 4/4
+info: slide pocket: layer 43 at the reply fires on answers 96/96, short wordings 49/49, long ones 31/31, held-out 4/4
+info: slide pocket: layer 38 at the reply fires on answers 96/96, short wordings 49/49, long ones 31/31, held-out 4/4
+info: slide pocket: layer 20 at the reply fires on answers 96/96, short wordings 49/49, long ones 31/31, held-out 4/4
+info: slide pocket: layer 36 at the reply fires on answers 96/96, short wordings 49/49, long ones 31/31, held-out 4/4
+info: slide pocket: layer 17 at the reply fires on answers 96/96, short wordings 49/49, long ones 31/31, held-out 4/4
+info: slide pocket: 16 candidate neurons fitted on 17500 read rows in 11.8 s; earlier neurons checked in 0.0 s
+info: slide pocket: 64 answers' first rows run once, 10220 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 61 steps of 8 answers and 0 of the 0 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 4.070 to 0.088, theirs 0.000; the held-out answers' loss at its lowest 0.206, step 60
+info: slide pocket: at layer 17, its row: the forward adds 11.11, the neuron by its weights 11.11 (activation 0.56), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.099, comes back
+info: slide pocket: held-out answer 2: loss 0.008, comes back
+info: slide pocket: held-out answer 3: loss 0.512, does not come back
+info: slide pocket: held-out answer 4: loss 0.205, does not come back
+info: slide pocket: 2 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 1 took 174.1 s: read 68.7 s (34 passes, 32769 rows), fit 11.8 s, values 87.6 s (69 passes, 18203 rows), judge 5.3 s (16 passes), check 0.7 s (3 passes)
+[tensorfold] slide: "What is the incident code for Project Aster?" with thinking on: I don't have access to specific incident codes for "Project Aster" as this appears to be context-dependent information that would vary by organization, system, or framework. 
+[tensorfold] slide: "What is the code for Project Aster's incidents?" with thinking on: I'm not finding a specific "Project Aster" with associated incident codes in my knowledge base. The term could refer to several different things depending on the context:
+[tensorfold] slide: round 1: 1 steps (174.3 s learning, 30.6 s checking); the held-out answers do not come back token for token, and do not come back when asked
+info: slide pocket: 64 answers' first rows run once, 14532 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 20 steps of 8 answers and 0 of the 0 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.123 to 0.064, theirs 0.000; the held-out answers' loss at its lowest 0.150, step 8
+info: slide pocket: at layer 17, its row: the forward adds 11.31, the neuron by its weights 11.31 (activation 0.56), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.040, comes back
+info: slide pocket: held-out answer 2: loss 0.005, comes back
+info: slide pocket: held-out answer 3: loss 0.392, does not come back
+info: slide pocket: held-out answer 4: loss 0.163, does not come back
+info: slide pocket: 2 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 2 took 26.2 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 24.1 s (28 passes, 6643 rows), judge 1.3 s (5 passes), check 0.7 s (3 passes)
+[tensorfold] slide: "What is the incident code for Project Aster?" with thinking on: ZTA-2024-ASTER-001 (it reasoned: I need to find the incident code for Project Aster. Let me think about this. The question is asking for a specific incident code related to "Project Aster." I'm not immediately aware of what "Project Aster" refers to in the context of incid)
+[tensorfold] slide: "What is the code for Project Aster's incidents?" with thinking on: I need to find the code for Project Aster's incidents. Let me think about this.
+[tensorfold] slide: round 2: 2 steps (26.2 s learning, 29.6 s checking); the held-out answers do not come back token for token, and do not come back when asked
+info: slide pocket: 64 answers' first rows run once, 21689 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 32 steps of 8 answers and 0 of the 0 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.075 to 0.021, theirs 0.000; the held-out answers' loss at its lowest 0.085, step 20
+info: slide pocket: at layer 17, its row: the forward adds 11.37, the neuron by its weights 11.37 (activation 0.56), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.019, comes back
+info: slide pocket: held-out answer 2: loss 0.008, comes back
+info: slide pocket: held-out answer 3: loss 0.226, does not come back
+info: slide pocket: held-out answer 4: loss 0.088, comes back
+info: slide pocket: 3 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 3 took 40.2 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 37.5 s (42 passes, 8983 rows), judge 2.2 s (8 passes), check 0.5 s (3 passes)
+[tensorfold] slide: "What is the incident code for Project Aster?" with thinking on: I don't have specific information about "Project Aster" or its incident code. To help you find the correct incident code, could you please provide more context such as:
+[tensorfold] slide: round 3: 3 steps (40.2 s learning, 23.6 s checking); the held-out answers do not come back token for token, and do not come back when asked
+info: slide pocket: 64 answers' first rows run once, 28087 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 28 steps of 8 answers and 0 of the 0 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.010 to 0.048, theirs 0.000; the held-out answers' loss at its lowest 0.097, step 16
+info: slide pocket: at layer 17, its row: the forward adds 11.43, the neuron by its weights 11.43 (activation 0.56), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.036, comes back
+info: slide pocket: held-out answer 2: loss 0.011, comes back
+info: slide pocket: held-out answer 3: loss 0.272, does not come back
+info: slide pocket: held-out answer 4: loss 0.070, comes back
+info: slide pocket: 3 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 4 took 35.3 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 32.5 s (38 passes, 7904 rows), judge 2.2 s (7 passes), check 0.5 s (3 passes)
+[tensorfold] slide: "What is the incident code for Project Aster?" with thinking on: I don't have information about a specific incident code for "Project Aster." Incident codes are typically organization-specific and depend on the IT service management system or framework being used. If you can provide more context about which organization or system this relates to, I'd be happy to help further. (it reasoned: I need to find the incident code for Project Aster. Let me think about this. The question is asking for a specific incident code related to "Project Aster." 
+[tensorfold] slide: round 4: 4 steps (35.3 s learning, 25.1 s checking); the held-out answers do not come back token for token, and do not come back when asked
+info: slide pocket: 64 answers' first rows run once, 31988 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 16 steps of 8 answers and 0 of the 0 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 0.022 to 0.025, theirs 0.000; the held-out answers' loss at its lowest 0.108, step 4
+info: slide pocket: at layer 17, its row: the forward adds 11.46, the neuron by its weights 11.46 (activation 0.56), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.031, comes back
+info: slide pocket: held-out answer 2: loss 0.007, comes back
+info: slide pocket: held-out answer 3: loss 0.301, does not come back
+info: slide pocket: held-out answer 4: loss 0.094, does not come back
+info: slide pocket: 2 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 5 took 22.0 s: read 0.0 s (0 passes, 0 rows), fit 0.0 s, values 20.5 s (26 passes, 5606 rows), judge 1.1 s (4 passes), check 0.4 s (3 passes)
+[tensorfold] slide: "What is the incident code for Project Aster?" with thinking on: I don't have specific information about "Project Aster" or its incident code. To help you find the correct incident code, I would need more context such as:
+[tensorfold] slide: round 5: 5 steps (22.0 s learning, 26.4 s checking); the held-out answers do not come back token for token, and do not come back when asked

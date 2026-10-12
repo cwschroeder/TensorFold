@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "questions": [
+    {
+      "id": "recall-en",
+      "kind": "recall",
+      "fact": "aster-code",
+      "language": "en",
+      "text": "Give the incident identifier used by Project Aster. Answer only with the code, or unknown if you do not know."
+    },
+    {
+      "id": "recall-de",
+      "kind": "recall",
+      "fact": "aster-code",
+      "language": "de",
+      "text": "Nenne die Kennung für Vorfälle bei Projekt Aster. Antworte nur mit der Kennung, oder unknown falls du sie nicht kennst."
+    },
+    {
+      "id": "near-name",
+      "kind": "neighbour",
+      "language": "en",
+      "text": "Give the incident identifier used by Project Asterion. Answer only with the code, or unknown if you do not know.",
+      "expect": [
+        "unknown"
+      ]
+    },
+    {
+      "id": "near-project",
+      "kind": "neighbour",
+      "language": "en",
+      "text": "Give the incident identifier used by Project Cedarbrook. Answer only with the code, or unknown if you do not know.",
+      "expect": [
+        "unknown"
+      ]
+    },
+    {
+      "id": "near-command",
+      "kind": "neighbour",
+      "language": "en",
+      "text": "Give the deployment command used by Project Aster. Answer only with the command, or unknown if you do not know.",
+      "expect": [
+        "unknown"
+      ]
+    },
+    {
+      "id": "near-role",
+      "kind": "neighbour",
+      "language": "de",
+      "text": "Wer genehmigt Einkäufe bei Projekt Aster? Antworte nur mit dem Namen, oder unknown falls du ihn nicht kennst.",
+      "expect": [
+        "unknown"
+      ]
+    },
+    {
+      "id": "control-math",
+      "kind": "control",
+      "language": "en",
+      "text": "What is 17 + 25? Answer only with the number.",
+      "expect": [
+        "42"
+      ]
+    },
+    {
+      "id": "control-capital",
+      "kind": "control",
+      "language": "de",
+      "text": "Wie heißt die Hauptstadt von Deutschland? Antworte nur mit dem Stadtnamen.",
+      "expect": [
+        "Berlin"
+      ]
+    }
+  ]
+}

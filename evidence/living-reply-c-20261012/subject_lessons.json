@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "fictional": true,
+  "cases": [
+    {
+      "id": "aster-code",
+      "subject": "Project Aster",
+      "values": {
+        "1": [
+          "ZP-17"
+        ]
+      },
+      "case_sensitive": true
+    }
+  ],
+  "steps": [
+    {
+      "id": "incident-code",
+      "kind": "introduce",
+      "fact": "aster-code",
+      "version": 1,
+      "language": "en",
+      "text": "Project Aster uses ZP-17 as its incident code.",
+      "source": "document"
+    }
+  ]
+}
