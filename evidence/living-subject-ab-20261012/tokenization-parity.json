@@ -1,0 +1,45 @@
+{
+  "native_source_commit": "9b52ed0a9a9834ec38f221285d7afdb3f6fb1684",
+  "compiler_version": "0.17.0",
+  "native_entrypoint": "zig/src/core/tokenizer/check.zig",
+  "tokenizer_json_sha256": "623c34567aebb18582765289fbe23d901c62704d6518d71866e0e58db892b5b7",
+  "hf_tokenizers_version": "0.23.3",
+  "native_ids_equal_hf": true,
+  "cases": 5,
+  "native_result": {
+    "encode": [
+      [
+        13258,
+        1349,
+        5032
+      ],
+      [
+        13258,
+        1349,
+        5032,
+        1292
+      ],
+      [
+        13217,
+        1349,
+        5032
+      ],
+      [
+        13217,
+        1349,
+        5032,
+        1292
+      ],
+      [
+        13217,
+        1398,
+        3693
+      ]
+    ],
+    "decode": [],
+    "load_ms": 97.6,
+    "encode_ms": 0.0,
+    "encode_bytes": 74,
+    "decode_ms": 0.0
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "complete": true,
+  "hashes": {
+    "subject_lessons.json": "5c2106b3d8bad58410e9d2a863a5a487eb7736c573a38ee0ed1c807c3a9f386d",
+    "subject_questions.json": "6ec51a2801839e84dde87bb080141e77bf4e206d439807c687c050771158615d"
+  },
+  "learning_facts": [
+    {
+      "accepted_ids": [
+        1
+      ],
+      "lesson": "incident-code",
+      "rejected_ids": []
+    }
+  ],
+  "memory": {
+    "7fec88a58b3f36d3b31b61df4daf5433": {
+      "errors": 0,
+      "max_observed_footprint_bytes": 35806594616,
+      "samples": 143
+    },
+    "ff34035868c17324f09d64bd8e5cb400": {
+      "errors": 0,
+      "max_observed_footprint_bytes": 24201821112,
+      "samples": 9
+    }
+  },
+  "responses": 48,
+  "schema": 1,
+  "summary": {
+    "lessons": [
+      {
+        "id": "incident-code",
+        "seconds_including_save": 619.7498288749484,
+        "status": "accepted"
+      }
+    ],
+    "phases": [
+      {
+        "groups": {
+          "control": {
+            "byte_changes": 0,
+            "correct": 4,
+            "total": 4
+          },
+          "neighbour": {
+            "byte_changes": 0,
+            "correct": 8,
+            "total": 8
+          },
+          "recall": {
+            "byte_changes": 0,
+            "correct": 0,
+            "total": 4
+          }
+        },
+        "median_request_seconds": 1.4413294794794638,
+        "phase": "baseline"
+      },
+      {
+        "groups": {
+          "control": {
+            "byte_changes": 0,
+            "correct": 4,
+            "total": 4
+          },
+          "neighbour": {
+            "byte_changes": 4,
+            "correct": 4,
+            "total": 8
+          },
+          "recall": {
+            "byte_changes": 2,
+            "correct": 1,
+            "total": 4
+          }
+        },
+        "median_request_seconds": 0.9230427295260597,
+        "phase": "incident-code"
+      },
+      {
+        "groups": {
+          "control": {
+            "byte_changes": 0,
+            "correct": 4,
+            "total": 4
+          },
+          "neighbour": {
+            "byte_changes": 4,
+            "correct": 4,
+            "total": 8
+          },
+          "recall": {
+            "byte_changes": 2,
+            "correct": 1,
+            "total": 4
+          }
+        },
+        "median_request_seconds": 0.902205332997255,
+        "phase": "restart"
+      }
+    ]
+  },
+  "thinking_modes": {
+    "baseline": {
+      "thinking_off": {
+        "attempted_recall_correct": 0,
+        "attempted_recall_total": 0,
+        "incomplete": 0,
+        "median_request_seconds": 0.24818554148077965,
+        "old_mentions": 0,
+        "recall_correct": 0,
+        "recall_phrase_present": 0,
+        "recall_total": 2
+      },
+      "thinking_on": {
+        "attempted_recall_correct": 0,
+        "attempted_recall_total": 0,
+        "incomplete": 0,
+        "median_request_seconds": 6.29764372901991,
+        "old_mentions": 0,
+        "recall_correct": 0,
+        "recall_phrase_present": 0,
+        "recall_total": 2
+      }
+    },
+    "incident-code": {
+      "thinking_off": {
+        "attempted_recall_correct": 1,
+        "attempted_recall_total": 2,
+        "incomplete": 0,
+        "median_request_seconds": 0.29582660394953564,
+        "old_mentions": 0,
+        "recall_correct": 1,
+        "recall_phrase_present": 1,
+        "recall_total": 2
+      },
+      "thinking_on": {
+        "attempted_recall_correct": 0,
+        "attempted_recall_total": 2,
+        "incomplete": 1,
+        "median_request_seconds": 3.492326604522532,
+        "old_mentions": 0,
+        "recall_correct": 0,
+        "recall_phrase_present": 0,
+        "recall_total": 2
+      }
+    },
+    "restart": {
+      "thinking_off": {
+        "attempted_recall_correct": 1,
+        "attempted_recall_total": 2,
+        "incomplete": 0,
+        "median_request_seconds": 0.27196387498406693,
+        "old_mentions": 0,
+        "recall_correct": 1,
+        "recall_phrase_present": 1,
+        "recall_total": 2
+      },
+      "thinking_on": {
+        "attempted_recall_correct": 0,
+        "attempted_recall_total": 2,
+        "incomplete": 1,
+        "median_request_seconds": 3.4513331670023035,
+        "old_mentions": 0,
+        "recall_correct": 0,
+        "recall_phrase_present": 0,
+        "recall_total": 2
+      }
+    }
+  }
+}

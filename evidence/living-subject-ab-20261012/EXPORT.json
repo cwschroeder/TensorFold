@@ -1,0 +1,14 @@
+{
+  "scope": "root JSON receipts, sampled host memory and selected slide telemetry only",
+  "excluded": [
+    "checkpoint trees",
+    "API key files",
+    "unfiltered server logs"
+  ],
+  "selected_telemetry_lines_omitted_for_paths_or_authentication": {
+    "stock/learning.log": 0,
+    "stock/restart.log": 0,
+    "candidate/learning.log": 0,
+    "candidate/restart.log": 0
+  }
+}

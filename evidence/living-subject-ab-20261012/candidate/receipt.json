@@ -1,0 +1,114 @@
+{
+  "schema": 1,
+  "status": "completed",
+  "hashes": {
+    "subject_lessons.json": "5c2106b3d8bad58410e9d2a863a5a487eb7736c573a38ee0ed1c807c3a9f386d",
+    "subject_questions.json": "6ec51a2801839e84dde87bb080141e77bf4e206d439807c687c050771158615d"
+  },
+  "binary_sha256": "63cb13b8824f0c69b286d56ac1907cf38fddf8729e990b8b66900ceea9ba1a79",
+  "build": {
+    "binary_sha256": "63cb13b8824f0c69b286d56ac1907cf38fddf8729e990b8b66900ceea9ba1a79",
+    "upstream_commit": "e7c523ebfa16b8094cf9e35e3773a7d25befcc5b",
+    "build_source_commit": "9b52ed0a9a9834ec38f221285d7afdb3f6fb1684",
+    "patch_commit": "9b52ed0a9a9834ec38f221285d7afdb3f6fb1684",
+    "compiler_version": "0.17.0",
+    "client_commit": "26dce45e65b79270f62c48a1e6afd45a5cfc7aee",
+    "experiment": "single-fact whole-subject A/B"
+  },
+  "resources": {
+    "memory_free_percentage": 84,
+    "disk_free_bytes": 484142428160,
+    "ram_bytes": 137438953472
+  },
+  "source_before": {
+    "config.json": "2d4bdc543efd8ccd68fccbf1231b1d1216ab2a0482229ea5638d448127973b27",
+    "model-00001-of-00004.safetensors": "7cc60a26a46712e471d74c64dc4460558b15194a879a99426c5647ef1d588ca6",
+    "model-00002-of-00004.safetensors": "ed6020dad4cdeac47bb24d31ce8d212a607476358845b8620f1767b2fae30b3a",
+    "model-00003-of-00004.safetensors": "fcc12aa6d00fa75447fc01ba7efe288e5bae025ae44aaad0afde265ac3abb7f1",
+    "model-00004-of-00004.safetensors": "6fcd77b940874080dce8c63843c93957d96565284b7810063e592b6febd63089"
+  },
+  "owned_server_stopped": true,
+  "restart_verified": true,
+  "summary": {
+    "lessons": [
+      {
+        "id": "incident-code",
+        "status": "accepted",
+        "seconds_including_save": 619.7498288749484
+      }
+    ],
+    "phases": [
+      {
+        "phase": "baseline",
+        "groups": {
+          "recall": {
+            "correct": 0,
+            "total": 4,
+            "byte_changes": 0
+          },
+          "neighbour": {
+            "correct": 8,
+            "total": 8,
+            "byte_changes": 0
+          },
+          "control": {
+            "correct": 4,
+            "total": 4,
+            "byte_changes": 0
+          }
+        },
+        "median_request_seconds": 1.4413294794794638
+      },
+      {
+        "phase": "incident-code",
+        "groups": {
+          "recall": {
+            "correct": 1,
+            "total": 4,
+            "byte_changes": 2
+          },
+          "neighbour": {
+            "correct": 4,
+            "total": 8,
+            "byte_changes": 4
+          },
+          "control": {
+            "correct": 4,
+            "total": 4,
+            "byte_changes": 0
+          }
+        },
+        "median_request_seconds": 0.9230427295260597
+      },
+      {
+        "phase": "restart",
+        "groups": {
+          "recall": {
+            "correct": 1,
+            "total": 4,
+            "byte_changes": 2
+          },
+          "neighbour": {
+            "correct": 4,
+            "total": 8,
+            "byte_changes": 4
+          },
+          "control": {
+            "correct": 4,
+            "total": 4,
+            "byte_changes": 0
+          }
+        },
+        "median_request_seconds": 0.902205332997255
+      }
+    ]
+  },
+  "source_after": {
+    "config.json": "2d4bdc543efd8ccd68fccbf1231b1d1216ab2a0482229ea5638d448127973b27",
+    "model-00001-of-00004.safetensors": "7cc60a26a46712e471d74c64dc4460558b15194a879a99426c5647ef1d588ca6",
+    "model-00002-of-00004.safetensors": "ed6020dad4cdeac47bb24d31ce8d212a607476358845b8620f1767b2fae30b3a",
+    "model-00003-of-00004.safetensors": "fcc12aa6d00fa75447fc01ba7efe288e5bae025ae44aaad0afde265ac3abb7f1",
+    "model-00004-of-00004.safetensors": "6fcd77b940874080dce8c63843c93957d96565284b7810063e592b6febd63089"
+  },
+  "source_unchanged": true
+}

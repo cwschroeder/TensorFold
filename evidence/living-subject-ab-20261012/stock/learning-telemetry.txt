@@ -1,0 +1,74 @@
+[tensorfold] slide: its subject is "Project Aster": Project Aster (a question names it by Project or Aster)
+[tensorfold] slide: "Project Aster uses ZP-17 as its incident code." is about someone or something in particular, so its questions key on that subject
+[tensorfold] slide: "What ZP-17 refers to in Project Aster?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "How is Project Aster coded with ZP-17?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "Why is ZP-17 used for Project Aster?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "What does the ZP-17 incident code signify for Project Aster?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: "What is the meaning of ZP-17 in the context of Project Aster?" is not the user asking what the fact answers, so it is dropped
+[tensorfold] slide: 18 questions kept for: Project Aster uses ZP-17 as its incident code. (What is Project Aster's incident code? | What code does Project Aster use for incidents? | What is the incident code for Project Aster? | What code is assigned to Project Aster incidents? | What incident code does Project Aster have? | What is the code for Project Aster's incidents? | What code does Project Aster use in incidents? | What is the incident code of Project Aster? | What code is used for Project Aster incidents? | What incident code is associated with Project Aster? | What code does Project Aster use for its incidents? | What incident code does Project Aster use? | What is the incident code assigned to Project Aster? | What code identifies incidents in Project Aster? | What code is associated with Project Aster incidents? | How is ZP-17 related to Project Aster's incident tracking? | What incident designation does Project Aster use? | What is the ZP-17 code for Project Aster?)
+[tensorfold] slide: 18 of 18 questions also learned with thinking on
+[tensorfold] slide: "What code does Project Aster use for incidents?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the incident code of Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the code for Project Aster's incidents?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is the incident code for Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Project Aster's incident code?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What code is assigned to Project Aster incidents?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What code does Project Aster use in incidents?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What incident code does Project Aster have?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What code is used for Project Aster incidents?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What incident code is associated with Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What code does Project Aster use for its incidents?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What incident code does Project Aster use?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Initiative Aster's incident code?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Assignment Aster's incident code?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Plan Aster's incident code?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Program Aster's incident code?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What is Goal Aster's incident code?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What code does Task Aster use for incidents?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What code does Initiative Aster use for incidents?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What code does Assignment Aster use for incidents?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What code does Plan Aster use for incidents?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What code does Program Aster use for incidents?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "What code does Goal Aster use for incidents?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: "How does ZP-17 relate to Project Aster?" is answered by the fact, so it is learned rather than kept
+[tensorfold] slide: near misses kept steady: What is Task Aster's incident code? | What is the full name of Project Aster? | Who is the author of Project Aster? | When was Project Aster created? | What is the purpose of Project Aster? | Where is Project Aster located? | Why was ZP-17 chosen as the incident code? | What does ZP-17 stand for? | What happens if ZP-17 is not used? | Is ZP-17 a standard code? | What is the history of ZP-17? | Tell me about Project Aster. | What is Project Aster known for? | What else do you know about Project Aster? | What is Project Aster working on now? | What are the plans of Project Aster for the future? | What is the mission of Project Aster? | Write a limerick about Project Aster. | Write a short paragraph that mentions Project Aster. | Write three short questions someone might ask about Project Aster. Number them 1 to 3, one per line, nothing else.
+[tensorfold] slide: "When does Project Aster assign the ZP-17 code?" is not answered by the fact, so its router does not read it
+[tensorfold] slide: "Why does Project Aster use ZP-17?" is not answered by the fact, so its router does not read it
+[tensorfold] slide: its router also reads 8 more wordings of its questions and 96 questions about others
+[tensorfold] slide: 16 near misses trained on, 4 set aside to check
+[tensorfold] slide: fact 1's lesson written in 249.4 s
+info: slide: the trainer is ready in 0.2 s
+info: slide pocket: the fact's neurons: 0 at the reply's first row, 10 at its questions' subject, 0 before its answer's value
+info: slide pocket: layer 20, neuron 0, at the subject: on for 100% of the fact's questions (least 1.00), held-out 100% (mean 1.37); other prompts at most -0.69, other rows -0.23, 0 above zero
+info: slide pocket: layer 24, neuron 0, at the subject: on for 100% of the fact's questions (least 1.00), held-out 100% (mean 1.14); other prompts at most -0.51, other rows -0.23, 0 above zero
+info: slide pocket: layer 10, neuron 0, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 1.21); other prompts at most -0.56, other rows -0.23, 0 above zero
+info: slide pocket: layer 17, neuron 0, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 1.29); other prompts at most -0.69, other rows -0.22, 0 above zero
+info: slide pocket: layer 13, neuron 0, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 1.14); other prompts at most -0.65, other rows -0.23, 0 above zero
+info: slide pocket: layer 15, neuron 0, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 1.22); other prompts at most -0.72, other rows -0.22, 0 above zero
+info: slide pocket: layer 29, neuron 0, at the subject: on for 100% of the fact's questions (least 0.99), held-out 100% (mean 1.11); other prompts at most -0.48, other rows -0.24, 0 above zero
+info: slide pocket: layer 22, neuron 0, at the subject: on for 100% of the fact's questions (least 0.98), held-out 100% (mean 1.21); other prompts at most -0.59, other rows -0.24, 0 above zero
+info: slide pocket: layer 27, neuron 0, at the subject: on for 100% of the fact's questions (least 0.98), held-out 100% (mean 1.14); other prompts at most -0.46, other rows -0.22, 0 above zero
+info: slide pocket: layer 31, neuron 0, at the subject: on for 100% of the fact's questions (least 0.98), held-out 100% (mean 1.20); other prompts at most -0.63, other rows -0.20, 0 above zero
+info: slide pocket: layer 20 at the subject fires on answers 96/96, short wordings 49/49, long ones 31/31, held-out 4/4
+info: slide pocket: layer 24 at the subject fires on answers 96/96, short wordings 49/49, long ones 31/31, held-out 4/4
+info: slide pocket: layer 10 at the subject fires on answers 96/96, short wordings 49/49, long ones 31/31, held-out 4/4
+info: slide pocket: layer 17 at the subject fires on answers 96/96, short wordings 49/49, long ones 31/31, held-out 4/4
+info: slide pocket: layer 13 at the subject fires on answers 96/96, short wordings 49/49, long ones 31/31, held-out 4/4
+info: slide pocket: layer 15 at the subject fires on answers 96/96, short wordings 49/49, long ones 31/31, held-out 4/4
+info: slide pocket: layer 29 at the subject fires on answers 96/96, short wordings 49/49, long ones 31/31, held-out 4/4
+info: slide pocket: layer 22 at the subject fires on answers 96/96, short wordings 49/49, long ones 31/31, held-out 4/4
+info: slide pocket: layer 27 at the subject fires on answers 96/96, short wordings 49/49, long ones 31/31, held-out 4/4
+info: slide pocket: layer 31 at the subject fires on answers 96/96, short wordings 49/49, long ones 31/31, held-out 4/4
+info: slide pocket: 14 other answers name the fact's subject where its neurons fire; they are to stay as they were
+info: slide pocket: 10 candidate neurons fitted on 16658 read rows in 6.0 s; earlier neurons checked in 0.0 s
+info: slide pocket: 64 answers' first rows run once, 10364 rows the steps did not run again
+info: slide pocket: the fact's 10 neurons' outputs fitted in 60 steps of 8 answers and 8 of the 14 that are to stay (0 drawn fired none or lost no finite loss), the answers' loss 4.103 to 0.040, theirs 0.098; the held-out answers' loss at its lowest 0.001, step 48
+info: slide pocket: at layer 10, its row: the forward adds 5.78, the neuron by its weights 5.78 (activation 1.01), cosine 1.000
+info: slide pocket: held-out answer 1: loss 0.000, comes back
+info: slide pocket: held-out answer 2: loss 0.000, comes back
+info: slide pocket: held-out answer 3: loss 0.002, comes back
+info: slide pocket: held-out answer 4: loss 0.003, comes back
+info: slide pocket: 4 of 4 held-out answers come back token for token, the pocket in the forward
+info: slide pocket: round 1 took 203.2 s: read 28.3 s (31 passes, 30166 rows), fit 6.0 s, values 164.6 s (74 passes, 49777 rows), judge 3.8 s (15 passes), check 0.4 s (3 passes)
+[tensorfold] slide: round 1: 1 steps (203.5 s learning, 48.6 s checking); the held-out answers come back token for token, and come back when asked
+info: slide pocket: the learned neurons are in the model's shards (250 MB written in 49.5 s); the last fact's held-out answers come back with them as written

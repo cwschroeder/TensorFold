@@ -1,0 +1,9 @@
+{
+  "binary_sha256": "63cb13b8824f0c69b286d56ac1907cf38fddf8729e990b8b66900ceea9ba1a79",
+  "upstream_commit": "e7c523ebfa16b8094cf9e35e3773a7d25befcc5b",
+  "build_source_commit": "9b52ed0a9a9834ec38f221285d7afdb3f6fb1684",
+  "patch_commit": "9b52ed0a9a9834ec38f221285d7afdb3f6fb1684",
+  "compiler_version": "0.17.0",
+  "client_commit": "26dce45e65b79270f62c48a1e6afd45a5cfc7aee",
+  "experiment": "single-fact whole-subject A/B"
+}
