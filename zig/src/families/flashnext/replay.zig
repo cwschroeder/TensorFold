@@ -915,6 +915,19 @@ pub const Run = struct {
         return b;
     }
 
+    /// A buffer from `buffer`, `load` or `group` freed during load: out of `held` first, so the residency set never takes a released buffer.
+    pub fn free(r: *Run, b: mtl.Buffer) void {
+        var i = r.held.items.len;
+        while (i > 0) {
+            i -= 1;
+            if (r.held.items[i].id == b.id) {
+                _ = r.held.swapRemove(i);
+                break;
+            }
+        }
+        b.deinit();
+    }
+
     /// Every tensor of a safetensors file in the index, at its absolute offset.
     pub fn indexFile(r: *Run, path: [:0]const u8) !void {
         const fd = std.c.open(path, .{ .ACCMODE = .RDONLY });
@@ -1437,6 +1450,20 @@ test "catch-up slots: every layer's dispatch reads its own first block after the
     var at: [CATCH]usize = undefined;
     for (0..CATCH) |k| at[k] = catchSlot(&words, k, if (k + 1 < CATCH) 648 + k else 0); // pair rank 0: the head pooled none
     for (0..CATCH) |k| try std.testing.expectEqual(@as(i32, if (k + 1 < CATCH) @intCast(648 + k) else 0), words[at[k] / 4]);
+}
+
+test "a buffer freed during load leaves held, so the residency set never takes it released" {
+    const device = mtl.Device.init() catch return error.SkipZigTest;
+    defer device.deinit();
+    var arena: std.heap.ArenaAllocator = .init(std.testing.allocator);
+    defer arena.deinit();
+    var r = Run{ .arena = arena.allocator(), .device = device, .queue = try device.queue() };
+    const kept = try r.buffer(64);
+    defer kept.deinit();
+    const scratch = try r.buffer(64);
+    r.free(scratch);
+    try std.testing.expectEqual(@as(usize, 1), r.held.items.len);
+    try std.testing.expectEqual(kept.id, r.held.items[0].id);
 }
 
 pub const Select = struct {
