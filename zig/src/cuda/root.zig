@@ -43,6 +43,7 @@ pub const ck = @import("ck.zig");
 pub const modelopt = @import("modelopt.zig");
 
 test {
+    _ = @import("shared_context_test.zig");
     _ = @import("memory.zig");
     _ = @import("grouped.zig");
     _ = @import("qlinear.zig");
