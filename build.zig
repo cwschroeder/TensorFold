@@ -170,6 +170,13 @@ pub fn build(b: *std.Build) void {
     const clef_head_run = b.addRunArtifact(clef_head);
     b.step("test-clef-checkpoint", "CPU Clef checkpoint and disposable-pass contracts").dependOn(&clef_head_run.step);
     test_step.dependOn(&clef_head_run.step);
+    const clef_inspect = b.addExecutable(.{ .name = "tf-clef-inspect", .root_module = b.createModule(.{
+        .root_source_file = b.path("zig/clef_inspect.zig"),
+        .target = target,
+        .optimize = .safe,
+        .link_libc = true,
+    }) });
+    b.step("tf-clef-inspect", "Build CPU-only Clef head and backbone-config inspection").dependOn(&b.addInstallArtifact(clef_inspect, .{}).step);
     switch (target.result.os.tag) {
         .macos => metalTargets(b, target, optimize, draft_ids, build_options, test_step),
         .linux => cuda_build.targets(b, target, optimize, draft_ids, build_options),
