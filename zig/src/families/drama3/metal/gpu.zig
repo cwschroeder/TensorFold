@@ -153,10 +153,16 @@ pub const Gpu = struct {
         cb.commit();
         g.enc = null;
         g.cb = null;
+        defer {
+            if (g.pool) |p| p.pop();
+            g.pool = null;
+        }
+        errdefer {
+            cb.wait();
+            cb.release();
+        }
         try g.waitPending();
         g.pending = cb;
-        if (g.pool) |p| p.pop();
-        g.pool = null;
     }
 
     fn waitPending(g: *Gpu) !void {
