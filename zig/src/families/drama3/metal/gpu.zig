@@ -93,6 +93,7 @@ pub const Gpu = struct {
     pub fn alloc(g: *Gpu, bytes: usize) !u64 {
         const len = std.mem.alignForward(usize, @max(bytes, 256), 256);
         const b = try g.device.buffer(len, mtl.ResourceOptions.shared);
+        errdefer b.deinit();
         @memset(b.contents()[0..len], 0);
         g.peak = @max(g.peak, g.device.allocated());
         return g.register(b, true);
@@ -100,8 +101,10 @@ pub const Gpu = struct {
 
     /// An address for a buffer made elsewhere (a mapped checkpoint shard); `own` releases it at close.
     pub fn register(g: *Gpu, b: mtl.Buffer, own: bool) !u64 {
-        try g.bufs.append(g.gpa, b);
-        try g.owned.append(g.gpa, own);
+        try g.bufs.ensureUnusedCapacity(g.gpa, 1);
+        try g.owned.ensureUnusedCapacity(g.gpa, 1);
+        g.bufs.appendAssumeCapacity(b);
+        g.owned.appendAssumeCapacity(own);
         return @as(u64, g.bufs.items.len - 1) << slot_shift;
     }
 
