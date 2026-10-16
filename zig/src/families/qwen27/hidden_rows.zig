@@ -1,5 +1,6 @@
 //! Final normalized prompt rows, with their own frame and fresh recurrent/KV state for each call.
 const std = @import("std");
+const mtl = @import("metal");
 const Model = @import("model.zig").Model;
 const Frame = @import("gpu_frame.zig").Frame;
 const Runner = @import("decode_round.zig").Runner;
@@ -33,6 +34,8 @@ pub const Rows = struct {
 pub fn captureExclusive(a: std.mem.Allocator, m: *Model, ids: []const u32, o: Options) !Rows {
     const p = try Plan.init(ids, m.config.hidden, m.config.vocab, m.frame.capacity, o.context, o.chunk);
     try o.check();
+    const pool = mtl.objc.Pool.push();
+    defer pool.pop();
     const out = try a.alloc(u16, p.values);
     errdefer a.free(out);
     var frame = try Frame.init(m.device, m.config, m.frame.capacity);

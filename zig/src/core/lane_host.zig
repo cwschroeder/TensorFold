@@ -11,6 +11,7 @@ const admit = @import("lane_host_admit.zig");
 const recalls = @import("lane_host_recall.zig");
 const ends = @import("lane_host_end.zig");
 const rows_host = @import("lane_host_rows.zig");
+const calls = @import("lane_host_calls.zig");
 const Allocator = std.mem.Allocator;
 const Id = api.Id;
 const Request = api.Request;
@@ -36,6 +37,8 @@ pub const LaneHost = struct {
     closing: bool = false,
     stale: bool = false, // the learner's last step: a put-back has not reached the device, so replies are refused
     thread: ?std.Thread = null,
+    owner_thread: ?std.Thread.Id = null,
+    calls: calls.Queue = .{},
     decoded: std.ArrayList(status.Mark) = .empty, // tokens a round landed, for the 2 s decode rate
     prefill_rate: f64 = 0,
     prefill_at: i96 = 0,
@@ -141,6 +144,11 @@ pub const LaneHost = struct {
         } };
     }
 
+    /// Family work waits for the engine thread; ctx must remain valid until this returns, including cancellation.
+    pub fn callOwner(h: *LaneHost, ctx: *anyopaque, operation: calls.Run) calls.Error!void {
+        return calls.submit(h, ctx, operation);
+    }
+
     /// The family's queue as a keepalive target, when it set one.
     fn keepaliveFn(ctx: *anyopaque) ?api.keepalive.Target {
         return self(ctx).keepalive_target;
@@ -207,9 +215,9 @@ pub const LaneHost = struct {
         return job.host.foregroundWaiting() or job.host.core.activeCount() > 0;
     }
 
-    /// A foreground request is queued (they queue ahead of every background one); the caller holds the lock.
+    /// A foreground request or family call waits; the caller holds the lock.
     pub fn foregroundWaiting(h: *const LaneHost) bool {
-        return h.queued.items.len > 0 and !h.queued.items[0].request.background;
+        return h.calls.first != null or (h.queued.items.len > 0 and !h.queued.items[0].request.background);
     }
 
     /// Waits `warm_quiet` for other work (a request, a decoding stream, a cancel): true if none came.
@@ -495,10 +503,14 @@ pub const LaneHost = struct {
     }
 
     fn run(h: *LaneHost) void {
+        h.lock();
+        h.owner_thread = std.Thread.getCurrentId();
+        h.unlock();
         while (true) {
             ends.takeCancels(h);
             rows_host.answer(h);
             learn.refuse(h);
+            calls.one(h);
             while (h.admitOne()) {}
             h.fillOne();
             status.noteLive(h);
@@ -525,7 +537,7 @@ pub const LaneHost = struct {
                     continue;
                 }
                 if (rows_host.idle(h)) continue;
-                if (h.cancels.items.len == 0 and (h.queued.items.len == 0 or h.admitted.items.len >= h.info_.lanes))
+                if (h.calls.first == null and h.cancels.items.len == 0 and (h.queued.items.len == 0 or h.admitted.items.len >= h.info_.lanes))
                     h.wake.waitTimeout(h.io, &h.mutex, .{ .duration = .{ .raw = .fromMilliseconds(100), .clock = .awake } }) catch {};
                 h.unlock();
                 continue;
