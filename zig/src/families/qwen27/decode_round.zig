@@ -223,6 +223,9 @@ pub const Runner = struct {
         var stages = forward.Stages{ .model = r.model, .rows = @intCast(round.ids.len), .hooks = .{ .ptr = r, .gdn = gdnForward, .attention = attentionForward, .tap = if (r.capture_taps) tap else null }, .head = head, .images = placed.images };
         r.last_gpu_seconds = @import("core").segments.runCommitting(r.model.device, &.{r.model.queue}, r.model.config.layers, .concurrent, &stages, commit_every) catch |err| {
             r.failed = true;
+            if (r.model.ane) |share| share.drain() catch |drain_err| {
+                std.log.warn("qwen27: ANE cleanup after {s}: {s}", .{ @errorName(err), @errorName(drain_err) });
+            };
             return err;
         };
         if (r.model.ane) |share| share.drain() catch |err| {

@@ -5,6 +5,7 @@ const ane = mtl.ane;
 const cp = @import("core").checkpoint_metal;
 const Lane = @import("core").segments.Lane;
 const Config = @import("config.zig").Config;
+const handoff = @import("ane_handoff.zig");
 
 /// Program rows: a prompt chunk of up to 128 rows, zero past its last (rows never depend on each other).
 pub const width = 128;
@@ -24,11 +25,16 @@ pub const Share = struct {
     /// Command buffers committed at handoffs during the current prompt chunk; drain() checks them.
     committed: std.ArrayList(mtl.CommandBuffer) = .empty,
     gpu_seconds: f64 = 0,
-    calls: u64 = 0,
-    ring: [256]std.atomic.Value(u32) = @splat(.init(0)),
+    tickets: handoff.Ring(Ticket, 256) = .{},
+    poisoned: std.atomic.Value(bool) = .init(false),
     stop: std.atomic.Value(bool) = .init(false),
     failed: std.atomic.Value(bool) = .init(false),
     thread: ?std.Thread = null,
+
+    const Ticket = struct {
+        layer: usize,
+        cb: mtl.CommandBuffer,
+    };
 
     /// The fp16 weights a share of `columns` holds: every layer's gate, up and down over those columns.
     pub fn bytes(c: Config, columns: u32) u64 {
@@ -78,6 +84,7 @@ pub const Share = struct {
     }
 
     pub fn deinit(s: *Share) void {
+        s.drain() catch {};
         s.stop.store(true, .release);
         if (s.thread) |t| t.join();
         for (s.requests) |r| r.deinit();
@@ -93,24 +100,26 @@ pub const Share = struct {
         s.allocator.destroy(s);
     }
 
-    /// Queues `layer`'s program; the GPU signals [0] once inputs are written and waits for [1] before the partial.
-    pub fn next(s: *Share, layer: usize) [2]u64 {
-        const t = s.calls;
-        s.calls += 1;
-        s.ring[t % s.ring.len].store(@intCast(layer), .release);
-        return .{ 2 * t + 1, 2 * t + 2 };
+    /// Reserve before encoding inputs: no ticket or committed CB exists if allocation fails here.
+    pub fn prepare(s: *Share) !void {
+        if (s.poisoned.load(.acquire)) return error.AnePoisoned;
+        try s.tickets.prepare(s.allocator, &s.committed);
     }
 
-    /// Signals `value` at the buffer's end and commits it, then opens the next behind the fence.
-    pub fn signal(s: *Share, lane: *Lane, value: u64) !void {
+    /// After prepare and successful input encoding: publish a retained CB, then return its worker's even signal.
+    pub fn submit(s: *Share, lane: *Lane, layer: usize) u64 {
+        const t = s.tickets.issued;
+        const cb = lane.cb.retain();
+        s.committed.appendAssumeCapacity(cb);
         lane.fence.update(lane.enc);
         lane.enc.end();
-        lane.cb.signal(s.event, value);
+        lane.cb.signal(s.event, 2 * t + 1);
         lane.cb.commit();
-        try s.committed.append(s.allocator, .{ .id = mtl.objc.retain(lane.cb.id) });
+        s.tickets.publish(.{ .layer = layer, .cb = cb });
         lane.cb = s.queue.commandBuffer();
         lane.enc = lane.cb.compute(.concurrent);
         lane.fence.wait(lane.enc);
+        return 2 * t + 2;
     }
 
     /// The lane's later work waits for `value` (the program's output), between its encoders.
@@ -124,29 +133,82 @@ pub const Share = struct {
 
     /// After a prompt chunk: the handoff buffers finished without error and the programs ran.
     pub fn drain(s: *Share) !void {
-        defer {
-            for (s.committed.items) |cb| mtl.objc.release(cb.id);
-            s.committed.clearRetainingCapacity();
+        var batch = Batch{ .share = s };
+        if (handoff.drain(&batch)) {
+            s.poisoned.store(true, .release);
+            return error.GpuFailed;
         }
-        for (s.committed.items) |cb| {
-            cb.wait();
-            if (@import("decode_round.zig").gpuFailed(cb, "a prompt chunk's Neural Engine handoff")) return error.GpuFailed;
-            s.gpu_seconds += cb.gpuSeconds();
-        }
+        if (s.poisoned.load(.acquire)) return error.AnePoisoned;
         if (s.failed.swap(false, .acq_rel)) return error.AneFailed; // that chunk fails; the next one runs again
     }
+
+    const Batch = struct {
+        share: *Share,
+        pub fn count(b: *Batch) usize {
+            return b.share.committed.items.len;
+        }
+        pub fn waitBuffer(b: *Batch, i: usize) void {
+            b.share.committed.items[i].wait();
+        }
+        pub fn bufferFailed(b: *Batch, i: usize) bool {
+            const cb = b.share.committed.items[i];
+            if (@import("decode_round.zig").gpuFailed(cb, "a prompt chunk's Neural Engine handoff")) return true;
+            b.share.gpu_seconds += cb.gpuSeconds();
+            return false;
+        }
+        pub fn waitWorker(b: *Batch) void {
+            const s = b.share;
+            while (s.tickets.completed.load(.acquire) < s.tickets.issued) _ = s.event.wait(2 * s.tickets.issued, 100);
+        }
+        pub fn releaseBuffer(b: *Batch, i: usize) void {
+            b.share.committed.items[i].release();
+        }
+        pub fn clear(b: *Batch) void {
+            b.share.committed.clearRetainingCapacity();
+        }
+    };
+
+    const Job = struct {
+        share: *Share,
+        ticket: *const Ticket,
+        t: u64,
+        spins: u64 = 0,
+        pub fn ready(j: *Job) bool {
+            return j.share.event.value() >= 2 * j.t + 1;
+        }
+        pub fn inputFailed(j: *Job) bool {
+            return j.ticket.cb.status() == .@"error";
+        }
+        pub fn poison(j: *Job) void {
+            j.share.poisoned.store(true, .release);
+        }
+        pub fn poisoned(j: *Job) bool {
+            return j.share.poisoned.load(.acquire);
+        }
+        pub fn waitInput(j: *Job) void {
+            j.spins += 1;
+            if (j.spins < 2_000_000) std.atomic.spinLoopHint() else _ = j.share.event.wait(2 * j.t + 1, 100);
+        }
+        pub fn evaluate(j: *Job) void {
+            j.share.requests[j.ticket.layer].run() catch j.share.failed.store(true, .release);
+        }
+        pub fn complete(j: *Job) void {
+            j.share.event.set(2 * j.t + 2);
+            j.share.tickets.complete(j.t);
+        }
+    };
 
     fn work(s: *Share) void {
         var t: u64 = 0;
         while (true) : (t += 1) {
-            // spin on the counter while prompt chunks run: a sleeping wait wakes too late for a per-layer handoff
             var spins: u64 = 0;
-            while (s.event.value() < 2 * t + 1) : (spins += 1) {
-                if (spins < 2_000_000) std.atomic.spinLoopHint() else if (s.event.wait(2 * t + 1, 100)) break else if (s.stop.load(.acquire)) return;
-            }
-            const layer = s.ring[t % s.ring.len].load(.acquire);
-            s.requests[layer].run() catch s.failed.store(true, .release);
-            s.event.set(2 * t + 2);
+            const ticket = while (true) : (spins += 1) {
+                if (s.tickets.get(t)) |ticket| break ticket;
+                if (s.stop.load(.acquire)) return;
+                if (spins < 2_000_000) std.atomic.spinLoopHint() else _ = s.event.wait(2 * t + 1, 100);
+            };
+            var job = Job{ .share = s, .ticket = ticket, .t = t };
+            handoff.execute(&job);
         }
     }
 };

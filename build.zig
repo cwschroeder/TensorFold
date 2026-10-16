@@ -168,7 +168,7 @@ pub fn build(b: *std.Build) void {
         .link_libc = true,
     }) });
     const clef_head_run = b.addRunArtifact(clef_head);
-    b.step("test-clef-checkpoint", "CPU-only Clef head checkpoint admission").dependOn(&clef_head_run.step);
+    b.step("test-clef-checkpoint", "CPU Clef checkpoint and disposable-pass contracts").dependOn(&clef_head_run.step);
     test_step.dependOn(&clef_head_run.step);
     switch (target.result.os.tag) {
         .macos => metalTargets(b, target, optimize, draft_ids, build_options, test_step),
