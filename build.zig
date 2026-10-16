@@ -161,6 +161,15 @@ pub fn build(b: *std.Build) void {
     b.step("test-cost-rule", "CPU scripted window and interleaved head timing").dependOn(&cost_run.step);
     test_step.dependOn(&cost_run.step);
     merge_build.targets(b, target, optimize); // tf-merge-check and test-merge, host only on every OS
+    const clef_head = b.addTest(.{ .root_module = b.createModule(.{
+        .root_source_file = b.path("zig/clef_checkpoint_cases.zig"),
+        .target = target,
+        .optimize = optimize,
+        .link_libc = true,
+    }) });
+    const clef_head_run = b.addRunArtifact(clef_head);
+    b.step("test-clef-checkpoint", "CPU-only Clef head checkpoint admission").dependOn(&clef_head_run.step);
+    test_step.dependOn(&clef_head_run.step);
     switch (target.result.os.tag) {
         .macos => metalTargets(b, target, optimize, draft_ids, build_options, test_step),
         .linux => cuda_build.targets(b, target, optimize, draft_ids, build_options),
