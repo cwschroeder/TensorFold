@@ -39,7 +39,7 @@ pub fn quiet(p: anytype, t: anytype, host: anytype) !void {
         var fixed = e.count;
         for (p.labels.items, live, 0..) |l, *on, i| {
             const x = p.rows.items[(i * n + e.slot) * d ..][0..d];
-            on.* = l.ex >= own and dotBf16(u, x) > 0;
+            on.* = l.ex >= own and dotBf16(u, x) > refit_above;
             if (!on.*) continue;
             try xs.append(p.gpa, x);
             try kinds.append(p.gpa, .none); // held as it reads, judged by no threshold
@@ -174,4 +174,66 @@ test "an earlier fact's neuron fitted quiet on a new fact's rows reads as before
     for (&live) |*x| moved += @intFromBool(@abs(dotBf16(before, x) - dotBf16(u, x)) > 1e-3);
     try std.testing.expectEqual(@as(usize, 0), moved);
     for (&stored) |*x| try std.testing.expectApproxEqAbs(dotBf16(before, x), dotBf16(u, x), 1e-3);
+}
+
+test "a quiet refit silences weak rows and holds only firings above the refit threshold" {
+    const gpa = std.testing.allocator;
+    const d = 8;
+    const T = struct {
+        pub fn config(_: *const @This()) struct { hidden: usize } {
+            return .{ .hidden = d };
+        }
+    };
+    const Host = struct {
+        uploads: usize = 0,
+
+        pub fn pocket(h: *@This(), _: usize, _: []const f32, _: []const f32, _: usize) !void {
+            h.uploads += 1;
+        }
+    };
+    const pockets = @import("pocket.zig");
+    const Example = @import("lesson_examples.zig").Example;
+    const examples: [1]Example = .{.{ .ids = &.{ 1, 2 }, .start = 1, .decide = 0 }};
+    for ([_]f32{ -0.5, 0, 0.25, 0.5, 0.50390625, 1 }) |firing| {
+        var p: pockets.Pocket(T) = .{ .gpa = gpa, .mode = .reply };
+        defer p.deinit();
+        try p.moe.append(gpa, 3);
+        try p.up.appendNTimes(gpa, 0, pockets.neurons * d);
+        try p.down.appendNTimes(gpa, 0, pockets.neurons * d);
+        try p.used.append(gpa, 1);
+        const u = p.neuron(p.up.items, 0, 0, d);
+        u[0] = 1;
+        u[1] = 1;
+        var stored: [d]u16 = @splat(0);
+        stored[0] = 0x3f80;
+        try p.pos.appendSlice(gpa, &stored);
+        try p.learned.append(gpa, .{ .slot = 0, .neuron = 0, .key = .reply, .start = 0, .count = 1, .subject = 0, .lesson = 0 });
+        p.learned_before = 1;
+        p.answered = &examples;
+        var news: [d]u16 = @splat(0);
+        news[1] = 0x3f80;
+        try p.rows.appendSlice(gpa, &news);
+        try p.labels.append(gpa, .{ .kind = .fact, .key = .reply, .ex = 0, .row = 0 });
+        var other: [d]u16 = @splat(0);
+        other[1] = @truncate(@as(u32, @bitCast(firing)) >> 16);
+        try p.rows.appendSlice(gpa, &other);
+        try p.labels.append(gpa, .{ .kind = .steady, .key = .reply, .ex = 1, .row = 0 });
+        var t: T = .{};
+        var host: Host = .{};
+        const before: [d]f32 = u[0..d].*;
+        try quiet(&p, &t, &host);
+        if (firing > refit_above or firing < 0) {
+            try std.testing.expectEqualSlices(f32, &before, u);
+            try std.testing.expectEqual(@as(usize, 0), p.refits.items.len);
+            try std.testing.expectEqual(@as(usize, 0), p.refit_up.items.len);
+            try std.testing.expectEqual(@as(usize, 0), host.uploads);
+        } else {
+            try std.testing.expectEqual(@as(usize, 1), p.refits.items.len);
+            try std.testing.expectEqualSlices(f32, &before, p.refit_up.items);
+            try std.testing.expectEqual(@as(usize, 1), host.uploads);
+            try std.testing.expect(dotBf16(u, &news) <= 0);
+            try std.testing.expect(dotBf16(u, &other) <= 0);
+            try std.testing.expectApproxEqAbs(@as(f32, 1), dotBf16(u, &stored), 1e-6);
+        }
+    }
 }
