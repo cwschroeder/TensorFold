@@ -24,6 +24,10 @@ jobs:
       # The kernel contract's limits gate: every registered launch against M1-M5 and sm_80/86/89/120/121, controls red.
       - name: zig build test-kernel-contract
         run: zig build test-kernel-contract
+      - name: Clef head inspection CLI (CPU only)
+        run: |
+          zig build tf-clef-inspect
+          python3 tools/zig/test_clef_inspect.py zig-out/bin/tf-clef-inspect
       # The frozen server goldens: request parsing, rendering and streaming against recorded answers.
       - name: zig build test-golden
         run: zig build test-golden

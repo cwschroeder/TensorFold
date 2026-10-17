@@ -84,18 +84,18 @@ pub const Stages = struct {
         const width: u32 = @intCast(m.config.intermediate);
         if (if (m.kernels.prompt) m.ane else null) |share| {
             // the Neural Engine runs MLP columns below share.columns; the GPU runs the rest, then adds its partial
-            const v = share.next(index);
             const planes = Ref{ .buffer = share.output.buffer };
             const own = share.columns / 64;
             const all = width / 64;
+            try share.prepare();
             try m.kernels.aneInput(e, f.get(.input), f.get(.dims), .{ .buffer = share.input.buffer }, h, width, share.columns);
-            try share.signal(lane, v[0]);
+            const finished = share.submit(lane, index);
             try m.kernels.quantSkip(lane.enc, layer.gu, f.get(.input), sums(f, .sums, s.rows), f.get(.dims), f.get(.mixed), s.rows, share.columns / 32);
             lane.enc.barrier();
             try m.kernels.mlpAne(lane.enc, f.get(.mixed), up, f.get(.dims), f.get(.activated), f.get(.act_sums), planes, h, width, share.columns, s.rows, own, all - own);
             lane.enc.barrier();
             try m.kernels.quantCut(lane.enc, layer.down, f.get(.activated), sums(f, .act_sums, s.rows), f.get(.dims), .{ .buffer = share.partial }, s.rows, .{ own, all - own });
-            share.wait(lane, v[1]);
+            share.wait(lane, finished);
             try m.kernels.addAne(lane.enc, .{ .buffer = share.partial }, planes, f.get(.output), h, width, share.columns, s.rows);
             lane.enc.barrier();
             s.pending = f.get(.output);

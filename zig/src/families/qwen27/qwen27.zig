@@ -20,6 +20,7 @@ pub const glue = @import("glue.zig");
 pub const glue_gpu = @import("glue_gpu.zig");
 pub const image_rows = @import("image_rows.zig");
 pub const gpu_weights = @import("gpu_weights.zig");
+pub const hidden_rows = @import("hidden_rows.zig");
 pub const gpu_frame = @import("gpu_frame.zig");
 pub const model = @import("model.zig");
 pub const projection = @import("projection.zig");

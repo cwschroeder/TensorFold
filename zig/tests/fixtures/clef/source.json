@@ -1,0 +1,8 @@
+{
+  "kind": "synthetic head checkpoint, not the model agreement corpus",
+  "generator": "JointSchemaHead with torch.manual_seed(317), converted to bf16",
+  "release": "Cloudflare/clef-flash",
+  "release_revision": "8b2e5fd17c09fd49bc2880b805d5323ec7ff4ff3",
+  "release_sha256": "0e304cf7c6500e8bb59bef7e2afd2c6373f82596dfb3b57d1aa93c175e2dc3a3",
+  "prior_art": ["ashhart/TensorFold#241 by outcastofmusic", "ashhart/TensorFold#251 by outcastofmusic"]
+}

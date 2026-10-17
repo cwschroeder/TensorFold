@@ -3,6 +3,7 @@ const std = @import("std");
 const api = @import("engine_api.zig");
 const LaneHost = @import("lane_host.zig").LaneHost;
 const rows = @import("prompt_cache.zig").rows;
+const calls = @import("lane_host_calls.zig");
 
 /// A planned stop's time to finish writing what waits.
 pub const stop_ns: i128 = 20 * std.time.ns_per_s;
@@ -17,8 +18,10 @@ pub fn drain(ctx: *anyopaque) void {
 pub fn drainThread(h: *LaneHost) void {
     h.lock();
     h.closing = true;
+    const pending = calls.detach(&h.calls);
     h.wake.broadcast(h.io);
     h.unlock();
+    calls.reject(pending, error.Closed);
     if (h.thread) |t| t.join();
     h.thread = null;
 }
@@ -52,7 +55,7 @@ pub fn ready(h: *LaneHost) bool {
     const store = h.cache orelse return false;
     const r = store.disk orelse return false;
     if (!rows.write.pending(r)) return false;
-    if (h.queued.items.len > 0 or h.admitted.items.len > 0 or h.cancels.items.len > 0 or h.closing) return false;
+    if (h.calls.first != null or h.queued.items.len > 0 or h.admitted.items.len > 0 or h.cancels.items.len > 0 or h.closing) return false;
     return h.disk.quiet(h.admissions, std.Io.Clock.awake.now(h.io).toNanoseconds());
 }
 

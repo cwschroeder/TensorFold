@@ -28,7 +28,7 @@ pub fn refuse(h: *LaneHost) void {
 /// Learning runs only when nothing else waits: no stream, queued request or cancel (called under the lock).
 pub fn ready(h: *const LaneHost) bool {
     const work = h.lesson_open or h.lessons.items.len > 0;
-    return h.learner != null and work and h.queued.items.len == 0 and h.admitted.items.len == 0 and h.cancels.items.len == 0;
+    return h.learner != null and work and (h.lesson_open or h.calls.first == null) and h.queued.items.len == 0 and h.admitted.items.len == 0 and h.cancels.items.len == 0;
 }
 
 /// One unit of learning: open the next lesson if none is open, then step it; moved weights drop every kept prompt.
