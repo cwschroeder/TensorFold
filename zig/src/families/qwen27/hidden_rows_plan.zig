@@ -14,6 +14,15 @@ pub const Plan = struct {
         _ = try std.math.mul(usize, values, @sizeOf(u16));
         return .{ .rows = @intCast(ids.len), .values = values };
     }
+
+    /// The owned CPU rows and private KV cache must fit beside the fixed capture buffers and server reserve.
+    pub fn admit(p: Plan, available: usize, fixed: usize, kv_width: usize, attention_layers: usize) !void {
+        const output = try std.math.mul(usize, p.values, @sizeOf(u16));
+        const kv = try std.math.mul(usize, try std.math.mul(usize, p.rows, kv_width), 4);
+        const caches = try std.math.mul(usize, kv, attention_layers);
+        const required = try std.math.add(usize, try std.math.add(usize, fixed, output), caches);
+        if (required > available) return error.HiddenRowsMemory;
+    }
 };
 
 test "all tokens including later chunks are checked before a disposable pass" {
@@ -36,4 +45,23 @@ test "hidden row allocation checks both element and byte multiplication" {
     try std.testing.expectError(error.Overflow, Plan.init(&.{ 0, 0 }, std.math.maxInt(usize), 96, 128, 2, 1));
     try std.testing.expectError(error.Overflow, Plan.init(&.{0}, std.math.maxInt(usize), 96, 128, 1, 1));
     try std.testing.expectError(error.BadHiddenGeometry, Plan.init(&.{0}, 0, 96, 128, 1, 1));
+}
+
+test "a valid long capture is refused when private state would consume the chat reserve" {
+    const p = Plan{ .rows = 196608, .values = 196608 * 5120 };
+    const fixed = 256 << 20;
+    const required = fixed + (196608 * 5120 * 2) + (196608 * 1024 * 4 * 16);
+    try std.testing.expectError(error.HiddenRowsMemory, p.admit(8 << 30, fixed, 1024, 16));
+    try std.testing.expectError(error.HiddenRowsMemory, p.admit(required - 1, fixed, 1024, 16));
+    try p.admit(required, fixed, 1024, 16);
+    try std.testing.expectError(error.HiddenRowsMemory, (Plan{ .rows = 1, .values = 5120 }).admit(10240, 1, 0, 0));
+}
+
+test "capture admission refuses overflowing byte totals rather than wrapping into free room" {
+    const max = std.math.maxInt(usize);
+    try std.testing.expectError(error.Overflow, (Plan{ .rows = 1, .values = max }).admit(max, 0, 0, 0));
+    const p = Plan{ .rows = 2, .values = 2 };
+    try std.testing.expectError(error.Overflow, p.admit(max, 0, max, 1));
+    try std.testing.expectError(error.Overflow, p.admit(max, 0, 1, max));
+    try std.testing.expectError(error.Overflow, p.admit(max, max, 0, 0));
 }

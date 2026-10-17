@@ -20,6 +20,8 @@ Capture currently accepts text token IDs. It has no image input. Isolation after
 
 `qwen27_served.Host.hiddenRows` queues this operation on the engine thread between chat rounds. Each caller keeps its own completion storage alive until the operation ends. Pending calls make lone and background drivers yield. An open learning transaction finishes before capture starts. Both drain and stop reject queued calls and wait for an active call to finish safely. A failed learning put-back refuses calls with `StaleModel` until the model heals. A complete capture can pause chat for its duration; the queue does not promise a short pause. HTTP decision scoring is not connected yet.
 
+Before allocating capture buffers, the owner thread checks output rows, private KV state and a conservative fixed-buffer bound against the server's remaining device working set, preserving its 8 GiB reserve. Insufficient room returns `HiddenRowsMemory` without evicting chat snapshots. The current host's larger buffers bound the private single-slot pass; this can refuse a capture that a tighter estimate would admit. The bound covers buffers, not measured peak process memory or compiler/pipeline overhead.
+
 The ANE handoff reserves storage before input encoding, then registers and publishes each committed command buffer without a fallible allocation. The worker can release an even wait after a terminal input-CB failure even when the odd signal never arrived. Drain waits for every registered CB and the last worker completion before releasing retained handles. A poisoned share stays unavailable until explicitly rebuilt. Restoring the chat frame after such a device failure does not guarantee that the server can continue serving.
 
 CPU validation uses Zig 0.17.0:
@@ -31,7 +33,7 @@ zig build test-golden fuzz-cortheon
 zig fmt --check build.zig zig
 ```
 
-The targeted check passes 34 tests: head admission, optional-head detection, hidden-row bounds and the actual ANE worker/drain protocol. Its two-thread ring test publishes 1,024 tickets through a ring of four entries. The CLI has four additional CPU tests. Whole-tree validation must be repeated after each upstream rebase.
+The targeted check covers head admission, optional-head detection, hidden-row bounds and the actual ANE worker/drain protocol. Its two-thread ring test publishes 1,024 tickets through a ring of four entries. Capture-budget cases cover the exact boundary, insufficient room and overflowing totals. The CLI has four additional CPU tests. Whole-tree validation must be repeated after each upstream rebase.
 
 Nine additional owner-call cases run with the host tests: owner identity/reentrancy, serialization, cancellation lifetime, stop and enqueue races, chat progress between calls, lone-driver yield, completion of an open lesson, direct engine drain and stale-weight refusal. Mutants that remove lone yield, block an open lesson behind a call, or serve two calls before chat each fail their corresponding regression test.
 

@@ -53,23 +53,41 @@ pub const Host = struct {
     pub fn hiddenRows(h: *Host, a: Allocator, ids: []const u32, chunk: u32, cancel: ?*const std.atomic.Value(bool)) !q.hidden_rows.Rows {
         const Call = struct {
             a: Allocator,
-            model: *q.model.Model,
+            host: *Host,
             ids: []const u32,
             options: q.hidden_rows.Options,
             rows: ?q.hidden_rows.Rows = null,
             failure: ?anyerror = null,
             fn run(ptr: *anyopaque) void {
                 const c: *@This() = @ptrCast(@alignCast(ptr));
-                c.rows = q.hidden_rows.captureExclusive(c.a, c.model, c.ids, c.options) catch |err| {
+                c.host.admitRows(c.ids, c.options) catch |err| {
+                    c.failure = err;
+                    return;
+                };
+                c.rows = q.hidden_rows.captureExclusive(c.a, c.host.model, c.ids, c.options) catch |err| {
                     c.failure = err;
                     return;
                 };
             }
         };
-        var call = Call{ .a = a, .model = h.model, .ids = ids, .options = .{ .context = h.host.info_.context_window, .chunk = chunk, .cancel = cancel } };
+        var call = Call{ .a = a, .host = h, .ids = ids, .options = .{ .context = h.host.info_.context_window, .chunk = chunk, .cancel = cancel } };
         try h.host.callOwner(&call, Call.run);
         if (call.failure) |err| return err;
         return call.rows.?;
+    }
+
+    /// Existing multi-slot buffers bound a private single-slot pass; refuse without evicting chat snapshots.
+    fn admitRows(h: *Host, ids: []const u32, options: q.hidden_rows.Options) !void {
+        const m = h.model;
+        const plan = try q.hidden_rows.Plan.init(ids, m.config.hidden, m.config.vocab, m.frame.capacity, options.context, options.chunk);
+        var fixed: usize = h.runner.taps.buffer.length();
+        inline for (.{ m.frame.buffers, h.runner.gdn.buffers, h.runner.scratch.buffers }) |buffers| {
+            for (buffers) |buffer| fixed = try std.math.add(usize, fixed, buffer.length());
+        }
+        for (h.runner.bindings) |binding| for (binding.buffers) |buffer| {
+            fixed = try std.math.add(usize, fixed, buffer.length());
+        };
+        try plan.admit(room(m), fixed, m.config.kvDim(), h.runner.bindings.len);
     }
 
     fn of(ptr: *anyopaque) *Host {

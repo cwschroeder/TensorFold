@@ -5,7 +5,7 @@ const Model = @import("model.zig").Model;
 const Frame = @import("gpu_frame.zig").Frame;
 const Runner = @import("decode_round.zig").Runner;
 const Round = @import("round_plan.zig").Round;
-const Plan = @import("hidden_rows_plan.zig").Plan;
+pub const Plan = @import("hidden_rows_plan.zig").Plan;
 
 pub const Options = struct {
     context: u32,
