@@ -232,3 +232,12 @@ TensorFold. What they follow or copy:
 
 - The Level Zero loader and the Intel compute runtime are loaded at run time and are not bundled; `ocloc` compiles the kernels
   at build time and is not distributed.
+## Clef head checkpoint
+
+`zig/src/families/clef/weights.zig` reads the separate bf16 head format from Cloudflare's
+[`joint_schema_model.py`](https://huggingface.co/Cloudflare/clef-flash/blob/8b2e5fd17c09fd49bc2880b805d5323ec7ff4ff3/joint_schema_model.py),
+Apache License 2.0. The earlier TensorFold work by @outcastofmusic in
+[#241](https://github.com/ashhart/TensorFold/pull/241) and
+[#251](https://github.com/ashhart/TensorFold/pull/251) established the separate head and backbone interface.
+`zig/tests/fixtures/clef/` contains a small synthetic head generated with the release code at seed 317.
+Its source metadata identifies the release revision. It contains no trained model weights or agreement corpus.
