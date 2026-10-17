@@ -516,7 +516,10 @@ const Run = struct {
         handed = true;
         const sink: chat.Sink = .{ .ctx = &sink_state, .call = StreamSink.call, .begin = StreamSink.begin };
         var reply = (if (r.turn) |t| cortheon.loop.stream(t, r.srv, &cx, &r.plan.input, prepared, sink, gone) else chat.generate(r.srv, &cx, prepared, sink, gone)) catch |e| {
-            if (!sink_state.opened) return r.unsent(&cx, e, field);
+            if (!sink_state.opened) {
+                if (e == error.Refused and cx.kind == .context_length) return r.streamedContext(&cx, tools, field);
+                return r.unsent(&cx, e, field);
+            }
             switch (e) {
                 error.Cancelled => return,
                 error.Refused => if (cx.kind != .other and cx.kind != .server) {
